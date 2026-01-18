@@ -1,2 +1,2 @@
 # python--daily---practice
-daily python practice for learning and consistency
+Daily Python practice focused on fundamentals and logic building.
