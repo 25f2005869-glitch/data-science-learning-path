@@ -1,0 +1,80 @@
+marks = [94.4, 87.5, 76.3,87.4, 91.8]
+print(marks)
+print(type(marks))
+print(marks[0])
+print(marks[1])
+
+marks = [94.4, 87.5, 76.3,87.4, 91.8]
+print(marks)
+print(len(marks))
+print(marks[0])
+print(marks[1])
+
+student = ["karan", 95.4, 17, "delhi"]
+print(student) 
+
+student = ["karan", 95.4, 17, "delhi"]
+print(student) 
+student[0] = "arjun"
+print(student)
+
+student = ["karan", 95.4, 17, "delhi"]
+print(student[5]) 
+
+marks = [85, 84, 99,93, 97]
+print(marks[1:4])
+
+marks = [85, 84, 99,93, 97]
+print(marks[:4])
+
+marks = [85, 84, 99,93, 97]
+print(marks[1:])
+
+marks = [85, 84, 99,93, 97]
+print(marks[-3:-1])
+
+list = [2, 1, 3]
+list.append(4)
+print(list)
+
+list = [2, 1, 3]
+print(list.sort())
+print(list)
+
+list = [2, 1, 3]
+list.append(4)
+print(list.sort())
+print(list)
+
+list = [2, 1, 3]
+list.append(4)
+print(list.sort(reverse=True))
+print(list)
+
+list = ["litchi", "banana", "apple"]
+print(list.sort(reverse=True))
+print(list)
+
+list = ["litchi", "banana", "apple"]
+print(list.sort())
+print(list)
+
+list = ['a', 'd', 'e', 'f', 'c', 'b']
+print(list.sort())
+print(list)
+
+list = ['a', 'd', 'e', 'f', 'c', 'b']
+print(list.reverse())
+print(list)
+
+list = [2, 1, 3]
+list.insert(1, 5)
+print(list)
+
+list = [2, 1, 3]
+list.remove(1)
+print(list)
+
+list = [2, 1, 3]
+list.pop(2)
+print(list)
