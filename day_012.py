@@ -1,0 +1,124 @@
+info = {
+    "key" : "value",
+    "name" : "apnacollege",
+    "learning" : "coding"
+}
+
+print(info)
+
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["python", "c", "java"],
+     "topics" : ("dict", "set"),
+     "age" : 35,
+     "is adult" : True,
+     "marks" : 94.4
+
+   }
+
+print(info) 
+
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["python", "c", "java"],
+     "topics" : ("dict", "set"),
+     "age" : 35,
+     "is adult" : True,
+    12 : 94.4
+
+   }
+
+print(info) 
+
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["python", "c", "java"],
+     "topics" : ("dict", "set"),
+     "age" : 35,
+     "is adult" : True,
+    12.99 : 94.4
+
+   }
+
+print(info) 
+
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["python", "c", "java"],
+     "topics" : ("dict", "set"),
+     "age" : 35,
+     "is adult" : True,
+    12.99 : 94.4
+
+   }
+
+print(type(info)) 
+
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["python", "c", "java"],
+     "topics" : ("dict", "set"),
+     "age" : 35,
+     "is adult" : True,
+    12.99 : 94.4
+
+   }
+
+print(info["name"]) 
+print(info["topics"]) 
+print(info["subjects"])
+
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["python", "c", "java"],
+     "topics" : ("dict", "set"),
+     "age" : 35,
+     "is adult" : True,
+    12.99 : 94.4
+
+   }
+
+info["name"] = "shradha kaphra"
+print(info) 
+
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["python", "c", "java"],
+     "topics" : ("dict", "set"),
+     "age" : 35,
+     "is adult" : True,
+    12.99 : 94.4
+
+   }
+
+info["name"] = "shradha"
+info["surname"] = "kapra"
+print(info)
+
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["python", "c", "java"],
+     "topics" : ("dict", "set"),
+     "age" : 35,
+     "is adult" : True,
+    12.99 : 94.4
+
+   }
+
+null_dict = {} 
+print(null_dict)
+
+info = {
+    "name" : "apnacollege",
+    "subjects" : ["python", "c", "java"],
+     "topics" : ("dict", "set"),
+     "age" : 35,
+     "is adult" : True,
+    12.99 : 94.4
+
+   }
+
+null_dict = {} 
+null_dict["name"] = "apnacollege"
+print(null_dict)
+
