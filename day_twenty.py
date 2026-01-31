@@ -1,0 +1,117 @@
+#qs1
+
+cities = ["delhi", "mumbai", "chennai", "kolkata", "pune"]
+heroes = ["siperman", "batsman", "ironman", "hulk"]
+
+def print_len(list):
+    print(len(list))
+
+def print_list(list):
+    for item in list:
+        print(item, end=" ")
+
+print_list(heroes) 
+
+#qs2
+
+cities = ["delhi", "mumbai", "chennai", "kolkata", "pune"]
+heroes = ["siperman", "batsman", "ironman", "hulk"]
+
+def print_len(list):
+    print(len(list))
+
+def print_list(list):
+    for item in list:
+        print(item, end=" ")
+
+print_list(heroes)
+print()
+
+#qs3
+
+cities = ["delhi", "mumbai", "chennai", "kolkata", "pune"]
+heroes = ["siperman", "batsman", "ironman", "hulk"]
+
+def print_len(list):
+    print(len(list))
+
+def print_list(list):
+    for item in list:
+        print(item, end=" ")
+
+print_list(cities)
+print()
+
+#qs4
+
+def cal_fact(n):
+    fact = 1
+    for i in range(1, n + 1):
+        fact *= i
+        print(fact)
+
+cal_fact(6)
+
+#qs5
+
+def converter(usd_val):
+    inr_val = usd_val * 83
+    print(usd_val, "USD =", inr_val, "INR")
+
+converter(100)
+
+#qs6
+
+def show(n):
+    print(n)
+
+show(5)
+
+#RECURSION
+
+def show(n):
+    if(n == 0):
+        return
+    print(n)
+    show(n-1)
+    print("END")
+
+show(3)
+
+def fact(n):
+    if(n == 1 or n == 0):
+        return 1
+    return fact(n-1) * n
+
+print(fact(2))
+
+def fact(n):
+    if(n == 1 or n == 0):
+        return 1
+    return fact(n-1) * n
+
+print(fact(6))
+
+#qs1
+
+def cal_sum(n):
+    if(n == 0):
+        return 0
+    return cal_sum(n-1) + n
+sum = cal_sum(19)
+print(sum)
+
+#qs2
+
+def print_list(list, idx=0):
+    if(idx == len(list)):
+        return
+    print(list[idx])
+    print_list(list, idx+1)
+
+fruits = ["mango", "banana", "cherry", "guava", "orange"]
+
+print_list(fruits)
+
+
+
