@@ -1,0 +1,132 @@
+#QS1
+
+class student:
+    
+    def __init__(self, fullname):
+        self.name = fullname
+        print("adding new student in database..")
+
+s1 = student("karan")
+print(s1.name)
+
+s2 = student("arjun")
+print(s2.name)
+
+#QS2
+
+class student:
+    
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+        print("adding new student in database..")
+
+s1 = student("karan", 98)
+print(s1.name, s1.marks)
+
+s2 = student("arjun", 99)
+print(s2.name, s2.marks)
+
+#QS3
+
+class student:
+
+    #default constructor
+    def __init__(self):
+        pass
+
+    #parameterized constructor
+    
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+        print("adding new student in database..")
+
+s1 = student("karan", 98)
+print(s1.name, s1.marks)
+
+s2 = student("arjun", 99)
+print(s2.name, s2.marks)
+
+#QS4
+
+class student:
+    college_name = "ABC College"
+
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+        print("adding new student in database..")
+
+s1 = student("karan", 98)
+print(s1.name, s1.marks)
+
+s2 = student("arjun", 99)
+print(s2.name, s2.marks)
+
+print(s2.college_name)
+
+#ERROR
+
+class student:
+    college_name = "ABC College"
+
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def welcome():
+        print("welcome student")
+
+s1 = student("karan", 97)
+s1.welcome()
+
+#QS5
+
+class student:
+    college_name = "ABC College"
+
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def welcome(self):
+        print("welcome student")
+
+s1 = student("karan", 97)
+s1.welcome()
+
+#QS6
+
+class student:
+    college_name = "ABC College"
+
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def welcome(self):
+        print("welcome student,", self.name)
+
+s1 = student("karan", 97)
+s1.welcome()
+
+#QS7
+
+class student:
+    college_name = "ABC College"
+
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def welcome(self):
+        print("welcome student,", self.name)
+
+    def get_marks(self):
+        return self.marks
+
+s1 = student("karan", 97)
+s1.welcome()
+print(s1.get_marks())
+
