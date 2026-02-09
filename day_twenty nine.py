@@ -1,0 +1,119 @@
+#let's create a file
+
+with open ('sample.txt','w') as f:
+    f.write('hello world')
+
+#try catch demo
+
+with open ('sample.txt','r') as f:
+    print(f.read())
+
+#try catch demo
+
+try:
+    with  open ('sample.txt','r') as f:
+        print(f.read())
+except:
+    print('sorry file not found')
+
+#catching specific exception
+
+f = open('sample.txt','r')
+print(f.read())
+print#(m)
+
+#CATCHING DIFFERENT TYPE OF ERROR
+
+#catching specific exception
+
+try:
+    f = open('sample.txt','r')
+    print(f.read())
+    print#(m)
+except:
+    print('some error occured')
+
+#catching specific exception
+
+try:
+    m=5
+    f = open('simple.txt','r')
+    print(f.read())
+    print(m)
+    print(5/0)
+except FileNotFoundError:
+    print('file not found')
+except NameError:
+    print('variable not defined')
+
+#catching specific exception
+
+try:
+    m=5
+    f = open('simple.txt','r')
+    print(f.read())
+    print(m)
+    print(5/0)
+except FileNotFoundError:
+    print('file not found')
+except NameError:
+    print('variable not defined')
+except Exception as e:
+    print(e.with_traceback)
+
+#catching specific exception
+
+try:
+    m=5
+    f = open('simple.txt','r')
+    print(f.read())
+    print(m)
+    print(5/0)
+except FileNotFoundError:
+    print('file not found')
+except NameError:
+    print('variable not defined')
+except ZeroDivisionError:
+    print("cannot divide by 0")
+
+#catching specific exception
+
+try:
+    m=5
+    f = open('simple.txt','r')
+    print(f.read())
+    print(m)
+    print(5/2)
+    L = [1,2,3]
+    L[100]
+except FileNotFoundError:
+    print('file not found')
+except NameError:
+    print('variable not defined')
+except ZeroDivisionError:
+    print("cannot divide by 0")
+except Exception as e:
+    print(e)
+
+#else
+try:
+    f = open('simple.txt','r')
+except FileNotFoundError:
+    print('file not found')
+except Exception:
+    print('there is a problem')
+else:
+    print(f.read())
+
+#finally
+#else
+
+#else
+try:
+    f = open('simple.txt','r')
+except FileNotFoundError:
+    print('file not found')
+except Exception:
+    print('there is a problem')
+else:
+    print(f.read())
