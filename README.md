@@ -42,3 +42,10 @@ To build strong programming logic before moving to:
 ---
 
 ## 📌 Repository Structure
+basics/           → Python fundamentals
+loops/            → Iteration practice
+functions/        → Modular programming
+oop/              → Object Oriented Programming
+exceptions/       → Error handling
+file_handling/    → Working with files
+projects/         → Applied mini projects
