@@ -1,0 +1,84 @@
+#write a python program for FiveDivisionError Exception.
+
+class FiveDivisionError (Exception):
+    "this is exception class called when five division error happen"
+    pass
+
+try:
+    n1=int(input("enter first number:"))
+    n2=int(input("enter second number:"))
+    if n2==5:
+        raise FiveDivisionError("cannot divide by five")
+    div=n1/n2
+    print("division is:",div)
+except (FiveDivisionError,ZeroDivisionError) as var:
+    print(var)
+
+print("rest of code")
+
+#write a python program for FiveDivisionError Exception.
+
+class FiveDivisionError (Exception):
+    "this is exception class called when five division error happen"
+    pass
+
+try:
+    n1=int(input("enter first number:"))
+    n2=int(input("enter second number:"))
+    if n2==5:
+        raise FiveDivisionError("cannot divide by five")
+    div=n1/n2
+    print("division is:",div)
+except (FiveDivisionError,ZeroDivisionError) as var:
+    print(var,end="")
+
+print("rest of code")
+
+import time
+class BalanceExceptionError(Exception):
+    pass
+
+class AttemptExceptionError(Exception):
+    pass
+attempts=1
+def withdraw():
+    global attempts
+    saved_pin=1234
+    balance=10000
+    pin=int(input("enter the PIN:"))
+    if pin==saved_pin:
+       try:
+           amt=float(input("enter amount to withdraw:"))
+           temp_bal=balance-amt
+           if temp_bal<1000:
+               raise BalanceExceptionError("Insuficient balance")
+           balance=balance-amt
+           print("Remained balance is:",balance)
+       except Exception as var:
+           print(var)
+
+       else:
+           ans=input("Do you ant to continue again:")
+           if ans.lower()=='y':
+               attempts+=1
+               try:
+                   if attempts==4:
+                        raise BalanceExceptionError("to many attempts, your account is blocked")
+               except Exception as var:
+                print(var)
+                time.sleep(3600)
+           else:
+            withdraw()
+    else:
+        print("Thank you")
+        return
+    
+withdraw()
+
+               
+                       
+               
+
+           
+           
+           
