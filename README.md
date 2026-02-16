@@ -86,7 +86,11 @@ To build strong programming logic before moving to advanced domains:
 - Structured topic progression 📈  
 - Real code implementations 💻  
 - GitHub commit consistency 🔥  
-
+- 36+ Days Continuous Coding Streak 🔥
+- Daily coding practice
+- Structured topic progression
+- Real code implementations
+- GitHub commit consistency
 ---
 
 ## 💡 Note
