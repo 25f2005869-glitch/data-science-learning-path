@@ -1,4 +1,4 @@
-[7:30 pm, 16/02/2026] chnchltiwari: # 🐍 Daily Python Practice
+# 🐍 Daily Python Practice
 
 This repository documents my daily Python coding practice and learning journey.  
 The goal is to build strong programming fundamentals, problem-solving skills, and consistency through daily hands-on coding.
@@ -66,7 +66,7 @@ The goal is to build strong programming fundamentals, problem-solving skills, an
 ---
 
 ## 📂 Repository Structure
-[7:32 pm, 16/02/2026] chnchltiwari: ---
+python-daily-practice/ │ ├── day_001.py ├── day_002.py ├── ... ├── day_036.py │ ├── basics/ ├── data_structures/ ├── functions/ ├── oop/ ├── file_handling/ ├── exception_handling/ ├── numpy/   (starting) │
 
 ## 🎯 Learning Goal
 
