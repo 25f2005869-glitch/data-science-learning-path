@@ -25,4 +25,5 @@ print("or operator;", val1 or val3)
 print("and operator:", val1 and val3)
 s,t = 1,2.5
 sum = s + t
+
 print(sum)
