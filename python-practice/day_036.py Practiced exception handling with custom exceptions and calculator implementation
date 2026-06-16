@@ -1,0 +1,98 @@
+def sum_of_int_list(my_list):
+    total = 0
+    for ele in my_list:
+        try:
+         int(ele)
+        except:
+         print(f"item{ele} is not a number")
+        else:
+            total = total + ele
+
+    return total
+
+print(sum_of_int_list([1,'a', 'b', 3]))
+
+class OperationError(Exception):
+   pass
+
+class OperatorError(Exception):
+   pass
+def calculator():
+   operations = ('+','-','*','/')
+   try:
+      user_input = input("please enter an operation:")
+      elements = user_input.split()
+      if len(elements)!=3:
+         raise OperationError("please enter two operands and an opera")
+      operator = elements[1]
+   except Exception as e:
+      print(e)
+   else:
+      pass
+   finally:
+      pass 
+result = calculator()
+print(result)
+
+
+class OperationError(Exception):
+   pass
+
+class OperatorError(Exception):
+   pass
+def calculator():
+   operations = ('+','-','*','/')
+   try:
+      user_input = input("please enter an operation:")
+      elements = user_input.split()
+      if len(elements)!=3:
+         raise OperationError("please enter two operands and an opera")
+      operator = elements[1]
+      if operator not in operations:
+         raise OperatorError(f"{operator} is not valid,please an operator from{operations}")
+   except Exception as e:
+      print(e)
+   else:
+      pass
+   finally:
+      pass 
+result = calculator()
+print(result)  
+
+class OperationError(Exception):
+   pass
+
+class OperatorError(Exception):
+   pass
+def calculator():
+   operations = ('+','-','*','/')
+   try:
+      user_input = input("please enter an operation:")
+      elements = user_input.split()
+      if len(elements)!=3:
+         raise OperationError("please enter two operands and an opera")
+      operator = elements[1]
+      if operator not in operations:
+         raise OperatorError(f"{operator} is not valid,please an operator from{operations}")
+      num1 = float(elements[0])
+      num2 = float(elements[2])
+      if operator=='/' and num2==0:
+         raise ZeroDivisionError("cannot divide by zero")
+   except Exception as e:
+      print(e)
+      print("try again")
+   else:
+      if operator == '+':
+         result = num1 + num2
+      elif operator == '-':
+         result = num1 - num2
+      elif operator == '*':
+         result = num1 * num2
+      elif operator == '/':
+         result = num1 /num2
+   finally:
+       return f"{num1} {operator} {num2} = {result}"
+   
+
+result = calculator()
+print(result)

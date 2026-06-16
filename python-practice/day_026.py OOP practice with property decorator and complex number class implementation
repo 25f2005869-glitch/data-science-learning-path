@@ -1,0 +1,130 @@
+#qs1
+
+class student:
+    def __init__(self, phy, chem, math):
+        self.phy = phy
+        self.chem = chem
+        self.math = math
+        self.percentage = str((self.phy + self.chem + self.math) / 3) + "%"
+
+stu1 = student(98, 97, 99)
+print(stu1.percentage)
+
+stu1.phy = 86
+print(stu1.phy)
+print(stu1.percentage)
+
+#qs2
+
+class student:
+    def __init__(self, phy, chem, math):
+        self.phy = phy
+        self.chem = chem
+        self.math = math
+
+    #def calcpercentage(self):
+    #    self.percentage = str((self.phy + self.chem + self.math) / 3 + "%"
+
+    @property
+    def percentage(self):
+        return str((self.phy + self.chem + self.math) / 3) + "%"
+    
+stu1 = student(98, 97, 99)
+print(stu1.percentage)
+
+stu1.phy = 86
+print(stu1.phy)
+
+#qs3
+
+class student:
+    def __init__(self, phy, chem, math):
+        self.phy = phy
+        self.chem = chem
+        self.math = math
+
+     
+    @property
+    def percentage(self):
+        return str((self.phy + self.chem + self.math) / 3) + "%"
+    
+stu1 = student(98, 97, 99)
+print(stu1.percentage)
+
+stu1.phy = 86
+print(stu1.phy)
+
+#qs4
+
+print(1 + 2)
+print(type(1))
+
+print("apna" + "college")
+print([1, 2, 3] + [4, 5, 6])
+
+#qs5
+
+print("apna" + "college")
+print(type("apna"))
+
+
+print([1, 2, 3] + [4, 5, 6])
+
+#qs6
+
+print([1, 2, 3] + [4, 5, 6])
+print(type([1, 2, 3]))
+
+#qs7
+
+class complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img
+
+    def showNumber(self):
+        print(self.real,"i +", self.img,"j")
+
+num1 = complex(1, 3)
+num1.showwNumber()
+
+#qs8
+
+class complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img
+
+    def showNumber(self):
+        print(self.real,"i +", self.img,"j")
+
+num1 = complex(1, 3)
+num1.showwNumber()
+
+num2 = complex(4, 9)
+num2.showwNumber()
+
+#qs9
+
+class complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img
+
+    def showNumber(self):
+        print(self.real,"i +", self.img,"j")
+
+    def add(self, num2):
+        newReal = self.real + num2.real
+        newImg = self.img + num2.img
+        return complex(newReal, newImg)
+
+num1 = complex(1, 3)
+num1.showwNumber()
+
+num2 = complex(4, 9)
+num2.showwNumber()
+
+num3 = num1.add(num2)
+num3.showwNumber()
+

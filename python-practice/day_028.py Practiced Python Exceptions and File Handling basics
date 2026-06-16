@@ -1,0 +1,78 @@
+#Index Error
+#TThe Index Error Is Thrown When Trying To access an item 
+# at an invalid index.
+
+L = [1, 2, 3]
+L[100]
+
+#Module Not Found Error
+#The Moudle Not Found Error is thrown when a module could
+#  not be found.
+
+import math #(mathi)
+math.floor(5.3)
+
+#Key Error
+#The Key Error is thrown when a Key is not be found.
+
+d = {"name" : "nitish"}
+d["age"]
+
+#Type Error 
+#The Type Error is thrown when an operation or function is
+#applied to an object of an inappropriate type.
+
+1 + "a"
+
+#Value Error
+#The Value Error is thrown when a function's argument is
+#  of an inappropriate type
+
+int("a")
+
+#Name Error
+#The Name Error is thrown when an objectcannot not be found.
+
+print(k)
+
+#Attribute Error
+
+L = [1, 2, 3]
+L.upper()
+
+#let's create a file
+
+with open ('sample.txt','w') as f:
+    f.write('hello world')
+
+#try catch demo
+
+with open ('sample.txt','r') as f:
+    print(f.read())
+
+#try catch demo
+
+try:
+    with  open ('sample.txt','r') as f:
+        print(f.read())
+except:
+    print('sorry file not found')
+
+#catching specific exception
+
+f = open('sample.txt','r')
+print(f.read())
+print(m)
+
+#catching specific exception
+
+try:
+    f = open('sample.txt','r')
+print(f.read())
+print(m)
+except:
+print('some error occured')
+
+
+
+   

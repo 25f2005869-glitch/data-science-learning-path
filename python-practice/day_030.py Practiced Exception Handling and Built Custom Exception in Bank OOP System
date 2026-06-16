@@ -1,0 +1,112 @@
+#raise Exception
+#In Python programming, exception are raised when error occured at runtime.
+#We can also manually raise exception using the raise keyboard.
+
+#We can optionally pass values to the exception to clarify why 
+#that exception was raised.
+raise NameError
+
+class Bank:
+    def __init__(self,balance):
+        self.balance = balance
+
+    def withdraw(self,amount):
+        if amount < 0:
+            raise Exception('amount cannot be negative')
+        if self.balance < amount:
+            raise Exception('you does not have money')
+        self.balance = self.balance - amount
+
+obj = Bank(10000)
+try:
+    obj.withdraw(500)
+except Exception as e:
+    print(e)
+else:
+    print(obj.balance)
+
+class Bank:
+    def __init__(self,balance):
+        self.balance = balance
+
+    def withdraw(self,amount):
+        if amount < 0:
+            raise Exception('amount cannot be negative')
+        if self.balance < amount:
+            raise Exception('you does not have money')
+        self.balance = self.balance - amount
+
+obj = Bank(10000)
+try:
+    obj.withdraw#(-500)
+except Exception as e:
+    print(e)
+else:
+    print(obj.balance)  
+
+#This give Error
+
+class Bank:
+    def __init__(self,balance):
+        self.balance = balance
+
+    def withdraw(self,amount):
+        if amount < 0:
+            raise Exception('amount cannot be negative')
+        if self.balance < amount:
+            raise Exception('you does not have money')
+        self.balance = self.balance - amount
+
+obj = Bank(10000)
+try:
+    obj.withdraw#(150000)
+except Exception as e:
+    print(e)
+else:
+    print(obj.balance) 
+
+#This also gives us error.
+
+class MyException(Exception):
+    def __init__(self,message):
+        print(message)
+
+class Bank:
+    def __init__(self,balance):
+        self.balance = balance
+
+    def withdraw(self,amount):
+        if amount < 0:
+            raise MyException('amount cannot be negative')
+        if self.balance < amount:
+            raise MyException('you does not have money')
+        self.balance = self.balance - amount
+
+obj = Bank(10000)
+try:
+    obj.withdraw(500)
+except MyException as e:
+    print(e)
+else:
+    print(obj.balance) 
+
+class Bank:
+    def __init__(self,balance):
+        self.balance = balance
+
+    def withdraw(self,amount):
+        if amount < 0:
+            raise Exception('amount cannot be negative')
+        if self.balance < amount:
+            raise Exception('you does not have money')
+        self.balance = self.balance - amount
+
+obj = Bank#(150000)
+try:
+    obj.withdraw(500)
+except Exception as e:
+    print(e)
+else:
+    print(obj.balance) 
+
+#This gives us error.

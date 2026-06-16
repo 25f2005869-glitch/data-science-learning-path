@@ -1,0 +1,109 @@
+def calc_sum(a, b):
+    sum = a + b
+    print(sum)
+    return sum
+
+calc_sum(5, 10)
+
+calc_sum(2, 10)
+
+calc_sum(12, 17)
+
+def calc_sum(a, b):
+    return a + b
+
+sum = calc_sum(1, 2)
+print(sum)
+
+def print_hello():
+    print("hello")
+
+print_hello() 
+
+def print_hello():
+    print("hello")
+
+output = print_hello()
+print(output) 
+
+def calc_avg(a, b, c):
+    sum = a + b + c
+    avg = sum / 3
+    print(avg)
+    return avg
+
+calc_avg(1, 2, 3)
+
+print("apnacollege","saloni")
+
+print("apnacollege", end=" ")
+print("saloni")
+
+print("apnacollege", end="$")
+print("saloni")
+
+def cal_prod(a, b):
+    print(a * b)
+    return a * b
+cal_prod()
+
+def cal_prod(a=1, b=1):
+    print(a * b)
+    return a * b
+cal_prod()
+
+def cal_prod(a, b=2):
+    print(a * b)
+    return a * b
+cal_prod(1)
+
+def cal_prod(b, a=2):
+    print(a * b)
+    return a * b
+cal_prod(1)
+
+cities = ["delhi", "mumbai", "chennai", "kolkata", "pune"]
+heroes = ["siperman", "batsman", "ironman", "hulk"]
+
+def print_len(list):
+    print(len(list))
+
+print_len(cities)
+print_len(heroes)
+
+cities = ["delhi", "mumbai", "chennai", "kolkata", "pune"]
+heroes = ["siperman", "batsman", "ironman", "hulk"]
+
+print(heroes[0])
+print(heroes[2])
+
+def print_len(list):
+    print(len(list))
+
+print_len(cities)
+print_len(heroes)
+
+cities = ["delhi", "mumbai", "chennai", "kolkata", "pune"]
+heroes = ["siperman", "batsman", "ironman", "hulk"]
+
+print(heroes[0], end="\n")
+print(heroes[2], end="\n")
+
+def print_len(list):
+    print(len(list))
+
+print_len(cities)
+print_len(heroes)
+
+cities = ["delhi", "mumbai", "chennai", "kolkata", "pune"]
+heroes = ["siperman", "batsman", "ironman", "hulk"]
+
+print(heroes[0], end="")
+print(heroes[2], end="")
+
+def print_len(list):
+    print(len(list))
+
+print_len(cities)
+print_len(heroes)
+

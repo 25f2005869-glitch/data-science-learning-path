@@ -1,0 +1,140 @@
+#QS1
+
+class car:
+    @staticmethod
+    def start():
+        print("car started..")
+
+    @staticmethod
+    def stop():
+        print("car stopped.")
+
+class Toyotacar(car):
+    def __init__(self, brand):
+        self.brand = brand
+
+class Fortuner(Toyotacar): 
+    def __init__(self, type):
+        self.type = type     
+
+car1 = Fortuner("disel")
+car1.start()
+
+#QS2
+
+class A:
+    varA = "welcome to class A"
+
+class B:
+    varB = "welcome to class B"
+
+class C(A, B):
+    varC = "welcome to class C"    
+
+c1 = C()
+
+print(c1.varC)
+print(c1.varB)
+print(c1.varA)
+
+#ERROR
+
+class car:
+    def __init__(self, type):
+        self.type = type 
+
+    @staticmethod
+    def start():
+        print("car started..")
+
+    @staticmethod
+    def stop():
+        print("car stopped.")
+
+class Toyotacar(car):
+    def __init__(self, name):
+        self.name = name
+
+car1 = Toyotacar("prius")
+print(car1.type)
+
+#QS3
+
+class car:
+    def __init__(self, type):
+        self.type = type 
+
+    @staticmethod
+    def start():
+        print("car started..")
+
+    @staticmethod
+    def stop():
+        print("car stopped.")
+
+class Toyotacar(car):
+    def __init__(self, name, type):
+        super().__init__(type)
+        self.name = name
+        super().start()
+
+car1 = Toyotacar("prius", "electric")
+print(car1.type) 
+
+#QS4
+
+class person:
+    name = "anonymous"
+
+    def changeName(self, name):
+        self.name = name
+
+p1 = person()
+p1.changeName("rahul kumar")
+print(p1.name) 
+
+#QS5
+
+class person:
+    name = "anonymous"
+
+    def changeName(self, name):
+        self.name = name
+
+p1 = person()
+p1.changeName("rahul kumar")
+print(p1.name)
+print(person.name) 
+
+#QS6
+
+class person:
+    name = "anonymous"
+
+    #def changeName(obj, name):
+    #    self.__class__.name = "rahul"
+
+    @classmethod
+    def changeName(cls, name):
+        cls.name = name
+
+p1 = person()
+p1.changeName("rahul kumar")
+print(p1.name)
+print(person.name) 
+
+#QS7
+
+class student:
+    def __init__(self, phy, chem, math):
+        self.phy = phy
+        self.chem = chem
+        self.math = math
+        self.percentage = str((self.phy + self.chem + self.math) / 3) + "%"
+
+stu1 = student(98, 97, 99)
+print(stu1.percentage)
+
+stu1.phy = 86
+print(stu1.phy)
+

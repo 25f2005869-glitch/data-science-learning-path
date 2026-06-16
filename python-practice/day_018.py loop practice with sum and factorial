@@ -1,0 +1,116 @@
+seq = range(5)
+print(seq[0])
+print(seq[1])
+print(seq[2])
+print(seq[3])
+
+seq = range(10)
+
+for i in seq:
+    print(i)
+
+for i in range(2, 10):
+    print(i)
+
+for i in range(2, 10, 2):
+    print(i)
+
+for i in range(2, 101, 2):
+    print(i)
+
+ #qs1
+
+for i in range(1, 101):
+    print(i)
+
+ #qs2
+
+for i in range(100, 0, -1):
+    print(i)
+
+ #qs3
+
+n = int(input("enter number : "))
+
+for i in range(1, 11):
+    print(n * i)
+
+ #qs4
+
+for i in range(5):
+    pass
+
+print("some useful work")
+
+#qs5
+
+for i in range(5):
+    pass
+
+if i > 5:
+    pass
+
+print("some useful work")  
+
+#qs6
+
+n = 5
+
+for i in range(1, n+1):
+    print(i)
+
+#qs7
+
+n = 5
+
+sum = 0
+for i in range(1, n+1):
+    sum += i
+
+    print("total sum =", sum)
+
+ #qs8
+
+n = 7
+sum = 0
+i = 1
+while i <= n:
+    sum += i
+    i += 1
+
+print("total sum =", sum)
+
+#qs9
+
+n = 5
+
+sum = 0
+for i in range(1, n+1):
+    sum += i
+
+print("total sum =", sum)
+
+#qs10
+
+n = 9
+fact = 1
+i = 1
+while i <= n:
+    fact *= i
+    i += 1
+
+print("factorial =", fact)
+
+#qs11
+
+n = 5
+
+fact = 1
+for i in range(1, n+1):
+    fact *= i
+
+print("factorial =", fact)
+
+
+
+

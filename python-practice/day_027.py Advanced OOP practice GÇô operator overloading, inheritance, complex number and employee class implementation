@@ -1,0 +1,163 @@
+class complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img
+
+    def showNumber(self):
+        print(self.real,"i +", self.img,"j")
+
+    def add(self, num2):
+        newReal = self.real + num2.real
+        newImg = self.img + num2.img
+        return complex(newReal, newImg)
+
+num1 = complex(1, 3)
+num1.showwNumber()
+
+num2 = complex(4, 9)
+num2.showwNumber()
+
+print(num1 + num2)
+num3 = num1.add(num2)
+num3.showwNumber()
+
+class complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img
+
+    def showNumber(self):
+        print(self.real,"i +", self.img,"j")
+
+    def add(self, num2):
+        newReal = self.real + num2.real
+        newImg = self.img + num2.img
+        return complex(newReal, newImg)
+
+num1 = complex(1, 3)
+num1.showwNumber()
+
+num2 = complex(4, 9)
+num2.showwNumber()
+
+num3 = num1 + num2
+num3.showwNumber()
+
+class complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img
+
+    def showNumber(self):
+        print(self.real,"i +", self.img,"j")
+
+    def __add__(self, num2):
+        newReal = self.real + num2.real
+        newImg = self.img + num2.img
+        return complex(newReal, newImg)
+
+num1 = complex(1, 3)
+num1.showwNumber()
+
+num2 = complex(4, 9)
+num2.showwNumber()
+
+num3 = num1 + num2
+num3.showwNumber()
+
+class complex:
+    def __init__(self, real, img):
+        self.real = real
+        self.img = img
+
+    def showNumber(self):
+        print(self.real,"i +", self.img,"j")
+
+    def __sub__(self, num2):
+        newReal = self.real - num2.real
+        newImg = self.img - num2.img
+        return complex(newReal, newImg)
+
+num1 = complex(1, 3)
+num1.showwNumber()
+
+num2 = complex(4, 9)
+num2.showwNumber()
+
+num3 = num1 - num2
+num3.showwNumber()
+
+class circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+    
+    def perimeter(self):
+        return 2 * 3.14 * self.radius
+    
+c1 = circle(21)
+print(c1.area())
+print(c1.perimeter())
+
+class circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return (22/7) * self.radius ** 2
+    
+    def perimeter(self):
+        return 2 * (22/7) * self.radius
+    
+c1 = circle(21)
+print(c1.area())
+print(c1.perimeter())
+
+class Employee:
+    def __init__(self, role, dept, salary):
+        self.role = role
+        self.dept = dept
+        self.salary = salary
+
+    def showDetails(self):
+        print("role =", self.role)
+        print("dept =", self.dept)
+        print("salary =", self.salary)
+
+e1 = Employee("accountant", "Finance", "60,000")
+e1.showDetails()
+
+class Employee:
+    def __init__(self, role, dept, salary):
+        self.role = role
+        self.dept = dept
+        self.salary = salary
+
+    def showDetails(self):
+        print("role =", self.role)
+        print("dept =", self.dept)
+        print("salary =", self.salary)
+
+class Engineer(Employee):
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        super().__init__("Engineer", "IT", "75,000")
+
+e1 = Employee("accountant", "Finance", "60,000")
+e1.showDetails()
+
+class order:
+    def __init__(self, item, price):
+        self.item = item
+        self.price = price
+
+    def __gt__(self, odr2):
+        return self.price > odr2.price
+    
+odr1 = order("chips", 20)
+odr2 = order("tea", 15)
+
+print(odr1 > odr2)
