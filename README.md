@@ -1,41 +1,46 @@
-# Python Daily Practice
+# 🚀 Python Daily Practice
 
 <div align="center">
 
-## Complete Python, Data Science & Machine Learning Learning Repository
+## Complete Python, Data Science, Problem Solving & Machine Learning Repository
 
-A structured repository documenting my learning journey through Python Programming, Problem Solving, Data Structures & Algorithms, Databases, Data Science Foundations, and Machine Learning.
+A comprehensive repository documenting my journey through Python Programming, Data Structures & Algorithms, SQL, DBMS, Data Science, and Machine Learning.
 
-**Author:** Saloni Tiwari
+### 👩‍💻 Author
+**Saloni Tiwari**
 
-**Program:** BS in Data Science and Applications
+BS in Data Science and Applications – IIT Madras
 
-**Institution:** IIT Madras
+B.Sc Mathematics – Magadh University
 
-**Academic Background:** B.Sc Mathematics, Magadh University
-
-**Status:** Active Learning Repository 🚀
+Python • Data Science • Machine Learning • Research
 
 </div>
 
 ---
 
-# Overview
+# 📖 About This Repository
 
-This repository serves as a centralized learning archive covering the core subjects required for Data Science, Machine Learning, Software Development, and Computational Problem Solving.
+This repository is a centralized learning archive covering programming fundamentals, problem solving, databases, data science, and machine learning.
 
-The purpose of this repository is not only to learn programming concepts but also to develop strong analytical thinking, problem-solving skills, mathematical foundations, and practical implementation abilities through consistent daily practice.
+The objective is to build strong foundations through:
 
-The repository follows a structured progression from programming fundamentals to advanced data science and machine learning concepts.
+- Daily Practice
+- Hands-on Coding
+- Problem Solving
+- Data Analysis
+- Database Design
+- Machine Learning Fundamentals
+- Continuous Revision
 
 ---
 
-# Learning Roadmap
+# 🎯 Learning Roadmap
 
 ```text
-Python Programming
+Python Fundamentals
         ↓
-Problem Solving & Data Structures
+Problem Solving & DSA
         ↓
 NumPy
         ↓
@@ -50,351 +55,276 @@ DBMS
 Machine Learning Foundations
 ```
 
-Each module builds upon the knowledge gained from the previous one, creating a systematic learning path.
+---
+
+# 📊 Repository Statistics
+
+| Learning Track | Progress |
+|---------------|----------|
+| Python Practice | 37 Days |
+| Python Complete Learning Path | 100 Days |
+| Problem Solving & Data Structures | 81 Days |
+| SQL for Data Science | 35 Days |
+| DBMS for Data Science | 81 Days |
+| NumPy for Data Science | 25+ Days |
+| Pandas for Data Science | Projects |
+| Matplotlib for Data Science | Projects |
+| Machine Learning Foundation | 61 Days |
 
 ---
 
-# Repository Structure
+# 📂 Repository Structure
 
 ```text
 python--daily---practice/
-│
+
 ├── python-practice/
-│   ├── Python Fundamentals
-│   ├── Functions
-│   ├── OOP
-│   ├── File Handling
-│   ├── Exception Handling
-│   └── Mini Projects
-│
+├── python-complete-learning-path/
 ├── problem-solving-data-structures/
-│   ├── Arrays
-│   ├── Strings
-│   ├── Linked Lists
-│   ├── Stacks
-│   ├── Queues
-│   ├── Trees
-│   ├── Graphs
-│   ├── Dynamic Programming
-│   ├── Greedy Algorithms
-│   ├── Segment Trees
-│   ├── Tries
-│   └── Advanced Algorithms
-│
 ├── numpy_for_data_science/
-│
 ├── pandas_for_data_science/
-│
 ├── matplotlib_for_data_science/
-│
 ├── SQL_FOR_DATA_SCIENCE/
-│
 ├── DBMS for Data Science/
-│
 └── machine-learning-foundation/
 ```
 
 ---
 
-# Module 1: Python Programming
-
-This section focuses on building strong programming fundamentals using Python.
+# 🐍 Python Practice (37 Days)
 
 ### Topics Covered
-
-* Variables and Data Types
-* Input and Output
-* Conditional Statements
-* Loops
-* Functions
-* Lists
-* Tuples
-* Sets
-* Dictionaries
-* Strings
-* Object-Oriented Programming
-* File Handling
-* Exception Handling
-* Modules and Packages
-* Mini Projects
-
-### Skills Developed
-
-* Programming Logic
-* Problem Solving
-* Debugging
-* Code Organization
-* Software Development Fundamentals
-
----
-
-# Module 2: Problem Solving & Data Structures
-
-This module focuses on algorithmic thinking and efficient problem solving.
-
-### Topics Covered
-
-* Arrays
-* Strings
-* Linked Lists
-* Stacks
-* Queues
-* Hash Tables
-* Trees
-* Binary Search Trees
-* Graphs
-* Heaps
-* Priority Queues
-* Recursion
-* Backtracking
-* Dynamic Programming
-* Greedy Algorithms
-* Union Find
-* Segment Trees
-* Tries
-
-### Skills Developed
-
-* Algorithm Design
-* Time Complexity Analysis
-* Space Optimization
-* Competitive Programming Foundations
-* Interview Preparation
-
----
-
-# Module 3: NumPy for Data Science
-
-NumPy provides the foundation for numerical computing in Python.
-
-### Topics Covered
-
-* NumPy Arrays
-* Array Operations
-* Indexing
-* Slicing
-* Broadcasting
-* Statistical Operations
-* Matrix Operations
-* Numerical Computation
-
-### Skills Developed
-
-* Scientific Computing
-* Matrix Manipulation
-* Numerical Analysis
-
----
-
-# Module 4: Pandas for Data Science
-
-Pandas is used for data analysis and manipulation.
-
-### Topics Covered
-
-* Series
-* DataFrames
-* Data Cleaning
-* Data Transformation
-* Missing Values
-* GroupBy Operations
-* Data Aggregation
-* Exploratory Data Analysis
-
-### Skills Developed
-
-* Data Wrangling
-* Data Analysis
-* Data Preparation
-
----
-
-# Module 5: Matplotlib for Data Science
-
-Visualization is an important part of data analysis.
-
-### Topics Covered
-
-* Line Charts
-* Bar Charts
-* Histograms
-* Pie Charts
-* Scatter Plots
-* Data Visualization Projects
-
-### Skills Developed
-
-* Data Visualization
-* Exploratory Analysis
-* Visual Storytelling
-
----
-
-# Module 6: SQL for Data Science
-
-This module introduces relational databases and querying techniques.
-
-### Topics Covered
-
-* SELECT Statements
-* WHERE Clause
-* ORDER BY
-* GROUP BY
-* Aggregate Functions
-* Joins
-* Subqueries
-* Views
-* Database Queries
-
-### Skills Developed
-
-* Data Retrieval
-* Query Optimization
-* Relational Database Usage
-
----
-
-# Module 7: DBMS for Data Science
-
-This section focuses on database theory and database system design.
-
-### Topics Covered
-
-* Introduction to DBMS
-* ER Model
-* Relational Model
-* Functional Dependencies
-* Normalization
-* Transactions
-* Concurrency Control
-* Indexing
-* Database Design
-
-### Skills Developed
-
-* Database Design
-* Data Modeling
-* Database Architecture Understanding
-
----
-
-# Module 8: Machine Learning Foundations
-
-A structured Machine Learning learning journey covering mathematics, statistics, algorithms, and workflows.
-
-### Topics Covered
-
-* Mathematical Foundations
-* Probability
-* Statistics
-* Data Preparation
-* Feature Engineering
-* Model Evaluation
-* Regression
-* Classification
-* Clustering
-* Model Improvement
-* Machine Learning Workflows
-
-### Skills Developed
-
-* Machine Learning Fundamentals
-* Statistical Thinking
-* Predictive Modeling
-* Data Science Foundations
-
----
-
-# Learning Methodology
-
-Every topic in this repository follows a structured learning pattern:
 
 ```text
-Concept
-    ↓
-Theory
-    ↓
-Python Implementation
-    ↓
-Examples
-    ↓
-Practice
-    ↓
-Mini Project
-    ↓
-Revision
+Day 01  → Python Basics
+Day 02  → User Input
+Day 03  → Operators
+Day 04  → Strings
+Day 05  → String Methods
+Day 06  → Conditional Statements
+Day 07  → Conditional Logic
+Day 08  → Lists
+Day 09  → Nested Lists
+Day 10  → List Methods
+Day 11  → Tuples
+Day 12  → Dictionaries
+Day 13  → Dictionary Practice
+Day 14  → Sets
+Day 15  → Collections Practice
+Day 16  → While Loop
+Day 17  → For Loop
+Day 18  → Loop Problems
+Day 19  → Functions
+Day 20  → Recursion
+Day 21–27 → Object Oriented Programming
+Day 28–33 → File Handling & Exception Handling
+Day 34–36 → Advanced Python Concepts
+Day 37 → Calculator Project
 ```
 
-This approach emphasizes conceptual understanding, implementation skills, and long-term retention.
+---
+
+# 💡 Problem Solving & Data Structures (81 Days)
+
+### Coverage
+
+```text
+Days 01–14  → Programming Foundations
+Days 15–20  → Arrays & Searching
+Days 21–29  → Linked Lists, Stacks & Queues
+Days 30–38  → Trees & BST
+Days 39–45  → Graph Algorithms
+Days 46–58  → Heap, Greedy & MST
+Days 59–66  → Dynamic Programming
+Days 67–74  → Advanced Data Structures
+Days 75–80  → Bit Manipulation
+Day 81      → Complete Revision
+```
 
 ---
 
-# Technologies Used
+# 🔢 NumPy for Data Science (25+ Days)
 
-* Python
-* SQL
-* Git
-* GitHub
-* VS Code
+### Coverage
 
----
-
-# Repository Statistics
-
-| Category                          | Status      |
-| --------------------------------- | ----------- |
-| Python Programming                | Completed   |
-| Problem Solving & Data Structures | Completed   |
-| NumPy                             | Completed   |
-| Pandas                            | Completed   |
-| Matplotlib                        | Completed   |
-| SQL for Data Science              | In Progress |
-| DBMS for Data Science             | In Progress |
-| Machine Learning Foundations      | Completed   |
-
----
-
-# Purpose of This Repository
-
-This repository serves as:
-
-* Personal Learning Archive
-* Revision Resource
-* Practice Repository
-* Knowledge Management System
-* Academic Reference Collection
-* Foundation for Future Projects
-* Foundation for Advanced Machine Learning Studies
-
-The long-term objective is to continuously expand this repository into a structured ecosystem of learning, projects, research, and practical implementations.
+```text
+Day 01 → NumPy Introduction
+Day 02 → Array Indexing
+Day 03 → Array Slicing
+Day 04 → NumPy Practice
+Day 05 → Copy vs View
+Day 06 → Reshape & Flatten
+Day 07 → Iteration
+Day 08 → Joining & Stacking
+Day 09 → Splitting Arrays
+Day 10 → Searching Arrays
+Day 11 → Sorting & Filtering
+Day 12 → Random Numbers
+Day 13 → Random Distributions
+Day 14 → Permutations
+Day 15–20 → Statistical Distributions
+Day 21–25 → Universal Functions (ufuncs)
+```
 
 ---
 
-# Future Learning Path
+# 🐼 Pandas for Data Science
 
-After completing the current modules:
+### Topics Covered
 
-1. Machine Learning Techniques
-2. Advanced Machine Learning
-3. Deep Learning
-4. Natural Language Processing
-5. Computer Vision
-6. Reinforcement Learning
-7. MLOps
-8. Research Projects
+```text
+Day 01 → Pandas Series
+Day 02 → DataFrames
+Day 03 → CSV Files
+Day 04 → JSON Files
+Day 05 → Data Cleaning
+Day 06 → Missing Values
+Day 07 → Data Correction
+Day 08 → Duplicate Handling
+```
 
----
+### Projects
 
-# Author
-
-**Saloni Tiwari**
-
-BS in Data Science and Applications – IIT Madras
-
-B.Sc Mathematics – Magadh University
-
-Python | Data Science | Machine Learning | Research
+```text
+• iPhone Sales Analysis
+• Screen Time Analysis
+```
 
 ---
 
-### "Strong Foundations Create Powerful Systems."
+# 📈 Matplotlib for Data Science
+
+### Visualization Projects
+
+```text
+Day 01 → Matplotlib Introduction
+Day 02 → Sales Comparison
+Day 03 → Student Performance Analysis
+Day 04 → Study Hours vs Marks
+Day 05 → Marks Distribution
+Day 06 → Daily Time Distribution
+Day 07 → Dashboard Visualization
+Day 08 → Advanced Plot Customization
+```
+
+---
+
+# 🗄 SQL for Data Science (35 Days)
+
+### Coverage
+
+```text
+Day 01 → SQL Introduction
+Day 02 → SELECT Statement
+Day 03 → WHERE Clause
+Day 04 → ORDER BY & LIMIT
+Day 05 → LIKE, BETWEEN, IN
+Day 06 → Aggregate Functions
+Day 07 → GROUP BY & HAVING
+Day 08 → CASE WHEN
+Day 09 → String Functions
+Day 10 → Date Functions
+Day 11–16 → Joins & Unions
+Day 17–20 → Subqueries & CTE
+Day 21–24 → Views, Indexes & Transactions
+Day 25–29 → Data Cleaning & Database Design
+Day 30–35 → Advanced SQL & Analytics Project
+```
+
+---
+
+# 🏛 DBMS for Data Science (81 Days)
+
+### Coverage
+
+```text
+Days 01–10 → DBMS Fundamentals & ER Models
+Days 11–20 → Relational Model & Keys
+Days 21–30 → Relational Algebra
+Days 31–40 → Functional Dependencies
+Days 41–50 → Normalization
+Days 51–60 → Transactions & Concurrency
+Days 61–70 → Indexing & Hashing
+Days 71–80 → Query Processing & Optimization
+Day 81     → Final Revision
+```
+
+---
+
+# 🤖 Machine Learning Foundation (61 Days)
+
+### Coverage
+
+```text
+Days 01–15 → Mathematics Foundations
+Days 16–29 → Probability & Statistics
+Days 30–39 → Data Preparation
+Days 40–48 → Supervised Learning
+Days 49–54 → Unsupervised Learning
+Days 55–60 → ML Workflow & Case Studies
+Day 61     → Capstone Project
+```
+
+---
+
+# 🧠 Python Complete Learning Path (100 Days)
+
+### Coverage
+
+```text
+Days 01–20 → Python Fundamentals
+Days 21–40 → Advanced Python & OOP
+Days 41–60 → NumPy & Pandas
+Days 61–70 → Matplotlib & Visualization
+Days 71–80 → Seaborn
+Days 81–90 → Plotly
+Days 91–100 → Statistics for Data Science
+```
+
+---
+
+# 🛠 Technologies Used
+
+- Python
+- SQL
+- NumPy
+- Pandas
+- Matplotlib
+- Machine Learning
+- Git
+- GitHub
+- VS Code
+
+---
+
+# 📌 Current Status
+
+| Module | Status |
+|----------|----------|
+| Python Practice | ✅ Completed |
+| Problem Solving & DSA | ✅ Completed |
+| NumPy | ✅ Completed |
+| Pandas | ✅ Completed |
+| Matplotlib | ✅ Completed |
+| SQL | ✅ Completed |
+| DBMS | ✅ Completed |
+| Machine Learning Foundation | ✅ Completed |
+| Python Complete Learning Path | 🚀 Active |
+
+---
+
+# 🎯 Repository Goals
+
+- Strengthen Programming Foundations
+- Improve Problem Solving Skills
+- Master Data Science Fundamentals
+- Learn Database Systems
+- Build Machine Learning Foundations
+- Create Reusable Learning Resources
+- Prepare for Research and Advanced Studies
+
+---
+
+# ✨ Motto
+
+> **"Strong Foundations Create Powerful Systems."**
