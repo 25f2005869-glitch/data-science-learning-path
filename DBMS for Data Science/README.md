@@ -1,32 +1,48 @@
-# 📚 DBMS for Data Science (IIT Madras BS Degree)
+# 🗄️ DBMS for Data Science
 
-This repository contains my day-wise notes, concepts, examples, and revision material for the **Database Management Systems (DBMS)** course in the **IIT Madras BS Degree Program**.
+<div align="center">
 
-The notebook is organized as an **81-day learning journey**, covering topics from database fundamentals to query optimization. The purpose of maintaining this repository is to create a structured record of learning, simplify revision, and strengthen conceptual understanding of DBMS.
+### Complete Database Management Systems Learning Journey
+
+A structured repository documenting my 81-day learning journey in Database Management Systems (DBMS), covering database design, relational models, normalization, transactions, indexing, hashing, and query optimization.
 
 **Author:** Saloni Tiwari
-**Duration:** 81 Days
-**Status:** ✅ Completed
+**Program:** BS in Data Science and Applications – IIT Madras
+**Academic Background:** B.Sc Mathematics – Magadh University
+
+</div>
 
 ---
 
-## 🎯 Purpose
+# 📖 Overview
 
-This repository is maintained for:
+This repository contains my complete DBMS learning journey as part of the IIT Madras BS Degree Program.
 
-* Course learning and revision
-* Building strong DBMS fundamentals
-* Quiz and examination preparation
-* GATE preparation
-* Technical interview preparation
-* Long-term academic reference
+The repository is organized as an **81-Day structured learning roadmap**, progressing from database fundamentals to advanced topics such as concurrency control, indexing techniques, recovery mechanisms, and query optimization.
+
+The purpose of this repository is to strengthen theoretical understanding, improve revision efficiency, and build a strong foundation for Data Science, Software Engineering, Competitive Examinations, and Technical Interviews.
 
 ---
 
-## 🛣️ Course Roadmap
+# 🎯 Learning Objectives
 
-| Unit   | Topic                                 | Timeline        |
-| :----- | :------------------------------------ | :-------------- |
+* Understand Database Fundamentals
+* Design Efficient Database Schemas
+* Master Relational Models and Keys
+* Learn Relational Algebra Operations
+* Analyze Functional Dependencies
+* Apply Normalization Techniques
+* Understand Transaction Processing
+* Learn Concurrency Control Mechanisms
+* Explore Indexing and Hashing Methods
+* Study Query Processing and Optimization
+
+---
+
+# 🛣️ 81-Day Learning Roadmap
+
+| Unit   | Topic                                 | Duration        |
+| ------ | ------------------------------------- | --------------- |
 | Unit 1 | Database Fundamentals & ER Model      | Day 01 – Day 10 |
 | Unit 2 | Relational Model & Keys               | Day 11 – Day 20 |
 | Unit 3 | Relational Algebra                    | Day 21 – Day 30 |
@@ -38,9 +54,9 @@ This repository is maintained for:
 
 ---
 
-## 📖 Topics Covered
+# 📚 Topics Covered
 
-### Unit 1: Database Fundamentals & ER Model
+## Unit 1: Database Fundamentals & ER Model
 
 * Introduction to Databases
 * File System vs DBMS
@@ -54,14 +70,16 @@ This repository is maintained for:
 * Weak Entities
 * ER Diagram Design
 
-### Unit 2: Relational Model & Keys
+---
+
+## Unit 2: Relational Model & Keys
 
 * Relational Model
 * Relational Schema
 * Integrity Constraints
-* Keys and Their Applications
+* Keys and Applications
 
-**Keys Covered**
+### Keys Covered
 
 * Super Key
 * Candidate Key
@@ -70,7 +88,9 @@ This repository is maintained for:
 * Composite Key
 * Foreign Key
 
-### Unit 3: Relational Algebra
+---
+
+## Unit 3: Relational Algebra
 
 * Selection (σ)
 * Projection (π)
@@ -82,7 +102,9 @@ This repository is maintained for:
 * Join Operations
 * Division
 
-### Unit 4: Functional Dependencies
+---
+
+## Unit 4: Functional Dependencies
 
 * Functional Dependencies
 * Attribute Closure
@@ -92,7 +114,9 @@ This repository is maintained for:
 * Dependency Preservation
 * Lossless Join Decomposition
 
-### Unit 5: Normalization
+---
+
+## Unit 5: Normalization
 
 * First Normal Form (1NF)
 * Second Normal Form (2NF)
@@ -103,7 +127,9 @@ This repository is maintained for:
 * Dependency Preservation
 * Lossless Decomposition
 
-### Unit 6: Transactions & Concurrency Control
+---
+
+## Unit 6: Transactions & Concurrency Control
 
 * Transactions
 * Transaction States
@@ -116,17 +142,22 @@ This repository is maintained for:
 * Deadlocks
 * Recovery Techniques
 
-### Unit 7: Indexing, Hashing & File Organization
+---
+
+## Unit 7: Indexing, Hashing & File Organization
 
 * File Organization
-* Ordered Indices
-* Dense and Sparse Indexing
+* Ordered Indexing
+* Dense Indexing
+* Sparse Indexing
 * B-Tree
 * B+ Tree
 * Static Hashing
 * Dynamic Hashing
 
-### Unit 8: Query Processing & Optimization
+---
+
+## Unit 8: Query Processing & Optimization
 
 * Query Processing
 * Query Evaluation
@@ -137,62 +168,123 @@ This repository is maintained for:
 
 ---
 
-## 📈 Progress
-
-| Topic                   | Status |
-| ----------------------- | ------ |
-| Database Fundamentals   | ✅      |
-| ER Model                | ✅      |
-| Relational Model        | ✅      |
-| Relational Algebra      | ✅      |
-| Functional Dependencies | ✅      |
-| Normalization           | ✅      |
-| Transactions            | ✅      |
-| Concurrency Control     | ✅      |
-| Recovery                | ✅      |
-| Indexing                | ✅      |
-| Hashing                 | ✅      |
-| File Organization       | ✅      |
-| Query Processing        | ✅      |
-| Query Optimization      | ✅      |
-
-**Completion Status:** 81 / 81 Days Completed ✅
-
----
-
-## 📂 Repository Structure
+# 📂 Repository Structure
 
 ```text
-DBMS for Data Science/
+DBMS_for_Data_Science/
+
+├── README.md
 │
-├── day01_course_overview
-├── day02_file_system_vs_dbms
-├── day03_database_architecture
+├── day01_course_overview.sql
+├── day02_file_system_vs_dbms.sql
+├── day03_database_architecture.sql
 │
 ├── ...
 │
-├── day80_query_processing_revision
-├── day81_final_revision
-│
-└── README.md
+├── day79_query_execution_plans.sql
+├── day80_query_optimization_revision.sql
+├── day81_complete_dbms_final_revision.sql
 ```
 
 ---
 
-## 🎯 Key Takeaways
+# 📊 Learning Progress
 
-By completing this 81-day learning journey, I have developed a strong understanding of:
+| Module                  | Status      |
+| ----------------------- | ----------- |
+| Database Fundamentals   | ✅ Completed |
+| ER Model                | ✅ Completed |
+| Relational Model        | ✅ Completed |
+| Relational Algebra      | ✅ Completed |
+| Functional Dependencies | ✅ Completed |
+| Normalization           | ✅ Completed |
+| Transactions            | ✅ Completed |
+| Concurrency Control     | ✅ Completed |
+| Recovery Techniques     | ✅ Completed |
+| Indexing                | ✅ Completed |
+| Hashing                 | ✅ Completed |
+| File Organization       | ✅ Completed |
+| Query Processing        | ✅ Completed |
+| Query Optimization      | ✅ Completed |
 
-* Database design using ER models and relational schemas.
-* Functional dependencies and normalization techniques.
-* Relational algebra operations and query formulation.
-* Transaction processing and concurrency control.
-* Recovery mechanisms and database reliability.
-* Indexing, hashing, and file organization methods.
-* Query execution plans and optimization strategies.
+### Overall Progress
+
+```text
+81 / 81 Days Completed
+████████████████████████████████ 100%
+```
 
 ---
 
-## 📚 Note
+# 🧠 Skills Developed
 
-This repository is intended to serve as a personal learning notebook and revision guide. The notes are organized day-wise to track progress and maintain continuity throughout the learning process.
+* Database Design
+* Data Modeling
+* Schema Development
+* Query Analysis
+* Relational Thinking
+* Transaction Management
+* Concurrency Handling
+* Database Optimization
+* Problem Solving
+
+---
+
+# 🎯 Applications
+
+Knowledge gained through this repository can be applied in:
+
+* Data Science
+* Software Development
+* Backend Engineering
+* Database Administration
+* System Design
+* GATE Preparation
+* Technical Interviews
+
+---
+
+# 🛠 Technologies Used
+
+* SQL
+* DBMS Concepts
+* Relational Algebra
+* Database Design Principles
+* Git
+* GitHub
+* VS Code
+
+---
+
+# 🚀 Key Takeaways
+
+Through this 81-Day DBMS learning journey, I developed a strong understanding of:
+
+* Database Architecture and Design
+* Entity Relationship Modeling
+* Relational Database Concepts
+* Functional Dependencies
+* Normalization Techniques
+* Transaction Management
+* Concurrency Control Mechanisms
+* Recovery and Reliability
+* Indexing and Hashing
+* Query Processing and Optimization
+
+---
+
+# 👩‍💻 Author
+
+**Saloni Tiwari**
+
+BS in Data Science and Applications – IIT Madras
+
+B.Sc Mathematics – Magadh University
+
+Python • SQL • DBMS • Data Science • Machine Learning
+
+---
+
+## ✨ Motto
+
+> **"Well-Designed Databases Power Reliable Systems."**
