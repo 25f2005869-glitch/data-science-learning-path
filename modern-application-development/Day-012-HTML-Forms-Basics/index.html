@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Day 012 - HTML Forms Basics</title>
+
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Course: Modern Application Development (MAD 1)
+        Day: 012
+        Topic: HTML Forms Basics
+    -->
+
+
+    <header>
+
+        <h1>📝 HTML Forms Basics</h1>
+
+        <p>
+            Learning how to create basic HTML forms and collect user input.
+        </p>
+
+    </header>
+
+
+    <hr>
+
+
+    <main>
+
+        <!-- ================= STUDENT REGISTRATION FORM ================= -->
+
+        <section>
+
+            <h2>🎓 Student Registration Form</h2>
+
+            <form action="#" method="post">
+
+
+                <!-- Full Name -->
+
+                <label for="full-name">
+                    Full Name:
+                </label>
+
+                <br>
+
+                <input
+                    type="text"
+                    id="full-name"
+                    name="full_name"
+                    placeholder="Enter your full name"
+                    required>
+
+                <br><br>
+
+
+                <!-- Email -->
+
+                <label for="email">
+                    Email:
+                </label>
+
+                <br>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+                <br><br>
+
+
+                <!-- Password -->
+
+                <label for="password">
+                    Password:
+                </label>
+
+                <br>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required>
+
+                <br><br>
+
+
+                <!-- Age -->
+
+                <label for="age">
+                    Age:
+                </label>
+
+                <br>
+
+                <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    min="1"
+                    max="100"
+                    placeholder="Enter your age"
+                    required>
+
+                <br><br>
+
+
+                <!-- Date of Birth -->
+
+                <label for="dob">
+                    Date of Birth:
+                </label>
+
+                <br>
+
+                <input
+                    type="date"
+                    id="dob"
+                    name="date_of_birth"
+                    required>
+
+                <br><br>
+
+
+                <!-- Student ID -->
+
+                <label for="student-id">
+                    Student ID:
+                </label>
+
+                <br>
+
+                <input
+                    type="text"
+                    id="student-id"
+                    name="student_id"
+                    placeholder="Enter your student ID"
+                    required>
+
+                <br><br>
+
+
+                <!-- Course -->
+
+                <label for="course">
+                    Course:
+                </label>
+
+                <br>
+
+                <input
+                    type="text"
+                    id="course"
+                    name="course"
+                    value="Modern Application Development"
+                    readonly>
+
+                <br><br>
+
+
+                <!-- Registration Status -->
+
+                <label for="registration-status">
+                    Registration Status:
+                </label>
+
+                <br>
+
+                <input
+                    type="text"
+                    id="registration-status"
+                    name="registration_status"
+                    value="Open"
+                    disabled>
+
+                <br><br>
+
+
+                <!-- Buttons -->
+
+                <button type="submit">
+                    Submit Registration
+                </button>
+
+                <button type="reset">
+                    Reset Form
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+        <hr>
+
+
+        <!-- ================= SEARCH FORM ================= -->
+
+        <section>
+
+            <h2>🔍 Search Form</h2>
+
+            <form action="#" method="get">
+
+                <label for="search">
+                    Search:
+                </label>
+
+                <br>
+
+                <input
+                    type="text"
+                    id="search"
+                    name="query"
+                    placeholder="Search something..."
+                    required>
+
+                <br><br>
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <hr>
+
+
+        <!-- ================= CONTACT FORM ================= -->
+
+        <section>
+
+            <h2>📩 Contact Form</h2>
+
+            <form action="#" method="post">
+
+
+                <label for="contact-name">
+                    Name:
+                </label>
+
+                <br>
+
+                <input
+                    type="text"
+                    id="contact-name"
+                    name="contact_name"
+                    placeholder="Enter your name"
+                    required>
+
+                <br><br>
+
+
+                <label for="contact-email">
+                    Email:
+                </label>
+
+                <br>
+
+                <input
+                    type="email"
+                    id="contact-email"
+                    name="contact_email"
+                    placeholder="Enter your email"
+                    required>
+
+                <br><br>
+
+
+                <label for="subject">
+                    Subject:
+                </label>
+
+                <br>
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Enter subject"
+                    required>
+
+                <br><br>
+
+
+                <label for="message">
+                    Message:
+                </label>
+
+                <br>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    cols="40"
+                    placeholder="Write your message"
+                    required></textarea>
+
+                <br><br>
+
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+                <button type="reset">
+                    Reset
+                </button>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <hr>
+
+
+    <footer>
+
+        <p>
+            © 2026 Modern Application Development Learning Journey
+        </p>
+
+        <p>
+            Day 012 — HTML Forms Basics
+        </p>
+
+        <p>
+            <strong>Author: Saloni Tiwari</strong>
+        </p>
+
+        <p>
+            <strong>
+                Programme: IIT Madras BS Degree — Diploma Level
+            </strong>
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
