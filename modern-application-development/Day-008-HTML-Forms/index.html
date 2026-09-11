@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 008 - HTML Forms</title>
+</head>
+
+<body>
+
+    <h1>HTML Forms</h1>
+
+    <hr>
+
+    <p>
+        This form demonstrates different HTML form elements and input types.
+    </p>
+
+    <form action="#" method="post">
+
+        <h2>Student Registration Form</h2>
+
+        <!-- Name -->
+        <label for="name">Full Name:</label>
+        <br>
+
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            required>
+
+        <br><br>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <br>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required>
+
+        <br><br>
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <br>
+
+        <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required>
+
+        <br><br>
+
+        <!-- Age -->
+        <label for="age">Age:</label>
+        <br>
+
+        <input
+            type="number"
+            id="age"
+            name="age"
+            min="1"
+            max="100">
+
+        <br><br>
+
+        <!-- Date -->
+        <label for="dob">Date of Birth:</label>
+        <br>
+
+        <input
+            type="date"
+            id="dob"
+            name="dob">
+
+        <br><br>
+
+        <!-- Gender -->
+        <fieldset>
+
+            <legend>Gender</legend>
+
+            <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male">
+
+            <label for="male">Male</label>
+
+            <br>
+
+            <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="female">
+
+            <label for="female">Female</label>
+
+            <br>
+
+            <input
+                type="radio"
+                id="other"
+                name="gender"
+                value="other">
+
+            <label for="other">Other</label>
+
+        </fieldset>
+
+        <br>
+
+        <!-- Course -->
+        <label for="course">Select Course:</label>
+        <br>
+
+        <select
+            id="course"
+            name="course"
+            required>
+
+            <option value="">
+                -- Select Course --
+            </option>
+
+            <option value="mad">
+                Modern Application Development
+            </option>
+
+            <option value="bdm">
+                Business Data Management
+            </option>
+
+            <option value="mlt">
+                Machine Learning Techniques
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <!-- Skills -->
+        <fieldset>
+
+            <legend>Skills</legend>
+
+            <input
+                type="checkbox"
+                id="html"
+                name="skills"
+                value="html">
+
+            <label for="html">HTML</label>
+
+            <br>
+
+            <input
+                type="checkbox"
+                id="css"
+                name="skills"
+                value="css">
+
+            <label for="css">CSS</label>
+
+            <br>
+
+            <input
+                type="checkbox"
+                id="javascript"
+                name="skills"
+                value="javascript">
+
+            <label for="javascript">JavaScript</label>
+
+            <br>
+
+            <input
+                type="checkbox"
+                id="python"
+                name="skills"
+                value="python">
+
+            <label for="python">Python</label>
+
+        </fieldset>
+
+        <br>
+
+        <!-- Address -->
+        <label for="address">Address:</label>
+        <br>
+
+        <textarea
+            id="address"
+            name="address"
+            rows="4"
+            cols="40"
+            placeholder="Enter your address">
+        </textarea>
+
+        <br><br>
+
+        <!-- Feedback -->
+        <label for="feedback">Feedback:</label>
+        <br>
+
+        <textarea
+            id="feedback"
+            name="feedback"
+            rows="5"
+            cols="40"
+            placeholder="Write your feedback">
+        </textarea>
+
+        <br><br>
+
+        <!-- Buttons -->
+        <button type="submit">
+            Submit
+        </button>
+
+        <button type="reset">
+            Reset
+        </button>
+
+    </form>
+
+    <hr>
+
+    <p>
+        Congratulations! You have completed Day 008.
+    </p>
+
+</body>
+
+</html>
+```
+
+---
+
+## 📁 Final Folder Structure
+
+```text
+Day-008-HTML-Forms/
+│
+├── README.md
+├── notes.md
+├── cheat-sheet.md
+├── practice.md
+└── code/
+    └── index.html
+```
+
+### ✅ Day-008 में सबसे महत्वपूर्ण चीज
+
+इस पूरे दिन के बाद आपको कम-से-कम यह structure **खुद से लिखना आना चाहिए**:
+
+```html
+<form>
+
+    <label for="name">Name:</label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        required>
+
+    <button type="submit">
+        Submit
+    </button>
+
+</form>
+```
+
+यही आगे **Flask + Forms + CRUD** में बहुत काम आएगा।
