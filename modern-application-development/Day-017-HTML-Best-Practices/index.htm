@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Day 017 - HTML Best Practices</title>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>Student Portfolio</h1>
+
+        <p>
+            A clean and semantic HTML5 portfolio webpage.
+        </p>
+
+    </header>
+
+    <hr>
+
+
+    <!-- Navigation -->
+
+    <nav aria-label="Main Navigation">
+
+        <a href="#about">About</a> |
+        <a href="#education">Education</a> |
+        <a href="#skills">Skills</a> |
+        <a href="#projects">Projects</a> |
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <hr>
+
+
+    <!-- Main Content -->
+
+    <main>
+
+        <!-- About Section -->
+
+        <section id="about">
+
+            <h2>About Me</h2>
+
+            <p>
+                I am learning Modern Application Development
+                and building strong foundations in web development.
+            </p>
+
+            <figure>
+
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+                    alt="HTML5 logo"
+                    width="180">
+
+                <figcaption>
+                    HTML5 provides the structure of modern webpages.
+                </figcaption>
+
+            </figure>
+
+        </section>
+
+        <hr>
+
+
+        <!-- Education Section -->
+
+        <section id="education">
+
+            <h2>Education</h2>
+
+            <table border="1">
+
+                <caption>
+                    Education Details
+                </caption>
+
+                <thead>
+
+                    <tr>
+                        <th scope="col">Programme</th>
+                        <th scope="col">Institution</th>
+                        <th scope="col">Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>IIT Madras BS Degree</td>
+                        <td>IIT Madras</td>
+                        <td>In Progress</td>
+                    </tr>
+
+                    <tr>
+                        <td>Data Science Diploma</td>
+                        <td>IIT Madras</td>
+                        <td>In Progress</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <hr>
+
+
+        <!-- Skills Section -->
+
+        <section id="skills">
+
+            <h2>Skills</h2>
+
+            <ul>
+
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>SQL</li>
+
+            </ul>
+
+        </section>
+
+        <hr>
+
+
+        <!-- Projects Section -->
+
+        <section id="projects">
+
+            <h2>Projects</h2>
+
+
+            <article>
+
+                <h3>Student Performance Dashboard</h3>
+
+                <p>
+                    A project focused on analyzing and presenting
+                    student performance data.
+                </p>
+
+                <a href="#">
+                    View Student Performance Dashboard
+                </a>
+
+            </article>
+
+
+            <article>
+
+                <h3>Economic Dashboard</h3>
+
+                <p>
+                    A project focused on exploring economic data
+                    and presenting useful insights.
+                </p>
+
+                <a href="#">
+                    View Economic Dashboard
+                </a>
+
+            </article>
+
+        </section>
+
+        <hr>
+
+
+        <!-- Aside -->
+
+        <aside>
+
+            <h2>Learning Topics</h2>
+
+            <ul>
+
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Flask</li>
+
+            </ul>
+
+        </aside>
+
+        <hr>
+
+
+        <!-- Contact Section -->
+
+        <section id="contact">
+
+            <h2>Contact</h2>
+
+            <form action="#" method="post">
+
+                <p>
+
+                    <label for="name">
+                        Full Name:
+                    </label>
+
+                    <br>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required>
+
+                </p>
+
+
+                <p>
+
+                    <label for="email">
+                        Email Address:
+                    </label>
+
+                    <br>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required>
+
+                </p>
+
+
+                <p>
+
+                    <label for="message">
+                        Message:
+                    </label>
+
+                    <br>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        cols="40"
+                        placeholder="Write your message"
+                        required></textarea>
+
+                </p>
+
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+                <button type="reset">
+                    Reset
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Student Portfolio
+        </p>
+
+        <p>
+            Day 017 — HTML Best Practices
+        </p>
+
+        <p>
+            Created by Saloni Tiwari
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
