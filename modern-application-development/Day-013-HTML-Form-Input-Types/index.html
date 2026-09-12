@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Day 013 - HTML Form Input Types</title>
+
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Course: Modern Application Development (MAD 1)
+        Day: 013
+        Topic: HTML Form Input Types
+    -->
+
+
+    <header>
+
+        <h1>📝 HTML Form Input Types</h1>
+
+        <p>
+            A practical demonstration of different HTML input types.
+        </p>
+
+    </header>
+
+
+    <hr>
+
+
+    <main>
+
+        <form action="#" method="post">
+
+
+            <!-- ================= TEXT INPUT ================= -->
+
+            <section>
+
+                <h2>👤 Personal Information</h2>
+
+
+                <label for="full-name">
+                    Full Name:
+                </label>
+
+                <br>
+
+                <input
+                    type="text"
+                    id="full-name"
+                    name="full_name"
+                    placeholder="Enter your full name"
+                    required>
+
+                <br><br>
+
+
+                <label for="email">
+                    Email:
+                </label>
+
+                <br>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+                <br><br>
+
+
+                <label for="password">
+                    Password:
+                </label>
+
+                <br>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required>
+
+                <br><br>
+
+
+                <label for="phone">
+                    Phone Number:
+                </label>
+
+                <br>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+91 98765 43210">
+
+                <br><br>
+
+
+                <label for="website">
+                    Portfolio Website:
+                </label>
+
+                <br>
+
+                <input
+                    type="url"
+                    id="website"
+                    name="website"
+                    placeholder="https://example.com">
+
+                <br><br>
+
+
+                <label for="search">
+                    Search:
+                </label>
+
+                <br>
+
+                <input
+                    type="search"
+                    id="search"
+                    name="search"
+                    placeholder="Search here...">
+
+            </section>
+
+
+            <hr>
+
+
+            <!-- ================= NUMBER ================= -->
+
+            <section>
+
+                <h2>🔢 Numeric Information</h2>
+
+
+                <label for="age">
+                    Age:
+                </label>
+
+                <br>
+
+                <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    min="1"
+                    max="100"
+                    step="1"
+                    placeholder="Enter your age">
+
+            </section>
+
+
+            <hr>
+
+
+            <!-- ================= DATE AND TIME ================= -->
+
+            <section>
+
+                <h2>📅 Date and Time</h2>
+
+
+                <label for="dob">
+                    Date of Birth:
+                </label>
+
+                <br>
+
+                <input
+                    type="date"
+                    id="dob"
+                    name="date_of_birth">
+
+                <br><br>
+
+
+                <label for="study-time">
+                    Preferred Study Time:
+                </label>
+
+                <br>
+
+                <input
+                    type="time"
+                    id="study-time"
+                    name="study_time">
+
+                <br><br>
+
+
+                <label for="meeting">
+                    Meeting Date and Time:
+                </label>
+
+                <br>
+
+                <input
+                    type="datetime-local"
+                    id="meeting"
+                    name="meeting">
+
+                <br><br>
+
+
+                <label for="study-month">
+                    Study Month:
+                </label>
+
+                <br>
+
+                <input
+                    type="month"
+                    id="study-month"
+                    name="study_month">
+
+                <br><br>
+
+
+                <label for="study-week">
+                    Study Week:
+                </label>
+
+                <br>
+
+                <input
+                    type="week"
+                    id="study-week"
+                    name="study_week">
+
+            </section>
+
+
+            <hr>
+
+
+            <!-- ================= RADIO BUTTONS ================= -->
+
+            <section>
+
+                <h2>🎯 Education Level</h2>
+
+
+                <input
+                    type="radio"
+                    id="beginner"
+                    name="level"
+                    value="beginner">
+
+                <label for="beginner">
+                    Beginner
+                </label>
+
+                <br>
+
+
+                <input
+                    type="radio"
+                    id="intermediate"
+                    name="level"
+                    value="intermediate">
+
+                <label for="intermediate">
+                    Intermediate
+                </label>
+
+                <br>
+
+
+                <input
+                    type="radio"
+                    id="advanced"
+                    name="level"
+                    value="advanced">
+
+                <label for="advanced">
+                    Advanced
+                </label>
+
+            </section>
+
+
+            <hr>
+
+
+            <!-- ================= CHECKBOXES ================= -->
+
+            <section>
+
+                <h2>💻 Skills</h2>
+
+
+                <input
+                    type="checkbox"
+                    id="html"
+                    name="skills"
+                    value="html">
+
+                <label for="html">
+                    HTML
+                </label>
+
+                <br>
+
+
+                <input
+                    type="checkbox"
+                    id="css"
+                    name="skills"
+                    value="css">
+
+                <label for="css">
+                    CSS
+                </label>
+
+                <br>
+
+
+                <input
+                    type="checkbox"
+                    id="javascript"
+                    name="skills"
+                    value="javascript">
+
+                <label for="javascript">
+                    JavaScript
+                </label>
+
+                <br>
+
+
+                <input
+                    type="checkbox"
+                    id="python"
+                    name="skills"
+                    value="python">
+
+                <label for="python">
+                    Python
+                </label>
+
+                <br>
+
+
+                <input
+                    type="checkbox"
+                    id="sql"
+                    name="skills"
+                    value="sql">
+
+                <label for="sql">
+                    SQL
+                </label>
+
+            </section>
+
+
+            <hr>
+
+
+            <!-- ================= FILE ================= -->
+
+            <section>
+
+                <h2>📁 File Upload</h2>
+
+
+                <label for="resume">
+                    Upload Resume:
+                </label>
+
+                <br>
+
+                <input
+                    type="file"
+                    id="resume"
+                    name="resume">
+
+            </section>
+
+
+            <hr>
+
+
+            <!-- ================= COLOR ================= -->
+
+            <section>
+
+                <h2>🎨 Color</h2>
+
+
+                <label for="favorite-color">
+                    Favorite Color:
+                </label>
+
+                <br>
+
+                <input
+                    type="color"
+                    id="favorite-color"
+                    name="favorite_color">
+
+            </section>
+
+
+            <hr>
+
+
+            <!-- ================= RANGE ================= -->
+
+            <section>
+
+                <h2>📈 Learning Progress</h2>
+
+
+                <label for="progress">
+                    Learning Progress:
+                </label>
+
+                <br>
+
+                <input
+                    type="range"
+                    id="progress"
+                    name="progress"
+                    min="0"
+                    max="100"
+                    step="10"
+                    value="50">
+
+                <p>
+                    Range: 0 to 100
+                </p>
+
+            </section>
+
+
+            <hr>
+
+
+            <!-- ================= HIDDEN INPUT ================= -->
+
+            <input
+                type="hidden"
+                name="form_version"
+                value="1">
+
+
+            <!-- ================= BUTTONS ================= -->
+
+            <section>
+
+                <h2>🚀 Form Actions</h2>
+
+
+                <input
+                    type="submit"
+                    value="Submit Form">
+
+
+                <input
+                    type="reset"
+                    value="Reset Form">
+
+
+                <input
+                    type="button"
+                    value="Normal Button">
+
+            </section>
+
+
+        </form>
+
+    </main>
+
+
+    <hr>
+
+
+    <footer>
+
+        <p>
+            © 2026 Modern Application Development Learning Journey
+        </p>
+
+        <p>
+            Day 013 — HTML Form Input Types
+        </p>
+
+        <p>
+            <strong>Author: Saloni Tiwari</strong>
+        </p>
+
+        <p>
+            <strong>
+                Programme: IIT Madras BS Degree — Diploma Level
+            </strong>
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
