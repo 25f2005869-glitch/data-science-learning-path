@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 030 - CSS Best Practices and Mini Project</title>
+
+    <style>
+        /* ==============================
+           Global Styles
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            list-style-position: inside;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ==============================
+           Reusable Container
+        ============================== */
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ==============================
+           Header
+        ============================== */
+
+        .site-header {
+            background-color: #222;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .site-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .site-subtitle {
+            font-size: 1rem;
+        }
+
+        /* ==============================
+           Navigation
+        ============================== */
+
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #333;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            list-style: none;
+            padding: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            text-decoration: underline;
+        }
+
+        /* ==============================
+           Main Sections
+        ============================== */
+
+        .section {
+            background-color: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+        }
+
+        .section-title {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-text {
+            max-width: 70ch;
+        }
+
+        /* ==============================
+           Profile
+        ============================== */
+
+        .profile-card {
+            padding: 1.5rem;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            background-color: #fafafa;
+        }
+
+        .profile-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ==============================
+           Skills
+        ============================== */
+
+        .skill-list {
+            padding-left: 1rem;
+        }
+
+        .skill-item {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ==============================
+           Education Table
+        ============================== */
+
+        .education-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .education-table th,
+        .education-table td {
+            border: 1px solid #bbb;
+            padding: 0.8rem;
+            text-align: left;
+        }
+
+        .education-table th {
+            background-color: #eee;
+        }
+
+        /* ==============================
+           Project Cards
+        ============================== */
+
+        .project-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .project-card {
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ==============================
+           Contact
+        ============================== */
+
+        .contact-form {
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: bold;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: 2px solid #555;
+        }
+
+        .submit-button {
+            padding: 0.8rem 1.5rem;
+            border: 1px solid #222;
+            border-radius: 6px;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-button:hover,
+        .submit-button:focus {
+            background-color: #555;
+        }
+
+        /* ==============================
+           Footer
+        ============================== */
+
+        .site-footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* ==============================
+           Responsive Design
+        ============================== */
+
+        @media (max-width: 600px) {
+            .site-title {
+                font-size: 1.6rem;
+            }
+
+            .section {
+                padding: 1.2rem;
+            }
+
+            .education-table {
+                font-size: 0.9rem;
+            }
+
+            .nav-list {
+                gap: 0.8rem;
+            }
+        }
+
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 030
+            Topic: CSS Best Practices and Mini Project
+        */
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">Student Portfolio</h1>
+            <p class="site-subtitle">
+                CSS Best Practices and Mini Project — Day 030
+            </p>
+        </div>
+    </header>
+
+    <nav class="site-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#skills">Skills</a></li>
+            <li><a class="nav-link" href="#education">Education</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+
+            <div class="profile-card">
+                <h3 class="profile-name">Saloni Tiwari</h3>
+
+                <p class="section-text">
+                    I am a student learning programming, data science and
+                    modern web development. This portfolio demonstrates
+                    the CSS concepts learned during the first 30 days
+                    of my learning journey.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2 class="section-title">Skills</h2>
+
+            <ul class="skill-list">
+                <li class="skill-item">HTML5</li>
+                <li class="skill-item">CSS3</li>
+                <li class="skill-item">Python</li>
+                <li class="skill-item">SQL</li>
+                <li class="skill-item">Data Structures and Algorithms</li>
+            </ul>
+        </section>
+
+        <section id="education" class="section">
+            <h2 class="section-title">Education</h2>
+
+            <table class="education-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Programme</th>
+                        <th scope="col">Level</th>
+                        <th scope="col">Area</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>IIT Madras BS Degree</td>
+                        <td>Diploma Level</td>
+                        <td>Data Science and Applications</td>
+                    </tr>
+
+                    <tr>
+                        <td>B.Sc.</td>
+                        <td>Undergraduate</td>
+                        <td>Mathematics</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="project-list">
+
+                <article class="project-card">
+                    <h3 class="project-title">Student Performance Dashboard</h3>
+
+                    <p>
+                        A data-based project for understanding student
+                        performance and presenting important insights.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title">Economic Analysis Series</h3>
+
+                    <p>
+                        A collection of projects exploring economics,
+                        data analysis and visualization.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3 class="project-title">Web Development Learning Hub</h3>
+
+                    <p>
+                        A structured learning repository covering HTML,
+                        CSS and upcoming JavaScript concepts.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact</h2>
+
+            <form class="contact-form" action="#" method="post">
+
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+
+                    <input
+                        class="form-input"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+
+                    <input
+                        class="form-input"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="message">Message</label>
+
+                    <textarea
+                        class="form-textarea"
+                        id="message"
+                        name="message"
+                        placeholder="Write your message"
+                        minlength="10"
+                        required
+                    ></textarea>
+                </div>
+
+                <button class="submit-button" type="submit">
+                    Send Message
+                </button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Day: 030</p>
+        <p>Topic: CSS Best Practices and Mini Project</p>
+    </footer>
+
+</body>
+</html>
