@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Day 022 - CSS Selectors</title>
+
+    <style>
+
+        /* Universal Selector */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Element Selector */
+
+        body {
+            background-color: #f4f6f8;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Grouping Selector */
+
+        h1,
+        h2,
+        h3 {
+            color: #1f4e79;
+        }
+
+        /* ID Selector */
+
+        #main-title {
+            text-align: center;
+            background-color: #dbeafe;
+            padding: 20px;
+        }
+
+        /* Class Selector */
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+        }
+
+        /* Multiple Class Selector */
+
+        .card.featured {
+            border: 3px solid #1f4e79;
+        }
+
+        /* Descendant Selector */
+
+        .about p {
+            color: #444444;
+        }
+
+        /* Child Selector */
+
+        .skills > ul {
+            border: 2px solid #cccccc;
+            padding: 20px;
+        }
+
+        /* Adjacent Sibling Selector */
+
+        .projects h3 + p {
+            color: #2e7d32;
+        }
+
+        /* General Sibling Selector */
+
+        .journey h2 ~ p {
+            font-style: italic;
+        }
+
+        /* Attribute Selector */
+
+        input[type="email"] {
+            background-color: #e8f4ff;
+        }
+
+        input[type="text"] {
+            background-color: #ffffff;
+        }
+
+        input[required] {
+            border: 2px solid #888888;
+        }
+
+        /* Attribute Contains Selector */
+
+        a[href*="github"] {
+            font-weight: bold;
+        }
+
+        /* Pseudo-Class */
+
+        a:hover {
+            background-color: #dbeafe;
+        }
+
+        button:hover {
+            background-color: #dbeafe;
+        }
+
+        input:focus {
+            background-color: #fff3cd;
+        }
+
+        /* Structural Pseudo-Classes */
+
+        .skills li:first-child {
+            font-weight: bold;
+        }
+
+        .skills li:last-child {
+            color: #c62828;
+        }
+
+        .skills li:nth-child(2) {
+            text-decoration: underline;
+        }
+
+        /* Checked */
+
+        input[type="checkbox"]:checked {
+            accent-color: green;
+        }
+
+        /* Disabled */
+
+        input:disabled {
+            background-color: #dddddd;
+        }
+
+        /* Card Styling */
+
+        .card {
+            border: 1px solid #cccccc;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1 id="main-title">
+            CSS Selectors
+        </h1>
+
+        <p>
+            Day 022 — Learning how CSS selects HTML elements.
+        </p>
+
+    </header>
+
+    <hr>
+
+    <!-- Introduction -->
+
+    <main>
+
+        <section class="about">
+
+            <h2>What is a CSS Selector?</h2>
+
+            <p>
+                A CSS selector identifies the HTML elements that should
+                receive a particular CSS rule.
+            </p>
+
+            <p class="highlight">
+                Selectors are one of the most important foundations of CSS.
+            </p>
+
+        </section>
+
+        <hr>
+
+        <!-- Basic Selectors -->
+
+        <section>
+
+            <h2>Basic Selectors</h2>
+
+            <div class="card">
+
+                <h3>Element Selector</h3>
+
+                <p>
+                    The element selector targets HTML elements such as
+                    paragraphs, headings, and lists.
+                </p>
+
+            </div>
+
+            <div class="card featured">
+
+                <h3>Class Selector</h3>
+
+                <p>
+                    The class selector can be reused on multiple elements.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>ID Selector</h3>
+
+                <p>
+                    The ID selector targets an element with a specific ID.
+                </p>
+
+            </div>
+
+        </section>
+
+        <hr>
+
+        <!-- Skills -->
+
+        <section class="skills">
+
+            <h2>Selector Practice with Lists</h2>
+
+            <ul>
+
+                <li>Universal Selector</li>
+                <li>Element Selector</li>
+                <li>Class Selector</li>
+                <li>ID Selector</li>
+                <li>Attribute Selector</li>
+
+            </ul>
+
+        </section>
+
+        <hr>
+
+        <!-- Projects -->
+
+        <section class="projects">
+
+            <h2>Projects</h2>
+
+            <article class="card">
+
+                <h3>HTML Portfolio</h3>
+
+                <p>
+                    This paragraph is targeted by an adjacent sibling selector.
+                </p>
+
+            </article>
+
+            <article class="card">
+
+                <h3>Student Dashboard</h3>
+
+                <p>
+                    This project demonstrates practical web development.
+                </p>
+
+            </article>
+
+        </section>
+
+        <hr>
+
+        <!-- Learning Journey -->
+
+        <section class="journey">
+
+            <h2>Learning Journey</h2>
+
+            <p>
+                HTML provides webpage structure.
+            </p>
+
+            <p>
+                CSS provides webpage presentation.
+            </p>
+
+            <p>
+                JavaScript provides webpage behaviour.
+            </p>
+
+        </section>
+
+        <hr>
+
+        <!-- Links -->
+
+        <section>
+
+            <h2>Useful Links</h2>
+
+            <p>
+
+                <a
+                    href="https://github.com/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    GitHub
+                </a>
+
+            </p>
+
+            <p>
+
+                <a
+                    href="https://developer.mozilla.org/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    MDN Web Docs
+                </a>
+
+            </p>
+
+        </section>
+
+        <hr>
+
+        <!-- Form -->
+
+        <section>
+
+            <h2>Attribute Selector Practice</h2>
+
+            <form action="#" method="post">
+
+                <p>
+
+                    <label for="name">
+                        Name:
+                    </label>
+
+                    <br>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required>
+
+                </p>
+
+                <p>
+
+                    <label for="email">
+                        Email:
+                    </label>
+
+                    <br>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required>
+
+                </p>
+
+                <p>
+
+                    <label for="topic">
+                        Topic:
+                    </label>
+
+                    <br>
+
+                    <select
+                        id="topic"
+                        name="topic">
+
+                        <option value="selectors">
+                            CSS Selectors
+                        </option>
+
+                        <option value="colors">
+                            CSS Colors
+                        </option>
+
+                    </select>
+
+                </p>
+
+                <p>
+
+                    <input
+                        type="checkbox"
+                        id="practice"
+                        name="practice">
+
+                    <label for="practice">
+                        I completed selector practice.
+                    </label>
+
+                </p>
+
+                <p>
+
+                    <label for="disabled">
+                        Disabled Field:
+                    </label>
+
+                    <br>
+
+                    <input
+                        type="text"
+                        id="disabled"
+                        value="Disabled"
+                        disabled>
+
+                </p>
+
+                <button type="submit">
+                    Submit
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Saloni Tiwari
+        </p>
+
+        <p>
+            Day 022 — CSS Selectors
+        </p>
+
+        <p>
+            Part of my IIT Madras BS Degree Learning Journey.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
