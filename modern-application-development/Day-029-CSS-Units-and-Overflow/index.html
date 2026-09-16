@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 029 - CSS Units and Overflow</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 5vh 5%;
+            background-color: #222;
+            color: white;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1rem;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+
+        section {
+            background-color: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        /* Percentage Unit */
+        .percentage-box {
+            width: 70%;
+            padding: 1rem;
+            background-color: #ddd;
+        }
+
+        /* Viewport Units */
+        .viewport-box {
+            width: 50vw;
+            height: 15vh;
+            padding: 1rem;
+            background-color: #eee;
+        }
+
+        /* rem Unit */
+        .rem-text {
+            font-size: 1.5rem;
+        }
+
+        /* em Unit */
+        .em-container {
+            font-size: 20px;
+        }
+
+        .em-text {
+            font-size: 1.5em;
+        }
+
+        /* vmin and vmax */
+        .viewport-units {
+            width: 50vmin;
+            min-height: 100px;
+            padding: 1rem;
+            background-color: #ddd;
+        }
+
+        /* ch Unit */
+        .ch-text {
+            max-width: 60ch;
+        }
+
+        /* Overflow Examples */
+        .overflow-box {
+            width: 100%;
+            height: 120px;
+            padding: 1rem;
+            border: 2px solid #333;
+            margin-bottom: 1rem;
+        }
+
+        .visible {
+            overflow: visible;
+        }
+
+        .hidden {
+            overflow: hidden;
+        }
+
+        .scroll {
+            overflow: scroll;
+        }
+
+        .auto {
+            overflow: auto;
+        }
+
+        .large-content {
+            width: 700px;
+        }
+
+        /* Horizontal Overflow */
+        .horizontal-scroll {
+            overflow-x: auto;
+            white-space: nowrap;
+            border: 2px solid #333;
+            padding: 1rem;
+        }
+
+        /* Vertical Overflow */
+        .vertical-scroll {
+            height: 100px;
+            overflow-y: auto;
+            border: 2px solid #333;
+            padding: 1rem;
+        }
+
+        /* Text Overflow */
+        .ellipsis {
+            width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border: 1px solid #aaa;
+            padding: 0.5rem;
+        }
+
+        .wrap-text {
+            overflow-wrap: break-word;
+            word-break: normal;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Units and Overflow</h1>
+        <p>Day 029 — IIT Madras BS Degree</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>1. Percentage Unit</h2>
+
+            <div class="percentage-box">
+                This box has a width of 70% of its parent.
+            </div>
+        </section>
+
+        <section>
+            <h2>2. rem Unit</h2>
+
+            <p class="rem-text">
+                This paragraph uses 1.5rem font size.
+            </p>
+        </section>
+
+        <section>
+            <h2>3. em Unit</h2>
+
+            <div class="em-container">
+                Parent font size is 20px.
+
+                <p class="em-text">
+                    This text uses 1.5em.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Viewport Units</h2>
+
+            <div class="viewport-box">
+                Width: 50vw<br>
+                Height: 15vh
+            </div>
+        </section>
+
+        <section>
+            <h2>5. vmin Unit</h2>
+
+            <div class="viewport-units">
+                This box uses 50vmin.
+            </div>
+        </section>
+
+        <section>
+            <h2>6. ch Unit</h2>
+
+            <p class="ch-text">
+                The ch unit is useful for controlling the approximate number
+                of characters per line and improving text readability.
+            </p>
+        </section>
+
+        <section>
+            <h2>7. Overflow: Visible</h2>
+
+            <div class="overflow-box visible">
+                <div class="large-content">
+                    This content is wider than the parent box. With
+                    overflow: visible, the extra content can appear outside
+                    the box.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>8. Overflow: Hidden</h2>
+
+            <div class="overflow-box hidden">
+                <div class="large-content">
+                    This content is wider than the parent box.
+                    Overflow is hidden.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>9. Overflow: Scroll</h2>
+
+            <div class="overflow-box scroll">
+                <div class="large-content">
+                    This content is intentionally wider than the container.
+                    Scrollbars are available.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>10. Overflow: Auto</h2>
+
+            <div class="overflow-box auto">
+                <div class="large-content">
+                    With overflow: auto, scrollbars appear only when required.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>11. Horizontal Scrolling</h2>
+
+            <div class="horizontal-scroll">
+                This is a long line of content that can be scrolled
+                horizontally when it does not fit inside the container.
+            </div>
+        </section>
+
+        <section>
+            <h2>12. Vertical Scrolling</h2>
+
+            <div class="vertical-scroll">
+                Line 1<br>
+                Line 2<br>
+                Line 3<br>
+                Line 4<br>
+                Line 5<br>
+                Line 6<br>
+                Line 7<br>
+                Line 8<br>
+            </div>
+        </section>
+
+        <section>
+            <h2>13. Text Overflow</h2>
+
+            <p class="ellipsis">
+                This is a very long student project title that will be
+                truncated using the text-overflow ellipsis property.
+            </p>
+
+            <p class="wrap-text">
+                VeryLongWordExampleThatMayNeedToBreakWhenItDoesNotFitInsideTheContainer
+            </p>
+        </section>
+
+        <section>
+            <h2>14. Responsive Container</h2>
+
+            <div style="width: 100%; max-width: 700px; margin: 0 auto; padding: 1rem; border: 2px solid #333;">
+                This container uses width: 100% and max-width: 700px.
+            </div>
+        </section>
+
+        <section>
+            <h2>15. Unit Comparison</h2>
+
+            <ul>
+                <li>px → Fixed size</li>
+                <li>% → Relative to parent</li>
+                <li>em → Relative to current font size</li>
+                <li>rem → Relative to root font size</li>
+                <li>vw → Relative to viewport width</li>
+                <li>vh → Relative to viewport height</li>
+                <li>vmin → Smaller viewport dimension</li>
+                <li>vmax → Larger viewport dimension</li>
+                <li>ch → Approximate character width</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Day: 029</p>
+        <p>Topic: CSS Units and Overflow</p>
+    </footer>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 029
+        Topic: CSS Units and Overflow
+    -->
+
+</body>
+</html>
