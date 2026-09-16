@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Day 023 - Colors and Backgrounds</title>
+
+    <style>
+
+        /* Basic Page Styling */
+
+        body {
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #222222;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Element Selector */
+
+        h1 {
+            color: #ffffff;
+            background-color: #1f4e79;
+            text-align: center;
+            padding: 25px;
+        }
+
+        h2 {
+            color: #1f4e79;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        /* Named Color */
+
+        .named-color {
+            color: blue;
+            background-color: lightyellow;
+            padding: 20px;
+        }
+
+        /* HEX Color */
+
+        .hex-color {
+            color: #ffffff;
+            background-color: #2563eb;
+            padding: 20px;
+        }
+
+        /* RGB Color */
+
+        .rgb-color {
+            color: rgb(255, 255, 255);
+            background-color: rgb(34, 139, 34);
+            padding: 20px;
+        }
+
+        /* RGBA Color */
+
+        .rgba-color {
+            color: #ffffff;
+            background-color: rgba(128, 0, 128, 0.65);
+            padding: 20px;
+        }
+
+        /* HSL Color */
+
+        .hsl-color {
+            color: hsl(220, 80%, 30%);
+            background-color: hsl(45, 100%, 90%);
+            padding: 20px;
+        }
+
+        /* Linear Gradient */
+
+        .linear-gradient {
+            color: #ffffff;
+            background: linear-gradient(
+                to right,
+                #2563eb,
+                #7c3aed
+            );
+            padding: 40px;
+        }
+
+        /* Radial Gradient */
+
+        .radial-gradient {
+            color: #ffffff;
+            background: radial-gradient(
+                circle,
+                #7c3aed,
+                #1f4e79
+            );
+            padding: 40px;
+        }
+
+        /* Background Image */
+
+        .background-image {
+            color: #ffffff;
+            background-image:
+                url("https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            background-color: #222222;
+            min-height: 250px;
+            padding: 30px;
+        }
+
+        /* Background Cover */
+
+        .background-cover {
+            color: #ffffff;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.55)
+                ),
+                url("https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            min-height: 250px;
+            padding: 30px;
+        }
+
+        /* Cards */
+
+        .card {
+            margin: 15px 0;
+            border: 1px solid #cccccc;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            CSS Colors and Backgrounds
+        </h1>
+
+        <p>
+            Day 023 — Exploring CSS color values and background properties.
+        </p>
+
+    </header>
+
+    <main>
+
+        <section class="card">
+
+            <h2>1. Named Color</h2>
+
+            <div class="named-color">
+
+                <p>
+                    This section demonstrates a CSS named color.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>2. HEX Color</h2>
+
+            <div class="hex-color">
+
+                <p>
+                    This section uses HEX color values.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>3. RGB Color</h2>
+
+            <div class="rgb-color">
+
+                <p>
+                    This section uses RGB color values.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>4. RGBA Color</h2>
+
+            <div class="rgba-color">
+
+                <p>
+                    This section demonstrates a partially transparent
+                    RGBA background color.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>5. HSL Color</h2>
+
+            <div class="hsl-color">
+
+                <p>
+                    This section demonstrates HSL color values.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>6. Linear Gradient</h2>
+
+            <div class="linear-gradient">
+
+                <h3>
+                    Linear Gradient Example
+                </h3>
+
+                <p>
+                    The colors transition from one side to another.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>7. Radial Gradient</h2>
+
+            <div class="radial-gradient">
+
+                <h3>
+                    Radial Gradient Example
+                </h3>
+
+                <p>
+                    The colors spread outward from the center.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>8. Background Image</h2>
+
+            <div class="background-image">
+
+                <h3>
+                    Background Image
+                </h3>
+
+                <p>
+                    This example demonstrates background-image,
+                    background-repeat, background-position,
+                    and background-size.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>9. Background Cover</h2>
+
+            <div class="background-cover">
+
+                <h3>
+                    Background Size: Cover
+                </h3>
+
+                <p>
+                    The background image is sized to cover the
+                    complete section.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>10. Color Contrast</h2>
+
+            <p>
+                Good contrast between text and background improves
+                readability and accessibility.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            © 2026 Saloni Tiwari
+        </p>
+
+        <p>
+            Day 023 — Colors and Backgrounds
+        </p>
+
+        <p>
+            Part of my IIT Madras BS Degree Learning Journey.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
