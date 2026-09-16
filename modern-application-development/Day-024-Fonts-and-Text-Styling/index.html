@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 024 - Fonts and Text Styling</title>
+
+    <style>
+        /* =========================================
+           DAY 024 - CSS FONTS AND TEXT STYLING
+           ========================================= */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            margin: 0;
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        header h1 {
+            font-family: Georgia, serif;
+            font-size: 36px;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px gray;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        section {
+            background-color: #ffffff;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: underline;
+            text-transform: capitalize;
+        }
+
+        /* Font Family Examples */
+
+        .serif-text {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .sans-serif-text {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .monospace-text {
+            font-family: "Courier New", monospace;
+        }
+
+        .cursive-text {
+            font-family: cursive;
+        }
+
+        /* Font Size Examples */
+
+        .small-text {
+            font-size: 14px;
+        }
+
+        .medium-text {
+            font-size: 20px;
+        }
+
+        .large-text {
+            font-size: 28px;
+        }
+
+        /* Font Weight Examples */
+
+        .normal-weight {
+            font-weight: 400;
+        }
+
+        .medium-weight {
+            font-weight: 500;
+        }
+
+        .bold-weight {
+            font-weight: 700;
+        }
+
+        .heavy-weight {
+            font-weight: 900;
+        }
+
+        /* Font Style */
+
+        .italic-text {
+            font-style: italic;
+        }
+
+        .oblique-text {
+            font-style: oblique;
+        }
+
+        /* Text Alignment */
+
+        .left-text {
+            text-align: left;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+
+        .right-text {
+            text-align: right;
+        }
+
+        .justify-text {
+            text-align: justify;
+        }
+
+        /* Text Decoration */
+
+        .underline-text {
+            text-decoration: underline;
+        }
+
+        .overline-text {
+            text-decoration: overline;
+        }
+
+        .line-through-text {
+            text-decoration: line-through;
+        }
+
+        .no-decoration-text {
+            text-decoration: none;
+        }
+
+        /* Text Transformation */
+
+        .uppercase-text {
+            text-transform: uppercase;
+        }
+
+        .lowercase-text {
+            text-transform: lowercase;
+        }
+
+        .capitalize-text {
+            text-transform: capitalize;
+        }
+
+        /* Text Spacing */
+
+        .letter-spacing-text {
+            letter-spacing: 4px;
+        }
+
+        .word-spacing-text {
+            word-spacing: 12px;
+        }
+
+        .line-height-text {
+            line-height: 2;
+        }
+
+        /* Text Indentation */
+
+        .indent-text {
+            text-indent: 40px;
+        }
+
+        /* Text Shadow */
+
+        .shadow-text {
+            font-size: 30px;
+            text-shadow: 3px 3px 5px gray;
+        }
+
+        /* Font Shorthand */
+
+        .shorthand-text {
+            font: italic 700 20px/1.6 Georgia, serif;
+        }
+
+        /* Typography Card */
+
+        .profile-card {
+            border-left: 5px solid #333;
+            padding-left: 20px;
+        }
+
+        .profile-card h3 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .profile-card p {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .skills {
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Fonts and Text Styling</h1>
+        <p>Day 024 — Learning CSS Typography</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Font Family</h2>
+
+            <p class="serif-text">
+                This paragraph uses a serif font.
+            </p>
+
+            <p class="sans-serif-text">
+                This paragraph uses a sans-serif font.
+            </p>
+
+            <p class="monospace-text">
+                This paragraph uses a monospace font.
+            </p>
+
+            <p class="cursive-text">
+                This paragraph uses a cursive font.
+            </p>
+        </section>
+
+        <section>
+            <h2>Font Size</h2>
+
+            <p class="small-text">This is small text.</p>
+            <p class="medium-text">This is medium-sized text.</p>
+            <p class="large-text">This is large text.</p>
+        </section>
+
+        <section>
+            <h2>Font Weight</h2>
+
+            <p class="normal-weight">Font weight 400 — Normal</p>
+            <p class="medium-weight">Font weight 500 — Medium</p>
+            <p class="bold-weight">Font weight 700 — Bold</p>
+            <p class="heavy-weight">Font weight 900 — Heavy</p>
+        </section>
+
+        <section>
+            <h2>Font Style</h2>
+
+            <p>This is normal text.</p>
+            <p class="italic-text">This is italic text.</p>
+            <p class="oblique-text">This is oblique text.</p>
+        </section>
+
+        <section>
+            <h2>Text Alignment</h2>
+
+            <p class="left-text">This text is aligned to the left.</p>
+            <p class="center-text">This text is centered.</p>
+            <p class="right-text">This text is aligned to the right.</p>
+            <p class="justify-text">
+                This paragraph demonstrates justified text alignment.
+                The browser adjusts the spacing between words so that
+                the text lines occupy the available width.
+            </p>
+        </section>
+
+        <section>
+            <h2>Text Decoration</h2>
+
+            <p class="underline-text">Underlined text</p>
+            <p class="overline-text">Overlined text</p>
+            <p class="line-through-text">Line-through text</p>
+            <p class="no-decoration-text">Text without decoration</p>
+        </section>
+
+        <section>
+            <h2>Text Transformation</h2>
+
+            <p class="uppercase-text">
+                this text is transformed to uppercase.
+            </p>
+
+            <p class="lowercase-text">
+                THIS TEXT IS TRANSFORMED TO LOWERCASE.
+            </p>
+
+            <p class="capitalize-text">
+                this text is transformed to capitalized words.
+            </p>
+        </section>
+
+        <section>
+            <h2>Text Spacing</h2>
+
+            <p class="letter-spacing-text">
+                Letter spacing example
+            </p>
+
+            <p class="word-spacing-text">
+                Word spacing example
+            </p>
+
+            <p class="line-height-text">
+                This paragraph demonstrates line height.
+                Line height creates vertical space between lines
+                and can make paragraphs easier to read.
+            </p>
+        </section>
+
+        <section>
+            <h2>Text Indentation</h2>
+
+            <p class="indent-text">
+                This paragraph has indentation applied to its first line.
+                Text indentation can be useful when creating traditional
+                paragraph-style layouts.
+            </p>
+        </section>
+
+        <section>
+            <h2>Text Shadow</h2>
+
+            <p class="shadow-text">
+                CSS Text Shadow
+            </p>
+        </section>
+
+        <section>
+            <h2>Font Shorthand</h2>
+
+            <p class="shorthand-text">
+                This paragraph uses the CSS font shorthand property.
+            </p>
+        </section>
+
+        <section>
+            <h2>Student Profile</h2>
+
+            <div class="profile-card">
+                <h3>Saloni Tiwari</h3>
+
+                <p>
+                    I am learning Modern Application Development and
+                    practicing HTML and CSS concepts step by step.
+                    Typography helps make a webpage readable,
+                    structured, and visually professional.
+                </p>
+
+                <p class="skills">
+                    Skills: HTML5 | CSS3 | Python | SQL | Data Science
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Day 024 — CSS Fonts and Text Styling
+        </p>
+
+        <p>
+            Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level
+        </p>
+    </footer>
+
+</body>
+</html>
