@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSS Margin, Padding and Border practice for IIT Madras BS Degree">
+    <title>Day 026 - Margin, Padding and Border</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            padding: 25px;
+            border: 2px solid #222;
+            border-radius: 12px;
+            background-color: white;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        section h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .box {
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 3px solid #333;
+            border-radius: 10px;
+            background-color: #eef2ff;
+            text-align: center;
+        }
+
+        .spacing-demo {
+            margin-top: 15px;
+            margin-right: 30px;
+            margin-bottom: 25px;
+            margin-left: 10px;
+
+            padding-top: 15px;
+            padding-right: 25px;
+            padding-bottom: 15px;
+            padding-left: 25px;
+
+            border: 2px dashed #555;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .border-demo {
+            padding: 20px;
+            margin: 15px 0;
+            border-top: 3px solid #333;
+            border-right: 3px dashed #555;
+            border-bottom: 3px double #777;
+            border-left: 3px dotted #999;
+            border-radius: 12px;
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 4px solid #333;
+            border-radius: 50%;
+            background-color: #e8f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card {
+            max-width: 350px;
+            margin: 20px auto;
+            padding: 25px;
+            border: 2px solid #333;
+            border-radius: 15px;
+            background-color: #fafafa;
+            text-align: center;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin: 8px 0;
+        }
+
+        .button {
+            margin: 15px 5px 0;
+            padding: 10px 20px;
+            border: 2px solid #333;
+            border-radius: 6px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #eee;
+        }
+
+        .comparison {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #aaa;
+            border-radius: 8px;
+        }
+
+        footer {
+            max-width: 900px;
+            margin: 30px auto 0;
+            padding: 20px;
+            border-top: 2px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Margin, Padding and Border</h1>
+        <p>Day 026 — CSS Practice Page</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>1. CSS Box Model</h2>
+
+            <div class="box">
+                <strong>Content</strong>
+                <p>This box demonstrates content, padding, border and margin.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Margin and Padding</h2>
+
+            <div class="spacing-demo">
+                <strong>Spacing Demo</strong>
+                <p>
+                    This element uses individual margin and padding properties.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Border Examples</h2>
+
+            <div class="border-demo">
+                <strong>Multiple Border Styles</strong>
+                <p>
+                    Different border styles can be applied to individual sides.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Border Radius</h2>
+
+            <p>
+                Border radius can be used to create rounded corners and circles.
+            </p>
+
+            <div class="circle">
+                Circle
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Student Profile Card</h2>
+
+            <div class="card">
+                <h3>Saloni Tiwari</h3>
+
+                <p><strong>Programme:</strong> IIT Madras BS Degree</p>
+
+                <p><strong>Level:</strong> Diploma Level</p>
+
+                <p><strong>Topic:</strong> Modern Application Development</p>
+
+                <p><strong>Current Topic:</strong> CSS Margin, Padding and Border</p>
+
+                <button class="button">Learn More</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Margin vs Padding</h2>
+
+            <div class="comparison">
+                <p><strong>Margin:</strong> Creates space outside the border.</p>
+
+                <p><strong>Padding:</strong> Creates space between content and border.</p>
+
+                <p><strong>Border:</strong> Creates a boundary around the element.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>7. Important CSS Properties</h2>
+
+            <ul>
+                <li><code>margin</code> — Outside spacing</li>
+                <li><code>padding</code> — Inside spacing</li>
+                <li><code>border</code> — Element boundary</li>
+                <li><code>border-radius</code> — Rounded corners</li>
+                <li><code>width</code> — Element width</li>
+                <li><code>height</code> — Element height</li>
+                <li><code>max-width</code> — Maximum element width</li>
+                <li><code>box-sizing</code> — Controls box dimension calculation</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Day 026 — CSS Margin, Padding and Border</p>
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+</body>
+</html>
