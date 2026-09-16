@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Day 028 CSS Position and Z-Index practice">
+    <title>Day 028 - CSS Position and Z-Index</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        /* Sticky Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            padding: 20px;
+            background-color: white;
+            border-bottom: 2px solid #333;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background-color: white;
+            border: 2px solid #ccc;
+            border-radius: 12px;
+        }
+
+        section h2 {
+            margin-top: 0;
+        }
+
+        /* Static */
+        .static-box {
+            position: static;
+            padding: 15px;
+            border: 2px solid #555;
+            background-color: #f0f0f0;
+        }
+
+        /* Relative */
+        .relative-container {
+            height: 150px;
+            padding: 20px;
+            border: 2px dashed #777;
+            background-color: #fafafa;
+        }
+
+        .relative-box {
+            position: relative;
+            top: 20px;
+            left: 30px;
+            width: 220px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background-color: #e8f5e9;
+        }
+
+        /* Absolute */
+        .card {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            min-height: 220px;
+            margin: 20px auto;
+            padding: 30px;
+            border: 2px solid #333;
+            border-radius: 12px;
+            background-color: #eef2ff;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            z-index: 5;
+            padding: 8px 12px;
+            border: 1px solid #333;
+            border-radius: 20px;
+            background-color: white;
+            font-weight: bold;
+        }
+
+        .card h3 {
+            margin-top: 35px;
+        }
+
+        /* Overlapping Boxes */
+        .overlap-area {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 250px;
+            margin: 20px auto;
+            border: 2px dashed #777;
+        }
+
+        .overlap-box {
+            position: absolute;
+            width: 180px;
+            height: 130px;
+            padding: 20px;
+            border: 3px solid #333;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .box-one {
+            top: 30px;
+            left: 40px;
+            z-index: 1;
+            background-color: #f8d7da;
+        }
+
+        .box-two {
+            top: 70px;
+            left: 130px;
+            z-index: 2;
+            background-color: #d1ecf1;
+        }
+
+        .box-three {
+            top: 110px;
+            left: 220px;
+            z-index: 3;
+            background-color: #d4edda;
+        }
+
+        /* Centering */
+        .center-parent {
+            position: relative;
+            height: 250px;
+            border: 2px solid #aaa;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .center-child {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 180px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: white;
+            text-align: center;
+        }
+
+        /* Fixed Button */
+        .floating-button {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            z-index: 200;
+            padding: 12px 18px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background-color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .floating-button:hover {
+            background-color: #eee;
+        }
+
+        /* Position Comparison */
+        .comparison {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #aaa;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        footer {
+            padding: 25px;
+            border-top: 2px solid #ccc;
+            background-color: white;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Position and Z-Index</h1>
+        <p>Day 028 — Modern Application Development</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>1. Position: Static</h2>
+
+            <p>
+                Static is the default positioning behavior.
+            </p>
+
+            <div class="static-box">
+                This element uses <strong>position: static</strong>.
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Position: Relative</h2>
+
+            <p>
+                The element remains in normal flow but is visually moved
+                using offset properties.
+            </p>
+
+            <div class="relative-container">
+                <div class="relative-box">
+                    Relative Box
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Position: Absolute</h2>
+
+            <p>
+                The badge is absolutely positioned inside the card.
+            </p>
+
+            <div class="card">
+
+                <span class="badge">
+                    New
+                </span>
+
+                <h3>Student Profile</h3>
+
+                <p>
+                    This card uses <strong>position: relative</strong>.
+                </p>
+
+                <p>
+                    The badge uses <strong>position: absolute</strong>.
+                </p>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Z-Index and Overlapping Elements</h2>
+
+            <p>
+                The boxes overlap and use different z-index values.
+                A higher stacking level generally appears above a lower one
+                within the same stacking context.
+            </p>
+
+            <div class="overlap-area">
+
+                <div class="overlap-box box-one">
+                    Box 1
+                    <br>
+                    z-index: 1
+                </div>
+
+                <div class="overlap-box box-two">
+                    Box 2
+                    <br>
+                    z-index: 2
+                </div>
+
+                <div class="overlap-box box-three">
+                    Box 3
+                    <br>
+                    z-index: 3
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Center an Absolute Element</h2>
+
+            <div class="center-parent">
+
+                <div class="center-child">
+                    <strong>Centered Element</strong>
+                    <p>
+                        top: 50%<br>
+                        left: 50%
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Position Types</h2>
+
+            <div class="comparison">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Normal Flow</th>
+                            <th>Main Use</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>static</td>
+                            <td>Yes</td>
+                            <td>Default layout</td>
+                        </tr>
+
+                        <tr>
+                            <td>relative</td>
+                            <td>Yes</td>
+                            <td>Offset or positioning context</td>
+                        </tr>
+
+                        <tr>
+                            <td>absolute</td>
+                            <td>No</td>
+                            <td>Badges and overlays</td>
+                        </tr>
+
+                        <tr>
+                            <td>fixed</td>
+                            <td>No</td>
+                            <td>Floating viewport elements</td>
+                        </tr>
+
+                        <tr>
+                            <td>sticky</td>
+                            <td>Yes</td>
+                            <td>Sticky headers/navigation</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>7. Positioning Properties</h2>
+
+            <ul>
+                <li><code>position</code> — Defines positioning behavior</li>
+                <li><code>top</code> — Controls top offset</li>
+                <li><code>right</code> — Controls right offset</li>
+                <li><code>bottom</code> — Controls bottom offset</li>
+                <li><code>left</code> — Controls left offset</li>
+                <li><code>z-index</code> — Controls stacking order</li>
+                <li><code>transform</code> — Useful for positioning adjustments</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>8. Key Pattern</h2>
+
+            <div class="card">
+
+                <span class="badge">
+                    Important
+                </span>
+
+                <h3>Parent + Child Positioning</h3>
+
+                <p>
+                    Parent:
+                    <strong>position: relative</strong>
+                </p>
+
+                <p>
+                    Child:
+                    <strong>position: absolute</strong>
+                </p>
+
+                <p>
+                    This is a common pattern for badges, icons,
+                    labels and overlays.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <button class="floating-button">
+        Fixed Button
+    </button>
+
+    <footer>
+        <p>Day 028 — CSS Position and Z-Index</p>
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+</body>
+</html>
