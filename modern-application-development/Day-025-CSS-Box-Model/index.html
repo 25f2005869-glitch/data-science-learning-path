@@ -1,0 +1,378 @@
+
+## 5. `code/index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 025 - CSS Box Model</title>
+
+    <style>
+        /* =========================================
+           DAY 025 - CSS BOX MODEL
+           ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            margin: 0;
+            padding: 30px;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: white;
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 2px solid #333;
+            border-radius: 12px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 36px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+        }
+
+        h2 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #333;
+        }
+
+        /* Basic Box */
+
+        .basic-box {
+            width: 300px;
+            min-height: 150px;
+            padding: 20px;
+            margin: 20px auto;
+            border: 5px solid #333;
+            background-color: #e8f0fe;
+        }
+
+        /* Padding Example */
+
+        .padding-box {
+            padding-top: 10px;
+            padding-right: 30px;
+            padding-bottom: 40px;
+            padding-left: 50px;
+
+            border: 3px solid #555;
+            background-color: #fef3c7;
+        }
+
+        /* Margin Example */
+
+        .margin-container {
+            border: 2px dashed #777;
+            padding: 10px;
+        }
+
+        .margin-box {
+            margin: 30px;
+            padding: 20px;
+            border: 3px solid #333;
+            background-color: #dcfce7;
+        }
+
+        /* Border Examples */
+
+        .solid-border {
+            border: 4px solid #333;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .dashed-border {
+            border: 4px dashed #333;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .dotted-border {
+            border: 4px dotted #333;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .double-border {
+            border: 6px double #333;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        /* Border Radius */
+
+        .rounded-box {
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 500px;
+            border: 3px solid #333;
+            border-radius: 20px;
+            background-color: #fce7f3;
+            text-align: center;
+        }
+
+        /* Content Box */
+
+        .content-box-example {
+            width: 300px;
+            padding: 20px;
+            border: 5px solid #333;
+            margin: 20px auto;
+            box-sizing: content-box;
+            background-color: #dbeafe;
+        }
+
+        /* Border Box */
+
+        .border-box-example {
+            width: 300px;
+            padding: 20px;
+            border: 5px solid #333;
+            margin: 20px auto;
+            box-sizing: border-box;
+            background-color: #dcfce7;
+        }
+
+        /* Centering Example */
+
+        .centered-box {
+            width: 400px;
+            max-width: 100%;
+            padding: 20px;
+            margin: 0 auto;
+            border: 3px solid #333;
+            border-radius: 10px;
+            background-color: #ede9fe;
+            text-align: center;
+        }
+
+        /* Student Profile Card */
+
+        .profile-card {
+            width: 400px;
+            max-width: 100%;
+            margin: 20px auto;
+            padding: 25px;
+            border: 3px solid #333;
+            border-radius: 15px;
+            background-color: #ffffff;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .profile-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 26px;
+        }
+
+        .profile-card p {
+            margin: 10px 0;
+        }
+
+        .profile-card .programme {
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .skills {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #555;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .skills ul {
+            margin-bottom: 0;
+        }
+
+        footer {
+            background-color: white;
+            padding: 20px;
+            margin-top: 30px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Box Model</h1>
+        <p>Day 025 — Content, Padding, Border and Margin</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>1. Basic Box Model</h2>
+
+            <div class="basic-box">
+                <strong>Content Area</strong>
+                <p>
+                    This box demonstrates width, padding, border,
+                    margin, and background color.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Padding</h2>
+
+            <div class="padding-box">
+                This element has different padding values on each side.
+                Padding creates space between the content and the border.
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Margin</h2>
+
+            <div class="margin-container">
+                <div class="margin-box">
+                    This box has a 30px margin on all four sides.
+                    Margin creates space outside the border.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Border Styles</h2>
+
+            <div class="solid-border">
+                Solid Border
+            </div>
+
+            <div class="dashed-border">
+                Dashed Border
+            </div>
+
+            <div class="dotted-border">
+                Dotted Border
+            </div>
+
+            <div class="double-border">
+                Double Border
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Border Radius</h2>
+
+            <div class="rounded-box">
+                This box uses <strong>border-radius</strong>
+                to create rounded corners.
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Content Box vs Border Box</h2>
+
+            <h3>Content Box</h3>
+
+            <div class="content-box-example">
+                Width: 300px<br>
+                Padding: 20px<br>
+                Border: 5px<br>
+                box-sizing: content-box
+            </div>
+
+            <h3>Border Box</h3>
+
+            <div class="border-box-example">
+                Width: 300px<br>
+                Padding: 20px<br>
+                Border: 5px<br>
+                box-sizing: border-box
+            </div>
+        </section>
+
+        <section>
+            <h2>7. Centering with Auto Margin</h2>
+
+            <div class="centered-box">
+                This fixed-width box is centered using:
+
+                <p><strong>margin: 0 auto;</strong></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>8. Student Profile Card</h2>
+
+            <div class="profile-card">
+
+                <h3>Saloni Tiwari</h3>
+
+                <p class="programme">
+                    IIT Madras BS Degree — Diploma Level
+                </p>
+
+                <p>
+                    I am learning Modern Application Development
+                    and practicing HTML and CSS concepts step by step.
+                </p>
+
+                <div class="skills">
+                    <strong>Skills</strong>
+
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>Data Science</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <strong>Learning Goal:</strong>
+                    Build strong web development fundamentals for MAD 1.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Day 025 — CSS Box Model
+        </p>
+
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level
+        </p>
+    </footer>
+
+</body>
+</html>
