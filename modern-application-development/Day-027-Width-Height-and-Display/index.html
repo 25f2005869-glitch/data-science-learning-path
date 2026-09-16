@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Day 027 CSS Width, Height and Display practice">
+    <title>Day 027 - Width, Height and Display</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        header {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 30px;
+            padding: 25px;
+            border: 2px solid #333;
+            border-radius: 12px;
+            background-color: white;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 0;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section {
+            width: 100%;
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        section h2 {
+            margin-top: 0;
+        }
+
+        /* Width and Height */
+        .fixed-box {
+            width: 300px;
+            height: 150px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 3px solid #333;
+            border-radius: 10px;
+            background-color: #eef2ff;
+            text-align: center;
+        }
+
+        /* Min and Max Width */
+        .responsive-box {
+            width: 100%;
+            min-width: 200px;
+            max-width: 700px;
+            min-height: 120px;
+            max-height: 250px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #555;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        /* Block */
+        .block-example {
+            display: block;
+            width: 300px;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #333;
+            border-radius: 8px;
+            background-color: #e8f5e9;
+        }
+
+        /* Inline */
+        .inline-example {
+            display: inline;
+            background-color: #fff3cd;
+            border: 1px solid #555;
+            padding: 5px;
+        }
+
+        /* Inline Block */
+        .inline-block-card {
+            display: inline-block;
+            width: 220px;
+            min-height: 150px;
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            vertical-align: top;
+        }
+
+        .inline-block-card h3 {
+            margin-top: 0;
+        }
+
+        /* Display None */
+        .display-none-example {
+            display: none;
+        }
+
+        /* Visibility Hidden */
+        .visibility-hidden-example {
+            visibility: hidden;
+        }
+
+        .comparison-box {
+            width: 100%;
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 2px dashed #777;
+            border-radius: 8px;
+        }
+
+        /* Box Sizing */
+        .box-sizing-example {
+            width: 300px;
+            padding: 20px;
+            border: 5px solid #333;
+            margin: 20px auto;
+            background-color: #e3f2fd;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            width: 100%;
+            text-align: center;
+        }
+
+        .dashboard-card {
+            display: inline-block;
+            width: 280px;
+            min-height: 180px;
+            max-width: 100%;
+            margin: 10px;
+            padding: 25px;
+            border: 2px solid #333;
+            border-radius: 12px;
+            background-color: #fafafa;
+            vertical-align: top;
+        }
+
+        .dashboard-card h3 {
+            margin-top: 0;
+        }
+
+        /* Responsive Image */
+        .responsive-image {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 20px auto;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        footer {
+            width: 100%;
+            max-width: 1000px;
+            margin: 30px auto 0;
+            padding: 20px;
+            border-top: 2px solid #ccc;
+            text-align: center;
+        }
+
+        code {
+            padding: 2px 5px;
+            border-radius: 4px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Width, Height and Display</h1>
+        <p>Day 027 — Modern Application Development</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>1. Width and Height</h2>
+
+            <p>
+                This box uses a fixed width of 300px and a height of 150px.
+            </p>
+
+            <div class="fixed-box">
+                <strong>300px × 150px</strong>
+                <p>Fixed Width and Height</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Min-Width, Max-Width, Min-Height and Max-Height</h2>
+
+            <div class="responsive-box">
+                <strong>Responsive Size Box</strong>
+                <p>
+                    Width: 100% | Max-width: 700px
+                </p>
+                <p>
+                    Min-height: 120px | Max-height: 250px
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Display: Block</h2>
+
+            <p>
+                Block elements normally start on a new line and can have
+                width and height.
+            </p>
+
+            <div class="block-example">
+                Block Element 1
+            </div>
+
+            <div class="block-example">
+                Block Element 2
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Display: Inline</h2>
+
+            <p>
+                Inline elements remain in the same line when enough space is
+                available.
+            </p>
+
+            <span class="inline-example">Inline Element 1</span>
+            <span class="inline-example">Inline Element 2</span>
+            <span class="inline-example">Inline Element 3</span>
+        </section>
+
+        <section>
+            <h2>5. Display: Inline-Block</h2>
+
+            <p>
+                Inline-block elements can appear beside each other while
+                allowing width and height.
+            </p>
+
+            <div class="inline-block-card">
+                <h3>Card 1</h3>
+                <p>Width and height can be controlled.</p>
+            </div>
+
+            <div class="inline-block-card">
+                <h3>Card 2</h3>
+                <p>Cards can appear on the same line.</p>
+            </div>
+
+            <div class="inline-block-card">
+                <h3>Card 3</h3>
+                <p>Useful for simple layouts.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Display: None</h2>
+
+            <p>
+                The following element uses
+                <code>display: none</code>.
+            </p>
+
+            <p class="display-none-example">
+                You cannot see this element because it does not occupy layout
+                space.
+            </p>
+
+            <p>
+                The hidden element above has been removed from the layout.
+            </p>
+        </section>
+
+        <section>
+            <h2>7. Visibility: Hidden</h2>
+
+            <p>
+                The following element uses
+                <code>visibility: hidden</code>.
+            </p>
+
+            <p class="visibility-hidden-example">
+                This text is invisible, but its layout space remains.
+            </p>
+
+            <p>
+                Notice that space remains where the hidden element was.
+            </p>
+        </section>
+
+        <section>
+            <h2>8. Display None vs Visibility Hidden</h2>
+
+            <div class="comparison-box">
+                <p>
+                    <strong>display: none</strong>
+                    → Element is hidden and layout space is removed.
+                </p>
+
+                <p>
+                    <strong>visibility: hidden</strong>
+                    → Element is hidden but layout space is preserved.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>9. Box-Sizing: Border-Box</h2>
+
+            <p>
+                This box has a declared width of 300px and uses
+                <code>box-sizing: border-box</code>.
+            </p>
+
+            <div class="box-sizing-example">
+                <strong>300px Total Width</strong>
+                <p>
+                    Padding and border are included inside the declared width.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>10. Responsive Image</h2>
+
+            <p>
+                The image uses <code>max-width: 100%</code> and
+                <code>height: auto</code>.
+            </p>
+
+            <img
+                class="responsive-image"
+                src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png"
+                alt="HTML5 logo"
+            >
+        </section>
+
+        <section>
+            <h2>11. Student Dashboard</h2>
+
+            <div class="dashboard">
+
+                <div class="dashboard-card">
+                    <h3>Education</h3>
+                    <p>IIT Madras BS Degree</p>
+                    <p>Diploma Level</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Skills</h3>
+                    <p>Python, SQL, HTML, CSS</p>
+                    <p>Data Structures and Algorithms</p>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>Learning Goal</h3>
+                    <p>Modern Application Development</p>
+                    <p>Build strong web development fundamentals.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>12. Key Properties</h2>
+
+            <ul>
+                <li><code>width</code> — Controls horizontal size</li>
+                <li><code>height</code> — Controls vertical size</li>
+                <li><code>min-width</code> — Sets minimum width</li>
+                <li><code>max-width</code> — Sets maximum width</li>
+                <li><code>min-height</code> — Sets minimum height</li>
+                <li><code>max-height</code> — Sets maximum height</li>
+                <li><code>display: block</code> — Block layout</li>
+                <li><code>display: inline</code> — Inline layout</li>
+                <li><code>display: inline-block</code> — Inline layout with controllable dimensions</li>
+                <li><code>display: none</code> — Hides and removes layout space</li>
+                <li><code>visibility: hidden</code> — Hides but preserves layout space</li>
+                <li><code>box-sizing: border-box</code> — Includes padding and border in dimensions</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Day 027 — CSS Width, Height and Display</p>
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+</body>
+</html>
