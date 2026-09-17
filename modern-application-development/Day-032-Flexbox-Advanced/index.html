@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 032 - CSS Flexbox Advanced</title>
+
+    <style>
+        /* ==============================
+           Global Styles
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background-color: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+        }
+
+        .section-title {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Header
+        ============================== */
+
+        .site-header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .site-title {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* ==============================
+           Navigation
+        ============================== */
+
+        .navbar {
+            background-color: #333;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            text-decoration: underline;
+        }
+
+        /* ==============================
+           Basic Flex Items
+        ============================== */
+
+        .flex-demo {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border: 2px solid #aaa;
+        }
+
+        .demo-item {
+            padding: 1rem;
+            background-color: #e8e8e8;
+            border: 1px solid #999;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* ==============================
+           Flex Grow
+        ============================== */
+
+        .grow-container {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .grow-one {
+            flex-grow: 1;
+        }
+
+        .grow-two {
+            flex-grow: 2;
+        }
+
+        .grow-three {
+            flex-grow: 1;
+        }
+
+        /* ==============================
+           Flex Shrink
+        ============================== */
+
+        .shrink-container {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+        }
+
+        .shrink-item {
+            flex-basis: 250px;
+            flex-shrink: 1;
+            padding: 1rem;
+            background-color: #eee;
+            border: 1px solid #999;
+            border-radius: 8px;
+        }
+
+        .no-shrink {
+            flex-shrink: 0;
+        }
+
+        /* ==============================
+           Flex Basis
+        ============================== */
+
+        .basis-container {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .basis-item {
+            flex-basis: 250px;
+            padding: 1rem;
+            background-color: #eee;
+            border: 1px solid #999;
+            border-radius: 8px;
+        }
+
+        /* ==============================
+           Flex Shorthand
+        ============================== */
+
+        .shorthand-container {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .shorthand-item {
+            flex: 1 1 200px;
+            padding: 1.5rem;
+            background-color: #eee;
+            border: 1px solid #999;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* ==============================
+           Order
+        ============================== */
+
+        .order-container {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .order-one {
+            order: 3;
+        }
+
+        .order-two {
+            order: 1;
+        }
+
+        .order-three {
+            order: 2;
+        }
+
+        /* ==============================
+           Align Self
+        ============================== */
+
+        .align-self-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-height: 180px;
+            border: 2px solid #aaa;
+            padding: 1rem;
+        }
+
+        .align-start {
+            align-self: flex-start;
+        }
+
+        .align-center {
+            align-self: center;
+        }
+
+        .align-end {
+            align-self: flex-end;
+        }
+
+        /* ==============================
+           Responsive Cards
+        ============================== */
+
+        .course-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .course-card {
+            flex: 1 1 220px;
+            padding: 1.5rem;
+            background-color: #fafafa;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .course-card h3 {
+            margin-top: 0;
+        }
+
+        .special-course {
+            order: -1;
+        }
+
+        /* ==============================
+           Student Dashboard
+        ============================== */
+
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .dashboard-card {
+            flex: 1 1 240px;
+            padding: 1.5rem;
+            background-color: #f8f8f8;
+            border: 1px solid #bbb;
+            border-radius: 10px;
+        }
+
+        .dashboard-card h3 {
+            margin-top: 0;
+        }
+
+        .featured {
+            flex-grow: 2;
+        }
+
+        /* ==============================
+           Footer
+        ============================== */
+
+        .site-footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #222;
+            color: white;
+        }
+
+        /* ==============================
+           Responsive Design
+        ============================== */
+
+        @media (max-width: 600px) {
+            .nav-list {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+
+            .section {
+                padding: 1.2rem;
+            }
+
+            .grow-container,
+            .basis-container,
+            .order-container {
+                flex-direction: column;
+            }
+        }
+
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 032
+            Topic: CSS Flexbox Advanced
+        */
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">CSS Flexbox Advanced</h1>
+            <p>Day 032 — Modern Application Development</p>
+        </div>
+    </header>
+
+    <nav class="navbar" aria-label="Main Navigation">
+        <ul class="nav-list">
+            <li><a class="nav-link" href="#grow">Flex Grow</a></li>
+            <li><a class="nav-link" href="#shrink">Flex Shrink</a></li>
+            <li><a class="nav-link" href="#basis">Flex Basis</a></li>
+            <li><a class="nav-link" href="#order">Order</a></li>
+            <li><a class="nav-link" href="#courses">Courses</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="grow" class="section">
+            <h2 class="section-title">1. Flex Grow</h2>
+
+            <p>
+                The second item has a growth factor of 2.
+            </p>
+
+            <div class="grow-container">
+                <div class="demo-item grow-one">Grow: 1</div>
+                <div class="demo-item grow-two">Grow: 2</div>
+                <div class="demo-item grow-three">Grow: 1</div>
+            </div>
+        </section>
+
+        <section id="shrink" class="section">
+            <h2 class="section-title">2. Flex Shrink</h2>
+
+            <p>
+                The cards have a basis of 250px and can shrink when necessary.
+            </p>
+
+            <div class="shrink-container">
+                <div class="shrink-item">
+                    Shrinkable Item
+                </div>
+
+                <div class="shrink-item">
+                    Shrinkable Item
+                </div>
+
+                <div class="shrink-item no-shrink">
+                    No Shrink
+                </div>
+            </div>
+        </section>
+
+        <section id="basis" class="section">
+            <h2 class="section-title">3. Flex Basis</h2>
+
+            <div class="basis-container">
+                <div class="basis-item">Basis: 250px</div>
+                <div class="basis-item">Basis: 250px</div>
+                <div class="basis-item">Basis: 250px</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">4. Flex Shorthand</h2>
+
+            <p>
+                Each item uses <strong>flex: 1 1 200px</strong>.
+            </p>
+
+            <div class="shorthand-container">
+                <div class="shorthand-item">Item 1</div>
+                <div class="shorthand-item">Item 2</div>
+                <div class="shorthand-item">Item 3</div>
+            </div>
+        </section>
+
+        <section id="order" class="section">
+            <h2 class="section-title">5. Flex Order</h2>
+
+            <p>
+                The visual order is different from the HTML order.
+            </p>
+
+            <div class="order-container">
+                <div class="demo-item order-one">HTML Item 1</div>
+                <div class="demo-item order-two">HTML Item 2</div>
+                <div class="demo-item order-three">HTML Item 3</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">6. Align Self</h2>
+
+            <p>
+                Individual items can override the parent's alignment.
+            </p>
+
+            <div class="align-self-container">
+                <div class="demo-item align-start">
+                    Flex Start
+                </div>
+
+                <div class="demo-item align-center">
+                    Center
+                </div>
+
+                <div class="demo-item align-end">
+                    Flex End
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="section">
+            <h2 class="section-title">7. Responsive Course Cards</h2>
+
+            <p>
+                Resize the browser to see the cards wrap automatically.
+            </p>
+
+            <div class="course-cards">
+
+                <article class="course-card special-course">
+                    <h3>MAD 1</h3>
+                    <p>Modern Application Development</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>DBMS</h3>
+                    <p>Database Management Systems</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>PDSA</h3>
+                    <p>Programming, Data Structures and Algorithms</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MLF</h3>
+                    <p>Machine Learning Foundations</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">8. Student Dashboard</h2>
+
+            <div class="dashboard">
+
+                <article class="dashboard-card featured">
+                    <h3>Modern Application Development</h3>
+                    <p>
+                        Featured course with flexible growth using
+                        <strong>flex-grow: 2</strong>.
+                    </p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>DBMS</h3>
+                    <p>Database Management Systems.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>PDSA</h3>
+                    <p>Programming and Algorithms.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>MLF</h3>
+                    <p>Machine Learning Foundations.</p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Day: 032</p>
+        <p>Topic: CSS Flexbox Advanced</p>
+    </footer>
+
+</body>
+</html>
