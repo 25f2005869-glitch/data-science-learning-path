@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 031 - CSS Flexbox Basics</title>
+
+    <style>
+        /* ==============================
+           Global Styles
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ==============================
+           Header
+        ============================== */
+
+        .site-header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .site-title {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .site-subtitle {
+            margin: 0.5rem 0 0;
+        }
+
+        /* ==============================
+           Navigation
+        ============================== */
+
+        .navbar {
+            background-color: #333;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            text-decoration: underline;
+        }
+
+        /* ==============================
+           General Sections
+        ============================== */
+
+        .section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+        }
+
+        .section-title {
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+
+        /* ==============================
+           Flex Direction Examples
+        ============================== */
+
+        .row-example {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            padding: 1rem;
+            border: 2px solid #aaa;
+        }
+
+        .column-example {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+            border: 2px solid #aaa;
+        }
+
+        /* ==============================
+           Basic Flex Items
+        ============================== */
+
+        .flex-item {
+            padding: 1rem;
+            background-color: #e8e8e8;
+            border: 1px solid #999;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* ==============================
+           Justify Content
+        ============================== */
+
+        .justify-example {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem;
+            border: 2px solid #aaa;
+        }
+
+        /* ==============================
+           Align Items
+        ============================== */
+
+        .align-example {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-height: 150px;
+            padding: 1rem;
+            border: 2px solid #aaa;
+        }
+
+        /* ==============================
+           Wrapping
+        ============================== */
+
+        .wrap-example {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .wrap-item {
+            flex: 1 1 200px;
+            padding: 1.5rem;
+            background-color: #eee;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* ==============================
+           Centering
+        ============================== */
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 180px;
+            border: 2px solid #aaa;
+        }
+
+        .center-item {
+            padding: 1.5rem;
+            border: 2px solid #555;
+            border-radius: 8px;
+        }
+
+        /* ==============================
+           Student Cards
+        ============================== */
+
+        .student-cards {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .student-card {
+            flex: 1 1 250px;
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+
+        .student-card h3 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Course Cards
+        ============================== */
+
+        .course-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .course-card {
+            flex: 1 1 220px;
+            padding: 1.5rem;
+            border: 1px solid #bbb;
+            border-radius: 10px;
+            background-color: #f8f8f8;
+        }
+
+        .course-card h3 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Footer
+        ============================== */
+
+        .site-footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background-color: #222;
+            color: white;
+        }
+
+        /* ==============================
+           Responsive Design
+        ============================== */
+
+        @media (max-width: 600px) {
+            .nav-list {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+
+            .section {
+                padding: 1.2rem;
+            }
+
+            .row-example {
+                flex-direction: column;
+            }
+        }
+
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 031
+            Topic: CSS Flexbox Basics
+        */
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">CSS Flexbox Basics</h1>
+            <p class="site-subtitle">
+                Day 031 — Modern Application Development
+            </p>
+        </div>
+    </header>
+
+    <nav class="navbar" aria-label="Main Navigation">
+        <ul class="nav-list">
+            <li><a class="nav-link" href="#direction">Direction</a></li>
+            <li><a class="nav-link" href="#alignment">Alignment</a></li>
+            <li><a class="nav-link" href="#wrapping">Wrapping</a></li>
+            <li><a class="nav-link" href="#dashboard">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="direction" class="section">
+            <h2 class="section-title">1. Flex Direction: Row</h2>
+
+            <div class="row-example">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">2. Flex Direction: Column</h2>
+
+            <div class="column-example">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+            </div>
+        </section>
+
+        <section id="alignment" class="section">
+            <h2 class="section-title">3. Justify Content</h2>
+
+            <p>
+                This example uses <strong>space-between</strong> on the
+                main axis.
+            </p>
+
+            <div class="justify-example">
+                <div class="flex-item">Start</div>
+                <div class="flex-item">Middle</div>
+                <div class="flex-item">End</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">4. Align Items</h2>
+
+            <p>
+                The items are aligned in the center of the cross axis.
+            </p>
+
+            <div class="align-example">
+                <div class="flex-item">Item 1</div>
+                <div class="flex-item">Item 2</div>
+                <div class="flex-item">Item 3</div>
+            </div>
+        </section>
+
+        <section id="wrapping" class="section">
+            <h2 class="section-title">5. Flex Wrap</h2>
+
+            <p>
+                Resize the browser window to see the items wrap.
+            </p>
+
+            <div class="wrap-example">
+                <div class="wrap-item">Course 1</div>
+                <div class="wrap-item">Course 2</div>
+                <div class="wrap-item">Course 3</div>
+                <div class="wrap-item">Course 4</div>
+                <div class="wrap-item">Course 5</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">6. Centering with Flexbox</h2>
+
+            <div class="center-container">
+                <div class="center-item">
+                    Centered Element
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">7. Student Cards</h2>
+
+            <div class="student-cards">
+
+                <article class="student-card">
+                    <h3>Saloni</h3>
+                    <p>Learning HTML, CSS and Modern Web Development.</p>
+                </article>
+
+                <article class="student-card">
+                    <h3>Data Science</h3>
+                    <p>Learning Python, SQL, statistics and machine learning.</p>
+                </article>
+
+                <article class="student-card">
+                    <h3>Projects</h3>
+                    <p>Building practical projects to strengthen development skills.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="dashboard" class="section">
+            <h2 class="section-title">8. Flexbox Student Dashboard</h2>
+
+            <div class="course-container">
+
+                <article class="course-card">
+                    <h3>DBMS</h3>
+                    <p>Database Management Systems</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>PDSA</h3>
+                    <p>Programming, Data Structures and Algorithms</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MLF</h3>
+                    <p>Machine Learning Foundations</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MAD 1</h3>
+                    <p>Modern Application Development</p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <p>Author: Saloni Tiwari</p>
+            <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+            <p>Day: 031</p>
+            <p>Topic: CSS Flexbox Basics</p>
+        </div>
+    </footer>
+
+</body>
+</html>
