@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 033 - CSS Grid Basics</title>
+
+    <style>
+        /* ==============================
+           Global Styles
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background-color: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+        }
+
+        .section-title {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Header
+        ============================== */
+
+        .site-header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .site-title {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* ==============================
+           Navigation
+        ============================== */
+
+        .navbar {
+            background-color: #333;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            text-decoration: underline;
+        }
+
+        /* ==============================
+           Basic Two Column Grid
+        ============================== */
+
+        .two-column-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* ==============================
+           Three Column Grid
+        ============================== */
+
+        .three-column-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        /* ==============================
+           Fixed Column Grid
+        ============================== */
+
+        .fixed-grid {
+            display: grid;
+            grid-template-columns: 150px 200px 150px;
+            gap: 1rem;
+            overflow-x: auto;
+        }
+
+        /* ==============================
+           Mixed Grid
+        ============================== */
+
+        .mixed-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr 2fr;
+            gap: 1rem;
+        }
+
+        /* ==============================
+           Grid Rows
+        ============================== */
+
+        .row-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 100px 150px;
+            gap: 1rem;
+        }
+
+        /* ==============================
+           Grid Items
+        ============================== */
+
+        .grid-item {
+            padding: 1.5rem;
+            background-color: #e8e8e8;
+            border: 1px solid #999;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* ==============================
+           Responsive Grid
+        ============================== */
+
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .course-card {
+            padding: 1.5rem;
+            background-color: #fafafa;
+            border: 1px solid #bbb;
+            border-radius: 10px;
+        }
+
+        .course-card h3 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Dashboard
+        ============================== */
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .dashboard-card {
+            padding: 1.5rem;
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .dashboard-card h3 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Footer
+        ============================== */
+
+        .site-footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #222;
+            color: white;
+        }
+
+        /* ==============================
+           Responsive Design
+        ============================== */
+
+        @media (max-width: 700px) {
+            .three-column-grid,
+            .dashboard {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .mixed-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .two-column-grid,
+            .three-column-grid,
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 1.2rem;
+            }
+        }
+
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 033
+            Topic: CSS Grid Basics
+        */
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">CSS Grid Basics</h1>
+            <p>Day 033 — Modern Application Development</p>
+        </div>
+    </header>
+
+    <nav class="navbar" aria-label="Main Navigation">
+        <ul class="nav-list">
+            <li><a class="nav-link" href="#two-column">Two Columns</a></li>
+            <li><a class="nav-link" href="#three-column">Three Columns</a></li>
+            <li><a class="nav-link" href="#rows">Rows</a></li>
+            <li><a class="nav-link" href="#responsive">Responsive</a></li>
+            <li><a class="nav-link" href="#dashboard">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="two-column" class="section">
+            <h2 class="section-title">1. Two Equal Columns</h2>
+
+            <div class="two-column-grid">
+                <div class="grid-item">Column 1</div>
+                <div class="grid-item">Column 2</div>
+            </div>
+        </section>
+
+        <section id="three-column" class="section">
+            <h2 class="section-title">2. Three Equal Columns</h2>
+
+            <p>
+                This Grid uses
+                <strong>repeat(3, 1fr)</strong>.
+            </p>
+
+            <div class="three-column-grid">
+                <div class="grid-item">Column 1</div>
+                <div class="grid-item">Column 2</div>
+                <div class="grid-item">Column 3</div>
+                <div class="grid-item">Column 4</div>
+                <div class="grid-item">Column 5</div>
+                <div class="grid-item">Column 6</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">3. Fixed Column Sizes</h2>
+
+            <div class="fixed-grid">
+                <div class="grid-item">150px</div>
+                <div class="grid-item">200px</div>
+                <div class="grid-item">150px</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">4. Mixed Fixed and Flexible Columns</h2>
+
+            <div class="mixed-grid">
+                <div class="grid-item">200px</div>
+                <div class="grid-item">1fr</div>
+                <div class="grid-item">2fr</div>
+            </div>
+        </section>
+
+        <section id="rows" class="section">
+            <h2 class="section-title">5. Grid Rows</h2>
+
+            <div class="row-grid">
+                <div class="grid-item">Row 1 - Item 1</div>
+                <div class="grid-item">Row 1 - Item 2</div>
+                <div class="grid-item">Row 2 - Item 1</div>
+                <div class="grid-item">Row 2 - Item 2</div>
+            </div>
+        </section>
+
+        <section id="responsive" class="section">
+            <h2 class="section-title">6. Responsive Grid</h2>
+
+            <p>
+                Resize the browser window to see the number of columns
+                change automatically.
+            </p>
+
+            <div class="responsive-grid">
+
+                <article class="course-card">
+                    <h3>DBMS</h3>
+                    <p>Database Management Systems</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>PDSA</h3>
+                    <p>Programming, Data Structures and Algorithms</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MLF</h3>
+                    <p>Machine Learning Foundations</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MAD 1</h3>
+                    <p>Modern Application Development</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>BDM</h3>
+                    <p>Business Data Management</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MLT</h3>
+                    <p>Machine Learning Techniques</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="dashboard" class="section">
+            <h2 class="section-title">7. Student Dashboard</h2>
+
+            <div class="dashboard">
+
+                <article class="dashboard-card">
+                    <h3>HTML</h3>
+                    <p>Completed the HTML learning phase.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>CSS</h3>
+                    <p>Currently learning CSS layouts and design.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>Flexbox</h3>
+                    <p>Learning one-dimensional layouts.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>Grid</h3>
+                    <p>Learning two-dimensional layouts.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>Projects</h3>
+                    <p>Building practical web development projects.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>Next Step</h3>
+                    <p>Continue with advanced CSS Grid properties.</p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Day: 033</p>
+        <p>Topic: CSS Grid Basics</p>
+    </footer>
+
+</body>
+</html>
