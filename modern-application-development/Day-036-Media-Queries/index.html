@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 036 - CSS Media Queries</title>
+
+    <style>
+        /* ==============================
+           Base / Mobile-First Styles
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ==============================
+           Header
+        ============================== */
+
+        .site-header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .site-title {
+            margin: 0;
+            font-size: 1.7rem;
+        }
+
+        .site-subtitle {
+            margin: 0.5rem 0 0;
+        }
+
+        /* ==============================
+           Navigation - Mobile
+        ============================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #333;
+        }
+
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.7rem;
+            list-style: none;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            text-decoration: underline;
+        }
+
+        /* ==============================
+           General Section
+        ============================== */
+
+        .section {
+            margin: 1.5rem 0;
+            padding: 1.2rem;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+        }
+
+        .section-title {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Mobile Dashboard
+        ============================== */
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .dashboard-card {
+            padding: 1.3rem;
+            background-color: #fafafa;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .dashboard-card h3 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Responsive Course Grid
+        ============================== */
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .course-card {
+            padding: 1.3rem;
+            border: 1px solid #bbb;
+            border-radius: 10px;
+            background-color: #f8f8f8;
+        }
+
+        .course-card h3 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Responsive Sidebar Layout
+        ============================== */
+
+        .page-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .sidebar,
+        .main-content {
+            padding: 1.3rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        /* ==============================
+           Responsive Form
+        ============================== */
+
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: bold;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            padding: 0.8rem 1.4rem;
+            border: 1px solid #222;
+            border-radius: 6px;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-button:hover,
+        .submit-button:focus {
+            background-color: #555;
+        }
+
+        /* ==============================
+           Footer
+        ============================== */
+
+        .site-footer {
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: #222;
+            color: white;
+            text-align: center;
+        }
+
+        /* ==============================
+           Tablet: 700px and Above
+        ============================== */
+
+        @media (min-width: 700px) {
+
+            .site-title {
+                font-size: 2.2rem;
+            }
+
+            .nav-list {
+                flex-direction: row;
+                justify-content: center;
+                gap: 1.5rem;
+            }
+
+            .section {
+                padding: 2rem;
+            }
+
+            .dashboard {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .page-layout {
+                grid-template-columns: 220px 1fr;
+            }
+        }
+
+        /* ==============================
+           Desktop: 1000px and Above
+        ============================== */
+
+        @media (min-width: 1000px) {
+
+            .dashboard {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .course-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .site-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* ==============================
+           Landscape with Limited Height
+        ============================== */
+
+        @media (orientation: landscape) and (max-height: 500px) {
+
+            .site-header {
+                padding: 1rem 0;
+            }
+
+            .section {
+                margin: 1rem 0;
+            }
+        }
+
+        /* ==============================
+           Print Styles
+        ============================== */
+
+        @media print {
+
+            .navbar,
+            .submit-button {
+                display: none;
+            }
+
+            body {
+                background-color: white;
+            }
+
+            .section {
+                border: 1px solid black;
+                box-shadow: none;
+            }
+        }
+
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 036
+            Topic: CSS Media Queries
+        */
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">Responsive Student Dashboard</h1>
+            <p class="site-subtitle">
+                Day 036 — CSS Media Queries
+            </p>
+        </div>
+    </header>
+
+    <nav class="navbar" aria-label="Main Navigation">
+        <ul class="nav-list">
+            <li><a class="nav-link" href="#dashboard">Dashboard</a></li>
+            <li><a class="nav-link" href="#courses">Courses</a></li>
+            <li><a class="nav-link" href="#layout">Layout</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="dashboard" class="section">
+            <h2 class="section-title">1. Responsive Dashboard</h2>
+
+            <p>
+                Mobile: one column. Tablet: two columns.
+                Desktop: three columns.
+            </p>
+
+            <div class="dashboard">
+
+                <article class="dashboard-card">
+                    <h3>HTML</h3>
+                    <p>HTML fundamentals and semantic structure.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>CSS</h3>
+                    <p>Layouts, responsive design and styling.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>Flexbox</h3>
+                    <p>One-dimensional responsive layouts.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>Grid</h3>
+                    <p>Two-dimensional responsive layouts.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>Projects</h3>
+                    <p>Practical Modern Application Development projects.</p>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>Next Step</h3>
+                    <p>Continue learning advanced CSS concepts.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="courses" class="section">
+            <h2 class="section-title">2. Responsive Course Grid</h2>
+
+            <p>
+                The number of columns changes at the defined breakpoints.
+            </p>
+
+            <div class="course-grid">
+
+                <article class="course-card">
+                    <h3>DBMS</h3>
+                    <p>Database Management Systems</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>PDSA</h3>
+                    <p>Programming, Data Structures and Algorithms</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MLF</h3>
+                    <p>Machine Learning Foundations</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MAD 1</h3>
+                    <p>Modern Application Development</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>BDM</h3>
+                    <p>Business Data Management</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MLT</h3>
+                    <p>Machine Learning Techniques</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="layout" class="section">
+            <h2 class="section-title">3. Responsive Sidebar Layout</h2>
+
+            <div class="page-layout">
+
+                <aside class="sidebar">
+                    <h3>Sidebar</h3>
+                    <p>Profile</p>
+                    <p>Courses</p>
+                    <p>Projects</p>
+                    <p>Progress</p>
+                </aside>
+
+                <div class="main-content">
+                    <h3>Main Content</h3>
+
+                    <p>
+                        On mobile, the sidebar and main content appear
+                        in one column.
+                    </p>
+
+                    <p>
+                        At 700px and above, they become a two-column layout.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">4. Responsive Contact Form</h2>
+
+            <form class="contact-form" action="#" method="post">
+
+                <div class="form-group">
+                    <label class="form-label" for="name">
+                        Name
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">
+                        Email
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        class="form-textarea"
+                        id="message"
+                        name="message"
+                        placeholder="Write your message"
+                        minlength="10"
+                        required
+                    ></textarea>
+                </div>
+
+                <button class="submit-button" type="submit">
+                    Send Message
+                </button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Day: 036</p>
+        <p>Topic: CSS Media Queries</p>
+    </footer>
+
+</body>
+</html>
