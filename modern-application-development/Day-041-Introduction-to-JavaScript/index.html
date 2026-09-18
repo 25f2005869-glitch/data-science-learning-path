@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 041
+        Topic: Introduction to JavaScript
+    -->
+
+    <title>Day 041 - Introduction to JavaScript</title>
+
+    <style>
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 041
+            Topic: Introduction to JavaScript
+        */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        .container {
+            width: min(92%, 1000px);
+            margin: 0 auto;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 45px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #d1d5db;
+        }
+
+        main {
+            padding: 45px 0;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #2563eb;
+        }
+
+        .technology-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(180px, 1fr)
+            );
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .technology-card {
+            padding: 20px;
+            border-radius: 12px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+
+        .technology-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .code-example {
+            margin-top: 20px;
+            padding: 18px;
+            background: #111827;
+            color: #f9fafb;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+
+        .interaction {
+            text-align: center;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-weight: 700;
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+        .btn:hover,
+        .btn:focus-visible {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            outline: none;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: 700;
+            color: #15803d;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: #eff6ff;
+        }
+
+        footer {
+            padding: 25px 0;
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+            color: #d1d5db;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Introduction to JavaScript</h1>
+            <p>Day 041 — Beginning the JavaScript Learning Journey</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <!-- Introduction -->
+            <section>
+                <h2>What is JavaScript?</h2>
+
+                <p>
+                    JavaScript is a programming language used to add
+                    behavior, logic and interactivity to web pages.
+                </p>
+
+                <div class="code-example">
+                    console.log("Hello, JavaScript!");
+                </div>
+            </section>
+
+            <!-- HTML CSS JavaScript -->
+            <section>
+                <h2>HTML vs CSS vs JavaScript</h2>
+
+                <div class="technology-grid">
+
+                    <article class="technology-card">
+                        <h3>HTML</h3>
+                        <p>
+                            Provides the structure and content of a webpage.
+                        </p>
+                    </article>
+
+                    <article class="technology-card">
+                        <h3>CSS</h3>
+                        <p>
+                            Controls appearance, layout and visual styling.
+                        </p>
+                    </article>
+
+                    <article class="technology-card">
+                        <h3>JavaScript</h3>
+                        <p>
+                            Adds behavior, logic and interactivity.
+                        </p>
+                    </article>
+
+                </div>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Technology</th>
+                            <th>Main Responsibility</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>HTML</td>
+                            <td>Structure</td>
+                        </tr>
+
+                        <tr>
+                            <td>CSS</td>
+                            <td>Presentation</td>
+                        </tr>
+
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>Behavior</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- JavaScript Syntax -->
+            <section>
+                <h2>Basic JavaScript Syntax</h2>
+
+                <p>
+                    JavaScript statements contain instructions that are
+                    executed by the JavaScript engine.
+                </p>
+
+                <div class="code-example">
+                    console.log("Welcome to JavaScript");<br>
+                    console.log(10 + 20);
+                </div>
+            </section>
+
+            <!-- Comments -->
+            <section>
+                <h2>JavaScript Comments</h2>
+
+                <div class="code-example">
+                    // Single-line comment<br><br>
+                    /*<br>
+                    &nbsp;&nbsp;Multi-line comment<br>
+                    */
+                </div>
+            </section>
+
+            <!-- Developer Tools -->
+            <section>
+                <h2>Browser Developer Tools</h2>
+
+                <p>
+                    Open Developer Tools using
+                    <strong>Right Click → Inspect</strong>
+                    or press <strong>F12</strong>.
+                </p>
+
+                <p>
+                    Open the <strong>Console</strong> tab to see the
+                    JavaScript output from this page.
+                </p>
+            </section>
+
+            <!-- Interaction -->
+            <section class="interaction">
+                <h2>JavaScript Interaction</h2>
+
+                <p>
+                    Click the button to execute JavaScript.
+                </p>
+
+                <button
+                    id="helloButton"
+                    class="btn"
+                    type="button"
+                >
+                    Run JavaScript
+                </button>
+
+                <p id="message">
+                    Waiting for interaction...
+                </p>
+            </section>
+
+            <!-- Learning Summary -->
+            <section>
+                <h2>Day 041 Learning Summary</h2>
+
+                <ul>
+                    <li>What JavaScript is</li>
+                    <li>Why JavaScript is used</li>
+                    <li>HTML, CSS and JavaScript roles</li>
+                    <li>Client-side JavaScript</li>
+                    <li>JavaScript engines</li>
+                    <li>Internal and external JavaScript</li>
+                    <li>JavaScript statements and expressions</li>
+                    <li>Comments</li>
+                    <li>console.log()</li>
+                    <li>Browser Developer Tools</li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 Saloni Tiwari — Day 041
+            </p>
+
+            <p>
+                IIT Madras BS Degree — Diploma Level |
+                Introduction to JavaScript
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 041
+            Topic: Introduction to JavaScript
+        */
+
+        // Basic console output
+        console.log("Hello, JavaScript!");
+        console.log("Welcome to Day 041.");
+
+        // Simple expression
+        console.log("10 + 20 =", 10 + 20);
+
+        // Select the button and message
+        const helloButton = document.getElementById("helloButton");
+        const message = document.getElementById("message");
+
+        // Respond to a click event
+        helloButton.addEventListener("click", function () {
+            console.log("The JavaScript button was clicked.");
+
+            message.textContent =
+                "JavaScript is working successfully! 🚀";
+        });
+    </script>
+
+</body>
+</html>
