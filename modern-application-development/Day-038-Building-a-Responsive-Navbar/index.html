@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 038 - Responsive Navbar</title>
+
+    <style>
+        /* ==============================
+           Global Styles
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ==============================
+           Responsive Navbar
+           Mobile-First
+        ============================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #222;
+        }
+
+        .navbar-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+
+        /* ==============================
+           Logo
+        ============================== */
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: bold;
+
+            transition: opacity 0.3s ease,
+                        transform 0.3s ease;
+        }
+
+        .logo:hover,
+        .logo:focus-visible {
+            opacity: 0.8;
+            transform: translateY(-2px);
+        }
+
+        /* ==============================
+           Navigation List
+        ============================== */
+
+        .nav-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-link {
+            display: block;
+            width: 100%;
+            padding: 0.7rem 1rem;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+
+            transition:
+                background-color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus-visible {
+            background-color: #444;
+            transform: translateY(-2px);
+        }
+
+        .nav-link:focus-visible,
+        .logo:focus-visible {
+            outline: 2px solid white;
+            outline-offset: 3px;
+        }
+
+        /* ==============================
+           Hero
+        ============================== */
+
+        .hero {
+            padding: 5rem 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .hero p {
+            max-width: 65ch;
+            margin: 0 auto;
+        }
+
+        /* ==============================
+           Sections
+        ============================== */
+
+        .section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+        }
+
+        .section h2 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Cards
+        ============================== */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .card {
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Contact
+        ============================== */
+
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: bold;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            padding: 0.8rem 1.5rem;
+            border: 1px solid #222;
+            border-radius: 6px;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+
+            transition:
+                background-color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .submit-button:hover,
+        .submit-button:focus-visible {
+            background-color: #444;
+            transform: translateY(-2px);
+        }
+
+        .submit-button:focus-visible {
+            outline: 2px solid #222;
+            outline-offset: 3px;
+        }
+
+        /* ==============================
+           Footer
+        ============================== */
+
+        .site-footer {
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: #222;
+            color: white;
+            text-align: center;
+        }
+
+        /* ==============================
+           Tablet
+        ============================== */
+
+        @media (min-width: 700px) {
+
+            .navbar-content {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nav-list {
+                flex-direction: row;
+                justify-content: flex-end;
+                width: auto;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .nav-link {
+                width: auto;
+                padding: 0.6rem 0.8rem;
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* ==============================
+           Desktop
+        ============================== */
+
+        @media (min-width: 1000px) {
+
+            .nav-list {
+                gap: 0.8rem;
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .hero {
+                padding: 6rem 0;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        /* ==============================
+           Reduced Motion
+        ============================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 038
+            Topic: Building a Responsive Navbar
+        */
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 038
+        Topic: Building a Responsive Navbar
+    -->
+
+    <nav class="navbar" aria-label="Main navigation">
+
+        <div class="navbar-content container">
+
+            <a class="logo" href="#home">
+                Saloni Tiwari
+            </a>
+
+            <ul class="nav-list">
+
+                <li>
+                    <a class="nav-link" href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#education">
+                        Education
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#projects">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <main>
+
+        <section id="home" class="hero">
+            <div class="container">
+
+                <h1>Responsive Student Portfolio</h1>
+
+                <p>
+                    This page demonstrates a responsive navbar built
+                    using semantic HTML, Flexbox, CSS Media Queries,
+                    transitions and accessible focus states.
+                </p>
+
+            </div>
+        </section>
+
+        <section id="about" class="section container">
+
+            <h2>About</h2>
+
+            <p>
+                I am learning Modern Application Development and
+                building practical web development projects.
+            </p>
+
+        </section>
+
+        <section id="education" class="section container">
+
+            <h2>Education</h2>
+
+            <p>
+                Studying the IIT Madras BS Degree programme at the
+                Diploma Level along with undergraduate Mathematics.
+            </p>
+
+        </section>
+
+        <section id="skills" class="section container">
+
+            <h2>Skills</h2>
+
+            <div class="card-grid">
+
+                <article class="card">
+                    <h3>HTML5</h3>
+                    <p>
+                        Semantic HTML, forms, tables and accessibility.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>CSS3</h3>
+                    <p>
+                        Flexbox, Grid, responsive design and animations.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Python</h3>
+                    <p>
+                        Programming fundamentals and data projects.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>SQL</h3>
+                    <p>
+                        Database queries and data management.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>DSA</h3>
+                    <p>
+                        Data structures, algorithms and problem solving.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Data Science</h3>
+                    <p>
+                        Statistics, analysis and machine learning basics.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section id="projects" class="section container">
+
+            <h2>Projects</h2>
+
+            <div class="card-grid">
+
+                <article class="card">
+                    <h3>Student Performance Dashboard</h3>
+                    <p>
+                        A data-oriented project for analyzing student
+                        performance.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Economic Analysis Series</h3>
+                    <p>
+                        Projects exploring economic concepts through
+                        data analysis.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Web Development Repository</h3>
+                    <p>
+                        A structured learning repository for
+                        Modern Application Development.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section id="contact" class="section container">
+
+            <h2>Contact</h2>
+
+            <form class="contact-form" action="#" method="post">
+
+                <div class="form-group">
+
+                    <label class="form-label" for="name">
+                        Name
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label class="form-label" for="email">
+                        Email
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label class="form-label" for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        class="form-textarea"
+                        id="message"
+                        name="message"
+                        placeholder="Write your message"
+                        minlength="10"
+                        required
+                    ></textarea>
+
+                </div>
+
+                <button
+                    class="submit-button"
+                    type="submit"
+                >
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Day: 038</p>
+        <p>Topic: Building a Responsive Navbar</p>
+
+    </footer>
+
+</body>
+</html>
