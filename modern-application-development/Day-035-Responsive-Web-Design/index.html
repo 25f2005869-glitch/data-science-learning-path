@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 035 - Responsive Web Design</title>
+
+    <style>
+        /* ==============================
+           Global Styles
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+        }
+
+        .section-title {
+            margin-top: 0;
+            font-size: 1.7rem;
+        }
+
+        /* ==============================
+           Header
+        ============================== */
+
+        .site-header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+        }
+
+        .site-title {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .site-subtitle {
+            margin: 0.5rem 0 0;
+        }
+
+        /* ==============================
+           Navigation
+        ============================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #333;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            text-decoration: underline;
+        }
+
+        /* ==============================
+           About
+        ============================== */
+
+        .about-content {
+            max-width: 70ch;
+        }
+
+        /* ==============================
+           Skills
+        ============================== */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .skill-card {
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+
+        .skill-card h3 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Education
+        ============================== */
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .education-table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+        }
+
+        .education-table th,
+        .education-table td {
+            padding: 0.8rem;
+            border: 1px solid #aaa;
+            text-align: left;
+        }
+
+        .education-table th {
+            background-color: #eee;
+        }
+
+        /* ==============================
+           Projects
+        ============================== */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .project-card {
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Contact
+        ============================== */
+
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: bold;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            max-width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: 2px solid #555;
+        }
+
+        .submit-button {
+            padding: 0.8rem 1.5rem;
+            border: 1px solid #222;
+            border-radius: 6px;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-button:hover,
+        .submit-button:focus {
+            background-color: #555;
+        }
+
+        /* ==============================
+           Responsive Card Grid
+        ============================== */
+
+        .course-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .course-card {
+            padding: 1.5rem;
+            border: 1px solid #bbb;
+            border-radius: 10px;
+            background-color: #f8f8f8;
+        }
+
+        .course-card h3 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Footer
+        ============================== */
+
+        .site-footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #222;
+            color: white;
+        }
+
+        /* ==============================
+           Tablet
+        ============================== */
+
+        @media (min-width: 700px) {
+            .skills-grid,
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .site-title {
+                font-size: 2.4rem;
+            }
+        }
+
+        /* ==============================
+           Desktop
+        ============================== */
+
+        @media (min-width: 1000px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .project-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* ==============================
+           Small Mobile
+        ============================== */
+
+        @media (max-width: 500px) {
+            .section {
+                padding: 1.2rem;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+
+            .site-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 035
+            Topic: Responsive Web Design
+        */
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">Responsive Student Portfolio</h1>
+            <p class="site-subtitle">
+                Day 035 — Responsive Web Design
+            </p>
+        </div>
+    </header>
+
+    <nav class="navbar" aria-label="Main Navigation">
+        <ul class="nav-list">
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#skills">Skills</a></li>
+            <li><a class="nav-link" href="#education">Education</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#courses">Courses</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+
+            <div class="about-content">
+                <p>
+                    I am learning Modern Application Development and
+                    building practical web development projects.
+                </p>
+
+                <p>
+                    This page demonstrates responsive design using
+                    flexible widths, Flexbox, CSS Grid and media queries.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+                    <h3>HTML5</h3>
+                    <p>Semantic structure, forms, tables and accessibility.</p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>CSS3</h3>
+                    <p>Layouts, Grid, Flexbox and responsive design.</p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Python</h3>
+                    <p>Programming fundamentals and data-oriented projects.</p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>SQL</h3>
+                    <p>Database queries and data management fundamentals.</p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>DSA</h3>
+                    <p>Data structures, algorithms and problem solving.</p>
+                </article>
+
+                <article class="skill-card">
+                    <h3>Data Science</h3>
+                    <p>Statistics, data analysis and machine learning basics.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2 class="section-title">Education</h2>
+
+            <div class="table-container">
+                <table class="education-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Programme</th>
+                            <th scope="col">Level</th>
+                            <th scope="col">Area</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>IIT Madras BS Degree</td>
+                            <td>Diploma Level</td>
+                            <td>Data Science and Applications</td>
+                        </tr>
+
+                        <tr>
+                            <td>B.Sc.</td>
+                            <td>Undergraduate</td>
+                            <td>Mathematics</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <h3>Student Performance Dashboard</h3>
+                    <p>
+                        A project for analyzing student performance
+                        and presenting useful insights.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Economic Analysis Series</h3>
+                    <p>
+                        Data-oriented projects exploring economic
+                        concepts and analysis.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Web Development Learning Hub</h3>
+                    <p>
+                        A structured learning repository covering
+                        modern web development concepts.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="courses" class="section">
+            <h2 class="section-title">Current Learning</h2>
+
+            <p>
+                The following cards use a responsive Grid with
+                <strong>auto-fit</strong> and <strong>minmax()</strong>.
+            </p>
+
+            <div class="course-grid">
+
+                <article class="course-card">
+                    <h3>DBMS</h3>
+                    <p>Database Management Systems</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>PDSA</h3>
+                    <p>Programming, Data Structures and Algorithms</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MLF</h3>
+                    <p>Machine Learning Foundations</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MAD 1</h3>
+                    <p>Modern Application Development</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>BDM</h3>
+                    <p>Business Data Management</p>
+                </article>
+
+                <article class="course-card">
+                    <h3>MLT</h3>
+                    <p>Machine Learning Techniques</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact</h2>
+
+            <form class="contact-form" action="#" method="post">
+
+                <div class="form-group">
+                    <label class="form-label" for="name">
+                        Name
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">
+                        Email
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        class="form-textarea"
+                        id="message"
+                        name="message"
+                        placeholder="Write your message"
+                        minlength="10"
+                        required
+                    ></textarea>
+                </div>
+
+                <button class="submit-button" type="submit">
+                    Send Message
+                </button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Day: 035</p>
+        <p>Topic: Responsive Web Design</p>
+    </footer>
+
+</body>
+</html>
