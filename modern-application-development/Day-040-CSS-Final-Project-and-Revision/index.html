@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 040
+        Topic: CSS Final Project and Revision
+    -->
+
+    <title>Day 040 - CSS Final Project</title>
+
+    <style>
+        /* =====================================================
+           DAY 040 - CSS FINAL PROJECT AND REVISION
+           Author: Saloni Tiwari
+           Programme: IIT Madras BS Degree — Diploma Level
+           Day: 040
+           Topic: CSS Final Project and Revision
+           ===================================================== */
+
+        /* ---------- Reset and Base ---------- */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f4f7fb;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        .container {
+            width: min(92%, 1100px);
+            margin: 0 auto;
+        }
+
+        /* ---------- Header / Navbar ---------- */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #111827;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar {
+            min-height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+            padding: 14px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease,
+                        transform 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            background: #374151;
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        /* ---------- Hero ---------- */
+
+        .hero {
+            padding: 70px 0;
+            background:
+                linear-gradient(135deg, #dbeafe, #f5f3ff);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 7vw, 4rem);
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 20px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-weight: 700;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+        .btn:hover,
+        .btn:focus-visible {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+            outline: none;
+        }
+
+        /* ---------- General Sections ---------- */
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+        /* ---------- About ---------- */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .profile-card,
+        .info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .profile-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #2563eb;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #dbeafe;
+            color: #1d4ed8;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        /* ---------- Skills ---------- */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(180px, 1fr)
+            );
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* ---------- Courses ---------- */
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            padding: 24px;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.09);
+        }
+
+        .course-card h3 {
+            color: #1d4ed8;
+        }
+
+        .progress-container {
+            background: #e5e7eb;
+            border-radius: 20px;
+            height: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #2563eb;
+            border-radius: inherit;
+        }
+
+        .progress-90 {
+            width: 90%;
+        }
+
+        .progress-75 {
+            width: 75%;
+        }
+
+        .progress-65 {
+            width: 65%;
+        }
+
+        /* ---------- Projects ---------- */
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .project-card::after {
+            content: "PROJECT";
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            padding: 5px 35px;
+            background: #111827;
+            color: white;
+            font-size: 0.7rem;
+            transform: rotate(45deg);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            color: #1d4ed8;
+        }
+
+        /* ---------- Learning Progress ---------- */
+
+        .progress-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .progress-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 8px;
+        }
+
+        /* ---------- Contact ---------- */
+
+        .contact-form {
+            max-width: 750px;
+            margin: 0 auto;
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: #f8fafc;
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #2563eb;
+            outline: 3px solid rgba(37, 99, 235, 0.15);
+        }
+
+        /* ---------- Footer ---------- */
+
+        footer {
+            padding: 30px 0;
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        footer p + p {
+            margin-top: 6px;
+            color: #cbd5e1;
+        }
+
+        /* ---------- Animation ---------- */
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ---------- Tablet ---------- */
+
+        @media (min-width: 600px) {
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ---------- Desktop ---------- */
+
+        @media (min-width: 900px) {
+            .hero {
+                padding: 100px 0;
+            }
+
+            .hero-content {
+                max-width: 850px;
+            }
+        }
+
+        /* ---------- Reduced Motion ---------- */
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header and Responsive Navigation -->
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a href="#home" class="logo">Saloni.dev</a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <p>CSS Final Project • Day 040</p>
+
+                <h1>
+                    Hello, I am <span>Saloni Tiwari</span>
+                </h1>
+
+                <p>
+                    An IIT Madras BS Degree student building skills in
+                    programming, data science and modern web development.
+                </p>
+
+                <a href="#projects" class="btn">View My Projects</a>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>About Me</h2>
+                    <p>A simple profile section using CSS Grid and the box model.</p>
+                </div>
+
+                <div class="about-grid">
+
+                    <article class="profile-card">
+                        <div class="profile-avatar">ST</div>
+
+                        <h3>Saloni Tiwari</h3>
+
+                        <p>
+                            I am learning web development and data science
+                            through structured daily practice and projects.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <h3>Learning Journey</h3>
+
+                        <p>
+                            I completed the HTML learning section and have
+                            now completed the CSS revision and final project.
+                        </p>
+
+                        <br>
+
+                        <p>
+                            My next learning stage is JavaScript, followed
+                            by Flask and database-based application development.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Skills</h2>
+                    <p>Responsive cards created with CSS Grid.</p>
+                </div>
+
+                <div class="card-grid">
+
+                    <article class="skill-card">
+                        <div class="skill-icon">🌐</div>
+                        <h3>HTML</h3>
+                        <p>Semantic and accessible HTML.</p>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <h3>CSS</h3>
+                        <p>Responsive layouts and modern styling.</p>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-icon">⚡</div>
+                        <h3>JavaScript</h3>
+                        <p>Next stage of my web development journey.</p>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-icon">🐍</div>
+                        <h3>Python</h3>
+                        <p>Programming and data analysis.</p>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-icon">🗄️</div>
+                        <h3>SQL</h3>
+                        <p>Database querying and management.</p>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-icon">📊</div>
+                        <h3>Data Science</h3>
+                        <p>Statistics, analysis and machine learning.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses -->
+        <section id="courses">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Current Courses</h2>
+                    <p>Responsive course cards with progress indicators.</p>
+                </div>
+
+                <div class="card-grid">
+
+                    <article class="course-card">
+                        <h3>PDSA</h3>
+                        <p>
+                            Programming, Data Structures and Algorithms.
+                        </p>
+
+                        <div class="progress-container">
+                            <div class="progress-bar progress-90"></div>
+                        </div>
+
+                        <small>Progress: 90%</small>
+                    </article>
+
+                    <article class="course-card">
+                        <h3>DBMS</h3>
+                        <p>
+                            Database Management Systems and SQL fundamentals.
+                        </p>
+
+                        <div class="progress-container">
+                            <div class="progress-bar progress-75"></div>
+                        </div>
+
+                        <small>Progress: 75%</small>
+                    </article>
+
+                    <article class="course-card">
+                        <h3>MLF</h3>
+                        <p>
+                            Machine Learning Foundations and core concepts.
+                        </p>
+
+                        <div class="progress-container">
+                            <div class="progress-bar progress-65"></div>
+                        </div>
+
+                        <small>Progress: 65%</small>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Projects</h2>
+                    <p>Project cards using Grid, positioning and transitions.</p>
+                </div>
+
+                <div class="card-grid">
+
+                    <article class="project-card">
+                        <h3>Student Portfolio</h3>
+                        <p>
+                            A semantic HTML and CSS portfolio demonstrating
+                            responsive design.
+                        </p>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Economic Analytics</h3>
+                        <p>
+                            A data-focused project exploring economic
+                            indicators and analytical concepts.
+                        </p>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Learning Dashboard</h3>
+                        <p>
+                            A responsive dashboard for tracking courses,
+                            skills and learning progress.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Progress -->
+        <section>
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Learning Progress</h2>
+                    <p>Flexbox-based progress components.</p>
+                </div>
+
+                <div class="progress-list">
+
+                    <article class="progress-item">
+                        <div class="progress-header">
+                            <strong>HTML</strong>
+                            <span>100%</span>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </article>
+
+                    <article class="progress-item">
+                        <div class="progress-header">
+                            <strong>CSS</strong>
+                            <span>100%</span>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 100%;"></div>
+                        </div>
+                    </article>
+
+                    <article class="progress-item">
+                        <div class="progress-header">
+                            <strong>JavaScript</strong>
+                            <span>Starting Next</span>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 5%;"></div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Contact Me</h2>
+                    <p>A responsive form with focus states.</p>
+                </div>
+
+                <form class="contact-form">
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="Enter subject"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Write your message"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">
+                        Send Message
+                    </button>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 Saloni Tiwari — CSS Final Project
+            </p>
+
+            <p>
+                IIT Madras BS Degree — Diploma Level | Day 040
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
