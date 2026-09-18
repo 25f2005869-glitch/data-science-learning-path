@@ -2,389 +2,521 @@
 ![Learning Path](https://img.shields.io/badge/Learning%20Path-100%20Days-green?style=for-the-badge)
 ![IIT Madras](https://img.shields.io/badge/IIT%20Madras-BS%20Degree-red?style=for-the-badge)
 ![Level](https://img.shields.io/badge/Level-Diploma-orange?style=for-the-badge)
-![Duration](https://img.shields.io/badge/Duration-100%20Days-purple?style=for-the-badge)
+![Day](https://img.shields.io/badge/Day-001--100-brightgreen?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
-# 📊 Business Data Management — 100 Day Learning Roadmap
+# 📊 Business Data Management — 100 Days Learning Journey
 
-**Author:** Saloni Tiwari  
-**Programme:** IIT Madras BS Degree — Diploma Level  
-**Course:** Business Data Management  
-**Learning Path:** 100 Days  
-**Focus:** Business Data Analysis, Excel, Financial Analysis, HR Analytics, FinTech, A/B Testing, Credit Risk and Business Analytics
+> A practical 100-day learning roadmap for Business Data Management, Excel, Business Analytics, Data Analysis, Visualisation, Business Insights, and Dashboard Development.
 
 ---
 
-## 🎯 About This Repository
+## 👩‍💻 Learner
 
-This repository contains my 100-day practical learning journey for Business Data Management.
+**Name:** Saloni Tiwari  
+**Programme:** IIT Madras BS Degree — Diploma Level  
+**Course:** Business Data Management  
+**Learning Path:** 100 Days  
+**Primary Tool:** Microsoft Excel  
+**Supporting Tools:** Python, Pandas, Matplotlib, Power BI
 
-The roadmap combines business concepts with hands-on data analysis.
+---
 
-The main focus is learning how business data can be collected, cleaned, analysed, visualised and converted into useful business insights.
+# 🎯 About This Repository
 
-The learning path starts with basic business and economic concepts.
+This repository contains my practical learning journey through Business Data Management.
 
-It then moves into Excel, financial analysis, e-commerce analytics, inventory analytics, HR analytics, FinTech, A/B testing and credit-risk analysis.
+The objective is to understand how business data is collected, organised, analysed, visualised, and converted into useful business insights.
 
-The final part extends the learning into Power BI and a complete business analytics project.
+The roadmap starts with basic business and economic concepts and gradually moves towards:
+
+- Business understanding
+- Economic concepts
+- Market estimation
+- Excel
+- Pivot Tables
+- Data visualisation
+- E-commerce analytics
+- Sales analytics
+- Inventory analytics
+- Manufacturing analytics
+- HR analytics
+- Finance and FinTech analytics
+- A/B testing
+- Credit risk analysis
+- Business operations
+- Power BI
+- Final business analytics project
 
 ---
 
 # 🗺️ 100-Day Roadmap
 
-## 🟦 Week 01 — Business & Economics Foundations
+## 🟦 Days 001–013 — Business & Economics Foundations
 
-### Day 001
-**Introduction to Economics**
+### Day 001 — Introduction to Economics
 
-- Basic economic concepts
-- Economic activities
-- Business environment
-- Demand and supply overview
-- Business data perspective
+Topics:
 
-### Day 002
-**Basic Economic Concepts**
-
+- Meaning of economics
+- Business and economics
+- Microeconomics
+- Macroeconomics
 - Scarcity
 - Opportunity cost
+- Business decision making
+
+---
+
+### Day 002 — Basic Economic Concepts
+
+Topics:
+
 - Resources
+- Demand
+- Supply
 - Production
 - Consumption
+- Markets
 - Economic decision making
 
-### Day 003
-**Demand and Supply**
+---
+
+### Day 003 — Demand and Supply
+
+Topics:
 
 - Demand
 - Supply
 - Demand curve
 - Supply curve
 - Market equilibrium
-- Business applications
-
-### Day 004
-**Elasticity and Business Decisions**
-
-- Price elasticity
-- Income elasticity
-- Cross elasticity
-- Elastic and inelastic demand
-- Business interpretation
+- Price and quantity
 
 ---
 
-# 🟦 Week 02 — Market and Business Fundamentals
+### Day 004 — Elasticity
 
-### Day 005
-**Excel Functions Practical**
+Topics:
 
-- Excel formulas
-- Basic functions
-- SUM
-- AVERAGE
-- COUNT
-- IF
-- Practical business calculations
+- Price elasticity
+- Demand sensitivity
+- Supply sensitivity
+- Business applications
+- Interpretation of elasticity
 
-### Day 006
-**Excel Economics Tutorial**
+---
 
-- Economic data
-- Demand calculations
-- Supply calculations
-- Elasticity practice
-- Excel-based economic analysis
+### Day 005 — Business Basics
 
-### Day 007
-**External Data Sources and Survey Methods**
+Topics:
+
+- Business meaning
+- Business objectives
+- Products
+- Services
+- Revenue
+- Cost
+- Profit
+- Customers
+
+---
+
+### Day 006 — B2C and B2B
+
+Topics:
+
+- B2C business model
+- B2B business model
+- Consumer buying
+- Business buying
+- Differences between B2C and B2B
+
+---
+
+### Day 007 — External Data Sources and Survey Methods
+
+Topics:
 
 - Primary data
 - Secondary data
 - Surveys
 - Questionnaire design
+- Sampling
 - Data sources
-- Survey analysis
 
-### Day 008
-**Exploring Demographic Data**
+---
 
-- Demographic variables
+### Day 008 — Exploring Demographic Data
+
+Topics:
+
+- Population data
 - Age
 - Gender
 - Region
-- Population groups
-- Category analysis
-
-### Day 009
-**Analysing Demographic Data — Part 1**
-
-- Consumption data
-- Group analysis
-- Urban and rural comparison
-- Demographic patterns
-- Business interpretation
-
-### Day 010
-**Analysing Demographic Data — Part 2**
-
-- Rural spending
-- Age-based spending
-- Spending patterns
-- Regional analysis
-- Business insights
+- Urban and rural classification
+- Demographic analysis
 
 ---
 
-# 🟦 Week 03 — Market Size Estimation
+### Day 009 — Analysing Demographic Data Part 1
 
-### Day 011
-**Estimating Market Size — Part 1**
+Topics:
 
+- Group analysis
+- Consumption patterns
+- Category comparison
+- Regional comparison
+- Demographic insights
+
+---
+
+### Day 010 — Analysing Demographic Data Part 2
+
+Topics:
+
+- Rural spending
+- Age-wise spending
+- Consumption behaviour
+- Spending patterns
+- Business interpretation
+
+---
+
+### Day 011 — Estimating Market Size Part 1
+
+Topics:
+
+- Market size
+- Survey-based estimation
 - Two-wheeler loans
-- Surveys
-- Market assumptions
+- Customer estimation
 - Regional analysis
-- Market estimation
 
-### Day 012
-**Estimating Market Size — Part 2**
+---
 
-- Bottom-up market estimation
-- Market segments
-- Customer assumptions
-- Market opportunity
+### Day 012 — Estimating Market Size Part 2
 
-### Day 013
-**Estimating Market Size — Part 3**
+Topics:
+
+- Bottom-up market sizing
+- Customer segments
+- Market assumptions
+- Market potential
+- Business estimation
+
+---
+
+### Day 013 — Estimating Market Size Part 3
+
+Topics:
 
 - Fixed deposits
 - Borrowing
-- Financial survey data
-- Market estimation
-- Borrowing purpose analysis
+- Financial surveys
+- Regional market estimation
+- Market opportunity analysis
 
 ---
 
-# 🟦 Week 04 — Excel, Pivot Tables and Market Share
+# 🟩 Days 014–020 — Excel, Pivot Tables & Market Share
 
-### Day 014
-**Introduction to Pivot Tables**
+## Day 014 — Introduction to Pivot Tables
 
-- Pivot tables
-- Category summaries
-- Regional summaries
-- Product summaries
-- Business reporting
+Topics:
 
-### Day 015
-**Representing Data Visually**
+- Pivot Tables
+- Rows
+- Columns
+- Values
+- Filters
+- Aggregation
+- Business summaries
+
+---
+
+## Day 015 — Representing Data Visually
+
+Topics:
 
 - Bar charts
 - Line charts
 - Pie charts
-- Data visualisation
-- Business communication
+- Chart selection
+- Data storytelling
+- Visual comparison
 
-### Day 016
-**Understanding Market Share — Part 1**
+---
 
-- Market size
-- Company revenue
+## Day 016 — Market Share Part 1
+
+Topics:
+
+- Company sales
+- Total market
 - Market share
+- Percentage contribution
 - Regional comparison
-- Ranking
 
-### Day 017
-**Understanding Market Share — Part 2**
+---
+
+## Day 017 — Market Share Part 2
+
+Topics:
 
 - Loan data
 - Market share
-- Pivot-table analysis
-- Regional comparison
+- Pivot-style analysis
+- Regional lending
+- Business comparison
 
-### Day 018
-**Understanding Market Share — Part 3**
+---
+
+## Day 018 — Market Share Part 3
+
+Topics:
 
 - Credit card lending
 - Lending trends
-- Monthly market analysis
-- Bank-level comparison
+- Bank analysis
+- Monthly trends
+- Market contribution
 
-### Day 019
-**Understanding Market Share — Part 4**
+---
+
+## Day 019 — Market Share Part 4
+
+Topics:
 
 - Credit
 - Microfinance
 - Loans
-- Institution analysis
-- Segment analysis
+- Institution comparison
+- Lending segments
 
-### Day 020
-**Analysis of Aspirational Data**
+---
+
+## Day 020 — Analysis of Aspirational Data
+
+Topics:
 
 - Development indicators
 - Regional comparison
 - District ranking
 - Indicator analysis
-- Business insights
+- Business and social insights
 
 ---
 
-# 🟩 Week 05 — E-Commerce Analytics
+# 🛒 Days 021–028 — E-Commerce Analytics
 
-### Day 021
-**Introduction to E-Commerce**
+## Day 021 — Introduction to E-Commerce
+
+Topics:
 
 - E-commerce business model
+- Online sales
 - Orders
 - Revenue
+- Product categories
+- Channels
+- Regions
+
+---
+
+## Day 022 — Introduction to the Case Study
+
+Topics:
+
+- Business case
+- Customer types
+- Sales data
+- Product performance
+- Business questions
+
+---
+
+## Day 023 — E-Commerce Data Post-Covid Sales Analysis
+
+Topics:
+
+- Post-Covid sales
+- Sales trends
+- Revenue trends
+- Customer behaviour
+- Channel analysis
+
+---
+
+## Day 024 — Review of Key Questions
+
+Topics:
+
+- Business questions
+- KPI analysis
+- Revenue
+- Orders
 - Categories
 - Channels
 - Regions
 
-### Day 022
-**Introduction to the Case Study**
+---
 
-- Case-study framework
-- Business questions
-- Customer analysis
-- Sales analysis
-- E-commerce dataset
+## Day 025 — Review of Data
 
-### Day 023
-**E-Commerce Data — Post-Covid Sales Analysis**
+Topics:
 
-- Post-Covid sales
-- Revenue trends
-- Orders
-- Customers
-- Business analysis
-
-### Day 024
-**Review of Key Questions**
-
-- Business questions
-- Revenue analysis
-- Category analysis
-- Channel analysis
-- Regional analysis
-
-### Day 025
-**Review of Data**
-
-- Data quality
 - Missing values
-- Duplicates
-- Numeric summaries
-- Category checks
+- Duplicate records
+- Numeric review
+- Category review
 - Data dictionary
+- Data quality
 
-### Day 026
-**Volume Pareto Analysis**
+---
+
+## Day 026 — Volume Pareto
+
+Topics:
 
 - Product volume
-- Monthly volume
-- Channel volume
-- Region volume
 - Pareto analysis
+- Cumulative percentage
+- Product contribution
+- Volume concentration
 
-### Day 027
-**Revenue Pareto and Scatter Plot**
+---
 
-- Revenue ranking
+## Day 027 — Revenue Pareto and Scatter Plot
+
+Topics:
+
+- Revenue Pareto
 - Cumulative revenue
-- Pareto analysis
 - Scatter plots
 - Units vs revenue
+- Product contribution
 
-### Day 028
-**Trend Analysis — Sales and Revenue Trends**
+---
 
-- Monthly trends
-- Weekday trends
+## Day 028 — Trend Analysis
+
+Topics:
+
+- Sales trends
+- Revenue trends
+- Monthly analysis
+- Weekday analysis
 - Product trends
 - Channel trends
 - Regional trends
 
 ---
 
-# 🟩 Week 06 — Sales, Inventory and Business Operations
+# 📈 Days 029–037 — Sales, Inventory & Project Planning
 
-### Day 029
-**Sales Analysis Presentation**
+## Day 029 — Sales Analysis Presentation
 
-- Sales results
-- Business KPIs
-- Visual presentation
+Topics:
+
+- Sales KPIs
+- Business presentation
+- Revenue analysis
+- Product performance
 - Business insights
 
-### Day 030
-**Scatter Chart Presentation**
+---
+
+## Day 030 — Scatter Chart Presentation
+
+Topics:
 
 - Scatter charts
-- Variable relationships
+- Relationship analysis
+- Correlation
+- Sales variables
 - Business interpretation
-- Presentation practice
 
-### Day 031
-**Sales Trend Presentation**
+---
 
-- Sales trends
-- Monthly analysis
-- Product analysis
-- Weekday analysis
-- Presentation
+## Day 031 — Sales Trend Presentation
 
-### Day 032
-**Ledger and Average Days of Inventory**
+Topics:
+
+- Monthly trends
+- Product trends
+- Weekday trends
+- Sales presentation
+- Business storytelling
+
+---
+
+## Day 032 — Ledger and Average Days of Inventory
+
+Topics:
 
 - Inventory ledger
 - Opening stock
 - Purchases
 - Sales
 - Closing stock
-- Average inventory days
+- Average inventory
+- Inventory days
 
-### Day 033
-**Days of Sales of Inventory**
+---
+
+## Day 033 — Days of Sales of Inventory
+
+Topics:
 
 - DSI
-- Inventory efficiency
-- Product analysis
-- Regional analysis
+- Average inventory
+- Daily sales
 - Inventory turnover
+- Product comparison
 
-### Day 034
-**Presentation of Ledger**
+---
 
-- Inventory ledger
+## Day 034 — Presentation of Ledger
+
+Topics:
+
+- Ledger presentation
 - Transaction analysis
-- Product ledger
-- Monthly stock
-- Business presentation
+- Product inventory
+- Monthly inventory
+- Business interpretation
 
-### Day 035
-**Key Learnings from the Case**
+---
 
-- Inventory learnings
-- Sales analysis
-- Stock analysis
+## Day 035 — Key Learnings from the Case
+
+Topics:
+
+- Inventory insights
+- Sales
+- Stock movement
 - Inventory turnover
-- Business conclusions
+- Business learnings
 
-### Day 036
-**VLOOKUP and Pivot Table**
+---
+
+## Day 036 — VLOOKUP and Pivot Table
+
+Topics:
 
 - VLOOKUP
 - Lookup tables
 - Product master
-- Pivot analysis
-- Business summaries
+- Pivot-style summaries
+- Business reporting
 
-### Day 037
-**Course Project Instructions and Guidelines**
+---
+
+## Day 037 — Course Project Instructions and Guidelines
+
+Topics:
 
 - Project planning
 - Business questions
@@ -392,13 +524,15 @@ The final part extends the learning into Power BI and a complete business analyt
 - KPI framework
 - Analysis plan
 - Presentation plan
+- Self-review
 
 ---
 
-# 🟨 Week 07 — Manufacturing and ACE Gears Case
+# 🏭 Days 038–047 — Manufacturing & ACE Gears Case
 
-### Day 038
-**Introduction to the Manufacturing Sector**
+## Day 038 — Introduction to the Manufacturing Sector
+
+Topics:
 
 - Manufacturing business
 - Production
@@ -406,264 +540,363 @@ The final part extends the learning into Power BI and a complete business analyt
 - Scrap
 - Revenue
 - Production cost
+- Gross margin
 
-### Day 039
-**ACE Gears Case — Introduction**
+---
+
+## Day 039 — ACE Gears Case Introduction
+
+Topics:
 
 - Manufacturing case
-- Product portfolio
-- Regions
+- Products
 - Customers
-- Business questions
+- Regions
+- Production
+- Sales
+- Inventory
 
-### Day 040
-**Background Context to the Case**
+---
 
-- Business setting
-- Stakeholders
+## Day 040 — Background Context to the Case
+
+Topics:
+
 - Business context
+- Stakeholders
+- Business setting
+- Business questions
 - Analysis roadmap
 
-### Day 041
-**Introduction to the Dataset**
+---
 
-- Sales
-- Production
-- Inventory
-- Monthly analysis
-- Dataset structure
+## Day 041 — Introduction to the Dataset
 
-### Day 042
-**Revenue Trend Working**
+Topics:
+
+- Sales data
+- Production data
+- Inventory data
+- Monthly data
+- Data dictionary
+
+---
+
+## Day 042 — Revenue Trend Working
+
+Topics:
 
 - Monthly revenue
 - Product revenue
 - Regional revenue
-- Trend analysis
-
-### Day 043
-**Revenue Analysis Presentation**
-
 - Revenue trend
-- Product contribution
-- Regional contribution
-- Revenue presentation
+- Trend interpretation
 
-### Day 044
-**Portfolio Management Working**
+---
+
+## Day 043 — Revenue Analysis Presentation
+
+Topics:
+
+- Revenue presentation
+- Monthly growth
+- Product share
+- Regional share
+- Gross margin
+
+---
+
+## Day 044 — Portfolio Management Working
+
+Topics:
 
 - Product portfolio
 - Revenue
 - Gross margin
+- Margin percentage
 - Revenue share
-- Product ranking
+- Sales conversion
+- Scrap rate
 
-### Day 045
-**Product Portfolio Presentation**
+---
 
-- Portfolio analysis
-- Revenue presentation
-- Margin presentation
+## Day 045 — Product Portfolio Presentation
+
+Topics:
+
+- Product comparison
+- Revenue
+- Gross margin
 - Revenue share
-- Operations analysis
+- Operational performance
 
-### Day 046
-**Region-Wise Revenues Working**
+---
+
+## Day 046 — Region-Wise Revenues Working
+
+Topics:
 
 - Regional revenue
 - Monthly regional revenue
 - Product-region analysis
 - Regional ranking
-
-### Day 047
-**Region-Wise Revenue and Sales Agent Planning**
-
-- Sales agents
-- Regional assignment
-- Revenue by agent
-- Regional sales planning
+- Revenue share
 
 ---
 
-# 🟨 Week 08 — Production, Scrap and Inventory
+## Day 047 — Region-Wise Revenue and Sales Agent Planning
 
-### Day 048
-**Production Scheduling Data**
+Topics:
 
-- Production planning
-- Planned production
+- Sales agents
+- Regional revenue
+- Agent performance
+- Monthly agent analysis
+- Sales planning
+
+---
+
+# ⚙️ Days 048–057 — Production, Scrap, OEE & Inventory
+
+## Day 048 — Production Scheduling Data
+
+Topics:
+
+- Production plan
 - Actual production
+- Plan vs actual
 - Variance
 - Plan achievement
 
-### Day 049
-**Scrap Analysis Working**
+---
+
+## Day 049 — Scrap Analysis Working
+
+Topics:
 
 - Scrap units
 - Scrap rate
 - Product scrap
 - Regional scrap
-- Scrap analysis
+- Monthly scrap
+- Operational insights
 
-### Day 050
-**OEE Discussion**
+---
+
+## Day 050 — OEE Discussion
+
+Topics:
 
 - Overall Equipment Effectiveness
 - Availability
 - Performance
 - Quality
-- OEE analysis
+- OEE calculation
+- Product comparison
 
-### Day 051
-**Unit-Level Profitability and Material Reordering**
+---
 
+## Day 051 — Unit-Level Profitability and Material Reordering
+
+Topics:
+
+- Unit revenue
+- Unit cost
 - Unit profit
-- Unit margin
-- Material requirements
+- Material usage
 - Reorder point
 - Business profitability
 
-### Day 052
-**Unit-Level Profitability Working**
+---
 
-- Unit cost
-- Revenue
-- Profit
-- Cost components
+## Day 052 — Unit-Level Profitability Working
+
+Topics:
+
+- Cost calculation
+- Revenue calculation
+- Profit calculation
 - Product profitability
+- Regional profitability
+- Cost components
 
-### Day 053
-**Scrap Costs and Margin Analysis Presentation**
+---
+
+## Day 053 — Scrap Costs and Margin Analysis Presentation
+
+Topics:
 
 - Scrap cost
-- Gross margin
-- Margin after scrap
 - Scrap rate
-- Business presentation
+- Gross profit
+- Margin percentage
+- Margin after scrap
+- Presentation
 
-### Day 054
-**Safety Stock and Reorder Concept Review**
+---
+
+## Day 054 — Safety Stock and Reorder Concept Review
+
+Topics:
 
 - Safety stock
 - Lead-time demand
 - Reorder point
-- Inventory gap
+- Inventory coverage
 - Stock status
 
-### Day 055
-**Safety Stock and Reorder**
+---
+
+## Day 055 — Safety Stock and Reorder
+
+Topics:
 
 - Reorder point
 - Safety stock
-- Lead-time demand
-- Inventory analysis
-- Regional stock
+- Inventory gap
+- Regional inventory
+- Product inventory
 
-### Day 056
-**Raw Material Inventory Analysis Presentation**
+---
+
+## Day 056 — Raw Material Inventory Analysis Presentation
+
+Topics:
 
 - Raw materials
 - Material usage
 - Inventory value
+- Lead-time demand
 - Safety stock
 - Reorder point
 - Presentation
 
-### Day 057
-**Tutorial Assignment**
+---
 
-- Material inventory
-- Inventory usage
+## Day 057 — Tutorial Assignment
+
+Topics:
+
+- Raw material analysis
+- Material usage
 - Inventory value
 - Regional analysis
-- Business questions
+- Business insights
+- Integrated practice
 
 ---
 
-# 🟧 Week 09 — HR Analytics
+# 👥 Days 058–071 — HR Analytics
 
-### Day 058
-**Introduction to HR as a Function**
+## Day 058 — Introduction to HR as a Function
 
-- HR role
+Topics:
+
+- Human resources
 - Employees
 - Departments
-- Regions
 - Employment types
 - HR KPIs
 
-### Day 059
-**Introduction to Tech Enterprises**
+---
 
-- Technology enterprises
+## Day 059 — Introduction to Tech Enterprises
+
+Topics:
+
+- Technology companies
 - Workforce
 - Departments
 - Business functions
-- Employee structure
+- Employee analytics
 
-### Day 060
-**Internal Sourcing**
+---
+
+## Day 060 — Internal Sourcing
+
+Topics:
 
 - Internal sourcing
 - Recruitment requests
-- Cost
-- Time
+- Internal cost
+- Actual days
 - Satisfaction
-- Completion
+- Completion rate
+- On-time rate
 
-### Day 061
-**Review of Data and Basic Statistics**
+---
+
+## Day 061 — Review of Data and Basic Statistics
+
+Topics:
 
 - Data review
 - Mean
 - Median
 - Standard deviation
+- Minimum
+- Maximum
 - Quartiles
 - IQR
-- Basic statistics
 
-### Day 062
-**Ranking of Internal Candidates**
+---
 
-- Candidate ranking
+## Day 062 — Internal Candidates Ranking
+
+Topics:
+
+- Candidate data
 - Candidate comparison
-- Internal sourcing
-- Ranking metrics
-- Business interpretation
+- Ranking criteria
+- Candidate evaluation
+- HR decision support
 
-### Day 063
-**Caselet 2 — Introduction to Job Description**
+---
+
+## Day 063 — Caselet 2: Introduction to Job Description
+
+Topics:
 
 - Job descriptions
+- Roles
 - Departments
-- Job levels
 - Required skills
 - Experience
-- Business context
+- Job description components
 
-### Day 064
-**Sourcing Channels and Their Analysis**
+---
+
+## Day 064 — Sourcing Channels and Their Analysis
+
+Topics:
 
 - Internal transfer
 - Internal promotion
 - Employee referral
 - Job portal
-- Sourcing cost
+- Candidate sourcing
 - Selection rate
+- Sourcing cost
 
-### Day 065
-**Introduction to Dataset and Gender Diversity**
+---
+
+## Day 065 — Introduction to Dataset and Gender Diversity
+
+Topics:
 
 - Employee dataset
 - Gender analysis
 - Salary
 - Performance
-- Attrition
 - Training
 - Attendance
+- Attrition
 
-### Day 066
-**Selection Criteria**
+---
+
+## Day 066 — Selection Criteria
+
+Topics:
 
 - Technical score
 - Communication score
@@ -671,10 +904,13 @@ The final part extends the learning into Power BI and a complete business analyt
 - Overall score
 - Experience
 - Weighted score
-- Selection status
+- Eligibility
 
-### Day 067
-**Channel Effectiveness**
+---
+
+## Day 067 — Channel Effectiveness
+
+Topics:
 
 - Recruitment channels
 - Candidate volume
@@ -683,160 +919,215 @@ The final part extends the learning into Power BI and a complete business analyt
 - Days to fill
 - Channel comparison
 
-### Day 068
-**Composite Score and Ranking**
+---
+
+## Day 068 — Composite Score and Ranking
+
+Topics:
 
 - Weighted scoring
 - Composite score
 - Ranking
 - Percentile
-- Rank bands
 - Candidate comparison
+- Department analysis
 
-### Day 069
-**Recruitment Process and Onboarding**
+---
+
+## Day 069 — Recruitment Process and Onboarding
+
+Topics:
 
 - Recruitment stages
 - Recruitment channels
-- Recruitment cost
 - Selection
+- Recruitment cost
+- Days to fill
 - Onboarding tasks
 - Completion
 
-### Day 070
-**Presentation of Results and Analysis**
+---
 
-- Recruitment results
+## Day 070 — Presentation of Results and Analysis
+
+Topics:
+
+- HR results
+- Recruitment KPIs
 - Channel analysis
 - Department analysis
 - Regional analysis
-- Business presentation
-
-### Day 071
-**Summary — Skills Availability and Role of HR**
-
-- Skills availability
-- Workforce capability
-- HR role
-- Recruitment
-- Employee analysis
-- Business insights
+- Presentation
 
 ---
 
-# 🟪 Week 10 — Finance, FinTech and Consumer Behaviour
+## Day 071 — Summary: Skills Availability and Role of HR
 
-### Day 072
-**Introduction to Finance Industry and FinTech**
+Topics:
+
+- Skills availability
+- Workforce analysis
+- Recruitment
+- HR role
+- Business requirements
+- Workforce insights
+
+---
+
+# 💰 Days 072–080 — Finance, FinTech & Consumer Behaviour
+
+## Day 072 — Introduction to Finance Industry and FinTech
+
+Topics:
 
 - Finance industry
-- FinTech
 - Banks
 - NBFCs
-- Insurance
-- Digital finance
-- Financial services
+- FinTech
+- Digital adoption
+- Customers
+- Transactions
+- Revenue
 
-### Day 073
-**Introduction to Payments Industry and Money Flow**
+---
 
-- Payment channels
+## Day 073 — Introduction to Payments Industry and Money Flow
+
+Topics:
+
+- Payments
 - UPI
-- Cards
+- Debit cards
+- Credit cards
 - Net banking
 - Wallets
-- Payment services
+- Transaction volume
 - Transaction value
+- Payment status
 
-### Day 074
-**PayBuddy Case — Credit Product Introduction**
+---
+
+## Day 074 — PayBuddy Case: Credit Product Introduction
+
+Topics:
 
 - Credit products
-- Customers
-- Credit activity
-- Regions
-- Product analysis
+- Customer activity
+- Credit products
+- Customer segments
+- Regional analysis
 - Credit KPIs
 
-### Day 075
-**Nudge Economics — Consumer Behaviour in E-Commerce**
+---
 
-- Nudges
+## Day 075 — Nudge Economics and Consumer Behaviour in E-Commerce
+
+Topics:
+
 - Consumer behaviour
-- Recommendations
+- Nudges
+- Default recommendation
+- Free shipping message
 - Social proof
+- Limited time message
 - Conversion
 - Revenue per visit
 
-### Day 076
-**PayBuddy Case — Main Players and Dataset**
+---
 
-- Financial players
+## Day 076 — PayBuddy Case: Main Players and Dataset
+
+Topics:
+
 - Banks
 - NBFCs
 - Insurance
+- Capital markets
 - FinTech
-- Products
-- Customer segments
-
-### Day 077
-**Review of Data and Basic Statistics**
-
-- Data quality
-- Missing values
-- Basic statistics
-- Correlation
-- Player analysis
-- Industry analysis
-- Region analysis
-
-### Day 078
-**Segment Analysis**
-
-- Customer segments
-- Activity levels
-- Customer value
 - Digital adoption
-- Segment comparison
-
-### Day 079
-**Business and Financial Data Interpretation**
-
-- Business metrics
-- Financial indicators
-- Customer behaviour
-- Segment insights
-- Decision-oriented analysis
-
-### Day 080
-**A/B Testing Introduction**
-
-- Experiment design
-- Control group
-- Treatment group
-- Hypothesis
-- Conversion
-- Experiment metrics
+- Customer activity
+- Transaction value
 
 ---
 
-# 🟥 Week 11 — A/B Testing and Credit Risk
+## Day 077 — Review of Data and Basic Statistics
 
-### Day 081
-**A/B Testing of PayLater Nudges**
+Topics:
 
-- PayLater
+- Data quality
+- Basic statistics
+- Mean
+- Median
+- Standard deviation
+- Correlation
+- Player analysis
+- Industry analysis
+
+---
+
+## Day 078 — Segment Analysis
+
+Topics:
+
+- Customer segments
+- Activity levels
+- Low activity
+- Medium activity
+- High activity
+- Customer value
+- Engagement index
+
+---
+
+## Day 079 — Business Finance Analysis Practice
+
+Topics:
+
+- Finance KPIs
+- Revenue
+- Cost
+- Customer activity
+- Transaction analysis
+- Business interpretation
+
+---
+
+## Day 080 — A/B Testing Introduction
+
+Topics:
+
+- A/B testing
+- Control group
+- Treatment group
+- Experiment design
+- Conversion
+- Metrics
+- Business questions
+
+---
+
+# 🧪 Days 081–087 — A/B Testing & Credit Risk
+
+## Day 081 — A/B Testing of PayLater Nudges
+
+Topics:
+
 - Control
 - Treatment
 - Nudge
 - Click rate
-- Conversion rate
+- PayLater conversion
 - Repayment rate
-- Lift
+- Absolute lift
+- Relative lift
 
-### Day 082
-**A/B Testing Presentation**
+---
 
+## Day 082 — A/B Testing Presentation
+
+Topics:
+
+- Business question
 - Experiment design
 - Sample
 - Control vs treatment
@@ -845,137 +1136,146 @@ The final part extends the learning into Power BI and a complete business analyt
 - Regional analysis
 - Presentation
 
-### Day 083
-**What is Credit Risk Analysis?**
+---
+
+## Day 083 — What is Credit Risk Analysis
+
+Topics:
 
 - Credit risk
+- Loan exposure
 - Credit score
-- DTI
-- Delinquency
+- Debt-to-income ratio
+- Delinquencies
 - Default
-- High-risk customers
-- Risk framework
+- Risk levels
 
-### Day 084
-**Explanation of Credit Risk Dataset**
+---
 
-- Customer variables
+## Day 084 — Explanation of Credit Risk Dataset
+
+Topics:
+
+- Customer data
+- Employment type
+- Loan product
 - Income
 - Loan amount
 - Tenure
 - Credit score
-- DTI
-- Default
-- Risk indicators
+- Debt-to-income
+- Default flag
 
-### Day 085
-**Credit Risk Analysis — Review of Data**
+---
+
+## Day 085 — Credit Risk Analysis: Review of Data
+
+Topics:
 
 - Missing values
-- Duplicates
+- Duplicate checks
 - Numeric review
 - Category review
 - Product risk
 - Regional risk
+- Employment analysis
 - Outcome analysis
 
-### Day 086
-**Credit Risk Analysis — Monthly Trends**
+---
 
-- Monthly exposure
+## Day 086 — Credit Risk Analysis Working
+
+Topics:
+
+- Risk score
+- Risk band
+- Credit score band
 - Default rate
-- Average credit score
-- Average DTI
-- High-risk share
-- Product trends
-- Regional trends
-
-### Day 087
-**Credit Risk Analysis — Presentation**
-
-- Business question
-- Dataset
-- Portfolio trend
-- Product analysis
-- Regional analysis
-- KPI summary
-- Business interpretation
-- Limitations
-- Next steps
+- High-risk customers
+- Loan exposure
+- Risk KPIs
 
 ---
 
-# 🟥 Week 12 — Business Operations and Final Analytics
+## Day 087 — Credit Risk Analysis Presentation
 
-### Day 088
-**How Businesses Operate**
+Topics:
 
-- Business models
+- Credit risk presentation
+- Monthly default rate
+- Loan exposure
+- Credit score
+- High-risk share
+- Product exposure
+- Regional analysis
+
+---
+
+# 🏢 Days 088–090 — Business Operations & Course Review
+
+## Day 088 — How Businesses Operate
+
+Topics:
+
+- Business operations
 - Business functions
-- Operations
 - Customers
 - Products
+- Services
 - Revenue
 - Costs
-- Business processes
-
-### Day 089
-**Business Processes and Data Flow**
-
-- Business process
-- Data generation
-- Data collection
-- Data flow
-- Operational metrics
-- Business reporting
-
-### Day 090
-**Business Data Management Course Review**
-
-- Economics
-- Excel
-- Financial analysis
-- Sales analytics
-- Inventory
-- HR
-- FinTech
-- A/B testing
-- Credit risk
-- Business operations
+- Processes
+- KPIs
+- Business performance
 
 ---
 
-# 🟦 Business Analytics Extension
+## Day 089 — Business Operations Analysis
 
-The final ten days extend the course learning into practical business analytics.
+Topics:
+
+- Operational data
+- Process analysis
+- Revenue analysis
+- Cost analysis
+- Customer segments
+- Business functions
+- KPI analysis
+- Business insights
 
 ---
+
+## Day 090 — Course Review and Business Analytics Workflow
+
+Topics:
+
+- Business understanding
+- Data understanding
+- Data cleaning
+- Data analysis
+- KPI development
+- Visualisation
+- Dashboard
+- Business insights
+- Presentation
+
+---
+
+# 🚀 Days 091–100 — Practical Extension
 
 ## Day 091 — Excel Revision
 
 Topics:
 
-- Excel formulas
-- Lookup functions
-- Conditional functions
-- Pivot tables
-- Charts
-- Data cleaning
-- Business calculations
-- Dashboard basics
-
-Practice:
-
-- SUM
-- AVERAGE
-- COUNT
-- IF
-- COUNTIF
-- SUMIF
-- COUNTIFS
-- SUMIFS
+- Excel fundamentals
+- Formulas
+- Functions
 - VLOOKUP
+- SUMIF
+- COUNTIF
 - Pivot Tables
+- Charts
+- Conditional formatting
 
 ---
 
@@ -984,17 +1284,12 @@ Practice:
 Topics:
 
 - Missing values
-- Duplicate records
-- Incorrect categories
+- Duplicates
 - Data types
+- Categories
 - Outliers
-- Standardisation
 - Data validation
-- Data quality checks
-
-Workflow:
-
-Raw Data → Review → Clean → Validate → Analyse
+- Data dictionary
 
 ---
 
@@ -1004,21 +1299,11 @@ Topics:
 
 - Sales revenue
 - Units sold
-- Customers
-- Products
-- Regions
-- Channels
-- Monthly trends
-- Growth
-- Contribution
-
-KPIs:
-
-- Total Sales
-- Total Units
-- Average Order Value
-- Revenue Growth
-- Product Contribution
+- Average order value
+- Product analysis
+- Customer analysis
+- Regional analysis
+- Sales KPIs
 
 ---
 
@@ -1026,23 +1311,14 @@ KPIs:
 
 Topics:
 
-- Inventory
 - Opening stock
 - Purchases
 - Sales
 - Closing stock
 - Inventory turnover
-- Days of inventory
+- DSI
 - Reorder point
 - Safety stock
-
-KPIs:
-
-- Closing Inventory
-- Inventory Turnover
-- Days of Inventory
-- Reorder Point
-- Inventory Gap
 
 ---
 
@@ -1050,24 +1326,14 @@ KPIs:
 
 Topics:
 
-- Employee data
-- Departments
+- Employees
 - Recruitment
 - Attrition
 - Performance
+- Salary
 - Training
 - Attendance
-- Salary
-- Diversity
-
-KPIs:
-
-- Employee Count
-- Attrition Rate
-- Average Salary
-- Average Performance
-- Training Hours
-- Attendance
+- HR KPIs
 
 ---
 
@@ -1075,22 +1341,13 @@ KPIs:
 
 Topics:
 
-- Customer segmentation
-- Customer value
-- Orders
+- Customer segments
+- Customer activity
 - Revenue
+- Purchase behaviour
 - Retention
-- Customer behaviour
-- Customer satisfaction
-- Engagement
-
-KPIs:
-
-- Customer Count
-- Revenue per Customer
-- Average Order Value
-- Customer Activity
-- Customer Segment Share
+- Customer value
+- Customer KPIs
 
 ---
 
@@ -1099,23 +1356,12 @@ KPIs:
 Topics:
 
 - Experiment design
-- Control
-- Treatment
-- Sample
-- Conversion
-- Click rate
+- Control group
+- Treatment group
+- Conversion rate
 - Lift
-- Relative lift
 - Segment analysis
-
-Practice:
-
-- Define hypothesis
-- Calculate conversion rate
-- Compare variants
-- Calculate absolute lift
-- Calculate relative lift
-- Interpret results carefully
+- Business interpretation
 
 ---
 
@@ -1126,19 +1372,10 @@ Topics:
 - Credit score
 - Loan exposure
 - DTI
-- Delinquency
-- Default
+- Delinquencies
+- Default rate
 - Risk bands
-- Portfolio monitoring
-- Risk trends
-
-KPIs:
-
-- Average Credit Score
-- Default Rate
-- High-Risk Share
-- Loan Exposure
-- Average DTI
+- High-risk customers
 
 ---
 
@@ -1146,437 +1383,428 @@ KPIs:
 
 Topics:
 
-- Power BI Desktop
+- Power BI
 - Data import
 - Power Query
-- Data cleaning
-- Data modelling
+- Data transformation
 - Relationships
-- DAX basics
 - Measures
 - Visualisations
-- Interactive dashboards
-
-Dashboard practice:
-
-- KPI cards
-- Bar charts
-- Line charts
-- Donut charts
-- Slicers
-- Tables
-- Trend visuals
-
----
-
-# 🏆 Day 100 — Final Business Analytics Project
-
-Day 100 combines the major concepts learned throughout the 100-day roadmap.
-
-## Project Objective
-
-Build a complete business analytics project from raw data to business presentation.
-
-## Recommended Workflow
-
-Raw Data
-
-↓
-
-Data Cleaning
-
-↓
-
-Data Quality Review
-
-↓
-
-Business Questions
-
-↓
-
-KPI Definition
-
-↓
-
-Exploratory Analysis
-
-↓
-
-Trend Analysis
-
-↓
-
-Segmentation
-
-↓
-
-Visualisation
-
-↓
-
-Dashboard
-
-↓
-
-Business Insights
-
-↓
-
-Presentation
-
-## Project Components
-
-### 1. Dataset
-
-Select a business dataset.
-
-Possible domains:
-
-- Sales
-- E-commerce
-- Finance
-- HR
-- Inventory
-- Customer Analytics
-- Marketing
-- Manufacturing
-
-### 2. Data Cleaning
-
-Perform:
-
-- Missing-value check
-- Duplicate check
-- Data-type check
-- Category validation
-- Numeric validation
-- Outlier review
-
-### 3. Business Questions
-
-Define meaningful questions.
-
-Example:
-
-- What drives revenue?
-- Which products contribute most?
-- Which regions perform differently?
-- How does performance change over time?
-- Which customer segments are important?
-
-### 4. KPI Framework
-
-Create relevant KPIs.
-
-Examples:
-
-- Revenue
-- Profit
-- Margin
-- Customers
-- Orders
-- Growth
-- Conversion
-- Retention
-- Inventory
-- Risk
-
-### 5. Analysis
-
-Perform:
-
-- Descriptive analysis
-- Comparative analysis
-- Trend analysis
-- Segment analysis
-- Regional analysis
-- Product analysis
-
-### 6. Visualisation
-
-Create:
-
-- KPI cards
-- Bar charts
-- Line charts
-- Scatter plots
-- Composition charts
-- Trend charts
-
-### 7. Dashboard
-
-Create an interactive dashboard.
-
-Possible tools:
-
-- Excel
-- Power BI
-- Python
-
-### 8. Business Insights
-
-Write concise evidence-based insights.
-
-Each insight should contain:
-
-Metric → Comparison → Observation → Business Context
-
-### 9. Presentation
-
-Prepare a business presentation containing:
-
-1. Business Problem
-2. Dataset
-3. Data Quality
-4. Business Questions
-5. KPIs
-6. Analysis
-7. Dashboard
-8. Key Insights
-9. Limitations
-10. Recommendations / Next Steps
-
----
-
-# 🧰 Main Tools Used
-
-## Excel
-
-Used for:
-
-- Data cleaning
-- Formulas
-- Lookup
-- Pivot tables
-- Charts
-- Dashboards
-- Business analysis
-
-## Python
-
-Used for:
-
-- Pandas
-- NumPy
-- Matplotlib
-- Data analysis
-- Automation
-- Reproducible workflows
-
-## Power BI
-
-Used for:
-
-- Data modelling
-- Power Query
-- DAX
-- Interactive dashboards
+- Dashboard
+- Filters
 - Business reporting
 
 ---
 
-# 📚 Skills Developed
+## Day 100 — Final Business Analytics Project
 
-By completing this roadmap, the practical skill areas covered include:
+Topics:
 
-- Business fundamentals
-- Economics
-- Market estimation
-- Excel
-- Pivot tables
-- Data visualisation
-- Market share analysis
-- E-commerce analytics
-- Sales analytics
-- Inventory analytics
-- Manufacturing analytics
-- Financial analysis
-- HR analytics
-- FinTech analytics
-- Payment analytics
-- Consumer behaviour
-- A/B testing
-- Credit risk analysis
-- Monthly trend analysis
-- Business presentation
-- Dashboard development
-- Power BI
-- Python analytics
+- Business problem
+- Dataset
+- Data cleaning
+- Exploratory analysis
+- KPI development
+- Excel analysis
+- Dashboard
+- Business insights
+- Recommendations based on evidence
+- Final presentation
 
 ---
 
-# 📂 Suggested Repository Structure
+# 🔄 Business Data Analysis Workflow
 
-```text
-Business-Data-Management/
-│
-├── Day_001-Introduction-to-Economics/
-├── Day_002-Basic-Economic-Concepts/
-├── Day_003-Demand-and-Supply/
-├── Day_004-Elasticity-and-Business-Decisions/
-├── Day_005-Excel-Functions-Practical/
-│
-├── ...
-│
-├── Day_087-Credit-Risk-Analysis-Presentation/
-├── Day_088-How-Businesses-Operate/
-├── Day_089-Business-Processes-and-Data-Flow/
-├── Day_090-BDM-Course-Review/
-│
-├── Day_091-Excel-Revision/
-├── Day_092-Business-Data-Cleaning/
-├── Day_093-Sales-Analytics/
-├── Day_094-Inventory-Analytics/
-├── Day_095-HR-Analytics/
-├── Day_096-Customer-Analytics/
-├── Day_097-A-B-Testing-Practice/
-├── Day_098-Credit-Risk-Analysis/
-├── Day_099-Power-BI-Extension/
-│
-└── Day_100-Final-Business-Analytics-Project/
+The complete 100-day learning journey follows this workflow:
 
-# 🗂️ Standard Day Folder Structure
+**Business Understanding**
 
-Each practical day can contain:
+→ **Data Understanding**
 
-```text
-Day_XXX-Topic/
-│
-├── README.md
-├── notes.md
-├── cheat-sheet.md
-├── practice.md
-├── resources.md
-│
-├── Day_XXX_Topic.xlsx
-│
-└── code/
-    └── analysis.py
+→ **Data Cleaning**
 
-# 📊 Standard Analysis Workflow
+→ **Data Analysis**
 
-The overall workflow followed throughout the repository is:
+→ **KPI Development**
 
-```text
-Business Problem
-      ↓
-Data Collection
-      ↓
-Data Review
-      ↓
-Data Cleaning
-      ↓
-Data Transformation
-      ↓
-KPI Calculation
-      ↓
-Exploratory Analysis
-      ↓
-Trend / Segment Analysis
-      ↓
-Visualisation
-      ↓
-Dashboard
-      ↓
-Business Insights
-      ↓
-Presentation
-# 🧠 Business Analytics Mindset
+→ **Visualisation**
 
-The purpose of business data analysis is not simply to create charts.
+→ **Dashboard**
 
-The goal is to answer business questions using data.
+→ **Business Insight**
 
-A good analysis should be:
+→ **Presentation**
+
+The final objective is to take a business dataset and convert it into a structured analytical output that can be understood by a business audience.
+
+---
+
+# 🧰 Tools Used
+
+## Excel
+
+Excel is the primary practical tool for the BDM learning journey.
+
+Important Excel skills include:
+
+- Data entry
+- Data formatting
+- Formulas
+- Functions
+- SUM
+- AVERAGE
+- COUNT
+- COUNTIF
+- SUMIF
+- VLOOKUP
+- Pivot Tables
+- Charts
+- Conditional formatting
+- Data validation
+- KPI calculations
+- Dashboard preparation
+
+---
+
+## Python
+
+Python is used as a supporting analytical tool.
+
+Important libraries include:
+
+- Pandas
+- NumPy
+- Matplotlib
+
+Python helps with:
+
+- Data cleaning
+- Data transformation
+- Aggregation
+- Statistical calculations
+- Visualisation
+- Reproducible analysis
+
+---
+
+## Power BI
+
+Power BI is used as an extension after completing the main practical roadmap.
+
+Important concepts include:
+
+- Power Query
+- Data modelling
+- Relationships
+- Measures
+- Visuals
+- Filters
+- Slicers
+- Dashboards
+
+---
+
+# 📊 Important Business KPIs
+
+During the 100-day journey, different business KPIs are used.
+
+## Sales KPIs
+
+- Total Revenue
+- Total Units
+- Number of Orders
+- Average Order Value
+- Revenue Growth
+- Product Revenue Share
+
+## Inventory KPIs
+
+- Closing Inventory
+- Average Inventory
+- Inventory Turnover
+- Days of Sales of Inventory
+- Safety Stock
+- Reorder Point
+
+## Manufacturing KPIs
+
+- Production Units
+- Sales Units
+- Scrap Units
+- Scrap Rate
+- Gross Margin
+- OEE
+- Plan Achievement
+
+## HR KPIs
+
+- Employee Count
+- Recruitment Cost
+- Selection Rate
+- Days to Fill
+- Attrition
+- Training Hours
+- Attendance
+- Satisfaction
+
+## Finance KPIs
+
+- Revenue
+- Cost
+- Profit
+- Margin
+- Loan Exposure
+- Credit Score
+- Default Rate
+- Risk Share
+
+## Customer KPIs
+
+- Active Customers
+- Transactions
+- Customer Value
+- Engagement
+- Conversion
+- Retention
+
+---
+
+# 📈 Visualisation Skills
+
+The roadmap uses different chart types depending on the analytical question.
+
+Common charts include:
+
+- Column Chart
+- Bar Chart
+- Line Chart
+- Pie Chart
+- Doughnut Chart
+- Scatter Plot
+- Area Chart
+- Combo Chart
+
+Chart selection should depend on the type of business question.
+
+For example:
+
+- Trends → Line Chart
+- Category comparison → Column/Bar Chart
+- Composition → Pie/Doughnut Chart
+- Relationship → Scatter Plot
+- Contribution → Pareto Chart
+
+---
+
+# 🧠 Business Analysis Questions
+
+A business analyst should not only calculate numbers.
+
+The analysis should answer questions such as:
+
+- What happened?
+- Where did it happen?
+- When did it happen?
+- Which category contributed most?
+- Which category contributed least?
+- What changed over time?
+- What relationship exists between two variables?
+- What operational issue is visible?
+- Which KPI requires attention?
+- What evidence supports the business insight?
+
+---
+
+# 🧹 Data Quality Checklist
+
+Before analysis, check:
+
+- Missing values
+- Duplicate records
+- Incorrect data types
+- Invalid categories
+- Incorrect dates
+- Negative values where inappropriate
+- Inconsistent names
+- Outliers
+- Formula errors
+- Incorrect totals
+
+A clean dataset is important before creating business KPIs or dashboards.
+
+---
+
+# 📚 Repository Structure
+
+The repository follows a day-wise learning structure.
+
+Day 001–100 folders contain the practical learning material.
+
+Typical structure:
+
+`Day_XXX_Topic/`
+
+Inside a day folder:
+
+`README.md`
+
+`notes.md`
+
+`cheat-sheet.md`
+
+`practice.md`
+
+`resources.md`
+
+`Excel workbook`
+
+`code/`
+
+The exact files may vary depending on the practical requirement of the day.
+
+---
+
+# 📝 Learning Files
+
+## README.md
+
+Contains:
+
+- Day overview
+- Objectives
+- Topics
+- Workbook information
+- Dashboard overview
+- Key learning outcomes
+
+## notes.md
+
+Contains:
+
+- Detailed concepts
+- Definitions
+- Formulas
+- Explanations
+- Business examples
+
+## cheat-sheet.md
+
+Contains:
+
+- Quick revision
+- Important formulas
+- Excel functions
+- KPI formulas
+- Key concepts
+
+## practice.md
+
+Contains:
+
+- Practice questions
+- Analysis tasks
+- Business cases
+- Interpretation questions
+
+## resources.md
+
+Contains:
+
+- Learning references
+- Documentation
+- Practice resources
+- Extension topics
+
+---
+
+# 🎯 Learning Objectives
+
+By completing this 100-day roadmap, the practical goals are to develop the ability to:
+
+1. Understand business problems.
+2. Understand business datasets.
+3. Review data quality.
+4. Clean business data.
+5. Analyse structured data.
+6. Calculate business KPIs.
+7. Build meaningful visualisations.
+8. Create business dashboards.
+9. Interpret analytical results.
+10. Present business insights clearly.
+
+---
+
+# 💡 Business Insight Framework
+
+A useful business insight should connect:
+
+**Data**
+
+→ **Observation**
+
+→ **Interpretation**
+
+→ **Business Meaning**
+
+For example:
+
+**Data:** Revenue changed across months.
+
+**Observation:** Some months show higher revenue.
+
+**Interpretation:** The monthly pattern should be investigated using product, channel, region, or customer data.
+
+**Business Meaning:** The analysis can help identify the operational or commercial factors associated with the change.
+
+---
+
+# 📊 Dashboard Principles
+
+A business dashboard should be:
 
 - Clear
-- Structured
-- Reproducible
-- Evidence-based
-- Business-focused
+- Simple
+- Relevant
+- Consistent
+- Easy to read
+- KPI-focused
+- Business-oriented
 
-Numbers should be connected to context.
+A dashboard should avoid unnecessary visual elements.
 
-Charts should answer questions.
-
-Insights should be supported by data.
-
----
-
-# 📌 Important Learning Principles
-
-### Principle 1 — Understand the Data
-
-Before analysing anything, understand what every important column means.
-
-### Principle 2 — Define the KPI
-
-Know exactly how a metric is calculated.
-
-### Principle 3 — Check Data Quality
-
-Poor-quality data can produce misleading results.
-
-### Principle 4 — Compare Properly
-
-Use appropriate denominators and comparable periods.
-
-### Principle 5 — Visualise Purposefully
-
-Choose the chart based on the question.
-
-### Principle 6 — Separate Observation and Interpretation
-
-First describe what the data shows.
-
-Then explain the possible business meaning.
-
-### Principle 7 — State Limitations
-
-Every analysis has assumptions and limitations.
-
-### Principle 8 — Reproduce the Work
-
-Python and structured Excel workflows make analysis repeatable.
+Each chart should answer a meaningful business question.
 
 ---
 
-# 🏁 100-Day Completion Path
+# 🔍 Analysis Principles
 
-```text
-Days 001–013
-Business + Economics + Market Estimation
+The learning journey follows these principles:
 
-Days 014–020
-Excel + Pivot Tables + Market Share
+### 1. Understand Before Analysing
 
-Days 021–028
-E-Commerce Analytics
+First understand the business context.
 
-Days 029–037
-Sales + Inventory + Project Planning
+### 2. Check Data Before Calculating
 
-Days 038–047
-Manufacturing + ACE Gears Case
+Review data quality before creating KPIs.
 
-Days 048–057
-Production + Scrap + OEE + Inventory
+### 3. Use Appropriate Metrics
 
-Days 058–071
-HR Analytics
+Choose metrics based on the business question.
 
-Days 072–080
-Finance + FinTech + Consumer Behaviour + A/B Testing
+### 4. Select the Right Chart
 
-Days 081–087
-A/B Testing + Credit Risk
+Use visualisations that communicate the intended comparison or relationship.
 
-Days 088–090
-Business Operations + Course Review
+### 5. Separate Data from Interpretation
 
-Days 091–100
-Practical Business Analytics Extension
+A calculated value is not automatically a business insight.
+
+### 6. Support Insights With Evidence
+
+Business conclusions should be connected to the analysed data.
+
+---
 
 # 🏆 Final Outcome
 
@@ -1604,6 +1832,118 @@ The final goal is to be able to take a business dataset and convert it into a st
 
 ---
 
+# 🌱 Skills Developed
+
+By the end of the roadmap, the practical skill areas include:
+
+- Business Understanding
+- Economics Basics
+- Market Sizing
+- Excel
+- Pivot Tables
+- Data Cleaning
+- Data Analysis
+- Sales Analytics
+- Inventory Analytics
+- Manufacturing Analytics
+- HR Analytics
+- Finance Analytics
+- Customer Analytics
+- A/B Testing
+- Credit Risk Analysis
+- KPI Development
+- Data Visualisation
+- Dashboard Development
+- Business Storytelling
+
+---
+
+# 📌 Final Project Scope
+
+The final project can combine multiple skills learned during the roadmap.
+
+A complete project should include:
+
+- Business problem
+- Business context
+- Dataset
+- Data dictionary
+- Data quality review
+- Data cleaning
+- Exploratory analysis
+- KPI framework
+- Segmentation
+- Trend analysis
+- Category analysis
+- Visualisations
+- Dashboard
+- Business insights
+- Final presentation
+
+---
+
 # 🏅 Badges
 
-![IIT Madras](https://img.shields.io/badge/IIT%20Madras-BS%20Degree-red?style=for-the-badge)
+![Business Analytics](https://img.shields.io/badge/Business-Analytics-blue?style=for-the-badge)
+
+![Excel](https://img.shields.io/badge/Excel-Practical-green?style=for-the-badge)
+
+![Data Analysis](https://img.shields.io/badge/Data-Analysis-orange?style=for-the-badge)
+
+![Dashboard](https://img.shields.io/badge/Dashboard-Development-purple?style=for-the-badge)
+
+![100 Days](https://img.shields.io/badge/100%20Days-Completed-success?style=for-the-badge)
+
+---
+
+# 📅 100-Day Completion Map
+
+| Phase | Days | Main Focus |
+|---|---:|---|
+| Phase 1 | 001–013 | Economics, Business & Market Size |
+| Phase 2 | 014–020 | Excel, Pivot Tables & Market Share |
+| Phase 3 | 021–028 | E-Commerce Analytics |
+| Phase 4 | 029–037 | Sales, Inventory & Project Planning |
+| Phase 5 | 038–047 | Manufacturing & ACE Gears |
+| Phase 6 | 048–057 | Production, Scrap, OEE & Inventory |
+| Phase 7 | 058–071 | HR Analytics |
+| Phase 8 | 072–080 | Finance, FinTech & Consumer Behaviour |
+| Phase 9 | 081–087 | A/B Testing & Credit Risk |
+| Phase 10 | 088–090 | Business Operations & Review |
+| Phase 11 | 091–100 | Practical Extension & Final Project |
+
+---
+
+# 🚀 Completion Statement
+
+This repository represents a structured 100-day practical journey in Business Data Management.
+
+The focus is not only on learning tools but also on understanding how data supports business analysis and decision making.
+
+The journey connects:
+
+**Business → Data → Analysis → KPI → Visualisation → Dashboard → Insight → Presentation**
+
+---
+
+## ⭐ Repository Goal
+
+**Learn business data.**
+
+**Analyse business data.**
+
+**Visualise business data.**
+
+**Explain business insights.**
+
+**Build practical analytics projects.**
+
+---
+
+# 👩‍💻 Author
+
+**Saloni Tiwari**
+
+**IIT Madras BS Degree — Diploma Level**
+
+**Business Data Management — 100 Days Learning Journey**
