@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 039 - Responsive Cards and Layouts</title>
+
+    <style>
+        /* ==============================
+           Global Styles
+        ============================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ==============================
+           Header
+        ============================== */
+
+        .site-header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+        }
+
+        .site-title {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+
+        .site-subtitle {
+            margin: 0.5rem 0 0;
+        }
+
+        /* ==============================
+           Navbar
+        ============================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: #333;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            list-style: none;
+            margin: 0;
+            padding: 0.8rem;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0.6rem 0.9rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+
+            transition:
+                background-color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link:focus-visible {
+            background-color: #555;
+            transform: translateY(-2px);
+        }
+
+        .nav-link:focus-visible {
+            outline: 2px solid white;
+            outline-offset: 3px;
+        }
+
+        /* ==============================
+           General Sections
+        ============================== */
+
+        .section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+        }
+
+        .section-title {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Page Layout
+        ============================== */
+
+        .page-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .sidebar,
+        .main-content {
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+
+        .sidebar h3,
+        .main-content h3 {
+            margin-top: 0;
+        }
+
+        /* ==============================
+           Responsive Course Cards
+        ============================== */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .card:hover,
+        .card:focus-within {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+        }
+
+        .card-link {
+            margin-top: auto;
+            color: #222;
+            font-weight: bold;
+        }
+
+        .card-link:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 3px;
+        }
+
+        /* ==============================
+           Project Cards
+        ============================== */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f8f8f8;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+        }
+
+        .technology-list {
+            margin-bottom: 1rem;
+            padding-left: 1.2rem;
+        }
+
+        /* ==============================
+           Progress Cards
+        ============================== */
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .progress-card {
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #bbb;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+
+        .progress-value {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* ==============================
+           Contact
+        ============================== */
+
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: bold;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            padding: 0.8rem 1.5rem;
+            border: 1px solid #222;
+            border-radius: 6px;
+            background-color: #222;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+
+            transition:
+                transform 0.2s ease,
+                opacity 0.2s ease;
+        }
+
+        .submit-button:hover,
+        .submit-button:focus-visible {
+            transform: translateY(-2px);
+            opacity: 0.85;
+        }
+
+        .submit-button:focus-visible {
+            outline: 2px solid #222;
+            outline-offset: 3px;
+        }
+
+        /* ==============================
+           Tablet
+        ============================== */
+
+        @media (min-width: 700px) {
+
+            .page-layout {
+                grid-template-columns: 220px 1fr;
+            }
+
+            .site-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* ==============================
+           Small Mobile
+        ============================== */
+
+        @media (max-width: 500px) {
+
+            .section {
+                padding: 1.2rem;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-link {
+                text-align: center;
+            }
+
+            .site-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ==============================
+           Reduced Motion
+        ============================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 039
+            Topic: Building Responsive Cards and Layouts
+        */
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 039
+        Topic: Building Responsive Cards and Layouts
+    -->
+
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">
+                Responsive Student Dashboard
+            </h1>
+
+            <p class="site-subtitle">
+                Day 039 — Building Responsive Cards and Layouts
+            </p>
+        </div>
+    </header>
+
+    <nav class="navbar" aria-label="Main navigation">
+
+        <div class="container">
+
+            <ul class="nav-list">
+
+                <li>
+                    <a class="nav-link" href="#courses">
+                        Courses
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#projects">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#progress">
+                        Progress
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <main class="container">
+
+        <section class="section">
+
+            <h2 class="section-title">
+                Responsive Page Layout
+            </h2>
+
+            <div class="page-layout">
+
+                <aside class="sidebar">
+
+                    <h3>Sidebar</h3>
+
+                    <p>
+                        Student Dashboard
+                    </p>
+
+                    <p>
+                        Learning Progress
+                    </p>
+
+                    <p>
+                        Courses
+                    </p>
+
+                    <p>
+                        Projects
+                    </p>
+
+                </aside>
+
+                <div class="main-content">
+
+                    <h3>Main Content</h3>
+
+                    <p>
+                        This layout uses CSS Grid. On smaller screens,
+                        the sidebar appears above the main content.
+                        On larger screens, they form two columns.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="courses" class="section">
+
+            <h2 class="section-title">
+                Course Cards
+            </h2>
+
+            <p>
+                These cards use
+                <strong>auto-fit</strong> and
+                <strong>minmax()</strong>.
+            </p>
+
+            <div class="card-grid">
+
+                <article class="card">
+
+                    <h3>DBMS</h3>
+
+                    <p>
+                        Database Management Systems and
+                        database fundamentals.
+                    </p>
+
+                    <a class="card-link" href="#">
+                        View Course
+                    </a>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>PDSA</h3>
+
+                    <p>
+                        Programming, Data Structures and
+                        Algorithms.
+                    </p>
+
+                    <a class="card-link" href="#">
+                        View Course
+                    </a>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>MLF</h3>
+
+                    <p>
+                        Machine Learning Foundations and
+                        fundamental ML concepts.
+                    </p>
+
+                    <a class="card-link" href="#">
+                        View Course
+                    </a>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>MAD 1</h3>
+
+                    <p>
+                        Modern Application Development using
+                        HTML, CSS, JavaScript and Flask.
+                    </p>
+
+                    <a class="card-link" href="#">
+                        View Course
+                    </a>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>BDM</h3>
+
+                    <p>
+                        Business Data Management and
+                        practical database work.
+                    </p>
+
+                    <a class="card-link" href="#">
+                        View Course
+                    </a>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>MLT</h3>
+
+                    <p>
+                        Machine Learning Techniques and
+                        practical machine learning concepts.
+                    </p>
+
+                    <a class="card-link" href="#">
+                        View Course
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section id="projects" class="section">
+
+            <h2 class="section-title">
+                Project Cards
+            </h2>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+
+                    <h3>Student Performance Dashboard</h3>
+
+                    <p>
+                        A data analysis project for studying
+                        student performance.
+                    </p>
+
+                    <ul class="technology-list">
+                        <li>Python</li>
+                        <li>Pandas</li>
+                        <li>Visualization</li>
+                    </ul>
+
+                    <a class="card-link" href="#">
+                        View Project
+                    </a>
+
+                </article>
+
+                <article class="project-card">
+
+                    <h3>Economic Analysis Series</h3>
+
+                    <p>
+                        A collection of projects exploring
+                        economic concepts through data.
+                    </p>
+
+                    <ul class="technology-list">
+                        <li>Python</li>
+                        <li>Data Analysis</li>
+                        <li>Charts</li>
+                    </ul>
+
+                    <a class="card-link" href="#">
+                        View Project
+                    </a>
+
+                </article>
+
+                <article class="project-card">
+
+                    <h3>Web Development Hub</h3>
+
+                    <p>
+                        A structured repository for learning
+                        Modern Application Development.
+                    </p>
+
+                    <ul class="technology-list">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+
+                    <a class="card-link" href="#">
+                        View Project
+                    </a>
+
+                </article>
+
+                <article class="project-card">
+
+                    <h3>Responsive Portfolio</h3>
+
+                    <p>
+                        A responsive portfolio demonstrating
+                        modern CSS layout techniques.
+                    </p>
+
+                    <ul class="technology-list">
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>Flexbox</li>
+                        <li>Grid</li>
+                    </ul>
+
+                    <a class="card-link" href="#">
+                        View Project
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section id="progress" class="section">
+
+            <h2 class="section-title">
+                Learning Progress
+            </h2>
+
+            <div class="progress-grid">
+
+                <article class="progress-card">
+
+                    <p class="progress-value">
+                        39
+                    </p>
+
+                    <p>
+                        Learning Days
+                    </p>
+
+                </article>
+
+                <article class="progress-card">
+
+                    <p class="progress-value">
+                        HTML
+                    </p>
+
+                    <p>
+                        Completed
+                    </p>
+
+                </article>
+
+                <article class="progress-card">
+
+                    <p class="progress-value">
+                        CSS
+                    </p>
+
+                    <p>
+                        In Progress
+                    </p>
+
+                </article>
+
+                <article class="progress-card">
+
+                    <p class="progress-value">
+                        MAD 1
+                    </p>
+
+                    <p>
+                        Learning
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section id="contact" class="section">
+
+            <h2 class="section-title">
+                Contact
+            </h2>
+
+            <form
+                class="contact-form"
+                action="#"
+                method="post"
+            >
+
+                <div class="form-group">
+
+                    <label
+                        class="form-label"
+                        for="name"
+                    >
+                        Name
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label
+                        class="form-label"
+                        for="email"
+                    >
+                        Email
+                    </label>
+
+                    <input
+                        class="form-input"
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label
+                        class="form-label"
+                        for="message"
+                    >
+                        Message
+                    </label>
+
+                    <textarea
+                        class="form-textarea"
+                        id="message"
+                        name="message"
+                        placeholder="Write your message"
+                        minlength="10"
+                        required
+                    ></textarea>
+
+                </div>
+
+                <button
+                    class="submit-button"
+                    type="submit"
+                >
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="site-header">
+
+        <p>Author: Saloni Tiwari</p>
+
+        <p>
+            Programme: IIT Madras BS Degree — Diploma Level
+        </p>
+
+        <p>Day: 039</p>
+
+        <p>Topic: Building Responsive Cards and Layouts</p>
+
+    </footer>
+
+</body>
+</html>
