@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Author: Saloni Tiwari
+    Programme: IIT Madras BS Degree — Diploma Level
+    Day: 046
+    Topic: Functions
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 046 - JavaScript Functions</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        button {
+            border: none;
+            padding: 11px 16px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 10px;
+            min-height: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🔧 JavaScript Functions</h1>
+        <p>Day 046 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>📚 What Is a Function?</h2>
+
+            <p>
+                A function is a reusable block of JavaScript code that
+                performs a specific task.
+            </p>
+
+            <pre>function greet() {
+    console.log("Hello!");
+}
+
+greet();</pre>
+        </section>
+
+        <br>
+
+        <section class="grid">
+
+            <article class="card">
+                <h2>📥 Parameters</h2>
+
+                <pre>function greet(name) {
+    console.log("Hello " + name);
+}
+
+greet("Saloni");</pre>
+
+                <p>
+                    <strong>name</strong> is the parameter and
+                    <strong>"Saloni"</strong> is the argument.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>↩️ return</h2>
+
+                <pre>function add(a, b) {
+    return a + b;
+}
+
+const result = add(10, 20);</pre>
+
+                <p>The function returns a reusable value.</p>
+            </article>
+
+            <article class="card">
+                <h2>➡️ Arrow Function</h2>
+
+                <pre>const square = x => x * x;
+
+console.log(square(5));</pre>
+
+                <p>Arrow functions provide concise syntax.</p>
+            </article>
+
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>📊 Function Types</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Function Declaration</td>
+                        <td>function add(a, b) { ... }</td>
+                    </tr>
+
+                    <tr>
+                        <td>Function Expression</td>
+                        <td>const add = function(a, b) { ... }</td>
+                    </tr>
+
+                    <tr>
+                        <td>Arrow Function</td>
+                        <td>const add = (a, b) => a + b</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🎓 Student Marks Functions</h2>
+
+            <p>
+                Marks:
+                <strong id="marks"></strong>
+            </p>
+
+            <button onclick="showTotal()">Calculate Total</button>
+            <button onclick="showAverage()">Calculate Average</button>
+            <button onclick="showHighest()">Find Highest</button>
+            <button onclick="showResult()">Check Result</button>
+
+            <div class="result" id="studentOutput">
+                Click a button to execute a function.
+            </div>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🧮 Function Calculator</h2>
+
+            <p>
+                This example uses separate reusable functions for
+                arithmetic operations.
+            </p>
+
+            <button onclick="calculateAddition()">10 + 20</button>
+            <button onclick="calculateMultiplication()">10 × 20</button>
+
+            <div class="result" id="calculatorOutput">
+                Calculator output will appear here.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Author:</strong> Saloni Tiwari</p>
+        <p><strong>Programme:</strong> IIT Madras BS Degree — Diploma Level</p>
+        <p><strong>Day:</strong> 046</p>
+        <p><strong>Topic:</strong> Functions</p>
+        <p>Modern Application Development — JavaScript Learning Path 🚀</p>
+    </footer>
+
+    <script>
+        const marks = [85, 90, 78, 92, 88];
+
+        document.getElementById("marks").textContent = marks.join(", ");
+
+        function calculateTotal(numbers) {
+            let total = 0;
+
+            for (let i = 0; i < numbers.length; i++) {
+                total += numbers[i];
+            }
+
+            return total;
+        }
+
+        function calculateAverage(numbers) {
+            return calculateTotal(numbers) / numbers.length;
+        }
+
+        function findHighest(numbers) {
+            let highest = numbers[0];
+
+            for (let i = 1; i < numbers.length; i++) {
+                if (numbers[i] > highest) {
+                    highest = numbers[i];
+                }
+            }
+
+            return highest;
+        }
+
+        function checkResult(average) {
+            if (average >= 40) {
+                return "Pass";
+            }
+
+            return "Fail";
+        }
+
+        function showTotal() {
+            const total = calculateTotal(marks);
+
+            document.getElementById("studentOutput").textContent =
+                "Total Marks: " + total;
+        }
+
+        function showAverage() {
+            const average = calculateAverage(marks);
+
+            document.getElementById("studentOutput").textContent =
+                "Average Marks: " + average.toFixed(2);
+        }
+
+        function showHighest() {
+            const highest = findHighest(marks);
+
+            document.getElementById("studentOutput").textContent =
+                "Highest Marks: " + highest;
+        }
+
+        function showResult() {
+            const average = calculateAverage(marks);
+            const result = checkResult(average);
+
+            document.getElementById("studentOutput").textContent =
+                "Average: " + average.toFixed(2) + " — Result: " + result;
+        }
+
+        const add = function(a, b) {
+            return a + b;
+        };
+
+        const multiply = (a, b) => a * b;
+
+        function calculateAddition() {
+            const result = add(10, 20);
+
+            document.getElementById("calculatorOutput").textContent =
+                "10 + 20 = " + result;
+        }
+
+        function calculateMultiplication() {
+            const result = multiply(10, 20);
+
+            document.getElementById("calculatorOutput").textContent =
+                "10 × 20 = " + result;
+        }
+    </script>
+
+</body>
+</html>
