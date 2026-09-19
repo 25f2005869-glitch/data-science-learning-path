@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 042
+        Topic: Variables and Data Types
+    -->
+
+    <title>Day 042 - Variables and Data Types</title>
+
+    <style>
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 042
+            Topic: Variables and Data Types
+        */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        .container {
+            width: min(92%, 1050px);
+            margin: 0 auto;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #d1d5db;
+        }
+
+        main {
+            padding: 45px 0;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            margin-bottom: 8px;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(180px, 1fr)
+            );
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 12px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+
+        .type-name {
+            color: #1d4ed8;
+            font-weight: 700;
+        }
+
+        .code-box {
+            margin-top: 20px;
+            padding: 18px;
+            background: #111827;
+            color: #f9fafb;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+
+        .variable-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .variable-table th,
+        .variable-table td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .variable-table th {
+            background: #eff6ff;
+        }
+
+        .profile {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(200px, 1fr)
+            );
+            gap: 15px;
+        }
+
+        .profile-item {
+            padding: 18px;
+            border-left: 4px solid #2563eb;
+            background: #f8fafc;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 10px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            color: #065f46;
+            font-weight: 700;
+        }
+
+        button {
+            margin-top: 18px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-weight: 700;
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+        button:hover,
+        button:focus-visible {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        footer {
+            padding: 25px 0;
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+            color: #d1d5db;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+
+            .variable-table {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Variables and Data Types</h1>
+            <p>Day 042 — JavaScript Fundamentals</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <!-- Variables -->
+            <section>
+                <h2>1. JavaScript Variables</h2>
+
+                <p>
+                    Variables allow us to store and work with values
+                    in a JavaScript program.
+                </p>
+
+                <div class="code-box">
+                    let studentName = "Saloni";<br>
+                    const age = 17;<br>
+                    let score = 90;
+                </div>
+            </section>
+
+            <!-- Let Const Var -->
+            <section>
+                <h2>2. let, const and var</h2>
+
+                <table class="variable-table">
+                    <thead>
+                        <tr>
+                            <th>Keyword</th>
+                            <th>Reassignment</th>
+                            <th>Scope</th>
+                            <th>Modern Use</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>let</td>
+                            <td>Allowed</td>
+                            <td>Block</td>
+                            <td>When value changes</td>
+                        </tr>
+
+                        <tr>
+                            <td>const</td>
+                            <td>Not allowed</td>
+                            <td>Block</td>
+                            <td>Preferred by default</td>
+                        </tr>
+
+                        <tr>
+                            <td>var</td>
+                            <td>Allowed</td>
+                            <td>Function</td>
+                            <td>Generally avoid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Data Types -->
+            <section>
+                <h2>3. JavaScript Data Types</h2>
+
+                <div class="concept-grid">
+
+                    <article class="card">
+                        <h3>String</h3>
+                        <p class="type-name">"JavaScript"</p>
+                        <p>Represents text.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Number</h3>
+                        <p class="type-name">100</p>
+                        <p>Represents numeric values.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Boolean</h3>
+                        <p class="type-name">true</p>
+                        <p>Represents true or false.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Undefined</h3>
+                        <p class="type-name">undefined</p>
+                        <p>Usually means no value has been assigned.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Null</h3>
+                        <p class="type-name">null</p>
+                        <p>Intentional absence of a value.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>BigInt</h3>
+                        <p class="type-name">1000n</p>
+                        <p>For very large integers.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Symbol</h3>
+                        <p class="type-name">Symbol()</p>
+                        <p>Creates a unique primitive value.</p>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Student Profile -->
+            <section>
+                <h2>4. Student Variables</h2>
+
+                <div class="profile">
+                    <article class="profile-item">
+                        <h3>Name</h3>
+                        <p id="studentName"></p>
+                    </article>
+
+                    <article class="profile-item">
+                        <h3>Age</h3>
+                        <p id="studentAge"></p>
+                    </article>
+
+                    <article class="profile-item">
+                        <h3>Programme</h3>
+                        <p id="programme"></p>
+                    </article>
+
+                    <article class="profile-item">
+                        <h3>Course</h3>
+                        <p id="course"></p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- typeof -->
+            <section>
+                <h2>5. typeof Operator</h2>
+
+                <p>
+                    The <strong>typeof</strong> operator tells us
+                    the type of a value.
+                </p>
+
+                <div class="code-box">
+                    typeof "Saloni" → "string"<br>
+                    typeof 17 → "number"<br>
+                    typeof true → "boolean"<br>
+                    typeof undefined → "undefined"<br>
+                    typeof null → "object"
+                </div>
+            </section>
+
+            <!-- Dynamic Typing -->
+            <section>
+                <h2>6. Dynamic Typing</h2>
+
+                <p>
+                    JavaScript is dynamically typed. A variable can
+                    hold values of different types at different times.
+                </p>
+
+                <div class="code-box">
+                    let value = 100;<br>
+                    value = "Hello";<br>
+                    value = true;
+                </div>
+            </section>
+
+            <!-- Interaction -->
+            <section>
+                <h2>7. JavaScript Practice</h2>
+
+                <p>
+                    Click the button to display the current variable
+                    values and their data types.
+                </p>
+
+                <button id="showData" type="button">
+                    Show Variable Data
+                </button>
+
+                <div id="output">
+                    Waiting for JavaScript...
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 Saloni Tiwari — Day 042
+            </p>
+
+            <p>
+                IIT Madras BS Degree — Diploma Level |
+                Variables and Data Types
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 042
+            Topic: Variables and Data Types
+        */
+
+        // Variables
+        const studentName = "Saloni";
+        const studentAge = 17;
+        const programme =
+            "IIT Madras BS Degree — Diploma Level";
+        const course =
+            "Modern Application Development";
+
+        let score = 90;
+
+        // Primitive data type examples
+        const studentNameType = typeof studentName;
+        const studentAgeType = typeof studentAge;
+        const scoreType = typeof score;
+
+        const isStudent = true;
+        const studentStatusType = typeof isStudent;
+
+        let result;
+        const resultType = typeof result;
+
+        const selectedUser = null;
+        const nullType = typeof selectedUser;
+
+        const largeNumber =
+            12345678901234567890n;
+
+        const largeNumberType = typeof largeNumber;
+
+        const uniqueId = Symbol("student");
+        const symbolType = typeof uniqueId;
+
+        // Display student variables
+        document.getElementById("studentName").textContent =
+            studentName;
+
+        document.getElementById("studentAge").textContent =
+            studentAge;
+
+        document.getElementById("programme").textContent =
+            programme;
+
+        document.getElementById("course").textContent =
+            course;
+
+        // Console practice
+        console.log("Student Name:", studentName);
+        console.log("Student Name Type:", studentNameType);
+
+        console.log("Age:", studentAge);
+        console.log("Age Type:", studentAgeType);
+
+        console.log("Score:", score);
+        console.log("Score Type:", scoreType);
+
+        console.log("Is Student:", isStudent);
+        console.log("Boolean Type:", studentStatusType);
+
+        console.log("Undefined Value:", result);
+        console.log("Undefined Type:", resultType);
+
+        console.log("Null Value:", selectedUser);
+        console.log("typeof null:", nullType);
+
+        console.log("BigInt:", largeNumber);
+        console.log("BigInt Type:", largeNumberType);
+
+        console.log("Symbol:", uniqueId);
+        console.log("Symbol Type:", symbolType);
+
+        // Button interaction
+        const showDataButton =
+            document.getElementById("showData");
+
+        const output =
+            document.getElementById("output");
+
+        showDataButton.addEventListener(
+            "click",
+            function () {
+                output.innerHTML =
+                    "Name: " + studentName +
+                    " (" + studentNameType + ")<br>" +
+                    "Age: " + studentAge +
+                    " (" + studentAgeType + ")<br>" +
+                    "Score: " + score +
+                    " (" + scoreType + ")<br>" +
+                    "Is Student: " + isStudent +
+                    " (" + studentStatusType + ")";
+            }
+        );
+    </script>
+
+</body>
+</html>
