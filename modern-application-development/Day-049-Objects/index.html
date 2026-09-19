@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Author: Saloni Tiwari
+    Programme: IIT Madras BS Degree — Diploma Level
+    Day: 049
+    Topic: Objects
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 049 - JavaScript Objects</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        button {
+            border: none;
+            padding: 11px 16px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 10px;
+            min-height: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🧩 JavaScript Objects</h1>
+        <p>Day 049 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>📚 What Is an Object?</h2>
+
+            <p>
+                An object stores related information as key-value pairs.
+            </p>
+
+            <pre>const student = {
+    name: "Saloni",
+    age: 17,
+    course: "MAD1"
+};</pre>
+        </section>
+
+        <br>
+
+        <section class="grid">
+
+            <article class="card">
+                <h2>🔑 Dot Notation</h2>
+
+                <pre>student.name
+student.age
+student.course</pre>
+
+                <p>
+                    Used when the property name is known directly.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>🔑 Bracket Notation</h2>
+
+                <pre>student["name"]
+
+const key = "course";
+student[key]</pre>
+
+                <p>
+                    Useful when the property name is dynamic.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>🔧 Object Method</h2>
+
+                <pre>const student = {
+    name: "Saloni",
+
+    greet() {
+        return `Hello ${this.name}`;
+    }
+};</pre>
+            </article>
+
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🧰 Object Operations</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Access</td>
+                        <td>student.name</td>
+                    </tr>
+
+                    <tr>
+                        <td>Add</td>
+                        <td>student.email = "example@email.com"</td>
+                    </tr>
+
+                    <tr>
+                        <td>Update</td>
+                        <td>student.age = 18</td>
+                    </tr>
+
+                    <tr>
+                        <td>Delete</td>
+                        <td>delete student.email</td>
+                    </tr>
+
+                    <tr>
+                        <td>Keys</td>
+                        <td>Object.keys(student)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Values</td>
+                        <td>Object.values(student)</td>
+                    </tr>
+
+                    <tr>
+                        <td>Entries</td>
+                        <td>Object.entries(student)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🎓 Student Object</h2>
+
+            <p id="studentDetails"></p>
+
+            <button onclick="showProfile()">Show Profile</button>
+            <button onclick="showTotal()">Calculate Total</button>
+            <button onclick="showAverage()">Calculate Average</button>
+            <button onclick="showResult()">Check Result</button>
+
+            <div class="result" id="studentOutput">
+                Click a button to use the student object.
+            </div>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>📚 Array of Objects</h2>
+
+            <p>
+                An array can contain multiple objects representing similar
+                entities.
+            </p>
+
+            <pre>const students = [
+    { name: "Asha", marks: 85 },
+    { name: "Riya", marks: 92 },
+    { name: "Neha", marks: 78 }
+];</pre>
+
+            <div class="result" id="studentsOutput"></div>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🔍 Object.keys(), values() and entries()</h2>
+
+            <div class="result" id="objectMethodsOutput"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Author:</strong> Saloni Tiwari</p>
+        <p><strong>Programme:</strong> IIT Madras BS Degree — Diploma Level</p>
+        <p><strong>Day:</strong> 049</p>
+        <p><strong>Topic:</strong> Objects</p>
+        <p>Modern Application Development — JavaScript Learning Path 🚀</p>
+    </footer>
+
+    <script>
+        const student = {
+            name: "Saloni Tiwari",
+            age: 17,
+            programme: "IIT Madras BS Degree",
+            course: "Modern Application Development",
+            subjects: ["DBMS", "PDSA", "MLF"],
+            marks: [85, 90, 78],
+
+            greet() {
+                return `Hello, I am ${this.name}.`;
+            },
+
+            totalMarks() {
+                let total = 0;
+
+                for (let i = 0; i < this.marks.length; i++) {
+                    total += this.marks[i];
+                }
+
+                return total;
+            },
+
+            averageMarks() {
+                return this.totalMarks() / this.marks.length;
+            },
+
+            isPassed() {
+                return this.averageMarks() >= 40;
+            }
+        };
+
+        document.getElementById("studentDetails").textContent =
+            `${student.name} — ${student.course}`;
+
+        function showProfile() {
+            document.getElementById("studentOutput").innerHTML = `
+                <strong>${student.greet()}</strong><br>
+                Age: ${student.age}<br>
+                Programme: ${student.programme}<br>
+                Course: ${student.course}<br>
+                Subjects: ${student.subjects.join(", ")}
+            `;
+        }
+
+        function showTotal() {
+            document.getElementById("studentOutput").textContent =
+                `Total Marks: ${student.totalMarks()}`;
+        }
+
+        function showAverage() {
+            document.getElementById("studentOutput").textContent =
+                `Average Marks: ${student.averageMarks().toFixed(2)}`;
+        }
+
+        function showResult() {
+            const result = student.isPassed() ? "Pass" : "Fail";
+
+            document.getElementById("studentOutput").textContent =
+                `Average: ${student.averageMarks().toFixed(2)} — Result: ${result}`;
+        }
+
+        const students = [
+            {
+                name: "Asha",
+                marks: 85
+            },
+            {
+                name: "Riya",
+                marks: 92
+            },
+            {
+                name: "Neha",
+                marks: 78
+            },
+            {
+                name: "Pooja",
+                marks: 88
+            }
+        ];
+
+        const studentLines = [];
+
+        for (let i = 0; i < students.length; i++) {
+            studentLines.push(
+                `Student ${i + 1}: ${students[i].name} — ${students[i].marks} marks`
+            );
+        }
+
+        document.getElementById("studentsOutput").innerHTML =
+            studentLines.join("<br>");
+
+        const keys = Object.keys(student);
+        const values = Object.values(student);
+        const entries = Object.entries(student);
+
+        document.getElementById("objectMethodsOutput").innerHTML = `
+            <strong>Keys:</strong> ${keys.join(", ")}<br><br>
+            <strong>Values:</strong> ${values
+                .map(value => typeof value === "object" ? "[Object/Array]" : value)
+                .join(", ")}<br><br>
+            <strong>Number of Entries:</strong> ${entries.length}
+        `;
+    </script>
+
+</body>
+</html>
