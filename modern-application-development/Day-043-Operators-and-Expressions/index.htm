@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 043
+        Topic: Operators and Expressions
+    -->
+
+    <title>Day 043 - Operators and Expressions</title>
+
+    <style>
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 043
+            Topic: Operators and Expressions
+        */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        .container {
+            width: min(92%, 1050px);
+            margin: 0 auto;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #d1d5db;
+        }
+
+        main {
+            padding: 45px 0;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .operator-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(180px, 1fr)
+            );
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 12px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+
+        .operator {
+            display: inline-block;
+            margin-bottom: 8px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1d4ed8;
+        }
+
+        .code-box {
+            margin-top: 18px;
+            padding: 18px;
+            background: #111827;
+            color: #f9fafb;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            color: #065f46;
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(200px, 1fr)
+            );
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .student-item {
+            padding: 18px;
+            background: #f8fafc;
+            border-left: 4px solid #2563eb;
+        }
+
+        button {
+            margin-top: 18px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-weight: 700;
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+        button:hover,
+        button:focus-visible {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        footer {
+            padding: 25px 0;
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+            color: #d1d5db;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Operators and Expressions</h1>
+            <p>Day 043 — JavaScript Fundamentals</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <!-- Introduction -->
+            <section>
+                <h2>1. What Are Operators?</h2>
+
+                <p>
+                    Operators perform operations on values called operands.
+                </p>
+
+                <div class="code-box">
+                    10 + 20
+                </div>
+
+                <p class="result-box">
+                    Operator: <strong>+</strong> |
+                    Operands: <strong>10</strong> and <strong>20</strong> |
+                    Result: <strong>30</strong>
+                </p>
+            </section>
+
+            <!-- Arithmetic -->
+            <section>
+                <h2>2. Arithmetic Operators</h2>
+
+                <div class="operator-grid">
+
+                    <article class="card">
+                        <span class="operator">+</span>
+                        <h3>Addition</h3>
+                        <p>10 + 5 = 15</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">−</span>
+                        <h3>Subtraction</h3>
+                        <p>10 - 5 = 5</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">*</span>
+                        <h3>Multiplication</h3>
+                        <p>10 * 5 = 50</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">/</span>
+                        <h3>Division</h3>
+                        <p>10 / 5 = 2</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">%</span>
+                        <h3>Remainder</h3>
+                        <p>10 % 3 = 1</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">**</span>
+                        <h3>Exponentiation</h3>
+                        <p>2 ** 3 = 8</p>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Assignment -->
+            <section>
+                <h2>3. Assignment Operators</h2>
+
+                <div class="code-box">
+                    let score = 80;<br>
+                    score += 10;<br>
+                    score -= 5;<br>
+                    score *= 2;<br>
+                    score /= 2;
+                </div>
+
+                <div class="result-box">
+                    Compound assignment operators update an existing
+                    variable.
+                </div>
+            </section>
+
+            <!-- Comparison -->
+            <section>
+                <h2>4. Comparison Operators</h2>
+
+                <div class="operator-grid">
+
+                    <article class="card">
+                        <span class="operator">==</span>
+                        <h3>Loose Equality</h3>
+                        <p>5 == "5" → true</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">===</span>
+                        <h3>Strict Equality</h3>
+                        <p>5 === "5" → false</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">&gt;</span>
+                        <h3>Greater Than</h3>
+                        <p>10 &gt; 5 → true</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">&lt;</span>
+                        <h3>Less Than</h3>
+                        <p>10 &lt; 5 → false</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">&gt;=</span>
+                        <h3>Greater or Equal</h3>
+                        <p>10 &gt;= 10 → true</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">!==</span>
+                        <h3>Strict Inequality</h3>
+                        <p>5 !== "5" → true</p>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Logical -->
+            <section>
+                <h2>5. Logical Operators</h2>
+
+                <div class="operator-grid">
+
+                    <article class="card">
+                        <span class="operator">&amp;&amp;</span>
+                        <h3>AND</h3>
+                        <p>Both conditions must be true.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">||</span>
+                        <h3>OR</h3>
+                        <p>At least one condition must be true.</p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">!</span>
+                        <h3>NOT</h3>
+                        <p>Reverses a Boolean value.</p>
+                    </article>
+
+                </div>
+
+                <div class="code-box">
+                    age &gt;= 18 &amp;&amp; hasID === true
+                </div>
+            </section>
+
+            <!-- Ternary -->
+            <section>
+                <h2>6. Ternary Operator</h2>
+
+                <p>
+                    The ternary operator provides a compact way to
+                    select between two expressions.
+                </p>
+
+                <div class="code-box">
+                    age &gt;= 18 ? "Adult" : "Minor"
+                </div>
+
+                <div id="ageResult" class="result-box">
+                    Calculating result...
+                </div>
+            </section>
+
+            <!-- Student Calculator -->
+            <section>
+                <h2>7. Student Result Calculator</h2>
+
+                <div class="student-grid">
+                    <article class="student-item">
+                        <h3>Subject 1</h3>
+                        <p id="subject1"></p>
+                    </article>
+
+                    <article class="student-item">
+                        <h3>Subject 2</h3>
+                        <p id="subject2"></p>
+                    </article>
+
+                    <article class="student-item">
+                        <h3>Subject 3</h3>
+                        <p id="subject3"></p>
+                    </article>
+
+                    <article class="student-item">
+                        <h3>Total</h3>
+                        <p id="total"></p>
+                    </article>
+
+                    <article class="student-item">
+                        <h3>Average</h3>
+                        <p id="average"></p>
+                    </article>
+                </div>
+
+                <button id="calculateButton" type="button">
+                    Calculate Result
+                </button>
+
+                <div id="result" class="result-box">
+                    Click the button to calculate the result.
+                </div>
+            </section>
+
+            <!-- Precedence -->
+            <section>
+                <h2>8. Operator Precedence</h2>
+
+                <div class="code-box">
+                    10 + 5 * 2 → 20<br><br>
+                    (10 + 5) * 2 → 30
+                </div>
+
+                <p class="result-box">
+                    Parentheses can be used to explicitly control
+                    the order of evaluation.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 Saloni Tiwari — Day 043
+            </p>
+
+            <p>
+                IIT Madras BS Degree — Diploma Level |
+                Operators and Expressions
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 043
+            Topic: Operators and Expressions
+        */
+
+        // Arithmetic operators
+        console.log("Addition:", 10 + 20);
+        console.log("Subtraction:", 20 - 10);
+        console.log("Multiplication:", 10 * 5);
+        console.log("Division:", 20 / 5);
+        console.log("Remainder:", 10 % 3);
+        console.log("Power:", 2 ** 3);
+
+        // Assignment operators
+        let score = 80;
+
+        score += 10;
+        console.log("After +=:", score);
+
+        score -= 5;
+        console.log("After -=:", score);
+
+        // Comparison operators
+        console.log("5 == '5':", 5 == "5");
+        console.log("5 === '5':", 5 === "5");
+        console.log("10 > 5:", 10 > 5);
+
+        // Logical operators
+        const age = 20;
+        const hasID = true;
+
+        console.log(
+            "Adult with ID:",
+            age >= 18 && hasID === true
+        );
+
+        console.log(
+            "Student or teacher:",
+            true || false
+        );
+
+        console.log(
+            "NOT true:",
+            !true
+        );
+
+        // Prefix and postfix
+        let prefixValue = 5;
+        const prefixResult = ++prefixValue;
+
+        console.log("Prefix x:", prefixValue);
+        console.log("Prefix result:", prefixResult);
+
+        let postfixValue = 5;
+        const postfixResult = postfixValue++;
+
+        console.log("Postfix x:", postfixValue);
+        console.log("Postfix result:", postfixResult);
+
+        // Template literal
+        const studentName = "Saloni";
+        const message =
+            `Hello, ${studentName}! Welcome to Day 043.`;
+
+        console.log(message);
+
+        // Ternary operator
+        const ageStatus =
+            age >= 18 ? "Adult" : "Minor";
+
+        document.getElementById("ageResult").textContent =
+            `Age ${age}: ${ageStatus}`;
+
+        // Student result calculator
+        const subject1Marks = 85;
+        const subject2Marks = 90;
+        const subject3Marks = 80;
+
+        const totalMarks =
+            subject1Marks +
+            subject2Marks +
+            subject3Marks;
+
+        const averageMarks =
+            totalMarks / 3;
+
+        const resultStatus =
+            averageMarks >= 40 ? "Pass" : "Fail";
+
+        document.getElementById("subject1").textContent =
+            subject1Marks;
+
+        document.getElementById("subject2").textContent =
+            subject2Marks;
+
+        document.getElementById("subject3").textContent =
+            subject3Marks;
+
+        document.getElementById("total").textContent =
+            totalMarks;
+
+        document.getElementById("average").textContent =
+            averageMarks.toFixed(2);
+
+        document.getElementById("calculateButton")
+            .addEventListener("click", function () {
+
+                document.getElementById("result").textContent =
+                    `Total Marks: ${totalMarks} | ` +
+                    `Average: ${averageMarks.toFixed(2)} | ` +
+                    `Result: ${resultStatus}`;
+
+                console.log(
+                    "Student Result:",
+                    resultStatus
+                );
+            });
+    </script>
+
+</body>
+</html>
