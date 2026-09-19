@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Author: Saloni Tiwari
+    Programme: IIT Madras BS Degree — Diploma Level
+    Day: 048
+    Topic: Arrays
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 048 - JavaScript Arrays</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        button {
+            border: none;
+            padding: 11px 16px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 10px;
+            min-height: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>📦 JavaScript Arrays</h1>
+        <p>Day 048 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>📚 What Is an Array?</h2>
+
+            <p>
+                An array stores multiple values inside a single variable.
+            </p>
+
+            <pre>const subjects = ["DBMS", "PDSA", "MLF"];
+
+console.log(subjects[0]);</pre>
+
+            <p>
+                Array indexes start from <strong>0</strong>.
+            </p>
+        </section>
+
+        <br>
+
+        <section class="grid">
+
+            <article class="card">
+                <h2>➕ Add Elements</h2>
+
+                <pre>subjects.push("MAD1");
+
+subjects.unshift("Statistics");</pre>
+
+                <p>
+                    <strong>push()</strong> adds to the end.
+                    <strong>unshift()</strong> adds to the beginning.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>➖ Remove Elements</h2>
+
+                <pre>subjects.pop();
+
+subjects.shift();</pre>
+
+                <p>
+                    <strong>pop()</strong> removes from the end.
+                    <strong>shift()</strong> removes from the beginning.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>✂️ slice()</h2>
+
+                <pre>const result = numbers.slice(1, 4);</pre>
+
+                <p>
+                    Extracts a portion without modifying the original array.
+                </p>
+            </article>
+
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🧰 Array Methods</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>push()</td>
+                        <td>Add at the end</td>
+                    </tr>
+
+                    <tr>
+                        <td>pop()</td>
+                        <td>Remove from the end</td>
+                    </tr>
+
+                    <tr>
+                        <td>unshift()</td>
+                        <td>Add at the beginning</td>
+                    </tr>
+
+                    <tr>
+                        <td>shift()</td>
+                        <td>Remove from the beginning</td>
+                    </tr>
+
+                    <tr>
+                        <td>includes()</td>
+                        <td>Check whether a value exists</td>
+                    </tr>
+
+                    <tr>
+                        <td>indexOf()</td>
+                        <td>Find an element's index</td>
+                    </tr>
+
+                    <tr>
+                        <td>join()</td>
+                        <td>Combine elements into a string</td>
+                    </tr>
+
+                    <tr>
+                        <td>slice()</td>
+                        <td>Extract without modifying original</td>
+                    </tr>
+
+                    <tr>
+                        <td>splice()</td>
+                        <td>Add, remove, or replace elements</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🎓 Student Marks</h2>
+
+            <p>
+                Marks:
+                <strong id="marks"></strong>
+            </p>
+
+            <button onclick="showTotal()">Total</button>
+            <button onclick="showAverage()">Average</button>
+            <button onclick="showHighest()">Highest</button>
+            <button onclick="showLowest()">Lowest</button>
+
+            <div class="result" id="marksOutput">
+                Click a button to analyze the marks array.
+            </div>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>📚 Course Array</h2>
+
+            <p id="courseList"></p>
+
+            <button onclick="addCourse()">Add MAD1</button>
+            <button onclick="removeCourse()">Remove Last Course</button>
+            <button onclick="searchCourse()">Search PDSA</button>
+
+            <div class="result" id="courseOutput">
+                Course operations will appear here.
+            </div>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🔁 Array Traversal</h2>
+
+            <p>
+                Every element is visited using a <strong>for loop</strong>.
+            </p>
+
+            <div class="result" id="traversalOutput"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Author:</strong> Saloni Tiwari</p>
+        <p><strong>Programme:</strong> IIT Madras BS Degree — Diploma Level</p>
+        <p><strong>Day:</strong> 048</p>
+        <p><strong>Topic:</strong> Arrays</p>
+        <p>Modern Application Development — JavaScript Learning Path 🚀</p>
+    </footer>
+
+    <script>
+        const marks = [85, 90, 78, 92, 88];
+
+        const courses = ["DBMS", "PDSA", "MLF"];
+
+        document.getElementById("marks").textContent =
+            marks.join(", ");
+
+        function calculateTotal(numbers) {
+            let total = 0;
+
+            for (let i = 0; i < numbers.length; i++) {
+                total += numbers[i];
+            }
+
+            return total;
+        }
+
+        function calculateAverage(numbers) {
+            return calculateTotal(numbers) / numbers.length;
+        }
+
+        function findHighest(numbers) {
+            let highest = numbers[0];
+
+            for (let i = 1; i < numbers.length; i++) {
+                if (numbers[i] > highest) {
+                    highest = numbers[i];
+                }
+            }
+
+            return highest;
+        }
+
+        function findLowest(numbers) {
+            let lowest = numbers[0];
+
+            for (let i = 1; i < numbers.length; i++) {
+                if (numbers[i] < lowest) {
+                    lowest = numbers[i];
+                }
+            }
+
+            return lowest;
+        }
+
+        function showTotal() {
+            const total = calculateTotal(marks);
+
+            document.getElementById("marksOutput").textContent =
+                `Total Marks: ${total}`;
+        }
+
+        function showAverage() {
+            const average = calculateAverage(marks);
+
+            document.getElementById("marksOutput").textContent =
+                `Average Marks: ${average.toFixed(2)}`;
+        }
+
+        function showHighest() {
+            const highest = findHighest(marks);
+
+            document.getElementById("marksOutput").textContent =
+                `Highest Marks: ${highest}`;
+        }
+
+        function showLowest() {
+            const lowest = findLowest(marks);
+
+            document.getElementById("marksOutput").textContent =
+                `Lowest Marks: ${lowest}`;
+        }
+
+        function displayCourses() {
+            document.getElementById("courseList").textContent =
+                courses.join(" | ");
+        }
+
+        function addCourse() {
+            courses.push("MAD1");
+
+            displayCourses();
+
+            document.getElementById("courseOutput").textContent =
+                "MAD1 was added to the end of the array.";
+        }
+
+        function removeCourse() {
+            const removedCourse = courses.pop();
+
+            displayCourses();
+
+            document.getElementById("courseOutput").textContent =
+                `${removedCourse || "No course"} was removed.`;
+        }
+
+        function searchCourse() {
+            const found = courses.includes("PDSA");
+
+            document.getElementById("courseOutput").textContent =
+                `Does the array contain PDSA? ${found}`;
+        }
+
+        displayCourses();
+
+        const traversal = [];
+
+        for (let i = 0; i < courses.length; i++) {
+            traversal.push(`Index ${i}: ${courses[i]}`);
+        }
+
+        document.getElementById("traversalOutput").innerHTML =
+            traversal.join("<br>");
+    </script>
+
+</body>
+</html>
