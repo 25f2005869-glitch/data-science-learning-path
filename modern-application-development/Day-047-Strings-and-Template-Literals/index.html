@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Author: Saloni Tiwari
+    Programme: IIT Madras BS Degree — Diploma Level
+    Day: 047
+    Topic: Strings and Template Literals
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 047 - Strings and Template Literals</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        button {
+            border: none;
+            padding: 11px 16px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 10px;
+            min-height: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🧵 Strings & Template Literals</h1>
+        <p>Day 047 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>📚 What Is a String?</h2>
+
+            <p>
+                A string is a sequence of characters used to represent text
+                in JavaScript.
+            </p>
+
+            <pre>const name = "Saloni";
+
+console.log(name);</pre>
+        </section>
+
+        <br>
+
+        <section class="grid">
+
+            <article class="card">
+                <h2>🔢 String Indexing</h2>
+
+                <pre>const word = "Hello";
+
+console.log(word[0]);
+console.log(word[4]);</pre>
+
+                <p>
+                    Indexing starts from <strong>0</strong>.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>📏 length</h2>
+
+                <pre>const word = "JavaScript";
+
+console.log(word.length);</pre>
+
+                <p>
+                    The <strong>length</strong> property gives the number of
+                    characters.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>✂️ slice()</h2>
+
+                <pre>const text = "JavaScript";
+
+console.log(text.slice(0, 4));</pre>
+
+                <p>
+                    Extracts a part of a string.
+                </p>
+            </article>
+
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🧰 Common String Methods</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>toUpperCase()</td>
+                        <td>Converts text to uppercase.</td>
+                    </tr>
+
+                    <tr>
+                        <td>toLowerCase()</td>
+                        <td>Converts text to lowercase.</td>
+                    </tr>
+
+                    <tr>
+                        <td>trim()</td>
+                        <td>Removes outer whitespace.</td>
+                    </tr>
+
+                    <tr>
+                        <td>includes()</td>
+                        <td>Checks whether text exists.</td>
+                    </tr>
+
+                    <tr>
+                        <td>indexOf()</td>
+                        <td>Finds the position of text.</td>
+                    </tr>
+
+                    <tr>
+                        <td>replace()</td>
+                        <td>Replaces matching text.</td>
+                    </tr>
+
+                    <tr>
+                        <td>split()</td>
+                        <td>Converts a string into an array.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🧩 Template Literals</h2>
+
+            <pre>const name = "Saloni";
+const course = "MAD 1";
+
+const message = `Hello ${name}.
+You are learning ${course}.`;
+
+console.log(message);</pre>
+
+            <p>
+                Template literals use backticks and allow variables and
+                expressions inside <strong>${}</strong>.
+            </p>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🎓 Student Profile</h2>
+
+            <p id="profile"></p>
+
+            <button onclick="showUppercase()">Uppercase Name</button>
+            <button onclick="showLength()">Name Length</button>
+            <button onclick="showCourseMessage()">Course Message</button>
+
+            <div class="result" id="output">
+                Click a button to run a string function.
+            </div>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🔍 Text Analyzer</h2>
+
+            <p>
+                Text:
+                <strong id="textValue"></strong>
+            </p>
+
+            <p id="analysis"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Author:</strong> Saloni Tiwari</p>
+        <p><strong>Programme:</strong> IIT Madras BS Degree — Diploma Level</p>
+        <p><strong>Day:</strong> 047</p>
+        <p><strong>Topic:</strong> Strings and Template Literals</p>
+        <p>Modern Application Development — JavaScript Learning Path 🚀</p>
+    </footer>
+
+    <script>
+        const studentName = "Saloni Tiwari";
+        const programme = "IIT Madras BS Degree";
+        const course = "Modern Application Development";
+
+        document.getElementById("profile").textContent =
+            `Hello! My name is ${studentName}. I am studying the ${course} course as part of the ${programme} programme.`;
+
+        function showUppercase() {
+            const result = studentName.toUpperCase();
+
+            document.getElementById("output").textContent =
+                `Uppercase Name: ${result}`;
+        }
+
+        function showLength() {
+            const result = studentName.length;
+
+            document.getElementById("output").textContent =
+                `Name Length: ${result} characters`;
+        }
+
+        function showCourseMessage() {
+            const result =
+                `Student: ${studentName} | Course: ${course}`;
+
+            document.getElementById("output").textContent = result;
+        }
+
+        const text = "Modern Application Development";
+
+        document.getElementById("textValue").textContent = text;
+
+        const characterCount = text.length;
+        const uppercaseText = text.toUpperCase();
+        const containsApplication = text.includes("Application");
+        const firstCharacter = text[0];
+        const lastCharacter = text[text.length - 1];
+
+        document.getElementById("analysis").innerHTML = `
+            Characters: <strong>${characterCount}</strong><br>
+            Uppercase: <strong>${uppercaseText}</strong><br>
+            Contains "Application": <strong>${containsApplication}</strong><br>
+            First Character: <strong>${firstCharacter}</strong><br>
+            Last Character: <strong>${lastCharacter}</strong>
+        `;
+
+        const subjects = ["DBMS", "PDSA", "MLF", "MAD1"];
+
+        for (let i = 0; i < subjects.length; i++) {
+            console.log(`Subject ${i + 1}: ${subjects[i]}`);
+        }
+    </script>
+
+</body>
+</html>
