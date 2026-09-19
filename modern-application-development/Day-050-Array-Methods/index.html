@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+    Author: Saloni Tiwari
+    Programme: IIT Madras BS Degree — Diploma Level
+    Day: 050
+    Topic: Array Methods
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 050 - JavaScript Array Methods</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        button {
+            border: none;
+            padding: 11px 16px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 10px;
+            min-height: 50px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>📦 JavaScript Array Methods</h1>
+        <p>Day 050 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>📚 What Are Array Methods?</h2>
+
+            <p>
+                Array methods are built-in JavaScript functions used to
+                process, transform, search, filter, and calculate array data.
+            </p>
+
+            <pre>const numbers = [1, 2, 3];
+
+const squares = numbers.map(
+    number => number * number
+);</pre>
+        </section>
+
+        <br>
+
+        <section class="grid">
+
+            <article class="card">
+                <h2>🔁 forEach()</h2>
+
+                <pre>numbers.forEach(number => {
+    console.log(number);
+});</pre>
+
+                <p>
+                    Performs an action for every element.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>🔄 map()</h2>
+
+                <pre>const doubled = numbers.map(
+    number => number * 2
+);</pre>
+
+                <p>
+                    Creates a new transformed array.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>🔍 filter()</h2>
+
+                <pre>const even = numbers.filter(
+    number => number % 2 === 0
+);</pre>
+
+                <p>
+                    Creates a new array containing matching elements.
+                </p>
+            </article>
+
+        </section>
+
+        <br>
+
+        <section class="grid">
+
+            <article class="card">
+                <h2>🎯 find()</h2>
+
+                <pre>numbers.find(
+    number => number > 10
+);</pre>
+
+                <p>
+                    Returns the first matching element.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>🔎 findIndex()</h2>
+
+                <pre>numbers.findIndex(
+    number => number > 10
+);</pre>
+
+                <p>
+                    Returns the index of the first match.
+                </p>
+            </article>
+
+            <article class="card">
+                <h2>❓ some() / every()</h2>
+
+                <pre>numbers.some(
+    number => number > 10
+);
+
+numbers.every(
+    number => number > 0
+);</pre>
+
+                <p>
+                    Check whether any or all elements satisfy a condition.
+                </p>
+            </article>
+
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>📊 reduce()</h2>
+
+            <pre>const total = numbers.reduce(
+    (sum, number) => sum + number,
+    0
+);</pre>
+
+            <p>
+                <strong>reduce()</strong> combines array elements into one
+                final value.
+            </p>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🧰 Array Methods Comparison</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Purpose</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>forEach()</td>
+                        <td>Perform an action</td>
+                        <td>undefined</td>
+                    </tr>
+
+                    <tr>
+                        <td>map()</td>
+                        <td>Transform</td>
+                        <td>New array</td>
+                    </tr>
+
+                    <tr>
+                        <td>filter()</td>
+                        <td>Select elements</td>
+                        <td>New array</td>
+                    </tr>
+
+                    <tr>
+                        <td>find()</td>
+                        <td>Find first match</td>
+                        <td>Element</td>
+                    </tr>
+
+                    <tr>
+                        <td>findIndex()</td>
+                        <td>Find first matching index</td>
+                        <td>Number</td>
+                    </tr>
+
+                    <tr>
+                        <td>some()</td>
+                        <td>Check any</td>
+                        <td>Boolean</td>
+                    </tr>
+
+                    <tr>
+                        <td>every()</td>
+                        <td>Check all</td>
+                        <td>Boolean</td>
+                    </tr>
+
+                    <tr>
+                        <td>reduce()</td>
+                        <td>Combine values</td>
+                        <td>Single value</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🎓 Student Marks Analyzer</h2>
+
+            <p>
+                Marks:
+                <strong id="marks"></strong>
+            </p>
+
+            <button onclick="showMap()">Add 5 Marks</button>
+            <button onclick="showFilter()">Passing Marks</button>
+            <button onclick="showFind()">First Mark Above 90</button>
+            <button onclick="showReduce()">Total Marks</button>
+            <button onclick="showSome()">Any Mark Above 90?</button>
+            <button onclick="showEvery()">Everyone Passed?</button>
+
+            <div class="result" id="marksOutput">
+                Choose an operation.
+            </div>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>👩‍🎓 Array of Student Objects</h2>
+
+            <div class="result" id="studentsOutput"></div>
+
+            <button onclick="showHighScorers()">Show High Scorers</button>
+            <button onclick="showStudentNames()">Show Names</button>
+
+            <div class="result" id="studentOperationOutput">
+                Choose an operation.
+            </div>
+        </section>
+
+        <br>
+
+        <section class="card">
+            <h2>🔗 Method Chaining</h2>
+
+            <pre>const result = numbers
+    .filter(number => number % 2 === 0)
+    .map(number => number * 2);</pre>
+
+            <p>
+                First <strong>filter()</strong> selects the even numbers.
+                Then <strong>map()</strong> doubles them.
+            </p>
+
+            <button onclick="showChaining()">Run Method Chaining</button>
+
+            <div class="result" id="chainOutput">
+                Result will appear here.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Author:</strong> Saloni Tiwari</p>
+        <p><strong>Programme:</strong> IIT Madras BS Degree — Diploma Level</p>
+        <p><strong>Day:</strong> 050</p>
+        <p><strong>Topic:</strong> Array Methods</p>
+        <p>Modern Application Development — JavaScript Learning Path 🚀</p>
+    </footer>
+
+    <script>
+        const marks = [85, 90, 78, 92, 38, 88];
+
+        document.getElementById("marks").textContent =
+            marks.join(", ");
+
+        function showMap() {
+            const updatedMarks = marks.map(mark => mark + 5);
+
+            document.getElementById("marksOutput").textContent =
+                `After adding 5: ${updatedMarks.join(", ")}`;
+        }
+
+        function showFilter() {
+            const passingMarks = marks.filter(mark => mark >= 40);
+
+            document.getElementById("marksOutput").textContent =
+                `Passing Marks: ${passingMarks.join(", ")}`;
+        }
+
+        function showFind() {
+            const result = marks.find(mark => mark > 90);
+
+            document.getElementById("marksOutput").textContent =
+                `First Mark Above 90: ${result ?? "Not found"}`;
+        }
+
+        function showReduce() {
+            const total = marks.reduce(
+                (sum, mark) => sum + mark,
+                0
+            );
+
+            document.getElementById("marksOutput").textContent =
+                `Total Marks: ${total}`;
+        }
+
+        function showSome() {
+            const result = marks.some(mark => mark > 90);
+
+            document.getElementById("marksOutput").textContent =
+                `Any Mark Above 90? ${result}`;
+        }
+
+        function showEvery() {
+            const result = marks.every(mark => mark >= 40);
+
+            document.getElementById("marksOutput").textContent =
+                `Everyone Passed? ${result}`;
+        }
+
+        const students = [
+            {
+                name: "Asha",
+                marks: 85
+            },
+            {
+                name: "Riya",
+                marks: 92
+            },
+            {
+                name: "Neha",
+                marks: 35
+            },
+            {
+                name: "Pooja",
+                marks: 78
+            },
+            {
+                name: "Kiran",
+                marks: 95
+            }
+        ];
+
+        const studentLines = students.map(student =>
+            `${student.name}: ${student.marks} marks`
+        );
+
+        document.getElementById("studentsOutput").innerHTML =
+            studentLines.join("<br>");
+
+        function showHighScorers() {
+            const highScorers = students.filter(
+                student => student.marks >= 80
+            );
+
+            document.getElementById("studentOperationOutput").innerHTML =
+                highScorers
+                    .map(student => `${student.name} — ${student.marks}`)
+                    .join("<br>");
+        }
+
+        function showStudentNames() {
+            const names = students.map(student => student.name);
+
+            document.getElementById("studentOperationOutput").textContent =
+                `Names: ${names.join(", ")}`;
+        }
+
+        const numbers = [1, 2, 3, 4, 5, 6];
+
+        function showChaining() {
+            const result = numbers
+                .filter(number => number % 2 === 0)
+                .map(number => number * 2);
+
+            document.getElementById("chainOutput").textContent =
+                `Even numbers doubled: ${result.join(", ")}`;
+        }
+
+        marks.forEach((mark, index) => {
+            console.log(`Mark ${index + 1}: ${mark}`);
+        });
+    </script>
+
+</body>
+</html>
