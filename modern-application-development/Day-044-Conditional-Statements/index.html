@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 044
+        Topic: Conditional Statements
+    -->
+
+    <title>Day 044 - Conditional Statements</title>
+
+    <style>
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 044
+            Topic: Conditional Statements
+        */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        .container {
+            width: min(92%, 1050px);
+            margin: 0 auto;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #d1d5db;
+        }
+
+        main {
+            padding: 45px 0;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        h2 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            margin-bottom: 8px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(180px, 1fr)
+            );
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .card {
+            padding: 20px;
+            border-radius: 12px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+
+        .operator {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1d4ed8;
+        }
+
+        .code-box {
+            margin-top: 18px;
+            padding: 18px;
+            background: #111827;
+            color: #f9fafb;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            color: #065f46;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(200px, 1fr)
+            );
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: 3px solid rgba(37, 99, 235, 0.15);
+            border-color: #2563eb;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-weight: 700;
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+        button:hover,
+        button:focus-visible {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        footer {
+            padding: 25px 0;
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+            color: #d1d5db;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Conditional Statements</h1>
+            <p>Day 044 — JavaScript Decision Making</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <!-- Introduction -->
+            <section>
+                <h2>1. What Are Conditional Statements?</h2>
+
+                <p>
+                    Conditional statements allow JavaScript to make
+                    decisions based on whether a condition is true or false.
+                </p>
+
+                <div class="code-box">
+                    if (age &gt;= 18) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("Adult");<br>
+                    }
+                </div>
+            </section>
+
+            <!-- If Else -->
+            <section>
+                <h2>2. if, else if and else</h2>
+
+                <div class="card-grid">
+
+                    <article class="card">
+                        <span class="operator">if</span>
+                        <h3>One Condition</h3>
+                        <p>
+                            Runs when the condition is truthy.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">else if</span>
+                        <h3>Multiple Conditions</h3>
+                        <p>
+                            Checks another condition when previous
+                            conditions were false.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">else</span>
+                        <h3>Default Path</h3>
+                        <p>
+                            Runs when no preceding condition is true.
+                        </p>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Logical Operators -->
+            <section>
+                <h2>3. Conditions with Logical Operators</h2>
+
+                <div class="card-grid">
+
+                    <article class="card">
+                        <span class="operator">&amp;&amp;</span>
+                        <h3>AND</h3>
+                        <p>
+                            Both conditions must be truthy.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">||</span>
+                        <h3>OR</h3>
+                        <p>
+                            At least one condition must be truthy.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <span class="operator">!</span>
+                        <h3>NOT</h3>
+                        <p>
+                            Reverses the truthiness of a value.
+                        </p>
+                    </article>
+
+                </div>
+
+                <div class="code-box">
+                    if (age &gt;= 18 &amp;&amp; hasID) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("Allowed");<br>
+                    }
+                </div>
+            </section>
+
+            <!-- Switch -->
+            <section>
+                <h2>4. switch Statement</h2>
+
+                <p>
+                    A switch is useful when one value needs to be
+                    compared with multiple known alternatives.
+                </p>
+
+                <div class="code-box">
+                    switch (role) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;case "student":<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Student");<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;default:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Unknown");<br>
+                    }
+                </div>
+            </section>
+
+            <!-- Truthy and Falsy -->
+            <section>
+                <h2>5. Truthy and Falsy Values</h2>
+
+                <div class="card-grid">
+
+                    <article class="card">
+                        <h3>Truthy</h3>
+                        <p>
+                            <strong>true</strong>,
+                            non-empty strings,
+                            non-zero numbers,
+                            objects and arrays.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Falsy</h3>
+                        <p>
+                            <strong>false</strong>,
+                            0, "", null,
+                            undefined and NaN.
+                        </p>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Interactive Grade Checker -->
+            <section>
+                <h2>6. Student Result Checker</h2>
+
+                <p>
+                    Enter student information and use JavaScript
+                    conditions to determine the result.
+                </p>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="studentName">Student Name</label>
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter name"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input
+                            type="number"
+                            id="age"
+                            min="1"
+                            max="100"
+                            value="20"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="marks">Marks</label>
+                        <input
+                            type="number"
+                            id="marks"
+                            min="0"
+                            max="100"
+                            value="78"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role">
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button id="checkResult" type="button">
+                    Check Result
+                </button>
+
+                <div id="result" class="result-box">
+                    Enter the details and click the button.
+                </div>
+            </section>
+
+            <!-- Ternary -->
+            <section>
+                <h2>7. Ternary Operator</h2>
+
+                <div class="code-box">
+                    const status =<br>
+                    age &gt;= 18 ? "Adult" : "Minor";
+                </div>
+
+                <p class="result-box">
+                    Ternary operators are useful for simple two-way
+                    decisions.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2026 Saloni Tiwari — Day 044
+            </p>
+
+            <p>
+                IIT Madras BS Degree — Diploma Level |
+                Conditional Statements
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        /*
+            Author: Saloni Tiwari
+            Programme: IIT Madras BS Degree — Diploma Level
+            Day: 044
+            Topic: Conditional Statements
+        */
+
+        // Basic if statement
+        const sampleAge = 20;
+
+        if (sampleAge >= 18) {
+            console.log("Sample result: Adult");
+        }
+
+        // if...else example
+        if (sampleAge >= 18) {
+            console.log("Sample: Eligible as an adult.");
+        } else {
+            console.log("Sample: Minor.");
+        }
+
+        // else if example
+        const sampleMarks = 78;
+
+        if (sampleMarks >= 90) {
+            console.log("Grade A");
+        } else if (sampleMarks >= 75) {
+            console.log("Grade B");
+        } else if (sampleMarks >= 50) {
+            console.log("Grade C");
+        } else if (sampleMarks >= 40) {
+            console.log("Grade D");
+        } else {
+            console.log("Fail");
+        }
+
+        // Logical operators
+        const hasID = true;
+
+        if (sampleAge >= 18 && hasID) {
+            console.log("Eligible for entry.");
+        }
+
+        // Ternary operator
+        const ageStatus =
+            sampleAge >= 18 ? "Adult" : "Minor";
+
+        console.log("Age Status:", ageStatus);
+
+        // Interactive student result checker
+        document
+            .getElementById("checkResult")
+            .addEventListener("click", function () {
+
+                const name =
+                    document.getElementById("studentName")
+                        .value.trim() || "Student";
+
+                const age =
+                    Number(
+                        document.getElementById("age").value
+                    );
+
+                const marks =
+                    Number(
+                        document.getElementById("marks").value
+                    );
+
+                const role =
+                    document.getElementById("role").value;
+
+                let grade;
+
+                // Grade calculation using else if
+                if (marks >= 90) {
+                    grade = "A";
+                } else if (marks >= 75) {
+                    grade = "B";
+                } else if (marks >= 60) {
+                    grade = "C";
+                } else if (marks >= 40) {
+                    grade = "D";
+                } else {
+                    grade = "Fail";
+                }
+
+                // Pass/fail condition
+                const passStatus =
+                    marks >= 40 ? "Pass" : "Fail";
+
+                // Adult/minor condition
+                const ageStatus =
+                    age >= 18 ? "Adult" : "Minor";
+
+                // Eligibility using logical AND
+                const eligible =
+                    age >= 18 && marks >= 40;
+
+                // switch example
+                let roleMessage;
+
+                switch (role) {
+                    case "student":
+                        roleMessage =
+                            "Student account selected.";
+                        break;
+
+                    case "teacher":
+                        roleMessage =
+                            "Teacher account selected.";
+                        break;
+
+                    case "admin":
+                        roleMessage =
+                            "Admin account selected.";
+                        break;
+
+                    default:
+                        roleMessage =
+                            "Unknown role.";
+                }
+
+                const resultElement =
+                    document.getElementById("result");
+
+                resultElement.innerHTML =
+                    `<strong>${name}</strong><br>` +
+                    `Age Status: ${ageStatus}<br>` +
+                    `Marks: ${marks}<br>` +
+                    `Result: ${passStatus}<br>` +
+                    `Grade: ${grade}<br>` +
+                    `Eligibility: ${
+                        eligible
+                            ? "Eligible"
+                            : "Not Eligible"
+                    }<br>` +
+                    `${roleMessage}`;
+
+                // Console output
+                console.log("Student Name:", name);
+                console.log("Age:", age);
+                console.log("Marks:", marks);
+                console.log("Grade:", grade);
+                console.log("Result:", passStatus);
+                console.log("Eligibility:", eligible);
+                console.log("Role:", role);
+            });
+    </script>
+
+</body>
+</html>
