@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 058 - Local Storage and Session Storage</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            transition: 0.3s;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 6px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #172554;
+            margin-top: 0;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 15px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f8fafc;
+            border: 1px solid #dbe2ea;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #2563eb;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            margin: 8px 0 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+        }
+
+        button {
+            border: none;
+            padding: 11px 18px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .secondary {
+            background: #475569;
+        }
+
+        .danger {
+            background: #dc2626;
+        }
+
+        .success {
+            background: #15803d;
+        }
+
+        .output {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            min-height: 45px;
+            white-space: pre-line;
+        }
+
+        .dark-mode {
+            background: #111827;
+            color: #e5e7eb;
+        }
+
+        .dark-mode section {
+            background: #1f2937;
+        }
+
+        .dark-mode h2 {
+            color: #93c5fd;
+        }
+
+        .dark-mode .card,
+        .dark-mode .output {
+            background: #374151;
+            border-color: #4b5563;
+        }
+
+        .student-data {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(180px, 1fr)
+            );
+            gap: 12px;
+        }
+
+        .data-item {
+            padding: 15px;
+            border-radius: 8px;
+            background: #eff6ff;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 18px;
+            }
+
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 058
+        Topic: Local Storage and Session Storage
+    -->
+
+    <header>
+        <h1>💾 Local Storage and Session Storage</h1>
+        <p>Day 058 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📚 Web Storage Concepts</h2>
+
+            <div class="concept-grid">
+
+                <article class="card">
+                    <h3>localStorage</h3>
+                    <p>
+                        Stores suitable data persistently
+                        in the browser.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>sessionStorage</h3>
+                    <p>
+                        Stores data for the current
+                        browsing session.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>JSON</h3>
+                    <p>
+                        Allows arrays and objects to be
+                        converted to and from strings.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Storage API</h3>
+                    <p>
+                        Provides set, get, remove,
+                        clear and other operations.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>📦 localStorage Demo</h2>
+
+            <label for="localName">
+                Name
+            </label>
+
+            <input
+                type="text"
+                id="localName"
+                placeholder="Enter your name"
+            >
+
+            <button id="saveLocalButton">
+                Save Name
+            </button>
+
+            <button
+                id="loadLocalButton"
+                class="secondary"
+            >
+                Load Name
+            </button>
+
+            <button
+                id="removeLocalButton"
+                class="danger"
+            >
+                Remove Name
+            </button>
+
+            <div
+                id="localOutput"
+                class="output"
+            >
+                No localStorage action performed.
+            </div>
+        </section>
+
+        <section>
+            <h2>⏳ sessionStorage Demo</h2>
+
+            <label for="sessionCourse">
+                Current Course
+            </label>
+
+            <input
+                type="text"
+                id="sessionCourse"
+                placeholder="Example: MAD 1"
+            >
+
+            <button id="saveSessionButton">
+                Save Session Data
+            </button>
+
+            <button
+                id="loadSessionButton"
+                class="secondary"
+            >
+                Load Session Data
+            </button>
+
+            <button
+                id="clearSessionButton"
+                class="danger"
+            >
+                Clear Session Data
+            </button>
+
+            <div
+                id="sessionOutput"
+                class="output"
+            >
+                No sessionStorage action performed.
+            </div>
+        </section>
+
+        <section>
+            <h2>🎓 Student Object Storage</h2>
+
+            <label for="studentName">
+                Student Name
+            </label>
+
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter student name"
+            >
+
+            <label for="studentCourse">
+                Course
+            </label>
+
+            <input
+                type="text"
+                id="studentCourse"
+                placeholder="Enter course"
+            >
+
+            <label for="studentScore">
+                Score
+            </label>
+
+            <input
+                type="number"
+                id="studentScore"
+                min="0"
+                max="100"
+                placeholder="Enter score"
+            >
+
+            <button
+                id="saveStudentButton"
+                class="success"
+            >
+                Save Student
+            </button>
+
+            <button
+                id="loadStudentButton"
+                class="secondary"
+            >
+                Load Student
+            </button>
+
+            <button
+                id="deleteStudentButton"
+                class="danger"
+            >
+                Delete Student
+            </button>
+
+            <div
+                id="studentOutput"
+                class="output"
+            >
+                No student data loaded.
+            </div>
+        </section>
+
+        <section>
+            <h2>📚 Course Array Storage</h2>
+
+            <button id="saveCoursesButton">
+                Save Courses
+            </button>
+
+            <button
+                id="loadCoursesButton"
+                class="secondary"
+            >
+                Load Courses
+            </button>
+
+            <button id="addCourseButton">
+                Add Course
+            </button>
+
+            <div
+                id="coursesOutput"
+                class="output"
+            >
+                No course data loaded.
+            </div>
+        </section>
+
+        <section>
+            <h2>🌙 Theme Preference</h2>
+
+            <label for="themeSelect">
+                Select Theme
+            </label>
+
+            <select id="themeSelect">
+                <option value="light">
+                    Light
+                </option>
+
+                <option value="dark">
+                    Dark
+                </option>
+            </select>
+
+            <button id="saveThemeButton">
+                Save Theme
+            </button>
+
+            <div
+                id="themeOutput"
+                class="output"
+            >
+                Theme preference will be stored in localStorage.
+            </div>
+        </section>
+
+        <section>
+            <h2>🔢 Storage Information</h2>
+
+            <button id="storageInfoButton">
+                Show Storage Information
+            </button>
+
+            <div
+                id="storageInfoOutput"
+                class="output"
+            >
+                Storage information will appear here.
+            </div>
+        </section>
+
+        <section>
+            <h2>⚠️ Clear Local Storage</h2>
+
+            <p>
+                This demonstration clears all localStorage
+                entries created by this page.
+            </p>
+
+            <button
+                id="clearLocalButton"
+                class="danger"
+            >
+                Clear localStorage
+            </button>
+
+            <div
+                id="clearOutput"
+                class="output"
+            >
+                localStorage has not been cleared.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 058
+        </p>
+
+        <p>
+            Local Storage and Session Storage — Web Storage Practice
+        </p>
+    </footer>
+
+    <script>
+        // =========================================================
+        // Day 058 — Local Storage and Session Storage
+        // =========================================================
+
+
+        // ---------------------------------------------------------
+        // 1. localStorage Demo
+        // ---------------------------------------------------------
+
+        const localName =
+            document.querySelector("#localName");
+
+        const saveLocalButton =
+            document.querySelector("#saveLocalButton");
+
+        const loadLocalButton =
+            document.querySelector("#loadLocalButton");
+
+        const removeLocalButton =
+            document.querySelector("#removeLocalButton");
+
+        const localOutput =
+            document.querySelector("#localOutput");
+
+
+        saveLocalButton.addEventListener(
+            "click",
+            function () {
+
+                const name =
+                    localName.value.trim();
+
+                if (name === "") {
+
+                    localOutput.textContent =
+                        "Please enter a name.";
+
+                    return;
+                }
+
+                localStorage.setItem(
+                    "studentName",
+                    name
+                );
+
+                localOutput.textContent =
+                    "Name saved in localStorage.";
+            }
+        );
+
+
+        loadLocalButton.addEventListener(
+            "click",
+            function () {
+
+                const name =
+                    localStorage.getItem(
+                        "studentName"
+                    );
+
+                if (name === null) {
+
+                    localOutput.textContent =
+                        "No saved name found.";
+
+                    return;
+                }
+
+                localOutput.textContent =
+                    `Saved Name: ${name}`;
+            }
+        );
+
+
+        removeLocalButton.addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem(
+                    "studentName"
+                );
+
+                localOutput.textContent =
+                    "Saved name removed.";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // 2. sessionStorage Demo
+        // ---------------------------------------------------------
+
+        const sessionCourse =
+            document.querySelector("#sessionCourse");
+
+        const saveSessionButton =
+            document.querySelector("#saveSessionButton");
+
+        const loadSessionButton =
+            document.querySelector("#loadSessionButton");
+
+        const clearSessionButton =
+            document.querySelector("#clearSessionButton");
+
+        const sessionOutput =
+            document.querySelector("#sessionOutput");
+
+
+        saveSessionButton.addEventListener(
+            "click",
+            function () {
+
+                const course =
+                    sessionCourse.value.trim();
+
+                if (course === "") {
+
+                    sessionOutput.textContent =
+                        "Please enter a course.";
+
+                    return;
+                }
+
+                sessionStorage.setItem(
+                    "currentCourse",
+                    course
+                );
+
+                sessionOutput.textContent =
+                    "Course saved in sessionStorage.";
+            }
+        );
+
+
+        loadSessionButton.addEventListener(
+            "click",
+            function () {
+
+                const course =
+                    sessionStorage.getItem(
+                        "currentCourse"
+                    );
+
+                if (course === null) {
+
+                    sessionOutput.textContent =
+                        "No session course found.";
+
+                    return;
+                }
+
+                sessionOutput.textContent =
+                    `Current Course: ${course}`;
+            }
+        );
+
+
+        clearSessionButton.addEventListener(
+            "click",
+            function () {
+
+                sessionStorage.removeItem(
+                    "currentCourse"
+                );
+
+                sessionOutput.textContent =
+                    "Session course removed.";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // 3. Student Object
+        // ---------------------------------------------------------
+
+        const studentName =
+            document.querySelector("#studentName");
+
+        const studentCourse =
+            document.querySelector("#studentCourse");
+
+        const studentScore =
+            document.querySelector("#studentScore");
+
+        const saveStudentButton =
+            document.querySelector("#saveStudentButton");
+
+        const loadStudentButton =
+            document.querySelector("#loadStudentButton");
+
+        const deleteStudentButton =
+            document.querySelector("#deleteStudentButton");
+
+        const studentOutput =
+            document.querySelector("#studentOutput");
+
+
+        saveStudentButton.addEventListener(
+            "click",
+            function () {
+
+                const name =
+                    studentName.value.trim();
+
+                const course =
+                    studentCourse.value.trim();
+
+                const score =
+                    Number(studentScore.value);
+
+
+                if (
+                    name === "" ||
+                    course === "" ||
+                    studentScore.value === ""
+                ) {
+
+                    studentOutput.textContent =
+                        "Please complete all student fields.";
+
+                    return;
+                }
+
+
+                if (score < 0 || score > 100) {
+
+                    studentOutput.textContent =
+                        "Score must be between 0 and 100.";
+
+                    return;
+                }
+
+
+                const student = {
+                    name: name,
+                    course: course,
+                    score: score
+                };
+
+
+                const studentJSON =
+                    JSON.stringify(student);
+
+
+                localStorage.setItem(
+                    "student",
+                    studentJSON
+                );
+
+
+                studentOutput.textContent =
+                    "Student object saved successfully.";
+            }
+        );
+
+
+        loadStudentButton.addEventListener(
+            "click",
+            function () {
+
+                const studentJSON =
+                    localStorage.getItem("student");
+
+
+                if (studentJSON === null) {
+
+                    studentOutput.textContent =
+                        "No student object found.";
+
+                    return;
+                }
+
+
+                try {
+
+                    const student =
+                        JSON.parse(studentJSON);
+
+
+                    studentOutput.textContent =
+                        `Name: ${student.name}
+Course: ${student.course}
+Score: ${student.score}`;
+
+                } catch (error) {
+
+                    studentOutput.textContent =
+                        "Stored student data is invalid.";
+                }
+            }
+        );
+
+
+        deleteStudentButton.addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem(
+                    "student"
+                );
+
+                studentOutput.textContent =
+                    "Student data deleted.";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // 4. Array Storage
+        // ---------------------------------------------------------
+
+        const coursesOutput =
+            document.querySelector("#coursesOutput");
+
+        const saveCoursesButton =
+            document.querySelector("#saveCoursesButton");
+
+        const loadCoursesButton =
+            document.querySelector("#loadCoursesButton");
+
+        const addCourseButton =
+            document.querySelector("#addCourseButton");
+
+
+        let courses = [
+            "MAD 1",
+            "DBMS",
+            "PDSA",
+            "MLF"
+        ];
+
+
+        saveCoursesButton.addEventListener(
+            "click",
+            function () {
+
+                localStorage.setItem(
+                    "courses",
+                    JSON.stringify(courses)
+                );
+
+                coursesOutput.textContent =
+                    "Course array saved.";
+            }
+        );
+
+
+        loadCoursesButton.addEventListener(
+            "click",
+            function () {
+
+                const storedCourses =
+                    localStorage.getItem(
+                        "courses"
+                    );
+
+
+                if (storedCourses === null) {
+
+                    coursesOutput.textContent =
+                        "No course array found.";
+
+                    return;
+                }
+
+
+                try {
+
+                    courses =
+                        JSON.parse(storedCourses);
+
+
+                    coursesOutput.textContent =
+                        courses.join("\n");
+
+                } catch (error) {
+
+                    coursesOutput.textContent =
+                        "Stored course data is invalid.";
+                }
+            }
+        );
+
+
+        addCourseButton.addEventListener(
+            "click",
+            function () {
+
+                courses.push(
+                    "Machine Learning Techniques"
+                );
+
+
+                localStorage.setItem(
+                    "courses",
+                    JSON.stringify(courses)
+                );
+
+
+                coursesOutput.textContent =
+                    `Course added.
+
+${courses.join("\n")}`;
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // 5. Theme Preference
+        // ---------------------------------------------------------
+
+        const themeSelect =
+            document.querySelector("#themeSelect");
+
+        const saveThemeButton =
+            document.querySelector("#saveThemeButton");
+
+        const themeOutput =
+            document.querySelector("#themeOutput");
+
+
+        function applyTheme(theme) {
+
+            if (theme === "dark") {
+
+                document.body.classList.add(
+                    "dark-mode"
+                );
+
+            } else {
+
+                document.body.classList.remove(
+                    "dark-mode"
+                );
+            }
+
+            themeSelect.value = theme;
+        }
+
+
+        saveThemeButton.addEventListener(
+            "click",
+            function () {
+
+                const theme =
+                    themeSelect.value;
+
+                localStorage.setItem(
+                    "theme",
+                    theme
+                );
+
+                applyTheme(theme);
+
+                themeOutput.textContent =
+                    `Theme saved: ${theme}`;
+            }
+        );
+
+
+        const savedTheme =
+            localStorage.getItem("theme");
+
+
+        if (savedTheme !== null) {
+            applyTheme(savedTheme);
+        }
+
+
+        // ---------------------------------------------------------
+        // 6. Storage Information
+        // ---------------------------------------------------------
+
+        const storageInfoButton =
+            document.querySelector(
+                "#storageInfoButton"
+            );
+
+        const storageInfoOutput =
+            document.querySelector(
+                "#storageInfoOutput"
+            );
+
+
+        storageInfoButton.addEventListener(
+            "click",
+            function () {
+
+                const localKeys = [];
+
+                for (
+                    let i = 0;
+                    i < localStorage.length;
+                    i++
+                ) {
+
+                    localKeys.push(
+                        localStorage.key(i)
+                    );
+                }
+
+
+                const sessionKeys = [];
+
+                for (
+                    let i = 0;
+                    i < sessionStorage.length;
+                    i++
+                ) {
+
+                    sessionKeys.push(
+                        sessionStorage.key(i)
+                    );
+                }
+
+
+                storageInfoOutput.textContent =
+                    `localStorage entries:
+${localStorage.length}
+
+localStorage keys:
+${localKeys.join(", ") || "None"}
+
+sessionStorage entries:
+${sessionStorage.length}
+
+sessionStorage keys:
+${sessionKeys.join(", ") || "None"}`;
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // 7. Clear localStorage
+        // ---------------------------------------------------------
+
+        const clearLocalButton =
+            document.querySelector(
+                "#clearLocalButton"
+            );
+
+        const clearOutput =
+            document.querySelector(
+                "#clearOutput"
+            );
+
+
+        clearLocalButton.addEventListener(
+            "click",
+            function () {
+
+                localStorage.clear();
+
+                clearOutput.textContent =
+                    "localStorage cleared successfully.";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // 8. Storage Event
+        // ---------------------------------------------------------
+
+        window.addEventListener(
+            "storage",
+            function (event) {
+
+                console.log(
+                    "Storage changed in another browsing context."
+                );
+
+                console.log(
+                    "Key:",
+                    event.key
+                );
+
+                console.log(
+                    "Old value:",
+                    event.oldValue
+                );
+
+                console.log(
+                    "New value:",
+                    event.newValue
+                );
+            }
+        );
+    </script>
+
+</body>
+
+</html>
