@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Day 060 - JavaScript Revision and Master Challenge
+    </title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            transition: 0.3s;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 6px 0;
+        }
+
+        main {
+            width: min(1150px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #172554;
+        }
+
+        h3 {
+            color: #2563eb;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(210px, 1fr)
+            );
+            gap: 15px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f8fafc;
+            border: 1px solid #dbe2ea;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(150px, 1fr)
+            );
+            gap: 15px;
+        }
+
+        .stat-card {
+            padding: 20px;
+            text-align: center;
+            background: #eff6ff;
+            border-radius: 10px;
+        }
+
+        .stat {
+            font-size: 30px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        form {
+            max-width: 700px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: 2px solid #93c5fd;
+        }
+
+        input:invalid:not(:placeholder-shown) {
+            border-color: #dc2626;
+        }
+
+        button {
+            border: none;
+            padding: 11px 18px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .secondary {
+            background: #475569;
+        }
+
+        .success {
+            background: #15803d;
+        }
+
+        .danger {
+            background: #dc2626;
+        }
+
+        .warning {
+            background: #b45309;
+        }
+
+        .output {
+            margin-top: 18px;
+            padding: 16px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            min-height: 45px;
+            white-space: pre-line;
+        }
+
+        .success-text {
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        .error-text {
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 30px;
+            margin: 15px 0;
+            background: #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #2563eb;
+            color: white;
+            font-size: 13px;
+            transition: width 0.3s;
+        }
+
+        .course-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .course-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .course-item button {
+            margin: 0;
+            padding: 7px 12px;
+        }
+
+        .search-box {
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 10px;
+            margin: 4px;
+            border-radius: 20px;
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .dark-mode {
+            background: #111827;
+            color: #e5e7eb;
+        }
+
+        .dark-mode section {
+            background: #1f2937;
+        }
+
+        .dark-mode h2 {
+            color: #93c5fd;
+        }
+
+        .dark-mode .card,
+        .dark-mode .output,
+        .dark-mode .course-item,
+        .dark-mode .stat-card {
+            background: #374151;
+            border-color: #4b5563;
+        }
+
+        .dark-mode .badge {
+            background: #1e3a8a;
+            color: #dbeafe;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 18px;
+            }
+
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .course-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 060
+        Topic: JavaScript Revision and Master Challenge
+    -->
+
+    <header>
+        <h1>🏆 JavaScript Master Challenge</h1>
+        <p>Day 060 — Student Academic Management Dashboard</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <!-- =====================================================
+             Dashboard
+        ====================================================== -->
+
+        <section>
+            <h2>📊 Student Dashboard</h2>
+
+            <div class="stat-grid">
+
+                <article class="stat-card">
+                    <h3>Student</h3>
+                    <div
+                        id="dashboardName"
+                        class="stat"
+                    >
+                        -
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Course</h3>
+                    <div
+                        id="dashboardCourse"
+                        class="stat"
+                    >
+                        -
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Marks</h3>
+                    <div
+                        id="dashboardMarks"
+                        class="stat"
+                    >
+                        -
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Grade</h3>
+                    <div
+                        id="dashboardGrade"
+                        class="stat"
+                    >
+                        -
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             JavaScript Concepts
+        ====================================================== -->
+
+        <section>
+            <h2>📚 JavaScript Revision Coverage</h2>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>🔤 Fundamentals</h3>
+                    <p>
+                        Variables, data types, operators,
+                        conditions and loops.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>🧩 Functions</h3>
+                    <p>
+                        Functions, parameters, return values
+                        and arrow functions.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>📦 Data</h3>
+                    <p>
+                        Strings, arrays, objects and
+                        array methods.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>🌳 DOM</h3>
+                    <p>
+                        Element selection, creation and
+                        dynamic manipulation.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>⚡ Events</h3>
+                    <p>
+                        Event listeners, input events
+                        and form submission.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>💾 Storage</h3>
+                    <p>
+                        localStorage, sessionStorage
+                        and JSON.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             Student Profile
+        ====================================================== -->
+
+        <section>
+            <h2>👩‍🎓 Student Profile and Result</h2>
+
+            <form
+                id="studentForm"
+                novalidate
+            >
+
+                <div class="form-group">
+                    <label for="studentName">
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        name="studentName"
+                        placeholder="Enter student name"
+                        minlength="3"
+                        maxlength="50"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="studentEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="studentEmail"
+                        name="studentEmail"
+                        placeholder="student@example.com"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="studentCourse">
+                        Course
+                    </label>
+
+                    <select
+                        id="studentCourse"
+                        name="studentCourse"
+                        required
+                    >
+                        <option value="">
+                            Select Course
+                        </option>
+
+                        <option value="MAD 1">
+                            MAD 1
+                        </option>
+
+                        <option value="DBMS">
+                            DBMS
+                        </option>
+
+                        <option value="PDSA">
+                            PDSA
+                        </option>
+
+                        <option value="MLF">
+                            MLF
+                        </option>
+
+                        <option value="BDM">
+                            BDM
+                        </option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="studentMarks">
+                        Marks
+                    </label>
+
+                    <input
+                        type="number"
+                        id="studentMarks"
+                        name="studentMarks"
+                        min="0"
+                        max="100"
+                        placeholder="0 - 100"
+                        required
+                    >
+                </div>
+
+
+                <button type="submit">
+                    Calculate Result
+                </button>
+
+                <button
+                    type="reset"
+                    class="secondary"
+                >
+                    Reset
+                </button>
+
+            </form>
+
+
+            <div
+                id="resultOutput"
+                class="output"
+            >
+                Enter student information to calculate the result.
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             Progress Tracker
+        ====================================================== -->
+
+        <section>
+            <h2>📈 Learning Progress</h2>
+
+            <p>
+                Progress:
+                <strong id="progressText">0%</strong>
+            </p>
+
+            <div class="progress-container">
+                <div
+                    id="progressBar"
+                    class="progress-bar"
+                >
+                    0%
+                </div>
+            </div>
+
+            <button id="increaseProgress">
+                Increase
+            </button>
+
+            <button
+                id="decreaseProgress"
+                class="secondary"
+            >
+                Decrease
+            </button>
+
+            <button
+                id="resetProgress"
+                class="danger"
+            >
+                Reset
+            </button>
+        </section>
+
+
+        <!-- =====================================================
+             Course Manager
+        ====================================================== -->
+
+        <section>
+            <h2>📚 Course Manager</h2>
+
+            <label for="courseSearch">
+                Search Courses
+            </label>
+
+            <input
+                type="search"
+                id="courseSearch"
+                class="search-box"
+                placeholder="Search course..."
+            >
+
+
+            <label for="newCourse">
+                Add New Course
+            </label>
+
+            <input
+                type="text"
+                id="newCourse"
+                placeholder="Enter course name"
+            >
+
+            <button id="addCourse">
+                Add Course
+            </button>
+
+
+            <div
+                id="courseList"
+                class="course-list"
+            ></div>
+        </section>
+
+
+        <!-- =====================================================
+             localStorage
+        ====================================================== -->
+
+        <section>
+            <h2>💾 localStorage</h2>
+
+            <p>
+                Save and restore the current student profile
+                using browser storage.
+            </p>
+
+            <button
+                id="saveStudent"
+                class="success"
+            >
+                Save Student
+            </button>
+
+            <button
+                id="loadStudent"
+                class="secondary"
+            >
+                Load Student
+            </button>
+
+            <button
+                id="deleteStudent"
+                class="danger"
+            >
+                Delete Student
+            </button>
+
+            <div
+                id="storageOutput"
+                class="output"
+            >
+                No storage action performed.
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             sessionStorage
+        ====================================================== -->
+
+        <section>
+            <h2>⏳ sessionStorage</h2>
+
+            <p>
+                Store temporary course and progress information
+                for the current browsing session.
+            </p>
+
+            <button
+                id="saveSession"
+                class="success"
+            >
+                Save Session
+            </button>
+
+            <button
+                id="loadSession"
+                class="secondary"
+            >
+                Load Session
+            </button>
+
+            <button
+                id="clearSession"
+                class="danger"
+            >
+                Clear Session
+            </button>
+
+            <div
+                id="sessionOutput"
+                class="output"
+            >
+                No session data loaded.
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             Theme
+        ====================================================== -->
+
+        <section>
+            <h2>🌙 Theme Preference</h2>
+
+            <label for="themeSelect">
+                Select Theme
+            </label>
+
+            <select id="themeSelect">
+
+                <option value="light">
+                    Light
+                </option>
+
+                <option value="dark">
+                    Dark
+                </option>
+
+            </select>
+
+            <button id="saveTheme">
+                Save Theme
+            </button>
+
+            <div
+                id="themeOutput"
+                class="output"
+            >
+                Select a theme and save it.
+            </div>
+        </section>
+
+
+        <!-- =====================================================
+             Concepts Used
+        ====================================================== -->
+
+        <section>
+            <h2>🧠 Concepts Used in This Challenge</h2>
+
+            <span class="badge">Variables</span>
+            <span class="badge">Conditions</span>
+            <span class="badge">Loops</span>
+            <span class="badge">Functions</span>
+            <span class="badge">Arrays</span>
+            <span class="badge">Objects</span>
+            <span class="badge">Array Methods</span>
+            <span class="badge">Template Literals</span>
+            <span class="badge">ES6</span>
+            <span class="badge">DOM</span>
+            <span class="badge">Events</span>
+            <span class="badge">Validation</span>
+            <span class="badge">JSON</span>
+            <span class="badge">localStorage</span>
+            <span class="badge">sessionStorage</span>
+            <span class="badge">Error Handling</span>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 060
+        </p>
+
+        <p>
+            🏆 JavaScript Section Complete — Master Challenge
+        </p>
+    </footer>
+
+
+    <script>
+        // =========================================================
+        // Day 060 — JavaScript Revision and Master Challenge
+        // =========================================================
+
+
+        // ---------------------------------------------------------
+        // DOM Selection
+        // ---------------------------------------------------------
+
+        const studentForm =
+            document.querySelector("#studentForm");
+
+        const studentName =
+            document.querySelector("#studentName");
+
+        const studentEmail =
+            document.querySelector("#studentEmail");
+
+        const studentCourse =
+            document.querySelector("#studentCourse");
+
+        const studentMarks =
+            document.querySelector("#studentMarks");
+
+        const resultOutput =
+            document.querySelector("#resultOutput");
+
+
+        const dashboardName =
+            document.querySelector("#dashboardName");
+
+        const dashboardCourse =
+            document.querySelector("#dashboardCourse");
+
+        const dashboardMarks =
+            document.querySelector("#dashboardMarks");
+
+        const dashboardGrade =
+            document.querySelector("#dashboardGrade");
+
+
+        // ---------------------------------------------------------
+        // Current Student
+        // ---------------------------------------------------------
+
+        let currentStudent = null;
+
+
+        // ---------------------------------------------------------
+        // Grade Function
+        // ---------------------------------------------------------
+
+        function calculateGrade(marks) {
+
+            if (marks >= 90) {
+                return "A+";
+            }
+
+            if (marks >= 80) {
+                return "A";
+            }
+
+            if (marks >= 70) {
+                return "B";
+            }
+
+            if (marks >= 60) {
+                return "C";
+            }
+
+            if (marks >= 50) {
+                return "D";
+            }
+
+            return "F";
+        }
+
+
+        // ---------------------------------------------------------
+        // Result Function
+        // ---------------------------------------------------------
+
+        function calculateResult(marks) {
+
+            return marks >= 50
+                ? "Passed"
+                : "Failed";
+        }
+
+
+        // ---------------------------------------------------------
+        // Update Dashboard
+        // ---------------------------------------------------------
+
+        function updateDashboard(student) {
+
+            dashboardName.textContent =
+                student.name;
+
+            dashboardCourse.textContent =
+                student.course;
+
+            dashboardMarks.textContent =
+                student.marks;
+
+            dashboardGrade.textContent =
+                student.grade;
+        }
+
+
+        // ---------------------------------------------------------
+        // Form Submission
+        // ---------------------------------------------------------
+
+        studentForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                if (!studentForm.checkValidity()) {
+
+                    resultOutput.textContent =
+                        "Please correct the invalid fields.";
+
+                    resultOutput.className =
+                        "output error-text";
+
+                    studentForm.reportValidity();
+
+                    return;
+                }
+
+
+                const name =
+                    studentName.value.trim();
+
+                const email =
+                    studentEmail.value.trim();
+
+                const course =
+                    studentCourse.value;
+
+                const marks =
+                    Number(studentMarks.value);
+
+
+                const grade =
+                    calculateGrade(marks);
+
+                const result =
+                    calculateResult(marks);
+
+
+                currentStudent = {
+                    name: name,
+                    email: email,
+                    course: course,
+                    marks: marks,
+                    grade: grade,
+                    result: result
+                };
+
+
+                updateDashboard(currentStudent);
+
+
+                resultOutput.textContent =
+                    `Student: ${name}
+Email: ${email}
+Course: ${course}
+Marks: ${marks}
+Grade: ${grade}
+Result: ${result}`;
+
+                resultOutput.className =
+                    "output success-text";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // Progress Tracker
+        // ---------------------------------------------------------
+
+        let progress = 0;
+
+        const progressText =
+            document.querySelector("#progressText");
+
+        const progressBar =
+            document.querySelector("#progressBar");
+
+
+        function updateProgress() {
+
+            progressText.textContent =
+                `${progress}%`;
+
+            progressBar.textContent =
+                `${progress}%`;
+
+            progressBar.style.width =
+                `${progress}%`;
+        }
+
+
+        document.querySelector(
+            "#increaseProgress"
+        ).addEventListener(
+            "click",
+            function () {
+
+                progress =
+                    Math.min(
+                        progress + 10,
+                        100
+                    );
+
+                updateProgress();
+            }
+        );
+
+
+        document.querySelector(
+            "#decreaseProgress"
+        ).addEventListener(
+            "click",
+            function () {
+
+                progress =
+                    Math.max(
+                        progress - 10,
+                        0
+                    );
+
+                updateProgress();
+            }
+        );
+
+
+        document.querySelector(
+            "#resetProgress"
+        ).addEventListener(
+            "click",
+            function () {
+
+                progress = 0;
+
+                updateProgress();
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // Course Manager
+        // ---------------------------------------------------------
+
+        let courses = [
+            "MAD 1",
+            "DBMS",
+            "PDSA",
+            "MLF",
+            "BDM"
+        ];
+
+
+        const courseList =
+            document.querySelector("#courseList");
+
+        const newCourse =
+            document.querySelector("#newCourse");
+
+        const courseSearch =
+            document.querySelector("#courseSearch");
+
+
+        function renderCourses(
+            searchTerm = ""
+        ) {
+
+            courseList.innerHTML = "";
+
+
+            const filteredCourses =
+                courses.filter(
+                    function (course) {
+
+                        return course
+                            .toLowerCase()
+                            .includes(
+                                searchTerm
+                                    .toLowerCase()
+                            );
+                    }
+                );
+
+
+            if (filteredCourses.length === 0) {
+
+                courseList.textContent =
+                    "No matching courses found.";
+
+                return;
+            }
+
+
+            filteredCourses.forEach(
+                function (course) {
+
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+                    item.className =
+                        "course-item";
+
+
+                    const name =
+                        document.createElement(
+                            "span"
+                        );
+
+                    name.textContent =
+                        course;
+
+
+                    const removeButton =
+                        document.createElement(
+                            "button"
+                        );
+
+                    removeButton.textContent =
+                        "Remove";
+
+                    removeButton.className =
+                        "danger";
+
+
+                    removeButton.addEventListener(
+                        "click",
+                        function () {
+
+                            courses =
+                                courses.filter(
+                                    function (
+                                        currentCourse
+                                    ) {
+
+                                        return (
+                                            currentCourse
+                                            !== course
+                                        );
+                                    }
+                                );
+
+
+                            renderCourses(
+                                courseSearch.value
+                            );
+                        }
+                    );
+
+
+                    item.append(
+                        name,
+                        removeButton
+                    );
+
+                    courseList.append(item);
+                }
+            );
+        }
+
+
+        document.querySelector(
+            "#addCourse"
+        ).addEventListener(
+            "click",
+            function () {
+
+                const course =
+                    newCourse.value.trim();
+
+
+                if (course === "") {
+
+                    return;
+                }
+
+
+                const exists =
+                    courses.some(
+                        function (item) {
+
+                            return (
+                                item.toLowerCase()
+                                === course.toLowerCase()
+                            );
+                        }
+                    );
+
+
+                if (exists) {
+
+                    alert(
+                        "This course already exists."
+                    );
+
+                    return;
+                }
+
+
+                courses.push(course);
+
+                newCourse.value = "";
+
+                renderCourses(
+                    courseSearch.value
+                );
+            }
+        );
+
+
+        courseSearch.addEventListener(
+            "input",
+            function () {
+
+                renderCourses(
+                    courseSearch.value
+                );
+            }
+        );
+
+
+        renderCourses();
+
+
+        // ---------------------------------------------------------
+        // localStorage — Save Student
+        // ---------------------------------------------------------
+
+        const storageOutput =
+            document.querySelector(
+                "#storageOutput"
+            );
+
+
+        document.querySelector(
+            "#saveStudent"
+        ).addEventListener(
+            "click",
+            function () {
+
+                if (currentStudent === null) {
+
+                    storageOutput.textContent =
+                        "Calculate a student result first.";
+
+                    storageOutput.className =
+                        "output error-text";
+
+                    return;
+                }
+
+
+                localStorage.setItem(
+                    "masterChallengeStudent",
+                    JSON.stringify(
+                        currentStudent
+                    )
+                );
+
+
+                storageOutput.textContent =
+                    "Student data saved to localStorage.";
+
+                storageOutput.className =
+                    "output success-text";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // localStorage — Load Student
+        // ---------------------------------------------------------
+
+        document.querySelector(
+            "#loadStudent"
+        ).addEventListener(
+            "click",
+            function () {
+
+                const storedData =
+                    localStorage.getItem(
+                        "masterChallengeStudent"
+                    );
+
+
+                if (storedData === null) {
+
+                    storageOutput.textContent =
+                        "No saved student data found.";
+
+                    storageOutput.className =
+                        "output error-text";
+
+                    return;
+                }
+
+
+                try {
+
+                    const student =
+                        JSON.parse(
+                            storedData
+                        );
+
+
+                    currentStudent =
+                        student;
+
+
+                    studentName.value =
+                        student.name;
+
+                    studentEmail.value =
+                        student.email;
+
+                    studentCourse.value =
+                        student.course;
+
+                    studentMarks.value =
+                        student.marks;
+
+
+                    updateDashboard(student);
+
+
+                    resultOutput.textContent =
+                        `Loaded Student: ${student.name}
+Course: ${student.course}
+Marks: ${student.marks}
+Grade: ${student.grade}
+Result: ${student.result}`;
+
+                    resultOutput.className =
+                        "output success-text";
+
+
+                    storageOutput.textContent =
+                        "Student data loaded successfully.";
+
+                    storageOutput.className =
+                        "output success-text";
+
+                } catch (error) {
+
+                    storageOutput.textContent =
+                        "Stored student data is invalid.";
+
+                    storageOutput.className =
+                        "output error-text";
+
+                    console.error(
+                        "JSON parsing error:",
+                        error
+                    );
+                }
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // localStorage — Delete Student
+        // ---------------------------------------------------------
+
+        document.querySelector(
+            "#deleteStudent"
+        ).addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem(
+                    "masterChallengeStudent"
+                );
+
+
+                storageOutput.textContent =
+                    "Saved student data deleted.";
+
+                storageOutput.className =
+                    "output";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // sessionStorage
+        // ---------------------------------------------------------
+
+        const sessionOutput =
+            document.querySelector(
+                "#sessionOutput"
+            );
+
+
+        document.querySelector(
+            "#saveSession"
+        ).addEventListener(
+            "click",
+            function () {
+
+                if (studentCourse.value === "") {
+
+                    sessionOutput.textContent =
+                        "Select a course first.";
+
+                    sessionOutput.className =
+                        "output error-text";
+
+                    return;
+                }
+
+
+                sessionStorage.setItem(
+                    "masterCurrentCourse",
+                    studentCourse.value
+                );
+
+
+                sessionStorage.setItem(
+                    "masterProgress",
+                    String(progress)
+                );
+
+
+                sessionOutput.textContent =
+                    `Session saved.
+Course: ${studentCourse.value}
+Progress: ${progress}%`;
+
+                sessionOutput.className =
+                    "output success-text";
+            }
+        );
+
+
+        document.querySelector(
+            "#loadSession"
+        ).addEventListener(
+            "click",
+            function () {
+
+                const course =
+                    sessionStorage.getItem(
+                        "masterCurrentCourse"
+                    );
+
+                const savedProgress =
+                    sessionStorage.getItem(
+                        "masterProgress"
+                    );
+
+
+                if (
+                    course === null &&
+                    savedProgress === null
+                ) {
+
+                    sessionOutput.textContent =
+                        "No session data found.";
+
+                    sessionOutput.className =
+                        "output error-text";
+
+                    return;
+                }
+
+
+                if (course !== null) {
+                    studentCourse.value =
+                        course;
+                }
+
+
+                if (savedProgress !== null) {
+
+                    progress =
+                        Number(savedProgress);
+
+                    updateProgress();
+                }
+
+
+                sessionOutput.textContent =
+                    `Session loaded.
+Course: ${course ?? "None"}
+Progress: ${savedProgress ?? "0"}%`;
+
+                sessionOutput.className =
+                    "output success-text";
+            }
+        );
+
+
+        document.querySelector(
+            "#clearSession"
+        ).addEventListener(
+            "click",
+            function () {
+
+                sessionStorage.removeItem(
+                    "masterCurrentCourse"
+                );
+
+                sessionStorage.removeItem(
+                    "masterProgress"
+                );
+
+
+                sessionOutput.textContent =
+                    "Session data cleared.";
+
+                sessionOutput.className =
+                    "output";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // Theme Preference
+        // ---------------------------------------------------------
+
+        const themeSelect =
+            document.querySelector(
+                "#themeSelect"
+            );
+
+        const themeOutput =
+            document.querySelector(
+                "#themeOutput"
+            );
+
+
+        function applyTheme(theme) {
+
+            if (theme === "dark") {
+
+                document.body.classList.add(
+                    "dark-mode"
+                );
+
+            } else {
+
+                document.body.classList.remove(
+                    "dark-mode"
+                );
+            }
+
+
+            themeSelect.value =
+                theme;
+        }
+
+
+        document.querySelector(
+            "#saveTheme"
+        ).addEventListener(
+            "click",
+            function () {
+
+                const theme =
+                    themeSelect.value;
+
+
+                localStorage.setItem(
+                    "masterChallengeTheme",
+                    theme
+                );
+
+
+                applyTheme(theme);
+
+
+                themeOutput.textContent =
+                    `Theme saved: ${theme}`;
+
+                themeOutput.className =
+                    "output success-text";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // Load Theme
+        // ---------------------------------------------------------
+
+        const savedTheme =
+            localStorage.getItem(
+                "masterChallengeTheme"
+            );
+
+
+        if (savedTheme !== null) {
+
+            applyTheme(savedTheme);
+        }
+
+
+        // ---------------------------------------------------------
+        // Reset Form
+        // ---------------------------------------------------------
+
+        studentForm.addEventListener(
+            "reset",
+            function () {
+
+                setTimeout(
+                    function () {
+
+                        resultOutput.textContent =
+                            "Enter student information to calculate the result.";
+
+                        resultOutput.className =
+                            "output";
+
+                    },
+                    0
+                );
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // Initial Progress
+        // ---------------------------------------------------------
+
+        updateProgress();
+    </script>
+
+</body>
+
+</html>
