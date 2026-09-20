@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 056 - Events and Event Listeners</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            margin: 6px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #172554;
+            margin-top: 0;
+        }
+
+        .event-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+
+        .event-card {
+            padding: 18px;
+            border: 1px solid #dbe2ea;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+
+        button {
+            border: none;
+            padding: 11px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .secondary {
+            background: #475569;
+        }
+
+        .danger {
+            background: #dc2626;
+        }
+
+        .box {
+            width: 100%;
+            max-width: 450px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #2563eb;
+            border-radius: 12px;
+            margin: 15px 0;
+            background: #eff6ff;
+            transition: 0.3s;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .box.active {
+            transform: scale(1.02);
+            background: #dbeafe;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            margin: 8px 0 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        form {
+            max-width: 500px;
+        }
+
+        .output {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            min-height: 45px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        .event-target {
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #172554;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 18px;
+            }
+
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 056
+        Topic: Events and Event Listeners
+    -->
+
+    <header>
+        <h1>⚡ Events and Event Listeners</h1>
+        <p>Day 056 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📚 Common JavaScript Events</h2>
+
+            <div class="event-grid">
+                <article class="event-card">
+                    <h3>🖱️ Mouse Events</h3>
+                    <p>click, dblclick, mouseenter, mouseleave</p>
+                </article>
+
+                <article class="event-card">
+                    <h3>⌨️ Keyboard Events</h3>
+                    <p>keydown and keyup</p>
+                </article>
+
+                <article class="event-card">
+                    <h3>✍️ Input Events</h3>
+                    <p>input, change, focus and blur</p>
+                </article>
+
+                <article class="event-card">
+                    <h3>📝 Form Events</h3>
+                    <p>submit and change</p>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>🖱️ Click Event</h2>
+
+            <button id="clickButton">Click Me</button>
+
+            <button id="resetButton" class="secondary">
+                Reset Counter
+            </button>
+
+            <div class="output">
+                Clicks: <span id="clickCount">0</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>🖱️ Mouse Events</h2>
+
+            <div id="mouseBox" class="box">
+                Move your mouse over this box
+            </div>
+
+            <p id="mouseMessage">Waiting for mouse interaction...</p>
+        </section>
+
+        <section>
+            <h2>⌨️ Keyboard Event</h2>
+
+            <label for="keyboardInput">Type something:</label>
+
+            <input
+                type="text"
+                id="keyboardInput"
+                placeholder="Press any key..."
+            >
+
+            <div class="output">
+                Last Key:
+                <span id="keyOutput">None</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>✍️ Input Event</h2>
+
+            <label for="nameInput">Student Name:</label>
+
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="Enter your name"
+            >
+
+            <div class="output">
+                Live Preview:
+                <span id="namePreview">Your name will appear here.</span>
+            </div>
+
+            <div class="output">
+                Characters:
+                <span id="characterCount">0</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>📚 Change Event</h2>
+
+            <label for="courseSelect">Select Course:</label>
+
+            <select id="courseSelect">
+                <option value="">Choose a course</option>
+                <option value="MAD 1">MAD 1</option>
+                <option value="DBMS">DBMS</option>
+                <option value="PDSA">PDSA</option>
+                <option value="MLF">MLF</option>
+            </select>
+
+            <div class="output">
+                Selected Course:
+                <span id="courseOutput">None</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>📝 Form Submit Event</h2>
+
+            <form id="studentForm">
+
+                <label for="studentName">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    name="studentName"
+                    placeholder="Enter student name"
+                    required
+                >
+
+                <label for="studentEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="studentEmail"
+                    name="studentEmail"
+                    placeholder="Enter email"
+                    required
+                >
+
+                <button type="submit">
+                    Submit Form
+                </button>
+            </form>
+
+            <div id="formMessage" class="output">
+                Form has not been submitted.
+            </div>
+        </section>
+
+        <section>
+            <h2>🎯 Event Object</h2>
+
+            <button id="eventButton">
+                Click to Inspect Event
+            </button>
+
+            <div class="output">
+                <p>
+                    Event Type:
+                    <span id="eventType">None</span>
+                </p>
+
+                <p>
+                    Target:
+                    <span id="eventTarget" class="event-target">
+                        None
+                    </span>
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>📋 Event Delegation</h2>
+
+            <p>
+                One listener is attached to the parent list.
+                Clicking any course is handled by the parent.
+            </p>
+
+            <ul id="courseList">
+                <li>Modern Application Development</li>
+                <li>Database Management Systems</li>
+                <li>Programming, Data Structures and Algorithms</li>
+                <li>Machine Learning Foundations</li>
+            </ul>
+
+            <button id="addCourseButton">
+                Add New Course
+            </button>
+
+            <div id="delegationOutput" class="output">
+                Click a course.
+            </div>
+        </section>
+
+        <section>
+            <h2>🔗 Event Bubbling</h2>
+
+            <div
+                id="parentBox"
+                class="box"
+            >
+                <button id="childButton">
+                    Click Child Button
+                </button>
+            </div>
+
+            <div id="bubblingOutput" class="output">
+                Event order will appear here.
+            </div>
+        </section>
+
+        <section>
+            <h2>🧹 removeEventListener()</h2>
+
+            <button id="removeDemoButton">
+                Click Me
+            </button>
+
+            <button
+                id="removeListenerButton"
+                class="danger"
+            >
+                Remove Listener
+            </button>
+
+            <div id="removeOutput" class="output">
+                Listener is active.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 056
+        </p>
+        <p>Events and Event Listeners — JavaScript DOM Practice</p>
+    </footer>
+
+    <script>
+        // =========================================================
+        // Day 056 — Events and Event Listeners
+        // =========================================================
+
+        // ---------------------------------------------------------
+        // 1. Click Event
+        // ---------------------------------------------------------
+
+        const clickButton = document.querySelector("#clickButton");
+        const resetButton = document.querySelector("#resetButton");
+        const clickCount = document.querySelector("#clickCount");
+
+        let count = 0;
+
+        clickButton.addEventListener("click", function () {
+            count++;
+            clickCount.textContent = count;
+        });
+
+        resetButton.addEventListener("click", function () {
+            count = 0;
+            clickCount.textContent = count;
+        });
+
+
+        // ---------------------------------------------------------
+        // 2. Mouse Events
+        // ---------------------------------------------------------
+
+        const mouseBox = document.querySelector("#mouseBox");
+        const mouseMessage = document.querySelector("#mouseMessage");
+
+        mouseBox.addEventListener("mouseenter", function () {
+            mouseBox.classList.add("active");
+            mouseBox.textContent = "Mouse entered!";
+            mouseMessage.textContent = "mouseenter event fired.";
+        });
+
+        mouseBox.addEventListener("mouseleave", function () {
+            mouseBox.classList.remove("active");
+            mouseBox.textContent = "Move your mouse over this box";
+            mouseMessage.textContent = "mouseleave event fired.";
+        });
+
+
+        // ---------------------------------------------------------
+        // 3. Keyboard Event
+        // ---------------------------------------------------------
+
+        const keyboardInput = document.querySelector("#keyboardInput");
+        const keyOutput = document.querySelector("#keyOutput");
+
+        keyboardInput.addEventListener("keydown", function (event) {
+            keyOutput.textContent = event.key;
+        });
+
+
+        // ---------------------------------------------------------
+        // 4. Input Event
+        // ---------------------------------------------------------
+
+        const nameInput = document.querySelector("#nameInput");
+        const namePreview = document.querySelector("#namePreview");
+        const characterCount = document.querySelector("#characterCount");
+
+        nameInput.addEventListener("input", function (event) {
+            const value = event.target.value;
+
+            namePreview.textContent =
+                value || "Your name will appear here.";
+
+            characterCount.textContent = value.length;
+        });
+
+
+        // ---------------------------------------------------------
+        // 5. Change Event
+        // ---------------------------------------------------------
+
+        const courseSelect = document.querySelector("#courseSelect");
+        const courseOutput = document.querySelector("#courseOutput");
+
+        courseSelect.addEventListener("change", function (event) {
+            courseOutput.textContent =
+                event.target.value || "None";
+        });
+
+
+        // ---------------------------------------------------------
+        // 6. Form Submit Event
+        // ---------------------------------------------------------
+
+        const studentForm = document.querySelector("#studentForm");
+        const formMessage = document.querySelector("#formMessage");
+
+        studentForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const studentName =
+                document.querySelector("#studentName").value;
+
+            formMessage.textContent =
+                `Form submitted successfully for ${studentName}.`;
+        });
+
+
+        // ---------------------------------------------------------
+        // 7. Event Object
+        // ---------------------------------------------------------
+
+        const eventButton = document.querySelector("#eventButton");
+        const eventType = document.querySelector("#eventType");
+        const eventTarget = document.querySelector("#eventTarget");
+
+        eventButton.addEventListener("click", function (event) {
+            eventType.textContent = event.type;
+            eventTarget.textContent = event.target.id;
+        });
+
+
+        // ---------------------------------------------------------
+        // 8. Event Delegation
+        // ---------------------------------------------------------
+
+        const courseList = document.querySelector("#courseList");
+        const delegationOutput =
+            document.querySelector("#delegationOutput");
+
+        courseList.addEventListener("click", function (event) {
+
+            if (event.target.matches("li")) {
+                delegationOutput.textContent =
+                    `Selected: ${event.target.textContent}`;
+            }
+
+        });
+
+        const addCourseButton =
+            document.querySelector("#addCourseButton");
+
+        addCourseButton.addEventListener("click", function () {
+
+            const newCourse = document.createElement("li");
+
+            newCourse.textContent =
+                "Machine Learning Techniques";
+
+            courseList.append(newCourse);
+        });
+
+
+        // ---------------------------------------------------------
+        // 9. Event Bubbling
+        // ---------------------------------------------------------
+
+        const parentBox = document.querySelector("#parentBox");
+        const childButton = document.querySelector("#childButton");
+        const bubblingOutput =
+            document.querySelector("#bubblingOutput");
+
+        parentBox.addEventListener("click", function () {
+            bubblingOutput.textContent =
+                "Parent listener executed.";
+        });
+
+        childButton.addEventListener("click", function () {
+            bubblingOutput.textContent =
+                "Child clicked. Event can bubble to the parent.";
+        });
+
+
+        // ---------------------------------------------------------
+        // 10. removeEventListener()
+        // ---------------------------------------------------------
+
+        const removeDemoButton =
+            document.querySelector("#removeDemoButton");
+
+        const removeListenerButton =
+            document.querySelector("#removeListenerButton");
+
+        const removeOutput =
+            document.querySelector("#removeOutput");
+
+        function handleRemoveDemoClick() {
+            removeOutput.textContent =
+                "The click listener is active.";
+        }
+
+        removeDemoButton.addEventListener(
+            "click",
+            handleRemoveDemoClick
+        );
+
+        removeListenerButton.addEventListener(
+            "click",
+            function () {
+
+                removeDemoButton.removeEventListener(
+                    "click",
+                    handleRemoveDemoClick
+                );
+
+                removeOutput.textContent =
+                    "The click listener has been removed.";
+            }
+        );
+    </script>
+
+</body>
+</html>
