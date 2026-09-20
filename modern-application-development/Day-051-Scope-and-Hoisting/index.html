@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 051 - Scope and Hoisting</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #d1d5db;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+
+        h3 {
+            margin: 15px 0 8px;
+            color: #374151;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            padding: 18px;
+            border: 1px solid #dbe3ef;
+            border-radius: 10px;
+            background: #f9fafb;
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        button {
+            border: none;
+            padding: 12px 18px;
+            border-radius: 7px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 15px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 8px;
+            min-height: 45px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #111827;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 051
+        Topic: Scope and Hoisting
+    -->
+
+    <header>
+        <h1>Day 051 — Scope and Hoisting</h1>
+        <p>Understanding JavaScript variable visibility and declaration behavior</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📖 What is Scope?</h2>
+
+            <p>
+                Scope determines where a variable, function, or identifier
+                can be accessed in JavaScript.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <strong>Global Scope</strong>
+                    Available from the global scope.
+                </div>
+
+                <div class="card">
+                    <strong>Function Scope</strong>
+                    Created by functions, especially for <code>var</code>.
+                </div>
+
+                <div class="card">
+                    <strong>Block Scope</strong>
+                    Created by blocks for <code>let</code> and <code>const</code>.
+                </div>
+
+                <div class="card">
+                    <strong>Lexical Scope</strong>
+                    Determined by where code is written.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔗 Scope Chain</h2>
+
+            <p>
+                JavaScript searches for variables from the current scope
+                and then moves outward through the scope chain.
+            </p>
+
+            <pre>
+Current Scope
+     ↓
+Outer Scope
+     ↓
+Global Scope
+            </pre>
+        </section>
+
+        <section>
+            <h2>🧩 var, let and const</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>var</th>
+                        <th>let</th>
+                        <th>const</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Function Scoped</td>
+                        <td>Yes</td>
+                        <td>No</td>
+                        <td>No</td>
+                    </tr>
+
+                    <tr>
+                        <td>Block Scoped</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+
+                    <tr>
+                        <td>Reassignment</td>
+                        <td>Allowed</td>
+                        <td>Allowed</td>
+                        <td>Not allowed</td>
+                    </tr>
+
+                    <tr>
+                        <td>Temporal Dead Zone</td>
+                        <td>No</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>👤 Variable Shadowing</h2>
+
+            <p>
+                Shadowing occurs when an inner scope declares a variable
+                with the same name as a variable in an outer scope.
+            </p>
+
+            <pre>
+let course = "HTML";
+
+function learn() {
+    let course = "JavaScript";
+    console.log(course);
+}
+
+learn();
+            </pre>
+        </section>
+
+        <section>
+            <h2>⬆️ Hoisting</h2>
+
+            <p>
+                Hoisting describes how JavaScript processes declarations
+                before executing the code.
+            </p>
+
+            <h3>var</h3>
+
+            <pre>
+console.log(score);
+var score = 90;
+
+// Output:
+// undefined
+            </pre>
+
+            <h3>let</h3>
+
+            <pre>
+console.log(score);
+let score = 90;
+
+// Result:
+// ReferenceError
+            </pre>
+
+            <h3>const</h3>
+
+            <pre>
+console.log(course);
+const course = "MAD 1";
+
+// Result:
+// ReferenceError
+            </pre>
+        </section>
+
+        <section>
+            <h2>⏳ Temporal Dead Zone</h2>
+
+            <p>
+                The Temporal Dead Zone is the period between entering a scope
+                and the initialization of a <code>let</code> or
+                <code>const</code> variable.
+            </p>
+
+            <pre>
+console.log(name);
+
+let name = "Saloni";
+
+// ReferenceError
+            </pre>
+        </section>
+
+        <section>
+            <h2>⚡ Function Hoisting</h2>
+
+            <p>
+                Function declarations can be called before their declaration.
+            </p>
+
+            <pre>
+greet();
+
+function greet() {
+    console.log("Hello!");
+}
+            </pre>
+
+            <button onclick="runFunctionHoisting()">
+                Run Function Example
+            </button>
+
+            <div id="output">Click the button to run the example.</div>
+        </section>
+
+        <section>
+            <h2>🎓 Student Scope Example</h2>
+
+            <pre>
+let student = "Saloni";
+
+function studentDetails() {
+    let score = 92;
+
+    if (score >= 90) {
+        const grade = "A";
+        console.log(student);
+        console.log(score);
+        console.log(grade);
+    }
+}
+
+studentDetails();
+            </pre>
+
+            <p>
+                The function can access the global <code>student</code>,
+                its local <code>score</code>, and the block-scoped
+                <code>grade</code>.
+            </p>
+        </section>
+
+        <section>
+            <h2>🧠 Key Takeaways</h2>
+
+            <ul>
+                <li>Scope controls variable accessibility.</li>
+                <li><code>var</code> is function-scoped.</li>
+                <li><code>let</code> and <code>const</code> are block-scoped.</li>
+                <li>JavaScript uses a scope chain to find variables.</li>
+                <li>Inner scopes can access suitable outer variables.</li>
+                <li>Variable shadowing occurs when inner and outer variables share a name.</li>
+                <li><code>var</code> is initialized as <code>undefined</code> during hoisting.</li>
+                <li><code>let</code> and <code>const</code> remain in the Temporal Dead Zone until initialization.</li>
+                <li>Function declarations are hoisted.</li>
+                <li>In modern JavaScript, prefer <code>const</code> and <code>let</code>.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Day 051 — Scope and Hoisting</p>
+        <p>Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+    <script>
+        function runFunctionHoisting() {
+            function greet() {
+                return "Hello from a hoisted function declaration!";
+            }
+
+            document.getElementById("output").textContent = greet();
+        }
+
+        let studentName = "Saloni";
+
+        function demonstrateScope() {
+            let score = 95;
+
+            if (score >= 90) {
+                const grade = "A";
+                console.log(studentName);
+                console.log(score);
+                console.log(grade);
+            }
+        }
+
+        demonstrateScope();
+    </script>
+
+</body>
+</html>
