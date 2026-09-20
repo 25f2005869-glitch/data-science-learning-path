@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 053 - Error Handling</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #d1d5db;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #374151;
+            margin: 15px 0 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f9fafb;
+            border: 1px solid #dbe3ef;
+            border-radius: 10px;
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 11px;
+            margin-top: 5px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        button {
+            border: none;
+            padding: 12px 18px;
+            margin-top: 15px;
+            border-radius: 7px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 15px;
+            min-height: 50px;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 053
+        Topic: Error Handling
+    -->
+
+    <header>
+        <h1>Day 053 — Error Handling</h1>
+        <p>Detecting, handling, and debugging JavaScript errors</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>⚠️ What is an Error?</h2>
+
+            <p>
+                An error is a problem that occurs while JavaScript is being
+                parsed or executed.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <strong>Syntax Error</strong>
+                    Invalid JavaScript syntax.
+                </div>
+
+                <div class="card">
+                    <strong>Runtime Error</strong>
+                    Problem occurring during execution.
+                </div>
+
+                <div class="card">
+                    <strong>Logical Error</strong>
+                    Program runs but produces an incorrect result.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🛡️ try...catch</h2>
+
+            <p>
+                The <code>try...catch</code> structure allows certain
+                runtime exceptions to be handled.
+            </p>
+
+            <pre>
+try {
+    riskyOperation();
+} catch (error) {
+    console.error(error);
+}
+            </pre>
+
+            <button onclick="runTryCatch()">
+                Run try...catch
+            </button>
+        </section>
+
+        <section>
+            <h2>🧹 finally</h2>
+
+            <pre>
+try {
+    console.log("Trying...");
+} catch (error) {
+    console.log("Error handled");
+} finally {
+    console.log("Cleanup");
+}
+            </pre>
+
+            <button onclick="runFinally()">
+                Run finally Example
+            </button>
+        </section>
+
+        <section>
+            <h2>🚨 throw</h2>
+
+            <pre>
+function checkMarks(marks) {
+    if (marks < 0 || marks > 100) {
+        throw new Error("Marks must be between 0 and 100");
+    }
+
+    return "Valid marks";
+}
+            </pre>
+
+            <button onclick="runThrow()">
+                Run throw Example
+            </button>
+        </section>
+
+        <section>
+            <h2>🔎 Error Object</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><code>name</code></td>
+                        <td>Identifies the error type</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>message</code></td>
+                        <td>Describes the error</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>stack</code></td>
+                        <td>Provides debugging information</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button onclick="runErrorObject()">
+                Inspect Error Object
+            </button>
+        </section>
+
+        <section>
+            <h2>📚 Common Error Types</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Error</th>
+                        <th>Typical Cause</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>ReferenceError</td>
+                        <td>Unknown variable or binding</td>
+                    </tr>
+
+                    <tr>
+                        <td>TypeError</td>
+                        <td>Invalid operation for a value's type</td>
+                    </tr>
+
+                    <tr>
+                        <td>RangeError</td>
+                        <td>Value outside an allowed range</td>
+                    </tr>
+
+                    <tr>
+                        <td>SyntaxError</td>
+                        <td>Invalid syntax or invalid JSON parsing</td>
+                    </tr>
+
+                    <tr>
+                        <td>URIError</td>
+                        <td>Invalid URI operation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🎓 Student Marks Validation</h2>
+
+            <label for="studentName">Student Name</label>
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter student name"
+            >
+
+            <label for="marks">Marks</label>
+            <input
+                type="number"
+                id="marks"
+                placeholder="Enter marks from 0 to 100"
+            >
+
+            <button onclick="checkStudentMarks()">
+                Check Result
+            </button>
+
+            <div id="output">
+                Enter student details and check the result.
+            </div>
+        </section>
+
+        <section>
+            <h2>📄 JSON Error Handling</h2>
+
+            <pre>
+try {
+    const data = JSON.parse('{"name":"Saloni"}');
+    console.log(data.name);
+} catch (error) {
+    console.error("Invalid JSON");
+}
+            </pre>
+
+            <button onclick="runJSONExample()">
+                Run JSON Example
+            </button>
+        </section>
+
+        <section>
+            <h2>💡 Best Practices</h2>
+
+            <ul>
+                <li>Validate input before processing it.</li>
+                <li>Use meaningful error messages.</li>
+                <li>Use <code>try...catch</code> for expected exceptions.</li>
+                <li>Use <code>finally</code> for cleanup.</li>
+                <li>Do not silently ignore important errors.</li>
+                <li>Use <code>console.error()</code> for debugging.</li>
+                <li>Do not expose sensitive technical details to users.</li>
+                <li>Fix the underlying cause of an error.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Day 053 — Error Handling</p>
+        <p>Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+    <script>
+        const output = document.getElementById("output");
+
+        function runTryCatch() {
+            try {
+                console.log(unknownVariable);
+            } catch (error) {
+                output.textContent =
+                    `Caught ${error.name}: ${error.message}`;
+
+                console.error(error);
+            }
+        }
+
+        function runFinally() {
+            let message = "";
+
+            try {
+                message += "Try block executed. ";
+            } catch (error) {
+                message += "Catch block executed. ";
+            } finally {
+                message += "Finally block executed.";
+            }
+
+            output.textContent = message;
+        }
+
+        function checkMarksValue(marks) {
+            if (Number.isNaN(marks)) {
+                throw new Error("Marks must be a valid number.");
+            }
+
+            if (marks < 0 || marks > 100) {
+                throw new Error("Marks must be between 0 and 100.");
+            }
+
+            return marks;
+        }
+
+        function runThrow() {
+            try {
+                checkMarksValue(120);
+                output.textContent = "Marks are valid.";
+            } catch (error) {
+                output.textContent =
+                    `Caught ${error.name}: ${error.message}`;
+
+                console.error(error);
+            }
+        }
+
+        function runErrorObject() {
+            try {
+                throw new TypeError("Example TypeError");
+            } catch (error) {
+                output.textContent =
+                    `Name: ${error.name} | Message: ${error.message}`;
+
+                console.error("Stack:", error.stack);
+            }
+        }
+
+        function checkStudentMarks() {
+            const name = document.getElementById("studentName").value.trim();
+            const marksInput = document.getElementById("marks").value;
+
+            try {
+                if (!name) {
+                    throw new Error("Student name is required.");
+                }
+
+                if (marksInput === "") {
+                    throw new Error("Marks are required.");
+                }
+
+                const marks = Number(marksInput);
+
+                checkMarksValue(marks);
+
+                const result =
+                    marks >= 40 ? "Pass" : "Needs Improvement";
+
+                output.textContent =
+                    `${name}: ${marks}/100 — ${result}`;
+            } catch (error) {
+                output.textContent =
+                    `Error: ${error.message}`;
+
+                console.error(error);
+            } finally {
+                console.log("Student marks validation completed.");
+            }
+        }
+
+        function runJSONExample() {
+            try {
+                const data = JSON.parse('{"name":"Saloni","course":"MAD 1"}');
+
+                output.textContent =
+                    `Student: ${data.name} | Course: ${data.course}`;
+            } catch (error) {
+                output.textContent =
+                    `JSON Error: ${error.message}`;
+
+                console.error(error);
+            }
+        }
+
+        console.log("Day 053 — Error Handling");
+    </script>
+
+</body>
+</html>
