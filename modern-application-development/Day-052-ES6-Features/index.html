@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 052 - ES6 Features</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #d1d5db;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #374151;
+            margin: 15px 0 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f9fafb;
+            border: 1px solid #dbe3ef;
+            border-radius: 10px;
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        button {
+            border: none;
+            padding: 12px 18px;
+            margin: 6px 5px 6px 0;
+            border-radius: 7px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 15px;
+            min-height: 45px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 052
+        Topic: ES6 Features
+    -->
+
+    <header>
+        <h1>Day 052 — ES6 Features</h1>
+        <p>Modern JavaScript syntax and features</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>🚀 What is ES6?</h2>
+
+            <p>
+                ES6, also known as ECMAScript 2015, introduced many features
+                that made JavaScript more modern, concise, and maintainable.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <strong>let / const</strong>
+                    Modern block-scoped declarations.
+                </div>
+
+                <div class="card">
+                    <strong>Arrow Functions</strong>
+                    Concise function syntax.
+                </div>
+
+                <div class="card">
+                    <strong>Destructuring</strong>
+                    Extract values from arrays and objects.
+                </div>
+
+                <div class="card">
+                    <strong>Spread / Rest</strong>
+                    Expand or collect values.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔤 Template Literals</h2>
+
+            <pre>
+const name = "Saloni";
+const course = "MAD 1";
+
+const message = `Student: ${name}, Course: ${course}`;
+            </pre>
+        </section>
+
+        <section>
+            <h2>⚡ Arrow Functions</h2>
+
+            <pre>
+const add = (a, b) => a + b;
+
+const square = x => x * x;
+            </pre>
+
+            <button onclick="runArrowFunction()">
+                Run Arrow Function
+            </button>
+        </section>
+
+        <section>
+            <h2>📦 Destructuring</h2>
+
+            <h3>Array Destructuring</h3>
+
+            <pre>
+const marks = [90, 85, 95];
+
+const [first, second, third] = marks;
+            </pre>
+
+            <h3>Object Destructuring</h3>
+
+            <pre>
+const student = {
+    name: "Saloni",
+    course: "MAD 1",
+    score: 95
+};
+
+const { name, course, score } = student;
+            </pre>
+        </section>
+
+        <section>
+            <h2>📋 Spread and Rest</h2>
+
+            <h3>Spread</h3>
+
+            <pre>
+const frontend = ["HTML", "CSS"];
+const programming = ["JavaScript", "Python"];
+
+const skills = [...frontend, ...programming];
+            </pre>
+
+            <h3>Rest</h3>
+
+            <pre>
+function total(...numbers) {
+    return numbers.reduce((sum, number) => sum + number, 0);
+}
+            </pre>
+
+            <button onclick="runSpreadRest()">
+                Run Spread and Rest
+            </button>
+        </section>
+
+        <section>
+            <h2>🔁 for...of</h2>
+
+            <pre>
+const courses = ["HTML", "CSS", "JavaScript"];
+
+for (const course of courses) {
+    console.log(course);
+}
+            </pre>
+
+            <button onclick="runForOf()">
+                Run for...of
+            </button>
+        </section>
+
+        <section>
+            <h2>🛡️ Optional Chaining</h2>
+
+            <pre>
+const student = {
+    profile: {
+        name: "Saloni"
+    }
+};
+
+console.log(student.profile?.name);
+console.log(student.address?.city);
+            </pre>
+
+            <button onclick="runOptionalChaining()">
+                Run Optional Chaining
+            </button>
+        </section>
+
+        <section>
+            <h2>❓ Nullish Coalescing</h2>
+
+            <pre>
+const score = null;
+
+const finalScore = score ?? 0;
+
+console.log(finalScore);
+            </pre>
+
+            <button onclick="runNullish()">
+                Run Nullish Example
+            </button>
+        </section>
+
+        <section>
+            <h2>🏗️ Enhanced Object Literals</h2>
+
+            <pre>
+const name = "Saloni";
+const course = "MAD 1";
+
+const student = {
+    name,
+    course,
+
+    greet() {
+        return `Hello, ${this.name}`;
+    }
+};
+            </pre>
+        </section>
+
+        <section>
+            <h2>🎓 Student ES6 Example</h2>
+
+            <pre>
+const student = {
+    name: "Saloni",
+    course: "MAD 1",
+    score: 95,
+    skills: ["HTML", "CSS", "JavaScript"]
+};
+
+const { name, course, score, skills } = student;
+
+const message = `
+Student: ${name}
+Course: ${course}
+Score: ${score}
+Skills: ${skills.join(", ")}
+`;
+            </pre>
+
+            <button onclick="showStudent()">
+                Show Student
+            </button>
+        </section>
+
+        <section>
+            <h2>📊 ES6 Feature Summary</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>let / const</td>
+                        <td>Modern variable declarations</td>
+                    </tr>
+
+                    <tr>
+                        <td>Arrow Function</td>
+                        <td>Concise function syntax</td>
+                    </tr>
+
+                    <tr>
+                        <td>Template Literal</td>
+                        <td>String interpolation</td>
+                    </tr>
+
+                    <tr>
+                        <td>Destructuring</td>
+                        <td>Extract values</td>
+                    </tr>
+
+                    <tr>
+                        <td>Spread</td>
+                        <td>Expand values</td>
+                    </tr>
+
+                    <tr>
+                        <td>Rest</td>
+                        <td>Collect values</td>
+                    </tr>
+
+                    <tr>
+                        <td>for...of</td>
+                        <td>Iterate over values</td>
+                    </tr>
+
+                    <tr>
+                        <td>Optional Chaining</td>
+                        <td>Safe property access</td>
+                    </tr>
+
+                    <tr>
+                        <td>Nullish Coalescing</td>
+                        <td>Handle null or undefined</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>💡 Output</h2>
+
+            <div id="output">
+                Click any interactive button to see the result.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Day 052 — ES6 Features</p>
+        <p>Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+    <script>
+        const output = document.getElementById("output");
+
+        const runArrowFunction = () => {
+            const add = (a, b) => a + b;
+            const square = x => x * x;
+
+            output.textContent =
+                `add(10, 20) = ${add(10, 20)} | square(5) = ${square(5)}`;
+        };
+
+        const runSpreadRest = () => {
+            const frontend = ["HTML", "CSS"];
+            const programming = ["JavaScript", "Python"];
+
+            const skills = [...frontend, ...programming];
+
+            const total = (...numbers) =>
+                numbers.reduce((sum, number) => sum + number, 0);
+
+            output.textContent =
+                `Skills: ${skills.join(", ")} | Total: ${total(10, 20, 30)}`;
+        };
+
+        const runForOf = () => {
+            const courses = ["HTML", "CSS", "JavaScript"];
+            const result = [];
+
+            for (const course of courses) {
+                result.push(course);
+            }
+
+            output.textContent =
+                `for...of values: ${result.join(" → ")}`;
+        };
+
+        const runOptionalChaining = () => {
+            const student = {
+                profile: {
+                    name: "Saloni"
+                }
+            };
+
+            const name = student.profile?.name;
+            const city = student.address?.city;
+
+            output.textContent =
+                `Name: ${name} | City: ${city ?? "Not available"}`;
+        };
+
+        const runNullish = () => {
+            const score = null;
+            const finalScore = score ?? 0;
+
+            output.textContent =
+                `Original score: ${score} | Final score: ${finalScore}`;
+        };
+
+        const showStudent = () => {
+            const student = {
+                name: "Saloni",
+                course: "MAD 1",
+                score: 95,
+                skills: ["HTML", "CSS", "JavaScript"]
+            };
+
+            const { name, course, score, skills } = student;
+
+            output.textContent =
+                `Student: ${name} | Course: ${course} | Score: ${score} | Skills: ${skills.join(", ")}`;
+        };
+
+        console.log("Day 052 — ES6 Features");
+
+        const studentName = "Saloni";
+        const studentCourse = "MAD 1";
+
+        const studentMessage =
+            `Learning ${studentCourse}: ${studentName}`;
+
+        console.log(studentMessage);
+    </script>
+
+</body>
+</html>
