@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 054 - DOM Introduction</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #d1d5db;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #374151;
+            margin: 15px 0 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f9fafb;
+            border: 1px solid #dbe3ef;
+            border-radius: 10px;
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        button {
+            border: none;
+            padding: 11px 16px;
+            margin: 6px 5px 6px 0;
+            border-radius: 7px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 15px;
+            min-height: 50px;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 054
+        Topic: DOM Introduction
+    -->
+
+    <header>
+        <h1 id="pageTitle">Day 054 — DOM Introduction</h1>
+        <p>Learning how JavaScript interacts with HTML through the DOM</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>🌳 What is the DOM?</h2>
+
+            <p>
+                DOM stands for Document Object Model. The browser represents
+                an HTML document as a tree of objects that JavaScript can
+                access and manipulate.
+            </p>
+
+            <pre>
+HTML
+  ↓
+Browser
+  ↓
+DOM Tree
+  ↓
+JavaScript
+  ↓
+Dynamic Webpage
+            </pre>
+        </section>
+
+        <section>
+            <h2>🔎 Selecting Elements</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <strong>getElementById()</strong>
+                    Selects an element by its ID.
+                </div>
+
+                <div class="card">
+                    <strong>querySelector()</strong>
+                    Selects the first matching CSS selector.
+                </div>
+
+                <div class="card">
+                    <strong>querySelectorAll()</strong>
+                    Selects all matching CSS selectors.
+                </div>
+
+            </div>
+
+            <pre>
+document.getElementById("pageTitle");
+
+document.querySelector(".card");
+
+document.querySelectorAll(".card");
+            </pre>
+        </section>
+
+        <section>
+            <h2>✏️ Changing Text</h2>
+
+            <p id="message">
+                This text will be changed using JavaScript.
+            </p>
+
+            <button onclick="changeText()">
+                Change Text
+            </button>
+        </section>
+
+        <section>
+            <h2>🎨 Changing Styles</h2>
+
+            <div id="styleBox" class="card">
+                This box can be styled using JavaScript.
+            </div>
+
+            <button onclick="changeStyle()">
+                Change Style
+            </button>
+        </section>
+
+        <section>
+            <h2>🏷️ classList</h2>
+
+            <div id="classBox" class="card">
+                Click the button to toggle the <code>highlight</code> class.
+            </div>
+
+            <button onclick="toggleClass()">
+                Toggle Highlight
+            </button>
+        </section>
+
+        <section>
+            <h2>🔗 Attributes</h2>
+
+            <a
+                id="resourceLink"
+                href="https://developer.mozilla.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Open MDN Web Docs
+            </a>
+
+            <br>
+
+            <button onclick="readAttribute()">
+                Read href
+            </button>
+
+            <button onclick="changeAttribute()">
+                Change href
+            </button>
+        </section>
+
+        <section>
+            <h2>➕ Creating an Element</h2>
+
+            <div id="skillContainer">
+                <p>Existing skill list:</p>
+                <ul id="skillList">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </div>
+
+            <button onclick="addSkill()">
+                Add New Skill
+            </button>
+
+            <button onclick="removeLastSkill()">
+                Remove Last Skill
+            </button>
+        </section>
+
+        <section>
+            <h2>🎓 Student DOM Example</h2>
+
+            <div class="card">
+                <h3 id="studentName">Saloni Tiwari</h3>
+
+                <p>
+                    Course:
+                    <span id="studentCourse">Modern Application Development</span>
+                </p>
+
+                <p>
+                    Score:
+                    <span id="studentScore">95</span>
+                </p>
+            </div>
+
+            <button onclick="updateStudentName()">
+                Change Name
+            </button>
+
+            <button onclick="updateStudentScore()">
+                Change Score
+            </button>
+        </section>
+
+        <section>
+            <h2>🗑️ Removing an Element</h2>
+
+            <p id="removeMessage">
+                This paragraph can be removed from the DOM.
+            </p>
+
+            <button onclick="removeMessage()">
+                Remove Paragraph
+            </button>
+        </section>
+
+        <section>
+            <h2>📊 DOM Methods Summary</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method / Property</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>getElementById()</td>
+                        <td>Select by ID</td>
+                    </tr>
+
+                    <tr>
+                        <td>querySelector()</td>
+                        <td>Select first matching element</td>
+                    </tr>
+
+                    <tr>
+                        <td>querySelectorAll()</td>
+                        <td>Select all matching elements</td>
+                    </tr>
+
+                    <tr>
+                        <td>textContent</td>
+                        <td>Read or change text</td>
+                    </tr>
+
+                    <tr>
+                        <td>classList</td>
+                        <td>Manage CSS classes</td>
+                    </tr>
+
+                    <tr>
+                        <td>setAttribute()</td>
+                        <td>Set an attribute</td>
+                    </tr>
+
+                    <tr>
+                        <td>createElement()</td>
+                        <td>Create an element</td>
+                    </tr>
+
+                    <tr>
+                        <td>append()</td>
+                        <td>Add an element</td>
+                    </tr>
+
+                    <tr>
+                        <td>remove()</td>
+                        <td>Remove an element</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>💡 Output</h2>
+
+            <div id="output">
+                DOM interaction results will appear here.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Day 054 — DOM Introduction</p>
+        <p>Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+    <script>
+        const output = document.getElementById("output");
+
+        function changeText() {
+            const message = document.getElementById("message");
+
+            message.textContent =
+                "The text was changed using the DOM.";
+
+            output.textContent =
+                "textContent successfully changed the paragraph.";
+        }
+
+        function changeStyle() {
+            const box = document.getElementById("styleBox");
+
+            box.style.backgroundColor = "#dbeafe";
+            box.style.border = "2px solid #2563eb";
+            box.style.padding = "25px";
+            box.style.fontSize = "18px";
+
+            output.textContent =
+                "The box style was changed using the DOM style property.";
+        }
+
+        function toggleClass() {
+            const box = document.getElementById("classBox");
+
+            box.classList.toggle("highlight");
+
+            const active =
+                box.classList.contains("highlight");
+
+            output.textContent =
+                active
+                    ? "The highlight class was added."
+                    : "The highlight class was removed.";
+        }
+
+        function readAttribute() {
+            const link =
+                document.getElementById("resourceLink");
+
+            const href =
+                link.getAttribute("href");
+
+            output.textContent =
+                `Current href: ${href}`;
+        }
+
+        function changeAttribute() {
+            const link =
+                document.getElementById("resourceLink");
+
+            link.setAttribute(
+                "href",
+                "https://www.google.com/"
+            );
+
+            output.textContent =
+                "The href attribute was changed to Google.";
+        }
+
+        function addSkill() {
+            const skillList =
+                document.getElementById("skillList");
+
+            const newSkill =
+                document.createElement("li");
+
+            newSkill.textContent = "DOM";
+
+            skillList.append(newSkill);
+
+            output.textContent =
+                "A new skill was created and appended to the list.";
+        }
+
+        function removeLastSkill() {
+            const skillList =
+                document.getElementById("skillList");
+
+            const lastSkill =
+                skillList.lastElementChild;
+
+            if (lastSkill) {
+                lastSkill.remove();
+
+                output.textContent =
+                    "The last skill was removed.";
+            } else {
+                output.textContent =
+                    "There are no skills left to remove.";
+            }
+        }
+
+        function updateStudentName() {
+            const studentName =
+                document.getElementById("studentName");
+
+            studentName.textContent =
+                "Saloni Tiwari — MAD 1 Student";
+
+            output.textContent =
+                "Student name was updated using textContent.";
+        }
+
+        function updateStudentScore() {
+            const studentScore =
+                document.getElementById("studentScore");
+
+            studentScore.textContent = "98";
+
+            output.textContent =
+                "Student score was updated from 95 to 98.";
+        }
+
+        function removeMessage() {
+            const message =
+                document.getElementById("removeMessage");
+
+            if (message) {
+                message.remove();
+
+                output.textContent =
+                    "The paragraph was removed from the DOM.";
+            }
+        }
+
+        const cards =
+            document.querySelectorAll(".card");
+
+        console.log(`Number of cards found: ${cards.length}`);
+
+        cards.forEach(card => {
+            console.log(card.textContent.trim());
+        });
+
+        console.log("Day 054 — DOM Introduction loaded successfully.");
+    </script>
+
+</body>
+</html>
