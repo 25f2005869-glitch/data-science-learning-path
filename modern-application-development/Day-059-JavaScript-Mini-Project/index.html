@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Day 059 - JavaScript Mini Project</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            transition: 0.3s;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 6px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #172554;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #2563eb;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 15px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f8fafc;
+            border: 1px solid #dbe2ea;
+            border-radius: 10px;
+        }
+
+        .stat {
+            font-size: 30px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        form {
+            max-width: 650px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: 2px solid #93c5fd;
+        }
+
+        button {
+            border: none;
+            padding: 11px 18px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .secondary {
+            background: #475569;
+        }
+
+        .success {
+            background: #15803d;
+        }
+
+        .danger {
+            background: #dc2626;
+        }
+
+        .warning {
+            background: #b45309;
+        }
+
+        .output {
+            margin-top: 18px;
+            padding: 16px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            min-height: 45px;
+            white-space: pre-line;
+        }
+
+        .success-text {
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        .error-text {
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 28px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 13px;
+            transition: width 0.3s;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .course-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            margin: 8px 0;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .course-item button {
+            margin: 0;
+            padding: 7px 12px;
+        }
+
+        .dark-mode {
+            background: #111827;
+            color: #e5e7eb;
+        }
+
+        .dark-mode section {
+            background: #1f2937;
+        }
+
+        .dark-mode h2 {
+            color: #93c5fd;
+        }
+
+        .dark-mode .card,
+        .dark-mode .output,
+        .dark-mode .course-item {
+            background: #374151;
+            border-color: #4b5563;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 18px;
+            }
+
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .course-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 059
+        Topic: JavaScript Mini Project
+    -->
+
+    <header>
+        <h1>🎓 Student Learning Tracker</h1>
+        <p>Day 059 — JavaScript Mini Project</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📊 Dashboard</h2>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>Student</h3>
+                    <div
+                        id="dashboardName"
+                        class="stat"
+                    >
+                        -
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Course</h3>
+                    <div
+                        id="dashboardCourse"
+                        class="stat"
+                    >
+                        -
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Marks</h3>
+                    <div
+                        id="dashboardMarks"
+                        class="stat"
+                    >
+                        -
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>Grade</h3>
+                    <div
+                        id="dashboardGrade"
+                        class="stat"
+                    >
+                        -
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>👩‍🎓 Student Profile</h2>
+
+            <form id="studentForm" novalidate>
+
+                <div class="form-group">
+                    <label for="studentName">
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        name="studentName"
+                        placeholder="Enter your name"
+                        minlength="3"
+                        maxlength="50"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="studentEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="studentEmail"
+                        name="studentEmail"
+                        placeholder="student@example.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="studentCourse">
+                        Course
+                    </label>
+
+                    <select
+                        id="studentCourse"
+                        name="studentCourse"
+                        required
+                    >
+                        <option value="">
+                            Select a course
+                        </option>
+
+                        <option value="MAD 1">
+                            MAD 1
+                        </option>
+
+                        <option value="DBMS">
+                            DBMS
+                        </option>
+
+                        <option value="PDSA">
+                            PDSA
+                        </option>
+
+                        <option value="MLF">
+                            MLF
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentMarks">
+                        Marks
+                    </label>
+
+                    <input
+                        type="number"
+                        id="studentMarks"
+                        name="studentMarks"
+                        min="0"
+                        max="100"
+                        placeholder="0 - 100"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Calculate Result
+                </button>
+
+                <button
+                    type="reset"
+                    class="secondary"
+                >
+                    Reset Form
+                </button>
+
+            </form>
+
+            <div
+                id="formOutput"
+                class="output"
+            >
+                Enter student information and calculate the result.
+            </div>
+        </section>
+
+        <section>
+            <h2>📈 Learning Progress</h2>
+
+            <p>
+                Current Progress:
+                <strong id="progressText">0%</strong>
+            </p>
+
+            <div class="progress-container">
+                <div
+                    id="progressBar"
+                    class="progress-bar"
+                >
+                    0%
+                </div>
+            </div>
+
+            <button id="increaseProgress">
+                Increase Progress
+            </button>
+
+            <button
+                id="decreaseProgress"
+                class="secondary"
+            >
+                Decrease Progress
+            </button>
+
+            <button
+                id="resetProgress"
+                class="danger"
+            >
+                Reset Progress
+            </button>
+        </section>
+
+        <section>
+            <h2>📚 Course Manager</h2>
+
+            <label for="newCourse">
+                New Course
+            </label>
+
+            <input
+                type="text"
+                id="newCourse"
+                placeholder="Enter a course name"
+            >
+
+            <button id="addCourse">
+                Add Course
+            </button>
+
+            <div
+                id="courseList"
+                class="output"
+            >
+                Course list will appear here.
+            </div>
+        </section>
+
+        <section>
+            <h2>💾 Student Storage</h2>
+
+            <button
+                id="saveStudent"
+                class="success"
+            >
+                Save Student
+            </button>
+
+            <button
+                id="loadStudent"
+                class="secondary"
+            >
+                Load Student
+            </button>
+
+            <button
+                id="deleteStudent"
+                class="danger"
+            >
+                Delete Student
+            </button>
+
+            <div
+                id="storageOutput"
+                class="output"
+            >
+                No storage operation performed.
+            </div>
+        </section>
+
+        <section>
+            <h2>⏳ Session Storage</h2>
+
+            <p>
+                Store the currently selected course
+                temporarily for this browsing session.
+            </p>
+
+            <button
+                id="saveSession"
+                class="success"
+            >
+                Save Current Course
+            </button>
+
+            <button
+                id="loadSession"
+                class="secondary"
+            >
+                Load Current Course
+            </button>
+
+            <button
+                id="clearSession"
+                class="danger"
+            >
+                Clear Session
+            </button>
+
+            <div
+                id="sessionOutput"
+                class="output"
+            >
+                No session data loaded.
+            </div>
+        </section>
+
+        <section>
+            <h2>🌙 Theme Preference</h2>
+
+            <label for="themeSelect">
+                Theme
+            </label>
+
+            <select id="themeSelect">
+                <option value="light">
+                    Light
+                </option>
+
+                <option value="dark">
+                    Dark
+                </option>
+            </select>
+
+            <button id="saveTheme">
+                Save Theme
+            </button>
+
+            <div
+                id="themeOutput"
+                class="output"
+            >
+                Theme preference is stored in localStorage.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 059
+        </p>
+
+        <p>
+            JavaScript Mini Project — Student Learning Tracker
+        </p>
+    </footer>
+
+    <script>
+        // =========================================================
+        // Day 059 — JavaScript Mini Project
+        // =========================================================
+
+
+        // ---------------------------------------------------------
+        // DOM Selection
+        // ---------------------------------------------------------
+
+        const studentForm =
+            document.querySelector("#studentForm");
+
+        const studentName =
+            document.querySelector("#studentName");
+
+        const studentEmail =
+            document.querySelector("#studentEmail");
+
+        const studentCourse =
+            document.querySelector("#studentCourse");
+
+        const studentMarks =
+            document.querySelector("#studentMarks");
+
+        const formOutput =
+            document.querySelector("#formOutput");
+
+        const dashboardName =
+            document.querySelector("#dashboardName");
+
+        const dashboardCourse =
+            document.querySelector("#dashboardCourse");
+
+        const dashboardMarks =
+            document.querySelector("#dashboardMarks");
+
+        const dashboardGrade =
+            document.querySelector("#dashboardGrade");
+
+
+        // ---------------------------------------------------------
+        // Student Data
+        // ---------------------------------------------------------
+
+        let currentStudent = null;
+
+
+        // ---------------------------------------------------------
+        // Grade Calculator
+        // ---------------------------------------------------------
+
+        function calculateGrade(marks) {
+
+            if (marks >= 90) {
+                return "A+";
+            }
+
+            if (marks >= 80) {
+                return "A";
+            }
+
+            if (marks >= 70) {
+                return "B";
+            }
+
+            if (marks >= 60) {
+                return "C";
+            }
+
+            if (marks >= 50) {
+                return "D";
+            }
+
+            return "F";
+        }
+
+
+        // ---------------------------------------------------------
+        // Pass / Fail
+        // ---------------------------------------------------------
+
+        function calculateResult(marks) {
+
+            return marks >= 50
+                ? "Passed"
+                : "Failed";
+        }
+
+
+        // ---------------------------------------------------------
+        // Update Dashboard
+        // ---------------------------------------------------------
+
+        function updateDashboard(student) {
+
+            dashboardName.textContent =
+                student.name;
+
+            dashboardCourse.textContent =
+                student.course;
+
+            dashboardMarks.textContent =
+                student.marks;
+
+            dashboardGrade.textContent =
+                student.grade;
+        }
+
+
+        // ---------------------------------------------------------
+        // Form Submission
+        // ---------------------------------------------------------
+
+        studentForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                if (!studentForm.checkValidity()) {
+
+                    formOutput.textContent =
+                        "Please enter valid student information.";
+
+                    formOutput.className =
+                        "output error-text";
+
+                    studentForm.reportValidity();
+
+                    return;
+                }
+
+
+                const name =
+                    studentName.value.trim();
+
+                const email =
+                    studentEmail.value.trim();
+
+                const course =
+                    studentCourse.value;
+
+                const marks =
+                    Number(studentMarks.value);
+
+
+                const grade =
+                    calculateGrade(marks);
+
+                const result =
+                    calculateResult(marks);
+
+
+                currentStudent = {
+                    name: name,
+                    email: email,
+                    course: course,
+                    marks: marks,
+                    grade: grade,
+                    result: result
+                };
+
+
+                updateDashboard(currentStudent);
+
+
+                formOutput.textContent =
+                    `Student: ${name}
+Course: ${course}
+Marks: ${marks}
+Grade: ${grade}
+Result: ${result}`;
+
+                formOutput.className =
+                    "output success-text";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // Progress Tracker
+        // ---------------------------------------------------------
+
+        let progress = 0;
+
+        const progressText =
+            document.querySelector("#progressText");
+
+        const progressBar =
+            document.querySelector("#progressBar");
+
+
+        function updateProgress() {
+
+            progressText.textContent =
+                `${progress}%`;
+
+            progressBar.textContent =
+                `${progress}%`;
+
+            progressBar.style.width =
+                `${progress}%`;
+        }
+
+
+        document.querySelector(
+            "#increaseProgress"
+        ).addEventListener(
+            "click",
+            function () {
+
+                progress =
+                    Math.min(progress + 10, 100);
+
+                updateProgress();
+            }
+        );
+
+
+        document.querySelector(
+            "#decreaseProgress"
+        ).addEventListener(
+            "click",
+            function () {
+
+                progress =
+                    Math.max(progress - 10, 0);
+
+                updateProgress();
+            }
+        );
+
+
+        document.querySelector(
+            "#resetProgress"
+        ).addEventListener(
+            "click",
+            function () {
+
+                progress = 0;
+
+                updateProgress();
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // Course Manager
+        // ---------------------------------------------------------
+
+        let courses = [
+            "MAD 1",
+            "DBMS",
+            "PDSA",
+            "MLF"
+        ];
+
+
+        const newCourse =
+            document.querySelector("#newCourse");
+
+        const courseList =
+            document.querySelector("#courseList");
+
+
+        function renderCourses() {
+
+            courseList.innerHTML = "";
+
+
+            if (courses.length === 0) {
+
+                courseList.textContent =
+                    "No courses available.";
+
+                return;
+            }
+
+
+            courses.forEach(
+                function (course, index) {
+
+                    const item =
+                        document.createElement("div");
+
+                    item.className =
+                        "course-item";
+
+
+                    const name =
+                        document.createElement("span");
+
+                    name.textContent =
+                        course;
+
+
+                    const removeButton =
+                        document.createElement("button");
+
+                    removeButton.textContent =
+                        "Remove";
+
+                    removeButton.className =
+                        "danger";
+
+
+                    removeButton.addEventListener(
+                        "click",
+                        function () {
+
+                            courses.splice(index, 1);
+
+                            renderCourses();
+                        }
+                    );
+
+
+                    item.append(
+                        name,
+                        removeButton
+                    );
+
+
+                    courseList.append(item);
+                }
+            );
+        }
+
+
+        document.querySelector(
+            "#addCourse"
+        ).addEventListener(
+            "click",
+            function () {
+
+                const course =
+                    newCourse.value.trim();
+
+
+                if (course === "") {
+
+                    return;
+                }
+
+
+                if (courses.includes(course)) {
+
+                    courseList.textContent =
+                        "This course already exists.";
+
+                    return;
+                }
+
+
+                courses.push(course);
+
+                newCourse.value = "";
+
+                renderCourses();
+            }
+        );
+
+
+        renderCourses();
+
+
+        // ---------------------------------------------------------
+        // localStorage — Save Student
+        // ---------------------------------------------------------
+
+        const storageOutput =
+            document.querySelector("#storageOutput");
+
+
+        document.querySelector(
+            "#saveStudent"
+        ).addEventListener(
+            "click",
+            function () {
+
+                if (currentStudent === null) {
+
+                    storageOutput.textContent =
+                        "Calculate the student result first.";
+
+                    return;
+                }
+
+
+                localStorage.setItem(
+                    "studentTrackerData",
+                    JSON.stringify(currentStudent)
+                );
+
+
+                storageOutput.textContent =
+                    "Student data saved successfully.";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // localStorage — Load Student
+        // ---------------------------------------------------------
+
+        document.querySelector(
+            "#loadStudent"
+        ).addEventListener(
+            "click",
+            function () {
+
+                const storedData =
+                    localStorage.getItem(
+                        "studentTrackerData"
+                    );
+
+
+                if (storedData === null) {
+
+                    storageOutput.textContent =
+                        "No saved student data found.";
+
+                    return;
+                }
+
+
+                try {
+
+                    const student =
+                        JSON.parse(storedData);
+
+
+                    currentStudent =
+                        student;
+
+
+                    studentName.value =
+                        student.name;
+
+                    studentEmail.value =
+                        student.email;
+
+                    studentCourse.value =
+                        student.course;
+
+                    studentMarks.value =
+                        student.marks;
+
+
+                    updateDashboard(student);
+
+
+                    formOutput.textContent =
+                        `Loaded Student: ${student.name}
+Course: ${student.course}
+Marks: ${student.marks}
+Grade: ${student.grade}
+Result: ${student.result}`;
+
+                    formOutput.className =
+                        "output success-text";
+
+
+                    storageOutput.textContent =
+                        "Student data loaded successfully.";
+
+                } catch (error) {
+
+                    storageOutput.textContent =
+                        "Stored student data is invalid.";
+
+                    console.error(error);
+                }
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // localStorage — Delete Student
+        // ---------------------------------------------------------
+
+        document.querySelector(
+            "#deleteStudent"
+        ).addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem(
+                    "studentTrackerData"
+                );
+
+                storageOutput.textContent =
+                    "Saved student data deleted.";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // sessionStorage
+        // ---------------------------------------------------------
+
+        const sessionOutput =
+            document.querySelector("#sessionOutput");
+
+
+        document.querySelector(
+            "#saveSession"
+        ).addEventListener(
+            "click",
+            function () {
+
+                const course =
+                    studentCourse.value;
+
+
+                if (course === "") {
+
+                    sessionOutput.textContent =
+                        "Select a course first.";
+
+                    return;
+                }
+
+
+                sessionStorage.setItem(
+                    "currentCourse",
+                    course
+                );
+
+
+                sessionOutput.textContent =
+                    `Current course saved for this session: ${course}`;
+            }
+        );
+
+
+        document.querySelector(
+            "#loadSession"
+        ).addEventListener(
+            "click",
+            function () {
+
+                const course =
+                    sessionStorage.getItem(
+                        "currentCourse"
+                    );
+
+
+                if (course === null) {
+
+                    sessionOutput.textContent =
+                        "No session course found.";
+
+                    return;
+                }
+
+
+                sessionOutput.textContent =
+                    `Session Course: ${course}`;
+            }
+        );
+
+
+        document.querySelector(
+            "#clearSession"
+        ).addEventListener(
+            "click",
+            function () {
+
+                sessionStorage.removeItem(
+                    "currentCourse"
+                );
+
+
+                sessionOutput.textContent =
+                    "Session course cleared.";
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // Theme Preference
+        // ---------------------------------------------------------
+
+        const themeSelect =
+            document.querySelector("#themeSelect");
+
+        const themeOutput =
+            document.querySelector("#themeOutput");
+
+
+        function applyTheme(theme) {
+
+            if (theme === "dark") {
+
+                document.body.classList.add(
+                    "dark-mode"
+                );
+
+            } else {
+
+                document.body.classList.remove(
+                    "dark-mode"
+                );
+            }
+
+
+            themeSelect.value =
+                theme;
+        }
+
+
+        document.querySelector(
+            "#saveTheme"
+        ).addEventListener(
+            "click",
+            function () {
+
+                const theme =
+                    themeSelect.value;
+
+
+                localStorage.setItem(
+                    "studentTrackerTheme",
+                    theme
+                );
+
+
+                applyTheme(theme);
+
+
+                themeOutput.textContent =
+                    `Theme saved: ${theme}`;
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // Load Saved Theme
+        // ---------------------------------------------------------
+
+        const savedTheme =
+            localStorage.getItem(
+                "studentTrackerTheme"
+            );
+
+
+        if (savedTheme !== null) {
+
+            applyTheme(savedTheme);
+        }
+
+
+        // ---------------------------------------------------------
+        // Reset Form
+        // ---------------------------------------------------------
+
+        studentForm.addEventListener(
+            "reset",
+            function () {
+
+                setTimeout(
+                    function () {
+
+                        formOutput.textContent =
+                            "Enter student information and calculate the result.";
+
+                        formOutput.className =
+                            "output";
+
+                    },
+                    0
+                );
+            }
+        );
+    </script>
+
+</body>
+
+</html>
