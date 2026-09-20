@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 057 - Form Validation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 6px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #172554;
+            margin-top: 0;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 15px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f8fafc;
+            border: 1px solid #dbe2ea;
+            border-radius: 10px;
+        }
+
+        form {
+            max-width: 650px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            outline: 2px solid #93c5fd;
+        }
+
+        input:invalid:not(:placeholder-shown) {
+            border-color: #dc2626;
+        }
+
+        input:valid:not(:placeholder-shown) {
+            border-color: #16a34a;
+        }
+
+        .hint {
+            display: block;
+            margin-top: 5px;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .error {
+            display: block;
+            min-height: 20px;
+            margin-top: 5px;
+            color: #dc2626;
+            font-size: 14px;
+        }
+
+        button {
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .secondary {
+            background: #475569;
+            margin-left: 8px;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f1f5f9;
+        }
+
+        .success {
+            color: #15803d;
+            font-weight: bold;
+        }
+
+        .invalid {
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .strength {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 18px;
+            }
+
+            .secondary {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 057
+        Topic: Form Validation
+    -->
+
+    <header>
+        <h1>📝 Form Validation</h1>
+        <p>Day 057 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📚 Validation Concepts</h2>
+
+            <div class="concept-grid">
+
+                <article class="card">
+                    <h3>required</h3>
+                    <p>Makes a field mandatory.</p>
+                </article>
+
+                <article class="card">
+                    <h3>minlength</h3>
+                    <p>Defines minimum text length.</p>
+                </article>
+
+                <article class="card">
+                    <h3>maxlength</h3>
+                    <p>Defines maximum text length.</p>
+                </article>
+
+                <article class="card">
+                    <h3>min / max</h3>
+                    <p>Defines an allowed numeric range.</p>
+                </article>
+
+                <article class="card">
+                    <h3>pattern</h3>
+                    <p>Defines a regular-expression format.</p>
+                </article>
+
+                <article class="card">
+                    <h3>JavaScript</h3>
+                    <p>Handles custom application rules.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>🎓 Student Registration Validator</h2>
+
+            <form id="studentForm" novalidate>
+
+                <div class="form-group">
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        minlength="3"
+                        maxlength="50"
+                        required
+                        autocomplete="name"
+                    >
+
+                    <span
+                        id="nameError"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="student@example.com"
+                        required
+                        autocomplete="email"
+                    >
+
+                    <span
+                        id="emailError"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="10-digit phone number"
+                        pattern="[0-9]{10}"
+                        required
+                        autocomplete="tel"
+                    >
+
+                    <span class="hint">
+                        Enter exactly 10 digits.
+                    </span>
+
+                    <span
+                        id="phoneError"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        min="17"
+                        max="100"
+                        required
+                    >
+
+                    <span
+                        id="ageError"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentId">
+                        Student ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        name="studentId"
+                        placeholder="Example: IITM1234"
+                        pattern="IITM[0-9]{4}"
+                        required
+                    >
+
+                    <span class="hint">
+                        Format: IITM followed by 4 digits.
+                    </span>
+
+                    <span
+                        id="studentIdError"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        minlength="8"
+                        required
+                        autocomplete="new-password"
+                    >
+
+                    <span
+                        id="passwordStrength"
+                        class="strength"
+                    ></span>
+
+                    <span
+                        id="passwordError"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Re-enter your password"
+                        required
+                        autocomplete="new-password"
+                    >
+
+                    <span
+                        id="confirmPasswordError"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="course">
+                        Course
+                    </label>
+
+                    <select
+                        id="course"
+                        name="course"
+                        required
+                    >
+                        <option value="">
+                            Select a course
+                        </option>
+                        <option value="MAD 1">
+                            Modern Application Development 1
+                        </option>
+                        <option value="DBMS">
+                            Database Management Systems
+                        </option>
+                        <option value="PDSA">
+                            Programming, Data Structures and Algorithms
+                        </option>
+                        <option value="MLF">
+                            Machine Learning Foundations
+                        </option>
+                    </select>
+
+                    <span
+                        id="courseError"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">
+                        Date of Birth
+                    </label>
+
+                    <input
+                        type="date"
+                        id="dob"
+                        name="dob"
+                        required
+                    >
+
+                    <span
+                        id="dobError"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                            style="width: auto;"
+                        >
+                        I agree to the terms and conditions.
+                    </label>
+
+                    <span
+                        id="termsError"
+                        class="error"
+                        aria-live="polite"
+                    ></span>
+                </div>
+
+                <button type="submit">
+                    Validate and Submit
+                </button>
+
+                <button
+                    type="reset"
+                    class="secondary"
+                    id="resetButton"
+                >
+                    Reset
+                </button>
+
+            </form>
+
+            <div
+                id="formOutput"
+                class="output"
+                aria-live="polite"
+            >
+                Fill the form and click Submit.
+            </div>
+        </section>
+
+        <section>
+            <h2>🔍 Constraint Validation API</h2>
+
+            <label for="apiEmail">
+                Test Email
+            </label>
+
+            <input
+                type="email"
+                id="apiEmail"
+                placeholder="Enter an email"
+                required
+            >
+
+            <br><br>
+
+            <button id="checkValidityButton">
+                Check Validity
+            </button>
+
+            <button
+                id="reportValidityButton"
+                class="secondary"
+            >
+                Report Validity
+            </button>
+
+            <div
+                id="apiOutput"
+                class="output"
+            >
+                Validation result will appear here.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 057
+        </p>
+
+        <p>
+            Form Validation — JavaScript and HTML5 Practice
+        </p>
+    </footer>
+
+    <script>
+        // =========================================================
+        // Day 057 — Form Validation
+        // =========================================================
+
+        const form = document.querySelector("#studentForm");
+
+        const fullName = document.querySelector("#fullName");
+        const email = document.querySelector("#email");
+        const phone = document.querySelector("#phone");
+        const age = document.querySelector("#age");
+        const studentId = document.querySelector("#studentId");
+        const password = document.querySelector("#password");
+        const confirmPassword =
+            document.querySelector("#confirmPassword");
+        const course = document.querySelector("#course");
+        const dob = document.querySelector("#dob");
+        const terms = document.querySelector("#terms");
+
+        const formOutput =
+            document.querySelector("#formOutput");
+
+        const passwordStrength =
+            document.querySelector("#passwordStrength");
+
+        // ---------------------------------------------------------
+        // Error Elements
+        // ---------------------------------------------------------
+
+        const nameError =
+            document.querySelector("#nameError");
+
+        const emailError =
+            document.querySelector("#emailError");
+
+        const phoneError =
+            document.querySelector("#phoneError");
+
+        const ageError =
+            document.querySelector("#ageError");
+
+        const studentIdError =
+            document.querySelector("#studentIdError");
+
+        const passwordError =
+            document.querySelector("#passwordError");
+
+        const confirmPasswordError =
+            document.querySelector("#confirmPasswordError");
+
+        const courseError =
+            document.querySelector("#courseError");
+
+        const dobError =
+            document.querySelector("#dobError");
+
+        const termsError =
+            document.querySelector("#termsError");
+
+
+        // ---------------------------------------------------------
+        // Password Strength
+        // ---------------------------------------------------------
+
+        password.addEventListener("input", function () {
+
+            const value = password.value;
+
+            if (value.length === 0) {
+                passwordStrength.textContent = "";
+            } else if (value.length < 8) {
+                passwordStrength.textContent = "Weak password";
+            } else if (value.length < 12) {
+                passwordStrength.textContent = "Medium password";
+            } else {
+                passwordStrength.textContent = "Strong password";
+            }
+
+            validatePasswordMatch();
+        });
+
+
+        // ---------------------------------------------------------
+        // Confirm Password
+        // ---------------------------------------------------------
+
+        function validatePasswordMatch() {
+
+            if (confirmPassword.value === "") {
+                confirmPassword.setCustomValidity(
+                    "Please confirm your password."
+                );
+
+                return;
+            }
+
+            if (password.value !== confirmPassword.value) {
+
+                confirmPassword.setCustomValidity(
+                    "Passwords do not match."
+                );
+
+                confirmPasswordError.textContent =
+                    "Passwords do not match.";
+
+            } else {
+
+                confirmPassword.setCustomValidity("");
+
+                confirmPasswordError.textContent = "";
+            }
+        }
+
+        confirmPassword.addEventListener(
+            "input",
+            validatePasswordMatch
+        );
+
+
+        // ---------------------------------------------------------
+        // Individual Validation Messages
+        // ---------------------------------------------------------
+
+        function validateField(field, errorElement, message) {
+
+            if (!field.checkValidity()) {
+                errorElement.textContent = message;
+                return false;
+            }
+
+            errorElement.textContent = "";
+            return true;
+        }
+
+
+        // ---------------------------------------------------------
+        // Form Submit Event
+        // ---------------------------------------------------------
+
+        form.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            validatePasswordMatch();
+
+            let isValid = true;
+
+            if (
+                !validateField(
+                    fullName,
+                    nameError,
+                    "Please enter a valid name of 3 to 50 characters."
+                )
+            ) {
+                isValid = false;
+            }
+
+            if (
+                !validateField(
+                    email,
+                    emailError,
+                    "Please enter a valid email address."
+                )
+            ) {
+                isValid = false;
+            }
+
+            if (
+                !validateField(
+                    phone,
+                    phoneError,
+                    "Please enter exactly 10 digits."
+                )
+            ) {
+                isValid = false;
+            }
+
+            if (
+                !validateField(
+                    age,
+                    ageError,
+                    "Age must be between 17 and 100."
+                )
+            ) {
+                isValid = false;
+            }
+
+            if (
+                !validateField(
+                    studentId,
+                    studentIdError,
+                    "Student ID must follow IITM1234 format."
+                )
+            ) {
+                isValid = false;
+            }
+
+            if (
+                !validateField(
+                    password,
+                    passwordError,
+                    "Password must contain at least 8 characters."
+                )
+            ) {
+                isValid = false;
+            }
+
+            if (!confirmPassword.checkValidity()) {
+
+                confirmPasswordError.textContent =
+                    confirmPassword.validationMessage;
+
+                isValid = false;
+
+            } else {
+
+                confirmPasswordError.textContent = "";
+            }
+
+            if (
+                !validateField(
+                    course,
+                    courseError,
+                    "Please select a course."
+                )
+            ) {
+                isValid = false;
+            }
+
+            if (
+                !validateField(
+                    dob,
+                    dobError,
+                    "Please select your date of birth."
+                )
+            ) {
+                isValid = false;
+            }
+
+            if (!terms.checked) {
+
+                termsError.textContent =
+                    "You must accept the terms and conditions.";
+
+                isValid = false;
+
+            } else {
+
+                termsError.textContent = "";
+            }
+
+
+            // -----------------------------------------------------
+            // Final Validation
+            // -----------------------------------------------------
+
+            if (!form.checkValidity()) {
+                isValid = false;
+            }
+
+
+            if (!isValid) {
+
+                formOutput.textContent =
+                    "Please correct the highlighted errors.";
+
+                formOutput.className =
+                    "output invalid";
+
+                form.reportValidity();
+
+                return;
+            }
+
+
+            // -----------------------------------------------------
+            // Successful Validation
+            // -----------------------------------------------------
+
+            formOutput.textContent =
+                `Registration successful for ${fullName.value.trim()}.
+                 Course: ${course.value}.`;
+
+            formOutput.className =
+                "output success";
+        });
+
+
+        // ---------------------------------------------------------
+        // Reset Form
+        // ---------------------------------------------------------
+
+        form.addEventListener("reset", function () {
+
+            setTimeout(function () {
+
+                formOutput.textContent =
+                    "Fill the form and click Submit.";
+
+                formOutput.className =
+                    "output";
+
+                passwordStrength.textContent = "";
+
+                const errors = document.querySelectorAll(".error");
+
+                errors.forEach(function (error) {
+                    error.textContent = "";
+                });
+
+            }, 0);
+        });
+
+
+        // ---------------------------------------------------------
+        // Constraint Validation API Demo
+        // ---------------------------------------------------------
+
+        const apiEmail =
+            document.querySelector("#apiEmail");
+
+        const checkValidityButton =
+            document.querySelector("#checkValidityButton");
+
+        const reportValidityButton =
+            document.querySelector("#reportValidityButton");
+
+        const apiOutput =
+            document.querySelector("#apiOutput");
+
+
+        checkValidityButton.addEventListener(
+            "click",
+            function () {
+
+                if (apiEmail.checkValidity()) {
+
+                    apiOutput.textContent =
+                        "The email is valid.";
+
+                    apiOutput.className =
+                        "output success";
+
+                } else {
+
+                    apiOutput.textContent =
+                        "The email is invalid.";
+
+                    apiOutput.className =
+                        "output invalid";
+                }
+            }
+        );
+
+
+        reportValidityButton.addEventListener(
+            "click",
+            function () {
+
+                const result =
+                    apiEmail.reportValidity();
+
+                if (result) {
+
+                    apiOutput.textContent =
+                        "The email passed browser validation.";
+
+                    apiOutput.className =
+                        "output success";
+
+                } else {
+
+                    apiOutput.textContent =
+                        "Browser validation reported an error.";
+
+                    apiOutput.className =
+                        "output invalid";
+                }
+            }
+        );
+
+
+        // ---------------------------------------------------------
+        // Live Custom Validation for Student ID
+        // ---------------------------------------------------------
+
+        studentId.addEventListener("input", function () {
+
+            if (studentId.validity.patternMismatch) {
+
+                studentIdError.textContent =
+                    "Use the format IITM1234.";
+
+            } else {
+
+                studentIdError.textContent = "";
+            }
+        });
+
+
+        // ---------------------------------------------------------
+        // Live Email Validation
+        // ---------------------------------------------------------
+
+        email.addEventListener("blur", function () {
+
+            if (email.value !== "" && email.validity.typeMismatch) {
+
+                emailError.textContent =
+                    "Please enter a valid email address.";
+
+            } else {
+
+                emailError.textContent = "";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
