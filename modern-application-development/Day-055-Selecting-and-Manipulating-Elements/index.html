@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 055 - Selecting and Manipulating Elements</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #d1d5db;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #374151;
+            margin: 12px 0 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f9fafb;
+            border: 1px solid #dbe3ef;
+            border-radius: 10px;
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        button {
+            border: none;
+            padding: 11px 16px;
+            margin: 6px 5px 6px 0;
+            border-radius: 7px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 15px;
+            min-height: 50px;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+        }
+
+        #studentCard {
+            transition: 0.2s ease;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            transform: translateY(-2px);
+        }
+
+        .skill-list {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .skill-list li {
+            margin: 6px 0;
+        }
+
+        .dynamic-card {
+            margin-top: 12px;
+            padding: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            background: #f8fafc;
+        }
+
+        .removed {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 055
+        Topic: Selecting and Manipulating Elements
+    -->
+
+    <header>
+        <h1 id="pageTitle">Day 055 — Selecting and Manipulating Elements</h1>
+        <p>Learning practical DOM selection and manipulation</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>🔎 Selecting Elements</h2>
+
+            <div class="grid">
+
+                <div class="card">
+                    <strong>getElementById()</strong>
+                    Selects an element by ID.
+                </div>
+
+                <div class="card">
+                    <strong>getElementsByClassName()</strong>
+                    Selects elements by class.
+                </div>
+
+                <div class="card">
+                    <strong>getElementsByTagName()</strong>
+                    Selects elements by tag.
+                </div>
+
+                <div class="card">
+                    <strong>querySelector()</strong>
+                    Selects the first CSS match.
+                </div>
+
+                <div class="card">
+                    <strong>querySelectorAll()</strong>
+                    Selects all CSS matches.
+                </div>
+
+            </div>
+
+            <pre>
+document.getElementById("pageTitle");
+
+document.getElementsByClassName("card");
+
+document.getElementsByTagName("section");
+
+document.querySelector(".card");
+
+document.querySelectorAll(".card");
+            </pre>
+        </section>
+
+        <section>
+            <h2>✏️ Changing Text</h2>
+
+            <p id="message">
+                This message will be changed using textContent.
+            </p>
+
+            <button onclick="changeText()">
+                Change Text
+            </button>
+
+            <button onclick="restoreText()">
+                Restore Text
+            </button>
+        </section>
+
+        <section>
+            <h2>🧱 Changing HTML</h2>
+
+            <div id="htmlBox" class="card">
+                Original content
+            </div>
+
+            <button onclick="changeHTML()">
+                Change HTML
+            </button>
+        </section>
+
+        <section>
+            <h2>🎨 Manipulating Classes and Styles</h2>
+
+            <div id="styleBox" class="card">
+                This card can be highlighted dynamically.
+            </div>
+
+            <button onclick="toggleHighlight()">
+                Toggle Highlight
+            </button>
+
+            <button onclick="changeStyle()">
+                Change Inline Style
+            </button>
+        </section>
+
+        <section>
+            <h2>🔗 Manipulating Attributes</h2>
+
+            <a
+                id="resourceLink"
+                href="https://developer.mozilla.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Open MDN Web Docs
+            </a>
+
+            <br>
+
+            <button onclick="readHref()">
+                Read href
+            </button>
+
+            <button onclick="changeHref()">
+                Change href
+            </button>
+
+            <button onclick="removeTarget()">
+                Remove target
+            </button>
+        </section>
+
+        <section>
+            <h2>➕ Creating and Inserting Elements</h2>
+
+            <ul id="skillList" class="skill-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+
+            <button onclick="addSkill()">
+                Add Skill
+            </button>
+
+            <button onclick="prependSkill()">
+                Add Skill at Beginning
+            </button>
+
+            <button onclick="removeLastSkill()">
+                Remove Last Skill
+            </button>
+        </section>
+
+        <section>
+            <h2>🎓 Student Card</h2>
+
+            <article id="studentCard" class="card">
+                <h3 id="studentName">Saloni Tiwari</h3>
+
+                <p>
+                    Programme:
+                    <span id="programme">
+                        IIT Madras BS Degree
+                    </span>
+                </p>
+
+                <p>
+                    Course:
+                    <span id="course">
+                        Modern Application Development
+                    </span>
+                </p>
+
+                <p>
+                    Score:
+                    <span id="score">95</span>
+                </p>
+            </article>
+
+            <button onclick="updateStudent()">
+                Update Student
+            </button>
+        </section>
+
+        <section>
+            <h2>🧩 Dynamic Course Card</h2>
+
+            <div id="courseContainer">
+                <p>No dynamic course card has been added yet.</p>
+            </div>
+
+            <button onclick="createCourseCard()">
+                Create Course Card
+            </button>
+        </section>
+
+        <section>
+            <h2>🗑️ Remove and Replace</h2>
+
+            <p id="removeMessage">
+                This paragraph can be removed from the DOM.
+            </p>
+
+            <button onclick="removeParagraph()">
+                Remove Paragraph
+            </button>
+
+            <h3 id="replaceHeading">
+                Original Heading
+            </h3>
+
+            <button onclick="replaceHeading()">
+                Replace Heading
+            </button>
+        </section>
+
+        <section>
+            <h2>🌳 Basic DOM Traversal</h2>
+
+            <div id="traversalBox" class="card">
+                <p>First child paragraph</p>
+                <p>Second child paragraph</p>
+                <p>Third child paragraph</p>
+            </div>
+
+            <button onclick="showTraversal()">
+                Show Traversal Information
+            </button>
+        </section>
+
+        <section>
+            <h2>📊 DOM Methods Summary</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method / Property</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>getElementById()</td>
+                        <td>Select by ID</td>
+                    </tr>
+
+                    <tr>
+                        <td>querySelector()</td>
+                        <td>Select first CSS match</td>
+                    </tr>
+
+                    <tr>
+                        <td>querySelectorAll()</td>
+                        <td>Select all CSS matches</td>
+                    </tr>
+
+                    <tr>
+                        <td>textContent</td>
+                        <td>Read or change text</td>
+                    </tr>
+
+                    <tr>
+                        <td>classList</td>
+                        <td>Manage CSS classes</td>
+                    </tr>
+
+                    <tr>
+                        <td>setAttribute()</td>
+                        <td>Set an attribute</td>
+                    </tr>
+
+                    <tr>
+                        <td>createElement()</td>
+                        <td>Create an element</td>
+                    </tr>
+
+                    <tr>
+                        <td>append()</td>
+                        <td>Add at the end</td>
+                    </tr>
+
+                    <tr>
+                        <td>prepend()</td>
+                        <td>Add at the beginning</td>
+                    </tr>
+
+                    <tr>
+                        <td>remove()</td>
+                        <td>Remove an element</td>
+                    </tr>
+
+                    <tr>
+                        <td>replaceWith()</td>
+                        <td>Replace an element</td>
+                    </tr>
+
+                    <tr>
+                        <td>parentElement</td>
+                        <td>Access parent element</td>
+                    </tr>
+
+                    <tr>
+                        <td>children</td>
+                        <td>Access child elements</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>💡 Output</h2>
+
+            <div id="output">
+                DOM manipulation results will appear here.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Day 055 — Selecting and Manipulating Elements</p>
+        <p>Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+    <script>
+        const output = document.getElementById("output");
+
+        function changeText() {
+            const message = document.getElementById("message");
+
+            message.textContent =
+                "The paragraph text was changed using textContent.";
+
+            output.textContent =
+                "textContent successfully changed the message.";
+        }
+
+        function restoreText() {
+            const message = document.getElementById("message");
+
+            message.textContent =
+                "This message will be changed using textContent.";
+
+            output.textContent =
+                "Original message restored.";
+        }
+
+        function changeHTML() {
+            const box = document.getElementById("htmlBox");
+
+            box.innerHTML =
+                "<strong>HTML was changed!</strong> The new content was inserted using innerHTML.";
+
+            output.textContent =
+                "The box content was changed using innerHTML.";
+        }
+
+        function toggleHighlight() {
+            const box = document.getElementById("styleBox");
+
+            box.classList.toggle("highlight");
+
+            const active =
+                box.classList.contains("highlight");
+
+            output.textContent = active
+                ? "The highlight class was added."
+                : "The highlight class was removed.";
+        }
+
+        function changeStyle() {
+            const box = document.getElementById("styleBox");
+
+            box.style.fontSize = "18px";
+            box.style.padding = "25px";
+            box.style.borderRadius = "15px";
+
+            output.textContent =
+                "Inline styles were changed using the style property.";
+        }
+
+        function readHref() {
+            const link =
+                document.getElementById("resourceLink");
+
+            const href =
+                link.getAttribute("href");
+
+            output.textContent =
+                `Current href: ${href}`;
+        }
+
+        function changeHref() {
+            const link =
+                document.getElementById("resourceLink");
+
+            link.setAttribute(
+                "href",
+                "https://www.google.com/"
+            );
+
+            output.textContent =
+                "The href attribute was changed.";
+        }
+
+        function removeTarget() {
+            const link =
+                document.getElementById("resourceLink");
+
+            link.removeAttribute("target");
+
+            output.textContent =
+                "The target attribute was removed.";
+        }
+
+        function addSkill() {
+            const list =
+                document.getElementById("skillList");
+
+            const skill =
+                document.createElement("li");
+
+            skill.textContent = "DOM";
+
+            list.append(skill);
+
+            output.textContent =
+                "A new skill was created and appended.";
+        }
+
+        function prependSkill() {
+            const list =
+                document.getElementById("skillList");
+
+            const skill =
+                document.createElement("li");
+
+            skill.textContent = "ES6";
+
+            list.prepend(skill);
+
+            output.textContent =
+                "ES6 was added at the beginning of the list.";
+        }
+
+        function removeLastSkill() {
+            const list =
+                document.getElementById("skillList");
+
+            const lastSkill =
+                list.lastElementChild;
+
+            if (lastSkill) {
+                lastSkill.remove();
+
+                output.textContent =
+                    "The last skill was removed.";
+            } else {
+                output.textContent =
+                    "There are no skills left to remove.";
+            }
+        }
+
+        function updateStudent() {
+            const name =
+                document.getElementById("studentName");
+
+            const programme =
+                document.getElementById("programme");
+
+            const course =
+                document.getElementById("course");
+
+            const score =
+                document.getElementById("score");
+
+            name.textContent = "Saloni Tiwari";
+            programme.textContent =
+                "IIT Madras BS Degree — Diploma Level";
+            course.textContent =
+                "Modern Application Development";
+            score.textContent = "98";
+
+            output.textContent =
+                "Student information was updated using DOM manipulation.";
+        }
+
+        function createCourseCard() {
+            const container =
+                document.getElementById("courseContainer");
+
+            const card =
+                document.createElement("article");
+
+            card.classList.add("dynamic-card");
+
+            const heading =
+                document.createElement("h3");
+
+            heading.textContent =
+                "Modern Application Development";
+
+            const description =
+                document.createElement("p");
+
+            description.textContent =
+                "Learning HTML, CSS, JavaScript, DOM, and web application development.";
+
+            const status =
+                document.createElement("p");
+
+            status.textContent =
+                "Status: In Progress";
+
+            card.append(
+                heading,
+                description,
+                status
+            );
+
+            container.append(card);
+
+            output.textContent =
+                "A course card was dynamically created.";
+        }
+
+        function removeParagraph() {
+            const paragraph =
+                document.getElementById("removeMessage");
+
+            if (paragraph) {
+                paragraph.remove();
+
+                output.textContent =
+                    "The paragraph was removed from the DOM.";
+            }
+        }
+
+        function replaceHeading() {
+            const oldHeading =
+                document.getElementById("replaceHeading");
+
+            const newHeading =
+                document.createElement("h3");
+
+            newHeading.textContent =
+                "Heading Replaced Successfully";
+
+            oldHeading.replaceWith(newHeading);
+
+            output.textContent =
+                "The old heading was replaced with a new element.";
+        }
+
+        function showTraversal() {
+            const box =
+                document.getElementById("traversalBox");
+
+            const children =
+                box.children;
+
+            const first =
+                box.firstElementChild;
+
+            const last =
+                box.lastElementChild;
+
+            output.textContent =
+                `Parent: ${box.parentElement.tagName} | ` +
+                `Children: ${children.length} | ` +
+                `First: ${first.textContent} | ` +
+                `Last: ${last.textContent}`;
+        }
+
+        const cards =
+            document.querySelectorAll(".card");
+
+        cards.forEach(card => {
+            console.log(card.textContent.trim());
+        });
+
+        console.log(
+            "Day 055 — Selecting and Manipulating Elements loaded successfully."
+        );
+    </script>
+
+</body>
+</html>
