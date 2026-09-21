@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 065 - Jinja2 Templates</title>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 065
+        Topic: Jinja2 Templates
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1050px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Consolas, monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        .flow {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        .syntax {
+            font-family: Consolas, monospace;
+            background: #f3f4f6;
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🧩 Jinja2 Templates</h1>
+        <p>Day 065 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 What is Jinja2?</h2>
+
+            <p>
+                Jinja2 is a template engine commonly used with Flask
+                to create dynamic HTML pages.
+            </p>
+
+            <p class="flow">
+                Python Data → Flask → Jinja2 → HTML → Browser
+            </p>
+        </section>
+
+        <section>
+            <h2>🎯 Why Use Templates?</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>📄 Separate HTML</h3>
+                    <p>
+                        HTML can be stored separately from Python code.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🔄 Dynamic Data</h3>
+                    <p>
+                        Python variables can be displayed dynamically.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>♻️ Reusable Layouts</h3>
+                    <p>
+                        Template inheritance reduces repeated HTML.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📁 Template Structure</h2>
+
+            <div class="code-box">flask-project/
+│
+├── app.py
+│
+└── templates/
+    ├── index.html
+    ├── about.html
+    └── student.html</div>
+        </section>
+
+        <section>
+            <h2>🖥️ `render_template()`</h2>
+
+            <div class="code-box">from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")</div>
+        </section>
+
+        <section>
+            <h2>📤 Passing Variables</h2>
+
+            <div class="code-box">@app.route("/")
+def home():
+    name = "Saloni"
+    course = "MAD 1"
+    score = 95
+
+    return render_template(
+        "index.html",
+        name=name,
+        course=course,
+        score=score
+    )</div>
+
+            <p>
+                The template can display these values using
+                <span class="syntax">{{ name }}</span>,
+                <span class="syntax">{{ course }}</span>, and
+                <span class="syntax">{{ score }}</span>.
+            </p>
+        </section>
+
+        <section>
+            <h2>🔀 Jinja2 Conditions</h2>
+
+            <div class="code-box">{% if score >= 50 %}
+    &lt;p&gt;Pass&lt;/p&gt;
+{% else %}
+    &lt;p&gt;Fail&lt;/p&gt;
+{% endif %}</div>
+        </section>
+
+        <section>
+            <h2>🔁 Jinja2 Loops</h2>
+
+            <div class="code-box">{% for course in courses %}
+    &lt;p&gt;{{ course }}&lt;/p&gt;
+{% endfor %}</div>
+
+            <p>
+                A loop can generate HTML for every item in a Python list.
+            </p>
+        </section>
+
+        <section>
+            <h2>🎨 Jinja2 Filters</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Filter</th>
+                        <th>Example</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>upper</td>
+                        <td>{{ name | upper }}</td>
+                        <td>Uppercase text</td>
+                    </tr>
+
+                    <tr>
+                        <td>lower</td>
+                        <td>{{ name | lower }}</td>
+                        <td>Lowercase text</td>
+                    </tr>
+
+                    <tr>
+                        <td>title</td>
+                        <td>{{ name | title }}</td>
+                        <td>Title case</td>
+                    </tr>
+
+                    <tr>
+                        <td>length</td>
+                        <td>{{ courses | length }}</td>
+                        <td>Length of a value</td>
+                    </tr>
+
+                    <tr>
+                        <td>trim</td>
+                        <td>{{ name | trim }}</td>
+                        <td>Remove surrounding whitespace</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>💬 Jinja2 Syntax</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Expression</h3>
+                    <p class="syntax">{{ variable }}</p>
+                </div>
+
+                <div class="card">
+                    <h3>Statement</h3>
+                    <p class="syntax">{% statement %}</p>
+                </div>
+
+                <div class="card">
+                    <h3>Comment</h3>
+                    <p class="syntax">{# comment #}</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧬 Template Inheritance</h2>
+
+            <div class="code-box">{% extends "base.html" %}
+
+{% block content %}
+    &lt;h1&gt;Home Page&lt;/h1&gt;
+{% endblock %}</div>
+
+            <p>
+                A base template can contain common elements such as
+                the header, navigation, and footer.
+            </p>
+        </section>
+
+        <section>
+            <h2>🔗 Dynamic Route + Template</h2>
+
+            <div class="code-box">@app.route("/student/&lt;int:student_id&gt;")
+def student(student_id):
+    return render_template(
+        "student.html",
+        student_id=student_id
+    )</div>
+
+            <p>
+                The same template can display different student IDs,
+                such as 101, 102, and 103.
+            </p>
+        </section>
+
+        <section>
+            <h2>🔄 Jinja2 Flow</h2>
+
+            <p class="flow">
+                Python Data → Flask → render_template() → Jinja2 → HTML
+            </p>
+        </section>
+
+        <section>
+            <h2>🧠 Day 065 Key Points</h2>
+
+            <ul>
+                <li>Jinja2 is used for dynamic HTML templates.</li>
+                <li>Flask uses <code>render_template()</code> to render templates.</li>
+                <li>Python data can be passed to templates.</li>
+                <li><code>{{ }}</code> is used for expressions.</li>
+                <li><code>{% %}</code> is used for statements.</li>
+                <li><code>{# #}</code> is used for Jinja2 comments.</li>
+                <li>Conditions and loops make templates dynamic.</li>
+                <li>Filters modify or format values.</li>
+                <li>Template inheritance allows reusable layouts.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Author:</strong> Saloni Tiwari</p>
+        <p><strong>Programme:</strong> IIT Madras BS Degree — Diploma Level</p>
+        <p><strong>Day:</strong> 065</p>
+        <p><strong>Topic:</strong> Jinja2 Templates</p>
+        <p>Happy Learning! 🚀</p>
+    </footer>
+
+</body>
+</html>
