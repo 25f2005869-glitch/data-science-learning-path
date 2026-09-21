@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 064 - Dynamic Routes and URL Parameters</title>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 064
+        Topic: Dynamic Routes and URL Parameters
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1000px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Consolas, monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        .flow {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🔗 Dynamic Routes & URL Parameters</h1>
+        <p>Day 064 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 What is a Dynamic Route?</h2>
+
+            <p>
+                A dynamic route contains a variable part of the URL.
+                The same route can handle many different values.
+            </p>
+
+            <p class="flow">
+                /student/101 → /student/102 → /student/103
+            </p>
+        </section>
+
+        <section>
+            <h2>🧩 Basic Dynamic Route</h2>
+
+            <div class="code-box">@app.route("/student/&lt;name&gt;")
+def student(name):
+    return f"Student: {name}"</div>
+
+            <p>
+                Example:
+                <strong>/student/Saloni</strong>
+            </p>
+        </section>
+
+        <section>
+            <h2>🔢 Integer Parameter</h2>
+
+            <div class="code-box">@app.route("/student/&lt;int:student_id&gt;")
+def student(student_id):
+    return f"Student ID: {student_id}"</div>
+
+            <p>
+                Valid example:
+                <strong>/student/101</strong>
+            </p>
+
+            <p>
+                A value such as <strong>/student/abc</strong> does not match
+                the integer converter.
+            </p>
+        </section>
+
+        <section>
+            <h2>📚 Route Converters</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Converter</th>
+                        <th>Example</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>string</td>
+                        <td>&lt;name&gt;</td>
+                        <td>Text without a slash</td>
+                    </tr>
+
+                    <tr>
+                        <td>int</td>
+                        <td>&lt;int:id&gt;</td>
+                        <td>Integer</td>
+                    </tr>
+
+                    <tr>
+                        <td>float</td>
+                        <td>&lt;float:price&gt;</td>
+                        <td>Decimal value</td>
+                    </tr>
+
+                    <tr>
+                        <td>path</td>
+                        <td>&lt;path:file&gt;</td>
+                        <td>Path containing slashes</td>
+                    </tr>
+
+                    <tr>
+                        <td>uuid</td>
+                        <td>&lt;uuid:id&gt;</td>
+                        <td>UUID value</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🔀 Multiple URL Parameters</h2>
+
+            <div class="code-box">@app.route("/student/&lt;int:id&gt;/course/&lt;course&gt;")
+def student_course(id, course):
+    return f"Student {id} - Course: {course}"</div>
+
+            <p>
+                Example URL:
+                <strong>/student/101/course/DBMS</strong>
+            </p>
+        </section>
+
+        <section>
+            <h2>📁 Path Parameter</h2>
+
+            <div class="code-box">@app.route("/files/&lt;path:filename&gt;")
+def files(filename):
+    return filename</div>
+
+            <p>
+                A path parameter can contain slash-separated content.
+            </p>
+
+            <p>
+                Example:
+                <strong>/files/docs/mad1/notes.pdf</strong>
+            </p>
+        </section>
+
+        <section>
+            <h2>🔗 Using `url_for()`</h2>
+
+            <p>
+                Flask can generate URLs for dynamic routes using
+                <strong>url_for()</strong>.
+            </p>
+
+            <div class="code-box">url_for("student", student_id=101)</div>
+
+            <p>
+                This generates the URL corresponding to the student route
+                with the supplied parameter.
+            </p>
+        </section>
+
+        <section>
+            <h2>📊 URL Parameter vs Query Parameter</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Example</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>URL Parameter</td>
+                        <td>/student/101</td>
+                        <td>Path</td>
+                    </tr>
+
+                    <tr>
+                        <td>Query Parameter</td>
+                        <td>/students?page=2</td>
+                        <td>Query string</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🎓 Practical Student Routes</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>/student/101</h3>
+                    <p>Represents student 101.</p>
+                </div>
+
+                <div class="card">
+                    <h3>/course/DBMS</h3>
+                    <p>Represents a DBMS course page.</p>
+                </div>
+
+                <div class="card">
+                    <h3>/project/5</h3>
+                    <p>Represents project 5.</p>
+                </div>
+
+                <div class="card">
+                    <h3>/post/10</h3>
+                    <p>Represents blog post 10.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔄 Dynamic Route Flow</h2>
+
+            <p class="flow">
+                Dynamic URL → Parameter → Flask Route → View Function → Response
+            </p>
+        </section>
+
+        <section>
+            <h2>🧠 Day 064 Key Points</h2>
+
+            <ul>
+                <li>Dynamic routes contain variable URL values.</li>
+                <li>URL parameters are received by Flask view functions.</li>
+                <li>Route converters can restrict parameter types.</li>
+                <li>Multiple parameters can be used in one route.</li>
+                <li><code>url_for()</code> can generate dynamic URLs.</li>
+                <li>URL parameters and query parameters are different.</li>
+                <li>Meaningful URL design improves application structure.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Author:</strong> Saloni Tiwari</p>
+        <p><strong>Programme:</strong> IIT Madras BS Degree — Diploma Level</p>
+        <p><strong>Day:</strong> 064</p>
+        <p><strong>Topic:</strong> Dynamic Routes and URL Parameters</p>
+        <p>Happy Learning! 🚀</p>
+    </footer>
+
+</body>
+</html>
