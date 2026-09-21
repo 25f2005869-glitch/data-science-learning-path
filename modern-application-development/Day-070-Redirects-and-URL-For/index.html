@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 070 - Redirects and url_for()</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        nav {
+            background: #0f172a;
+            padding: 14px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .concept {
+            padding: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+
+        .syntax {
+            background: #eef2ff;
+            border-left: 4px solid #4338ca;
+            padding: 14px;
+            margin: 12px 0;
+            font-family: Consolas, monospace;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .flow {
+            padding: 20px;
+            background: #f1f5f9;
+            border-left: 4px solid #4338ca;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+
+            main {
+                padding: 0 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 070
+        Topic: Redirects and url_for()
+    -->
+
+    <header>
+        <h1>Day 070 — Redirects and <code>url_for()</code></h1>
+        <p>Flask navigation, URL generation and Post/Redirect/Get</p>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <a href="#redirect">Redirect</a>
+        <a href="#urlfor">url_for()</a>
+        <a href="#dynamic">Dynamic URLs</a>
+        <a href="#prg">PRG</a>
+    </nav>
+
+    <main>
+
+        <section class="card">
+            <h2>🔀 Core Concepts</h2>
+
+            <div class="grid">
+
+                <article class="concept">
+                    <h3>redirect()</h3>
+                    <p>
+                        Tells the browser to navigate to another URL.
+                    </p>
+
+                    <div class="syntax">
+                        redirect("/home")
+                    </div>
+                </article>
+
+                <article class="concept">
+                    <h3>url_for()</h3>
+                    <p>
+                        Generates a URL for a Flask endpoint.
+                    </p>
+
+                    <div class="syntax">
+                        url_for("home")
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="redirect" class="card">
+            <h2>1. Flask Redirect</h2>
+
+            <p>
+                A redirect tells the browser to make another request
+                to a different URL.
+            </p>
+
+            <div class="syntax">
+                <pre><code>from flask import redirect
+
+@app.route("/old")
+def old():
+    return redirect("/new")</code></pre>
+            </div>
+
+            <p>
+                The browser receives a redirect response and then
+                requests the new location.
+            </p>
+        </section>
+
+        <section id="urlfor" class="card">
+            <h2>2. <code>url_for()</code></h2>
+
+            <p>
+                <code>url_for()</code> generates a URL from a Flask
+                endpoint name.
+            </p>
+
+            <div class="syntax">
+                <pre><code>@app.route("/")
+def home():
+    return "Home"
+
+url_for("home")</code></pre>
+            </div>
+
+            <p>
+                If the endpoint is <code>home</code>, Flask generates
+                the URL associated with that endpoint.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>3. Redirect + url_for()</h2>
+
+            <div class="syntax">
+                return redirect(url_for("home"))
+            </div>
+
+            <p>
+                This is one of the most commonly used Flask navigation patterns.
+            </p>
+
+            <div class="flow">
+                <p><strong>url_for()</strong> → Generates the URL</p>
+                <p>↓</p>
+                <p><strong>redirect()</strong> → Tells the browser to navigate</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>4. Endpoint</h2>
+
+            <div class="syntax">
+                <pre><code>@app.route("/about")
+def about():
+    return "About"</code></pre>
+            </div>
+
+            <p>
+                The endpoint is normally:
+            </p>
+
+            <div class="syntax">
+                about
+            </div>
+
+            <p>
+                Therefore:
+            </p>
+
+            <div class="syntax">
+                url_for("about")
+            </div>
+        </section>
+
+        <section id="dynamic" class="card">
+            <h2>5. Dynamic URL</h2>
+
+            <div class="syntax">
+                <pre><code>@app.route("/student/&lt;int:student_id&gt;")
+def student(student_id):
+    return f"Student {student_id}"</code></pre>
+            </div>
+
+            <p>
+                Generate the URL using:
+            </p>
+
+            <div class="syntax">
+                url_for("student", student_id=101)
+            </div>
+
+            <p>
+                Result:
+            </p>
+
+            <div class="syntax">
+                /student/101
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>6. Query Parameters</h2>
+
+            <p>
+                Extra keyword arguments can be used to generate query parameters
+                when they are not route variables.
+            </p>
+
+            <div class="syntax">
+                url_for("search", q="python", page=2)
+            </div>
+
+            <p>
+                Result:
+            </p>
+
+            <div class="syntax">
+                /search?q=python&amp;page=2
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>7. Jinja2 Template Usage</h2>
+
+            <div class="syntax">
+                <pre><code>&lt;a href="{{ url_for('home') }}"&gt;
+    Home
+&lt;/a&gt;
+
+&lt;a href="{{ url_for('student', student_id=101) }}"&gt;
+    Student
+&lt;/a&gt;</code></pre>
+            </div>
+
+            <p>
+                Using <code>url_for()</code> in templates avoids hard-coding
+                internal application URLs.
+            </p>
+        </section>
+
+        <section id="prg" class="card">
+            <h2>8. Post/Redirect/Get</h2>
+
+            <div class="flow">
+                <p><strong>POST</strong></p>
+                <p>↓</p>
+                <p><strong>Validate and Process</strong></p>
+                <p>↓</p>
+                <p><strong>Redirect</strong></p>
+                <p>↓</p>
+                <p><strong>GET</strong></p>
+            </div>
+
+            <p>
+                This pattern is commonly used after successful form submissions.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>9. Flask PRG Example</h2>
+
+            <div class="syntax">
+                <pre><code>@app.route("/register", methods=["GET", "POST"])
+def register():
+
+    if request.method == "POST":
+        name = request.form.get("name", "").strip()
+
+        if not name:
+            return "Name is required", 400
+
+        return redirect(url_for("success"))
+
+    return "Registration Form"</code></pre>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>10. Redirect Status Codes</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status Code</th>
+                        <th>Meaning</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>301</td>
+                        <td>Permanent Redirect</td>
+                    </tr>
+
+                    <tr>
+                        <td>302</td>
+                        <td>Found</td>
+                    </tr>
+
+                    <tr>
+                        <td>303</td>
+                        <td>See Other</td>
+                    </tr>
+
+                    <tr>
+                        <td>307</td>
+                        <td>Temporary Redirect</td>
+                    </tr>
+
+                    <tr>
+                        <td>308</td>
+                        <td>Permanent Redirect</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Flask's <code>redirect()</code> uses a temporary redirect
+                by default. A specific status code can be supplied when needed.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>11. <code>redirect()</code> vs <code>url_for()</code></h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Function</th>
+                        <th>Purpose</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>redirect()</td>
+                        <td>Redirect browser</td>
+                        <td>redirect("/home")</td>
+                    </tr>
+
+                    <tr>
+                        <td>url_for()</td>
+                        <td>Generate URL</td>
+                        <td>url_for("home")</td>
+                    </tr>
+
+                    <tr>
+                        <td>Both</td>
+                        <td>Generate and redirect</td>
+                        <td>redirect(url_for("home"))</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>12. Common Mistakes</h2>
+
+            <ul>
+                <li>Passing <code>/home</code> directly to <code>url_for()</code>.</li>
+                <li>Forgetting the endpoint name.</li>
+                <li>Using the wrong endpoint name.</li>
+                <li>Forgetting required dynamic route parameters.</li>
+                <li>Using POST without allowing POST on the route.</li>
+                <li>Hard-coding internal URLs unnecessarily.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>13. Mental Model</h2>
+
+            <div class="flow">
+                <p>
+                    <strong>url_for()</strong>
+                    asks Flask:
+                    "What URL belongs to this endpoint?"
+                </p>
+
+                <p>
+                    <strong>redirect()</strong>
+                    tells the browser:
+                    "Go to this URL."
+                </p>
+
+                <p>
+                    Therefore:
+                </p>
+
+                <div class="syntax">
+                    redirect(url_for("home"))
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 070 — Redirects and url_for()</strong></p>
+        <p>Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+</body>
+</html>
