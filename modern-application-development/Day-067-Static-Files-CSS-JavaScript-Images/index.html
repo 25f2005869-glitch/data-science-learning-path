@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 067 - Flask Static Files</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #0f172a;
+            padding: 14px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .asset-card {
+            padding: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+
+        .path {
+            display: block;
+            background: #eef2ff;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 6px;
+            font-family: Consolas, monospace;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .flow {
+            padding: 18px;
+            background: #f1f5f9;
+            border-left: 4px solid #4338ca;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+
+            main {
+                padding: 0 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 067
+        Topic: Flask Static Files — CSS, JavaScript & Images
+    -->
+
+    <header>
+        <h1>Day 067 — Flask Static Files</h1>
+        <p>CSS, JavaScript, Images and Static Asset Management</p>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <a href="#concept">Concept</a>
+        <a href="#structure">Structure</a>
+        <a href="#urlfor">url_for()</a>
+        <a href="#workflow">Workflow</a>
+    </nav>
+
+    <main>
+
+        <section id="concept" class="card">
+            <h2>What Are Static Files?</h2>
+
+            <p>
+                Static files are assets that are served to the browser,
+                such as CSS, JavaScript, images, fonts and icons.
+            </p>
+
+            <div class="grid">
+
+                <article class="asset-card">
+                    <h3>🎨 CSS</h3>
+                    <p>Controls the visual appearance of the application.</p>
+                    <span class="path">static/css/style.css</span>
+                </article>
+
+                <article class="asset-card">
+                    <h3>⚙️ JavaScript</h3>
+                    <p>Adds browser-side interaction and behavior.</p>
+                    <span class="path">static/js/script.js</span>
+                </article>
+
+                <article class="asset-card">
+                    <h3>🖼️ Images</h3>
+                    <p>Provides visual assets for the application.</p>
+                    <span class="path">static/images/logo.png</span>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="structure" class="card">
+            <h2>Flask Project Structure</h2>
+
+            <div class="path">
+                <pre><code>project/
+├── app.py
+├── templates/
+│   ├── base.html
+│   └── home.html
+└── static/
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── script.js
+    └── images/
+        └── logo.png</code></pre>
+            </div>
+
+            <p>
+                The <strong>templates</strong> directory contains Jinja2
+                templates, while the <strong>static</strong> directory
+                contains frontend assets.
+            </p>
+        </section>
+
+        <section id="urlfor" class="card">
+            <h2>Using <code>url_for()</code></h2>
+
+            <p>
+                Flask provides <code>url_for()</code> to generate URLs
+                for static files.
+            </p>
+
+            <div class="grid">
+
+                <article class="asset-card">
+                    <h3>CSS</h3>
+                    <div class="path">
+                        {{ url_for('static', filename='css/style.css') }}
+                    </div>
+                </article>
+
+                <article class="asset-card">
+                    <h3>JavaScript</h3>
+                    <div class="path">
+                        {{ url_for('static', filename='js/script.js') }}
+                    </div>
+                </article>
+
+                <article class="asset-card">
+                    <h3>Image</h3>
+                    <div class="path">
+                        {{ url_for('static', filename='images/logo.png') }}
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>CSS Example</h2>
+
+            <div class="path">
+                &lt;link rel="stylesheet"
+                href="{{ url_for('static', filename='css/style.css') }}"&gt;
+            </div>
+
+            <p>
+                The stylesheet can be stored separately inside
+                <code>static/css/</code>.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>JavaScript Example</h2>
+
+            <div class="path">
+                &lt;script
+                src="{{ url_for('static', filename='js/script.js') }}"&gt;
+                &lt;/script&gt;
+            </div>
+
+            <p>
+                JavaScript files can be organized inside
+                <code>static/js/</code>.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Image Example</h2>
+
+            <div class="path">
+                &lt;img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="Website Logo"&gt;
+            </div>
+
+            <p>
+                Images can be stored inside
+                <code>static/images/</code>.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Static Files vs Templates</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Directory</th>
+                        <th>Purpose</th>
+                        <th>Examples</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>templates/</td>
+                        <td>Jinja2 templates</td>
+                        <td>base.html, home.html</td>
+                    </tr>
+
+                    <tr>
+                        <td>static/css/</td>
+                        <td>Stylesheets</td>
+                        <td>style.css</td>
+                    </tr>
+
+                    <tr>
+                        <td>static/js/</td>
+                        <td>JavaScript</td>
+                        <td>script.js</td>
+                    </tr>
+
+                    <tr>
+                        <td>static/images/</td>
+                        <td>Images</td>
+                        <td>logo.png, profile.jpg</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="workflow" class="card">
+            <h2>Static File Request Workflow</h2>
+
+            <div class="flow">
+                <p><strong>1.</strong> Browser requests a Flask page.</p>
+                <p><strong>2.</strong> Flask renders the Jinja2 template.</p>
+                <p><strong>3.</strong> The generated HTML contains static URLs.</p>
+                <p><strong>4.</strong> Browser requests CSS, JavaScript and images.</p>
+                <p><strong>5.</strong> Flask serves the corresponding static assets.</p>
+                <p><strong>6.</strong> Browser uses the assets to render the page.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Best Practices</h2>
+
+            <ul>
+                <li>Keep CSS inside <code>static/css/</code>.</li>
+                <li>Keep JavaScript inside <code>static/js/</code>.</li>
+                <li>Keep images inside <code>static/images/</code>.</li>
+                <li>Use <code>url_for()</code> for static URLs.</li>
+                <li>Use meaningful filenames.</li>
+                <li>Do not store passwords or API keys in static files.</li>
+                <li>Keep templates and static assets separate.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 067 — Flask Static Files</strong></p>
+        <p>Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+</body>
+</html>
