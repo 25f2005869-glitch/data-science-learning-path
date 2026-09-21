@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 061 - Introduction to Flask</title>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 061
+        Topic: Introduction to Flask
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1000px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .flow {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+            white-space: pre-wrap;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        footer {
+            text-align: center;
+            background: #111827;
+            color: white;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🐍 Introduction to Flask</h1>
+        <p>Day 061 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 What is Flask?</h2>
+
+            <p>
+                Flask is a lightweight web framework written in Python.
+                It is used to build web applications, websites and APIs.
+            </p>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>🐍 Python</h3>
+                    <p>Programming language used to write backend logic.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🌐 Flask</h3>
+                    <p>Python framework used to handle web requests.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🖥️ Browser</h3>
+                    <p>Client that sends HTTP requests and receives responses.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎯 Why Learn Flask?</h2>
+
+            <ul>
+                <li>Simple and lightweight</li>
+                <li>Python-based</li>
+                <li>Easy routing</li>
+                <li>Flexible project structure</li>
+                <li>Useful for backend development</li>
+                <li>Useful for building APIs</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🔗 Flask Request Flow</h2>
+
+            <p class="flow">
+                Browser → HTTP Request → Flask → Route → View Function → Response → Browser
+            </p>
+        </section>
+
+        <section>
+            <h2>🧩 Basic Flask Application</h2>
+
+            <div class="code-box">from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello, Flask!"
+
+if __name__ == "__main__":
+    app.run()</div>
+        </section>
+
+        <section>
+            <h2>🔀 Route and View Function</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Example</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Route</td>
+                        <td>/about</td>
+                        <td>URL path</td>
+                    </tr>
+
+                    <tr>
+                        <td>Decorator</td>
+                        <td>@app.route("/about")</td>
+                        <td>Maps URL to function</td>
+                    </tr>
+
+                    <tr>
+                        <td>View Function</td>
+                        <td>def about()</td>
+                        <td>Handles the request</td>
+                    </tr>
+
+                    <tr>
+                        <td>Response</td>
+                        <td>return "About Page"</td>
+                        <td>Data sent back to browser</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>📁 Basic Flask Structure</h2>
+
+            <div class="code-box">flask-project/
+│
+├── app.py
+├── templates/
+├── static/
+└── README.md</div>
+
+            <p>
+                The <strong>templates</strong> folder is commonly used for
+                HTML templates, while <strong>static</strong> is commonly used
+                for CSS, JavaScript and images.
+            </p>
+        </section>
+
+        <section>
+            <h2>🛠️ Important Commands</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>pip install flask</td>
+                        <td>Install Flask</td>
+                    </tr>
+
+                    <tr>
+                        <td>python --version</td>
+                        <td>Check Python version</td>
+                    </tr>
+
+                    <tr>
+                        <td>python app.py</td>
+                        <td>Run Flask application</td>
+                    </tr>
+
+                    <tr>
+                        <td>app.run(debug=True)</td>
+                        <td>Run development server with debug mode</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>📚 Day 061 Learning Checklist</h2>
+
+            <ul>
+                <li>Understand Flask</li>
+                <li>Understand web frameworks</li>
+                <li>Install Flask</li>
+                <li>Create a Flask application</li>
+                <li>Understand routes</li>
+                <li>Understand view functions</li>
+                <li>Return responses</li>
+                <li>Run the development server</li>
+                <li>Understand debug mode</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Author:</strong> Saloni Tiwari</p>
+        <p><strong>Programme:</strong> IIT Madras BS Degree — Diploma Level</p>
+        <p><strong>Day:</strong> 061</p>
+        <p><strong>Topic:</strong> Introduction to Flask</p>
+        <p>Happy Learning! 🚀</p>
+    </footer>
+
+</body>
+</html>
