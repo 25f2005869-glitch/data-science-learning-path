@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 066 - Template Inheritance</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #0f172a;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .hero,
+        .card {
+            background: white;
+            padding: 24px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero h2 {
+            margin-top: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .syntax {
+            background: #eef2ff;
+            padding: 15px;
+            border-left: 4px solid #4338ca;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px 20px;
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 8px 0;
+            }
+
+            main {
+                padding: 0 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 066
+        Topic: Jinja2 Template Inheritance
+    -->
+
+    <header>
+        <h1>Day 066 — Template Inheritance</h1>
+        <p>Learning reusable layouts with Flask and Jinja2</p>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <a href="#concept">Concept</a>
+        <a href="#syntax">Syntax</a>
+        <a href="#structure">Structure</a>
+        <a href="#workflow">Workflow</a>
+    </nav>
+
+    <main>
+
+        <section id="concept" class="hero">
+            <h2>What is Template Inheritance?</h2>
+
+            <p>
+                Jinja2 Template Inheritance allows multiple Flask pages
+                to share a common layout.
+            </p>
+
+            <p>
+                A base template contains common elements such as the
+                header, navigation, footer, and content areas.
+                Child templates reuse this structure and provide
+                page-specific content.
+            </p>
+        </section>
+
+        <section id="syntax" class="card">
+            <h2>Important Jinja2 Syntax</h2>
+
+            <div class="grid">
+
+                <article>
+                    <h3>extends</h3>
+                    <div class="syntax">
+                        <code>{% extends "base.html" %}</code>
+                    </div>
+                    <p>Inherits the structure of a parent template.</p>
+                </article>
+
+                <article>
+                    <h3>block</h3>
+                    <div class="syntax">
+                        <code>{% block content %} ... {% endblock %}</code>
+                    </div>
+                    <p>Creates a replaceable section in a template.</p>
+                </article>
+
+                <article>
+                    <h3>super()</h3>
+                    <div class="syntax">
+                        <code>{{ super() }}</code>
+                    </div>
+                    <p>Keeps the parent block content while adding child content.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="structure" class="card">
+            <h2>Typical Flask Template Structure</h2>
+
+            <div class="syntax">
+                <pre><code>project/
+├── app.py
+├── templates/
+│   ├── base.html
+│   ├── home.html
+│   ├── about.html
+│   └── contact.html
+└── static/</code></pre>
+            </div>
+
+            <p>
+                The base template provides the common website structure.
+                The child templates extend the base template.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Base Template Concept</h2>
+
+            <div class="syntax">
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;{% block title %}Website{% endblock %}&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;header&gt;Common Header&lt;/header&gt;
+
+    &lt;nav&gt;Common Navigation&lt;/nav&gt;
+
+    &lt;main&gt;
+        {% block content %}
+        {% endblock %}
+    &lt;/main&gt;
+
+    &lt;footer&gt;Common Footer&lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Child Template Concept</h2>
+
+            <div class="syntax">
+                <pre><code>{% extends "base.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    &lt;h1&gt;Welcome to the Home Page&lt;/h1&gt;
+    &lt;p&gt;This content belongs to the child template.&lt;/p&gt;
+{% endblock %}</code></pre>
+            </div>
+        </section>
+
+        <section id="workflow" class="card">
+            <h2>Template Inheritance Workflow</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Step</th>
+                        <th>Process</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Browser sends a request to Flask.</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Flask executes the appropriate route.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Flask calls render_template().</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Jinja2 loads the child template.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>The child extends the base template.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Jinja2 inserts child content into blocks.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Final HTML is returned to the browser.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Why Use Template Inheritance?</h2>
+
+            <div class="grid">
+                <article>
+                    <h3>♻️ Reusability</h3>
+                    <p>Write common HTML once and reuse it across pages.</p>
+                </article>
+
+                <article>
+                    <h3>🧹 Less Duplication</h3>
+                    <p>Follow the DRY principle and avoid repeated markup.</p>
+                </article>
+
+                <article>
+                    <h3>🔧 Easy Maintenance</h3>
+                    <p>Update the common layout in one base template.</p>
+                </article>
+
+                <article>
+                    <h3>📁 Better Organization</h3>
+                    <p>Keep common and page-specific content separate.</p>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 066 — Jinja2 Template Inheritance</strong></p>
+        <p>Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+</body>
+</html>
