@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 063 - Flask Routing</title>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 063
+        Topic: Flask Routing
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1000px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Consolas, monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        .flow {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🔗 Flask Routing</h1>
+        <p>Day 063 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 What is Routing?</h2>
+
+            <p>
+                Routing connects a URL to a Python view function.
+                Flask uses the route to decide which function should handle
+                an incoming request.
+            </p>
+
+            <p class="flow">
+                URL → Route → View Function → Response
+            </p>
+        </section>
+
+        <section>
+            <h2>🏠 Basic Route</h2>
+
+            <div class="code-box">@app.route("/")
+def home():
+    return "Home Page"</div>
+        </section>
+
+        <section>
+            <h2>📚 Multiple Routes</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>/</h3>
+                    <p>Home page route</p>
+                </div>
+
+                <div class="card">
+                    <h3>/about</h3>
+                    <p>About page route</p>
+                </div>
+
+                <div class="card">
+                    <h3>/projects</h3>
+                    <p>Projects page route</p>
+                </div>
+
+                <div class="card">
+                    <h3>/contact</h3>
+                    <p>Contact page route</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎯 Dynamic Routes</h2>
+
+            <p>
+                Dynamic routes allow values to be received directly from
+                the URL.
+            </p>
+
+            <div class="code-box">@app.route("/student/&lt;name&gt;")
+def student(name):
+    return f"Student: {name}"</div>
+
+            <p>
+                Example URL:
+                <strong>/student/Saloni</strong>
+            </p>
+        </section>
+
+        <section>
+            <h2>🔢 Route Converters</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Converter</th>
+                        <th>Example</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>string</td>
+                        <td>&lt;name&gt;</td>
+                        <td>Text</td>
+                    </tr>
+
+                    <tr>
+                        <td>int</td>
+                        <td>&lt;int:id&gt;</td>
+                        <td>Integer</td>
+                    </tr>
+
+                    <tr>
+                        <td>float</td>
+                        <td>&lt;float:price&gt;</td>
+                        <td>Decimal number</td>
+                    </tr>
+
+                    <tr>
+                        <td>path</td>
+                        <td>&lt;path:file&gt;</td>
+                        <td>Path containing slashes</td>
+                    </tr>
+
+                    <tr>
+                        <td>uuid</td>
+                        <td>&lt;uuid:id&gt;</td>
+                        <td>UUID value</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🔢 Integer Route Example</h2>
+
+            <div class="code-box">@app.route("/student/&lt;int:student_id&gt;")
+def student(student_id):
+    return f"Student ID: {student_id}"</div>
+
+            <p>
+                Valid example:
+                <strong>/student/101</strong>
+            </p>
+
+            <p>
+                A non-integer value such as <strong>/student/abc</strong>
+                does not match this route.
+            </p>
+        </section>
+
+        <section>
+            <h2>🌐 HTTP Methods</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Common Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>GET</td>
+                        <td>Retrieve data</td>
+                    </tr>
+
+                    <tr>
+                        <td>POST</td>
+                        <td>Submit or create data</td>
+                    </tr>
+
+                    <tr>
+                        <td>PUT</td>
+                        <td>Replace data</td>
+                    </tr>
+
+                    <tr>
+                        <td>PATCH</td>
+                        <td>Partially update data</td>
+                    </tr>
+
+                    <tr>
+                        <td>DELETE</td>
+                        <td>Delete data</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="code-box">@app.route("/login", methods=["GET", "POST"])
+def login():
+    return "Login"</div>
+        </section>
+
+        <section>
+            <h2>🔗 `url_for()`</h2>
+
+            <p>
+                Flask provides <strong>url_for()</strong> to generate URLs
+                using endpoint or view function names.
+            </p>
+
+            <div class="code-box">from flask import url_for
+
+url_for("home")
+url_for("about")</div>
+        </section>
+
+        <section>
+            <h2>❌ 404 Not Found</h2>
+
+            <p>
+                If Flask cannot find a route matching the requested URL,
+                it returns a 404 Not Found response.
+            </p>
+
+            <div class="code-box">Browser Request
+       ↓
+/unknown
+       ↓
+No Matching Route
+       ↓
+404 Not Found</div>
+        </section>
+
+        <section>
+            <h2>🔄 Routing Flow</h2>
+
+            <p class="flow">
+                Browser → HTTP Request → Flask → Route Matching →
+                View Function → Response → Browser
+            </p>
+        </section>
+
+        <section>
+            <h2>🧠 Day 063 Key Points</h2>
+
+            <ul>
+                <li>A route maps a URL to a Python function.</li>
+                <li><code>@app.route()</code> defines a route.</li>
+                <li>Dynamic routes receive values from URLs.</li>
+                <li>Route converters restrict the type of URL values.</li>
+                <li>HTTP methods control the types of requests accepted.</li>
+                <li><code>url_for()</code> generates URLs from endpoints.</li>
+                <li>An unmatched URL generally produces a 404 response.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Author:</strong> Saloni Tiwari</p>
+        <p><strong>Programme:</strong> IIT Madras BS Degree — Diploma Level</p>
+        <p><strong>Day:</strong> 063</p>
+        <p><strong>Topic:</strong> Flask Routing</p>
+        <p>Happy Learning! 🚀</p>
+    </footer>
+
+</body>
+</html>
