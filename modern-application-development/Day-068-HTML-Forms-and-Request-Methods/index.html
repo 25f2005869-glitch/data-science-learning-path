@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 068 - HTML Forms and Request Methods</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #0f172a;
+            padding: 14px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .method-card {
+            padding: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+
+        .syntax {
+            display: block;
+            padding: 14px;
+            margin: 12px 0;
+            background: #eef2ff;
+            border-left: 4px solid #4338ca;
+            font-family: Consolas, monospace;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        form {
+            max-width: 600px;
+        }
+
+        label {
+            display: block;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 11px;
+            font-size: 1rem;
+        }
+
+        button {
+            margin-top: 18px;
+            border: none;
+            border-radius: 6px;
+            background: #1d4ed8;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        .flow {
+            padding: 20px;
+            background: #f1f5f9;
+            border-left: 4px solid #4338ca;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+
+            main {
+                padding: 0 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 068
+        Topic: HTML Forms and Request Methods
+    -->
+
+    <header>
+        <h1>Day 068 — HTML Forms and Request Methods</h1>
+        <p>Connecting HTML forms with Flask request handling</p>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <a href="#form">Form</a>
+        <a href="#methods">GET vs POST</a>
+        <a href="#flask">Flask</a>
+        <a href="#workflow">Workflow</a>
+    </nav>
+
+    <main>
+
+        <section id="form" class="card">
+            <h2>1. HTML Form</h2>
+
+            <p>
+                An HTML form collects information from the user and
+                sends it to a server.
+            </p>
+
+            <div class="syntax">
+                &lt;form action="/register" method="POST"&gt;
+                <br>
+                &nbsp;&nbsp;&lt;input type="text" name="name"&gt;
+                <br>
+                &nbsp;&nbsp;&lt;button type="submit"&gt;Register&lt;/button&gt;
+                <br>
+                &lt;/form&gt;
+            </div>
+        </section>
+
+        <section id="methods" class="card">
+            <h2>2. GET and POST</h2>
+
+            <div class="grid">
+
+                <article class="method-card">
+                    <h3>🔎 GET</h3>
+
+                    <p>
+                        GET is commonly used for retrieving data.
+                    </p>
+
+                    <div class="syntax">
+                        &lt;form action="/search" method="GET"&gt;
+                    </div>
+
+                    <p>
+                        Flask reads query parameters using:
+                    </p>
+
+                    <div class="syntax">
+                        request.args.get("q")
+                    </div>
+                </article>
+
+                <article class="method-card">
+                    <h3>📤 POST</h3>
+
+                    <p>
+                        POST is commonly used for submitting or changing data.
+                    </p>
+
+                    <div class="syntax">
+                        &lt;form action="/register" method="POST"&gt;
+                    </div>
+
+                    <p>
+                        Flask reads form data using:
+                    </p>
+
+                    <div class="syntax">
+                        request.form.get("name")
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>3. GET vs POST Comparison</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>GET</th>
+                        <th>POST</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Common purpose</td>
+                        <td>Retrieve data</td>
+                        <td>Submit/process data</td>
+                    </tr>
+
+                    <tr>
+                        <td>Data location</td>
+                        <td>URL query string</td>
+                        <td>Request body</td>
+                    </tr>
+
+                    <tr>
+                        <td>Visible in URL</td>
+                        <td>Yes</td>
+                        <td>Normally no</td>
+                    </tr>
+
+                    <tr>
+                        <td>Search</td>
+                        <td>Common choice</td>
+                        <td>Usually unnecessary</td>
+                    </tr>
+
+                    <tr>
+                        <td>Registration</td>
+                        <td>Usually inappropriate</td>
+                        <td>Common choice</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="flask" class="card">
+            <h2>4. Flask Request Handling</h2>
+
+            <p>Import the request object:</p>
+
+            <div class="syntax">
+                from flask import Flask, request
+            </div>
+
+            <p>For GET query parameters:</p>
+
+            <div class="syntax">
+                query = request.args.get("q", "")
+            </div>
+
+            <p>For POST form data:</p>
+
+            <div class="syntax">
+                name = request.form.get("name", "")
+            </div>
+
+            <p>To check the request method:</p>
+
+            <div class="syntax">
+                if request.method == "POST":
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>5. Route Supporting GET and POST</h2>
+
+            <div class="syntax">
+                <pre><code>@app.route("/register", methods=["GET", "POST"])
+def register():
+
+    if request.method == "POST":
+        name = request.form.get("name")
+        return f"Registered: {name}"
+
+    return "Show registration form"</code></pre>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>6. Example Search Form</h2>
+
+            <form action="/search" method="GET">
+
+                <label for="search">
+                    Search Course
+                </label>
+
+                <input
+                    type="search"
+                    id="search"
+                    name="q"
+                    placeholder="Enter course name"
+                    required
+                >
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+            <p>
+                A GET submission can produce a URL such as:
+            </p>
+
+            <div class="syntax">
+                /search?q=Python
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>7. Example Registration Form</h2>
+
+            <form action="/register" method="POST">
+
+                <label for="student-name">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="student-name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label for="course">
+                    Course
+                </label>
+
+                <select id="course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="Python">Python</option>
+                    <option value="DBMS">DBMS</option>
+                    <option value="PDSA">PDSA</option>
+                    <option value="MLF">ML Foundations</option>
+                    <option value="MAD1">Modern Application Development</option>
+                </select>
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+        </section>
+
+        <section id="workflow" class="card">
+            <h2>8. Form Submission Workflow</h2>
+
+            <div class="flow">
+                <p><strong>1.</strong> User opens the form.</p>
+                <p><strong>2.</strong> User enters information.</p>
+                <p><strong>3.</strong> User submits the form.</p>
+                <p><strong>4.</strong> Browser creates an HTTP request.</p>
+                <p><strong>5.</strong> Request is sent to the form action.</p>
+                <p><strong>6.</strong> Flask receives the request.</p>
+                <p><strong>7.</strong> Flask checks <code>request.method</code>.</p>
+                <p><strong>8.</strong> Flask reads <code>request.args</code> or <code>request.form</code>.</p>
+                <p><strong>9.</strong> Server validates and processes the data.</p>
+                <p><strong>10.</strong> Flask sends a response.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>9. Important Rules</h2>
+
+            <ul>
+                <li>Use GET commonly for retrieval and search.</li>
+                <li>Use POST commonly for data submission or state changes.</li>
+                <li>Use <code>request.args</code> for query parameters.</li>
+                <li>Use <code>request.form</code> for POST form fields.</li>
+                <li>Use meaningful <code>name</code> attributes.</li>
+                <li>Always perform important validation on the server.</li>
+                <li>POST does not itself encrypt data.</li>
+                <li>Use HTTPS when transmitting sensitive information.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 068 — HTML Forms and Request Methods</strong></p>
+        <p>Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+</body>
+</html>
