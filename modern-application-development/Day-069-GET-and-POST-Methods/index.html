@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 069 - GET and POST Methods</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        nav {
+            background: #0f172a;
+            padding: 14px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .method-card {
+            padding: 22px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+
+        .syntax {
+            background: #eef2ff;
+            border-left: 4px solid #4338ca;
+            padding: 14px;
+            margin: 12px 0;
+            font-family: Consolas, monospace;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .flow {
+            padding: 20px;
+            background: #f1f5f9;
+            border-left: 4px solid #4338ca;
+        }
+
+        form {
+            max-width: 600px;
+        }
+
+        label {
+            display: block;
+            margin: 14px 0 6px;
+            font-weight: bold;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 11px;
+            font-size: 1rem;
+        }
+
+        button {
+            margin-top: 18px;
+            border: none;
+            border-radius: 6px;
+            background: #1d4ed8;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+
+            main {
+                padding: 0 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 069
+        Topic: GET and POST Methods
+    -->
+
+    <header>
+        <h1>Day 069 — GET and POST Methods</h1>
+        <p>Understanding HTTP methods and Flask request handling</p>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <a href="#get">GET</a>
+        <a href="#post">POST</a>
+        <a href="#comparison">Comparison</a>
+        <a href="#workflow">Workflow</a>
+    </nav>
+
+    <main>
+
+        <section class="card">
+            <h2>📡 What Is an HTTP Method?</h2>
+
+            <p>
+                An HTTP method tells the server what type of operation
+                the client is requesting.
+            </p>
+
+            <div class="grid">
+
+                <article class="method-card">
+                    <h3>🔎 GET</h3>
+                    <p>
+                        Commonly used to retrieve information.
+                    </p>
+                </article>
+
+                <article class="method-card">
+                    <h3>📤 POST</h3>
+                    <p>
+                        Commonly used to submit or process information.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="get" class="card">
+            <h2>1. GET Method</h2>
+
+            <p>
+                GET is commonly used when the client wants to retrieve
+                information from the server.
+            </p>
+
+            <div class="syntax">
+                GET /courses
+            </div>
+
+            <h3>Query Parameters</h3>
+
+            <p>
+                GET requests can contain query parameters in the URL.
+            </p>
+
+            <div class="syntax">
+                /search?q=python&page=2
+            </div>
+
+            <p>
+                Flask reads query parameters using:
+            </p>
+
+            <div class="syntax">
+                request.args.get("q")
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>2. GET Form Example</h2>
+
+            <form action="/search" method="GET">
+
+                <label for="search">
+                    Search Course
+                </label>
+
+                <input
+                    type="search"
+                    id="search"
+                    name="q"
+                    placeholder="Enter course name"
+                    required
+                >
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+            <p>
+                If the user searches for <strong>Python</strong>,
+                the URL can become:
+            </p>
+
+            <div class="syntax">
+                /search?q=Python
+            </div>
+        </section>
+
+        <section id="post" class="card">
+            <h2>3. POST Method</h2>
+
+            <p>
+                POST is commonly used to submit data to the server.
+            </p>
+
+            <div class="syntax">
+                POST /register
+            </div>
+
+            <p>
+                Normal form fields submitted through POST are commonly
+                available in Flask through:
+            </p>
+
+            <div class="syntax">
+                request.form
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>4. POST Form Example</h2>
+
+            <form action="/register" method="POST">
+
+                <label for="student-name">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="student-name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>5. Flask GET Example</h2>
+
+            <div class="syntax">
+                <pre><code>from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route("/search", methods=["GET"])
+def search():
+    query = request.args.get("q", "")
+    return f"Searching for: {query}"</code></pre>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>6. Flask POST Example</h2>
+
+            <div class="syntax">
+                <pre><code>from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route("/register", methods=["POST"])
+def register():
+    name = request.form.get("name", "")
+    return f"Registered: {name}"</code></pre>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>7. One Route for GET and POST</h2>
+
+            <div class="syntax">
+                <pre><code>@app.route("/student", methods=["GET", "POST"])
+def student():
+
+    if request.method == "POST":
+        name = request.form.get("name", "")
+        return f"Submitted: {name}"
+
+    return "Show Student Form"</code></pre>
+            </div>
+        </section>
+
+        <section id="comparison" class="card">
+            <h2>8. GET vs POST</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>GET</th>
+                        <th>POST</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Common purpose</td>
+                        <td>Retrieve data</td>
+                        <td>Submit/process data</td>
+                    </tr>
+
+                    <tr>
+                        <td>Typical data location</td>
+                        <td>URL query string</td>
+                        <td>Request body</td>
+                    </tr>
+
+                    <tr>
+                        <td>Visible in URL</td>
+                        <td>Yes</td>
+                        <td>Normally no</td>
+                    </tr>
+
+                    <tr>
+                        <td>Search</td>
+                        <td>Common</td>
+                        <td>Uncommon</td>
+                    </tr>
+
+                    <tr>
+                        <td>Registration</td>
+                        <td>Usually inappropriate</td>
+                        <td>Common</td>
+                    </tr>
+
+                    <tr>
+                        <td>Server-side state change</td>
+                        <td>Should not</td>
+                        <td>May</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="workflow" class="card">
+            <h2>9. GET Request Flow</h2>
+
+            <div class="flow">
+                <p>Browser</p>
+                <p>↓</p>
+                <p>GET Request</p>
+                <p>↓</p>
+                <p>Flask Route</p>
+                <p>↓</p>
+                <p><code>request.args</code></p>
+                <p>↓</p>
+                <p>Processing</p>
+                <p>↓</p>
+                <p>Response</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>10. POST Request Flow</h2>
+
+            <div class="flow">
+                <p>Browser</p>
+                <p>↓</p>
+                <p>POST Request</p>
+                <p>↓</p>
+                <p>Flask Route</p>
+                <p>↓</p>
+                <p><code>request.form</code></p>
+                <p>↓</p>
+                <p>Validation</p>
+                <p>↓</p>
+                <p>Processing</p>
+                <p>↓</p>
+                <p>Response</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>11. Post/Redirect/Get</h2>
+
+            <div class="syntax">
+                POST
+                ↓
+                Process
+                ↓
+                Redirect
+                ↓
+                GET
+            </div>
+
+            <p>
+                Flask can perform a redirect using:
+            </p>
+
+            <div class="syntax">
+                return redirect(url_for("home"))
+            </div>
+
+            <p>
+                This pattern helps prevent accidental duplicate
+                submissions after refreshing a successful POST result.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>12. Important Rules</h2>
+
+            <ul>
+                <li>GET is commonly used for retrieval and search.</li>
+                <li>POST is commonly used for submitting or changing data.</li>
+                <li>Use <code>request.args</code> for query parameters.</li>
+                <li>Use <code>request.form</code> for normal submitted form fields.</li>
+                <li>Use <code>request.method</code> to identify the HTTP method.</li>
+                <li>Always validate important data on the server.</li>
+                <li>Do not put passwords in GET query parameters.</li>
+                <li>POST does not provide encryption by itself.</li>
+                <li>Use HTTPS for sensitive data transmission.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 069 — GET and POST Methods</strong></p>
+        <p>Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+</body>
+</html>
