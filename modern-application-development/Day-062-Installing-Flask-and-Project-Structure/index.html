@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 062 - Installing Flask and Project Structure</title>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 062
+        Topic: Installing Flask and Project Structure
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1000px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 8px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .terminal {
+            background: #111827;
+            color: #f9fafb;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Consolas, monospace;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .tree {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: Consolas, monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🐍 Installing Flask & Project Structure</h1>
+        <p>Day 062 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 Day 062 Overview</h2>
+
+            <p>
+                Before building Flask applications, we need a proper Python
+                environment and a clean project structure.
+            </p>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>🐍 Python</h3>
+                    <p>Required to run Flask applications.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🌱 Virtual Environment</h3>
+                    <p>Keeps project dependencies isolated.</p>
+                </div>
+
+                <div class="card">
+                    <h3>📦 Flask</h3>
+                    <p>Python web framework used for backend development.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔧 Installation Workflow</h2>
+
+            <div class="terminal">python --version
+
+python -m pip --version
+
+python -m venv .venv
+
+.venv\Scripts\activate
+
+python -m pip install flask
+
+python -m pip freeze &gt; requirements.txt</div>
+        </section>
+
+        <section>
+            <h2>📁 Recommended Project Structure</h2>
+
+            <div class="tree">flask-project/
+│
+├── .venv/
+├── app.py
+├── requirements.txt
+├── .gitignore
+│
+├── templates/
+│   └── index.html
+│
+└── static/
+    ├── css/
+    │   └── style.css
+    ├── js/
+    │   └── script.js
+    └── images/</div>
+        </section>
+
+        <section>
+            <h2>📚 Project Components</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>.venv/</td>
+                        <td>Isolated Python environment</td>
+                    </tr>
+
+                    <tr>
+                        <td>app.py</td>
+                        <td>Main Flask application</td>
+                    </tr>
+
+                    <tr>
+                        <td>templates/</td>
+                        <td>HTML templates</td>
+                    </tr>
+
+                    <tr>
+                        <td>static/</td>
+                        <td>CSS, JavaScript and images</td>
+                    </tr>
+
+                    <tr>
+                        <td>requirements.txt</td>
+                        <td>Project dependencies</td>
+                    </tr>
+
+                    <tr>
+                        <td>.gitignore</td>
+                        <td>Files ignored by Git</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🐍 Basic Flask Application</h2>
+
+            <div class="terminal">from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Hello, Flask!"
+
+if __name__ == "__main__":
+    app.run(debug=True)</div>
+        </section>
+
+        <section>
+            <h2>🌐 Templates and Static Files</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>📄 templates/</h3>
+                    <p>
+                        Used for HTML templates that Flask can render.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🎨 static/css/</h3>
+                    <p>
+                        Used for CSS files.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>⚙️ static/js/</h3>
+                    <p>
+                        Used for JavaScript files.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🖼️ static/images/</h3>
+                    <p>
+                        Used for images and other static assets.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📋 Dependency Management</h2>
+
+            <p>
+                A Flask project can record its Python dependencies in
+                <strong>requirements.txt</strong>.
+            </p>
+
+            <div class="terminal">python -m pip freeze &gt; requirements.txt
+
+python -m pip install -r requirements.txt</div>
+        </section>
+
+        <section>
+            <h2>🚀 Learning Checklist</h2>
+
+            <ul>
+                <li>Check Python installation</li>
+                <li>Check pip</li>
+                <li>Create a virtual environment</li>
+                <li>Activate the environment</li>
+                <li>Install Flask</li>
+                <li>Verify Flask</li>
+                <li>Understand app.py</li>
+                <li>Understand templates/</li>
+                <li>Understand static/</li>
+                <li>Understand requirements.txt</li>
+                <li>Understand .gitignore</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Author:</strong> Saloni Tiwari</p>
+        <p><strong>Programme:</strong> IIT Madras BS Degree — Diploma Level</p>
+        <p><strong>Day:</strong> 062</p>
+        <p><strong>Topic:</strong> Installing Flask and Project Structure</p>
+        <p>Happy Learning! 🚀</p>
+    </footer>
+
+</body>
+</html>
