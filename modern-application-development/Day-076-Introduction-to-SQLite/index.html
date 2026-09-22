@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 076 - Introduction to SQLite</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            padding: 20px;
+            background: #f9fafb;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        .flow {
+            display: grid;
+            gap: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .flow-item {
+            background: #eef2ff;
+            padding: 13px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .project {
+            background: #f0fdf4;
+            border-left: 5px solid #16a34a;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .warning {
+            background: #fef2f2;
+            border-left: 5px solid #dc2626;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            margin: 4px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 28px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 32px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 076
+        Topic: Introduction to SQLite
+    -->
+
+    <header>
+        <h1>🗄️ Introduction to SQLite</h1>
+        <p>Day 076 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 What Is SQLite?</h2>
+
+            <div class="project">
+                <p>
+                    SQLite is a lightweight relational database management
+                    system. It is commonly stored as a single database file
+                    and does not require a separate database server.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧩 Database Fundamentals</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <strong>Database</strong>
+                    <span>Organized collection of data.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Table</strong>
+                    <span>Stores related records.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Row</strong>
+                    <span>Represents one record.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Column</strong>
+                    <span>Represents an attribute.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Primary Key</strong>
+                    <span>Uniquely identifies a row.</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>📊 Example Student Table</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Marks</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Saloni</td>
+                        <td>Python</td>
+                        <td>90</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Rahul</td>
+                        <td>Flask</td>
+                        <td>82</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Priya</td>
+                        <td>SQL</td>
+                        <td>88</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>💻 SQLite with Python</h2>
+
+            <p>
+                Python provides the built-in <strong>sqlite3</strong> module
+                for working with SQLite databases.
+            </p>
+
+            <div class="code-box">import sqlite3
+
+connection = sqlite3.connect("students.db")
+cursor = connection.cursor()</div>
+        </section>
+
+        <section>
+            <h2>🏗️ Create a Table</h2>
+
+            <div class="code-box">cursor.execute("""
+    CREATE TABLE IF NOT EXISTS students (
+        id INTEGER PRIMARY KEY,
+        name TEXT,
+        course TEXT
+    )
+""")
+
+connection.commit()</div>
+        </section>
+
+        <section>
+            <h2>➕ Insert Data</h2>
+
+            <div class="code-box">cursor.execute(
+    "INSERT INTO students (name, course) VALUES (?, ?)",
+    ("Saloni", "Python")
+)
+
+connection.commit()</div>
+
+            <p>
+                The question-mark placeholders are used for parameterized
+                queries.
+            </p>
+        </section>
+
+        <section>
+            <h2>🔍 Select Data</h2>
+
+            <div class="code-box">cursor.execute(
+    "SELECT * FROM students"
+)
+
+students = cursor.fetchall()</div>
+
+            <p>
+                <strong>fetchall()</strong> retrieves all available rows from
+                the executed SELECT query.
+            </p>
+        </section>
+
+        <section>
+            <h2>✏️ Update Data</h2>
+
+            <div class="code-box">cursor.execute(
+    "UPDATE students SET course = ? WHERE id = ?",
+    ("Flask", 1)
+)
+
+connection.commit()</div>
+        </section>
+
+        <section>
+            <h2>🗑️ Delete Data</h2>
+
+            <div class="code-box">cursor.execute(
+    "DELETE FROM students WHERE id = ?",
+    (1,)
+)
+
+connection.commit()</div>
+
+            <div class="warning">
+                <strong>Important:</strong>
+                Always be careful with DELETE and UPDATE queries.
+                An incorrect WHERE condition can affect multiple records.
+            </div>
+        </section>
+
+        <section>
+            <h2>🔄 CRUD</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <strong>Create</strong>
+                    <span>INSERT data into a table.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Read</strong>
+                    <span>SELECT data from a table.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Update</strong>
+                    <span>Modify existing records.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Delete</strong>
+                    <span>Remove records.</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>🔄 SQLite Workflow</h2>
+
+            <div class="flow">
+                <div class="flow-item">Connect</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Create Cursor</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Execute SQL</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Fetch Results</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Commit Changes</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Close Connection</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🌐 Flask + SQLite</h2>
+
+            <div class="flow">
+                <div class="flow-item">Browser</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Flask Route</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Python Logic</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">sqlite3</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">SQLite Database</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Result</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Flask Response</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔐 Parameterized Queries</h2>
+
+            <div class="code-box">cursor.execute(
+    "SELECT * FROM students WHERE name = ?",
+    (student_name,)
+)</div>
+
+            <p>
+                Parameterized queries are preferred when working with
+                user-provided values because they help prevent SQL injection.
+            </p>
+        </section>
+
+        <section>
+            <h2>📦 SQLite Data Types</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Storage Class</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>NULL</td>
+                        <td>Missing or unknown value</td>
+                    </tr>
+
+                    <tr>
+                        <td>INTEGER</td>
+                        <td>Integer numbers</td>
+                    </tr>
+
+                    <tr>
+                        <td>REAL</td>
+                        <td>Floating-point numbers</td>
+                    </tr>
+
+                    <tr>
+                        <td>TEXT</td>
+                        <td>Text values</td>
+                    </tr>
+
+                    <tr>
+                        <td>BLOB</td>
+                        <td>Binary data</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>⚖️ SQLite Advantages</h2>
+
+            <ul>
+                <li>Lightweight</li>
+                <li>Serverless</li>
+                <li>File-based</li>
+                <li>Easy to configure</li>
+                <li>Portable</li>
+                <li>Excellent for learning and small applications</li>
+                <li>Python provides the sqlite3 module</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>⚠️ SQLite Considerations</h2>
+
+            <ul>
+                <li>It is not ideal for every large multi-user workload.</li>
+                <li>Concurrency characteristics differ from server-based databases.</li>
+                <li>Larger applications may use databases such as PostgreSQL.</li>
+                <li>The database choice should depend on application requirements.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>⭐ Key Takeaways</h2>
+
+            <ul>
+                <li><strong>SQLite</strong> is a lightweight relational database.</li>
+                <li><strong>sqlite3</strong> allows Python to work with SQLite.</li>
+                <li><strong>SQL</strong> is used to communicate with the database.</li>
+                <li><strong>CRUD</strong> means Create, Read, Update, Delete.</li>
+                <li><strong>Primary keys</strong> identify records uniquely.</li>
+                <li><strong>Parameterized queries</strong> help protect against SQL injection.</li>
+                <li><strong>commit()</strong> persists database changes.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 076 — Introduction to SQLite</strong></p>
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Next: Day 077 — SQLite Database and SQL Basics 🚀</p>
+    </footer>
+
+</body>
+</html>
