@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 073 - Flask Configuration and Environment</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 42px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: #f9fafb;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .warning {
+            background: #fef2f2;
+            border-left: 5px solid #dc2626;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .flow {
+            display: grid;
+            gap: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .flow-item {
+            background: #eef2ff;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 073
+        Topic: Flask Configuration and Environment
+    -->
+
+    <header>
+        <h1>⚙️ Flask Configuration and Environment</h1>
+        <p>Day 073 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 What Is Configuration?</h2>
+
+            <p>
+                Configuration contains settings that control how a Flask
+                application behaves.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Debug</h3>
+                    <p>Controls development debugging behavior.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Database</h3>
+                    <p>Stores database connection configuration.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Security</h3>
+                    <p>Contains security-related settings such as secret keys.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Application</h3>
+                    <p>Contains application-specific settings.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>🧩 Flask Configuration Object</h2>
+
+            <p>
+                Flask provides the <strong>app.config</strong> object for
+                storing application configuration.
+            </p>
+
+            <div class="code-box">from flask import Flask
+
+app = Flask(__name__)
+
+app.config["DEBUG"] = True
+app.config["APP_NAME"] = "Student Portal"</div>
+        </section>
+
+        <section>
+            <h2>📦 from_mapping()</h2>
+
+            <p>
+                Multiple configuration values can be loaded using
+                <strong>from_mapping()</strong>.
+            </p>
+
+            <div class="code-box">app.config.from_mapping(
+    DEBUG=True,
+    APP_NAME="Student Portal",
+    MAX_STUDENTS=100
+)</div>
+        </section>
+
+        <section>
+            <h2>🏗️ Configuration Classes</h2>
+
+            <div class="code-box">class Config:
+    APP_NAME = "Student Portal"
+    DEBUG = False
+
+app.config.from_object(Config)</div>
+
+            <p>
+                Configuration classes help keep settings organized and
+                separate from application logic.
+            </p>
+        </section>
+
+        <section>
+            <h2>🌱 Environment Variables</h2>
+
+            <p>
+                Environment variables allow deployment-specific values to be
+                supplied outside the application source code.
+            </p>
+
+            <div class="code-box">import os
+
+secret_key = os.environ.get("SECRET_KEY")
+database_url = os.environ.get("DATABASE_URL")</div>
+        </section>
+
+        <section>
+            <h2>📄 .env File</h2>
+
+            <p>
+                A local development environment can use a <strong>.env</strong>
+                file to define environment variables.
+            </p>
+
+            <div class="code-box">SECRET_KEY=development-secret
+DATABASE_URL=sqlite:///students.db
+APP_NAME=Student Portal</div>
+
+            <div class="warning">
+                <strong>Security:</strong>
+                Never commit real secrets to a public repository.
+                Add sensitive .env files to .gitignore.
+            </div>
+        </section>
+
+        <section>
+            <h2>🔐 SECRET_KEY</h2>
+
+            <p>
+                Flask uses SECRET_KEY for security-related features such as
+                signing session data.
+            </p>
+
+            <div class="code-box">app.config["SECRET_KEY"] = os.environ.get(
+    "SECRET_KEY"
+)</div>
+
+            <ul>
+                <li>Keep the secret private.</li>
+                <li>Use a strong unpredictable value.</li>
+                <li>Do not publish it on GitHub.</li>
+                <li>Use appropriate values for different environments.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🖥️ Development vs Production</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Development</th>
+                        <th>Production</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Debugging may be enabled</td>
+                        <td>Debugging disabled</td>
+                    </tr>
+
+                    <tr>
+                        <td>Local database</td>
+                        <td>Production database</td>
+                    </tr>
+
+                    <tr>
+                        <td>Development configuration</td>
+                        <td>Secure deployment configuration</td>
+                    </tr>
+
+                    <tr>
+                        <td>Detailed debugging</td>
+                        <td>Safe error responses</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🔄 Configuration Flow</h2>
+
+            <div class="flow">
+                <div class="flow-item">Environment Variables</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Flask Configuration</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Flask Application</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Routes / Extensions / Templates</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">HTTP Response</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧪 Application Factory</h2>
+
+            <p>
+                Larger Flask applications can use an application factory to
+                create applications with different configurations.
+            </p>
+
+            <div class="code-box">def create_app():
+    app = Flask(__name__)
+    app.config.from_object(Config)
+
+    return app</div>
+        </section>
+
+        <section>
+            <h2>🛡️ Configuration Best Practices</h2>
+
+            <ul>
+                <li>Keep configuration separate from application logic.</li>
+                <li>Use environment variables for sensitive values.</li>
+                <li>Keep .env files out of version control.</li>
+                <li>Use strong secret keys.</li>
+                <li>Disable debug mode in production.</li>
+                <li>Separate development, testing, and production settings.</li>
+                <li>Never expose secrets in responses or logs.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>⭐ Key Takeaways</h2>
+
+            <ul>
+                <li><strong>app.config</strong> stores Flask configuration.</li>
+                <li><strong>from_mapping()</strong> loads multiple configuration values.</li>
+                <li><strong>from_object()</strong> loads values from an object or class.</li>
+                <li><strong>Environment variables</strong> keep deployment-specific values outside source code.</li>
+                <li><strong>.env</strong> is useful for local development.</li>
+                <li><strong>SECRET_KEY</strong> must be protected.</li>
+                <li><strong>Production</strong> should use secure configuration.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 073 — Flask Configuration and Environment</strong></p>
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Next: Day 074 — Flask Sessions and Cookies 🚀</p>
+    </footer>
+
+</body>
+</html>
