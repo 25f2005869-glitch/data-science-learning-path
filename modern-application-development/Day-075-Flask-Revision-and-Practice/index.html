@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 075 - Flask Revision and Practice</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            padding: 20px;
+            background: #f9fafb;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        .flow {
+            display: grid;
+            gap: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .flow-item {
+            background: #eef2ff;
+            padding: 13px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .project {
+            background: #f0fdf4;
+            border-left: 5px solid #16a34a;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .warning {
+            background: #fef2f2;
+            border-left: 5px solid #dc2626;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            margin: 4px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 28px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 32px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 075
+        Topic: Flask Revision and Practice
+    -->
+
+    <header>
+        <h1>🐍 Flask Revision and Practice</h1>
+        <p>Day 075 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 Flask Revision</h2>
+
+            <div class="project">
+                <p>
+                    Day 075 revises the major Flask concepts learned from
+                    Day 061 to Day 074 and connects them into one complete
+                    mental model.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>📚 Flask Topics</h2>
+
+            <div>
+                <span class="badge">Flask Basics</span>
+                <span class="badge">Routing</span>
+                <span class="badge">Dynamic Routes</span>
+                <span class="badge">Jinja2</span>
+                <span class="badge">Forms</span>
+                <span class="badge">GET / POST</span>
+                <span class="badge">Redirects</span>
+                <span class="badge">url_for()</span>
+                <span class="badge">Blueprints</span>
+                <span class="badge">Error Handling</span>
+                <span class="badge">Debugging</span>
+                <span class="badge">Configuration</span>
+                <span class="badge">Environment</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔄 Complete Flask Request Flow</h2>
+
+            <div class="flow">
+                <div class="flow-item">Browser</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">HTTP Request</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Flask Application</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Route</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">View Function</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Application Logic</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Template / Response</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">HTTP Response</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Browser</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🛣️ Routing</h2>
+
+            <div class="code-box">from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Welcome to Flask"
+
+@app.route("/student/&lt;student_name&gt;")
+def student(student_name):
+    return f"Student: {student_name}"</div>
+
+            <p>
+                Routes connect URLs to Python view functions.
+                Dynamic routes allow values to be captured from the URL.
+            </p>
+        </section>
+
+        <section>
+            <h2>📄 Jinja2 Templates</h2>
+
+            <div class="code-box">from flask import render_template
+
+@app.route("/student")
+def student():
+    return render_template(
+        "student.html",
+        name="Saloni",
+        marks=85
+    )</div>
+
+            <div class="code-box">&lt;h1&gt;Welcome, {{ name }}&lt;/h1&gt;
+
+{% if marks &gt;= 50 %}
+    &lt;p&gt;Passed&lt;/p&gt;
+{% else %}
+    &lt;p&gt;Failed&lt;/p&gt;
+{% endif %}</div>
+        </section>
+
+        <section>
+            <h2>📝 Forms and Request Data</h2>
+
+            <div class="code-box">from flask import request
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+
+        return "Registration successful"
+
+    return "Registration Form"</div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Flask Object</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>request.form</td>
+                        <td>Read submitted form data</td>
+                    </tr>
+
+                    <tr>
+                        <td>request.args</td>
+                        <td>Read query parameters</td>
+                    </tr>
+
+                    <tr>
+                        <td>request.method</td>
+                        <td>Read HTTP method</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🔄 Redirects and url_for()</h2>
+
+            <div class="code-box">from flask import redirect, url_for
+
+return redirect(url_for("success"))</div>
+
+            <p>
+                <strong>url_for()</strong> generates a URL from an endpoint
+                name and makes navigation easier to maintain.
+            </p>
+        </section>
+
+        <section>
+            <h2>🧩 Blueprints</h2>
+
+            <div class="code-box">from flask import Blueprint
+
+student_bp = Blueprint(
+    "students",
+    __name__,
+    url_prefix="/students"
+)
+
+@student_bp.route("/profile")
+def profile():
+    return "Student Profile"
+
+app.register_blueprint(student_bp)</div>
+
+            <p>
+                Blueprints help divide larger Flask applications into
+                logical modules.
+            </p>
+        </section>
+
+        <section>
+            <h2>⚠️ Error Handling</h2>
+
+            <div class="code-box">@app.errorhandler(404)
+def not_found(error):
+    return "Page not found", 404</div>
+
+            <div class="code-box">from flask import abort
+
+abort(404)</div>
+
+            <div class="warning">
+                <strong>Production rule:</strong>
+                Do not expose detailed Flask debug tracebacks to users in
+                production.
+            </div>
+        </section>
+
+        <section>
+            <h2>⚙️ Configuration and Environment</h2>
+
+            <div class="code-box">class Config:
+    DEBUG = False
+    TESTING = False
+    APP_NAME = "Student Portal"
+
+app.config.from_object(Config)</div>
+
+            <div class="code-box">import os
+
+app.config["SECRET_KEY"] = os.environ.get(
+    "SECRET_KEY"
+)</div>
+        </section>
+
+        <section>
+            <h2>🔐 Security Checklist</h2>
+
+            <ul>
+                <li>Validate user input on the server.</li>
+                <li>Keep secrets outside source code.</li>
+                <li>Do not commit real .env secrets.</li>
+                <li>Disable debug mode in production.</li>
+                <li>Do not expose detailed tracebacks.</li>
+                <li>Use HTTPS in production.</li>
+                <li>Use appropriate HTTP status codes.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📊 Flask Learning Timeline</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Days</th>
+                        <th>Major Concepts</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>061–064</td>
+                        <td>Flask, Structure, Routing, Dynamic Routes</td>
+                    </tr>
+
+                    <tr>
+                        <td>065–067</td>
+                        <td>Jinja2, Template Inheritance, Static Files</td>
+                    </tr>
+
+                    <tr>
+                        <td>068–070</td>
+                        <td>Forms, GET/POST, Redirects, url_for()</td>
+                    </tr>
+
+                    <tr>
+                        <td>071–073</td>
+                        <td>Blueprints, Error Handling, Configuration</td>
+                    </tr>
+
+                    <tr>
+                        <td>074</td>
+                        <td>Flask Mini Project</td>
+                    </tr>
+
+                    <tr>
+                        <td>075</td>
+                        <td>Revision and Practice</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🧠 Practice Checklist</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Routing</h3>
+                    <p>Create basic and dynamic routes.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Templates</h3>
+                    <p>Use Jinja2 variables, conditions and loops.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Forms</h3>
+                    <p>Process GET and POST requests.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Blueprints</h3>
+                    <p>Organize routes into modules.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Errors</h3>
+                    <p>Create custom 404 and 500 handlers.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Configuration</h3>
+                    <p>Use config classes and environment variables.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>⭐ Final Flask Mental Model</h2>
+
+            <div class="flow">
+                <div class="flow-item">Request</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Route</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Request Data</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Application Logic</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Jinja2 Template / Response</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">HTTP Response</div>
+            </div>
+
+            <p>
+                Understanding this flow is the foundation for building
+                larger Flask applications.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 075 — Flask Revision and Practice</strong></p>
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Flask Section Complete 🎯</p>
+        <p>Next: Day 076 — SQLite Introduction 🚀</p>
+    </footer>
+
+</body>
+</html>
