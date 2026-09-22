@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 077 - Database Design and Tables</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            padding: 20px;
+            background: #f9fafb;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .flow {
+            display: grid;
+            gap: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .flow-item {
+            background: #eef2ff;
+            padding: 13px;
+            border-radius: 8px;
+        }
+
+        .project {
+            background: #f0fdf4;
+            border-left: 5px solid #16a34a;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .warning {
+            background: #fef2f2;
+            border-left: 5px solid #dc2626;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 28px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 32px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 077
+        Topic: Database Design and Tables
+    -->
+
+    <header>
+        <h1>🗄️ Database Design and Tables</h1>
+        <p>Day 077 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 What Is Database Design?</h2>
+
+            <div class="project">
+                <p>
+                    Database design is the process of organizing data into
+                    meaningful tables, choosing columns and data types, and
+                    defining relationships and constraints.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧩 Basic Database Concepts</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <strong>Database</strong>
+                    <span>Organized collection of data.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Table</strong>
+                    <span>Stores related records.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Row</strong>
+                    <span>Represents one record.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Column</strong>
+                    <span>Represents an attribute.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Entity</strong>
+                    <span>Object about which information is stored.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Attribute</strong>
+                    <span>Property of an entity.</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>📊 Example Student Table</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Saloni</td>
+                        <td>saloni@example.com</td>
+                        <td>Python</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Rahul</td>
+                        <td>rahul@example.com</td>
+                        <td>Flask</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Priya</td>
+                        <td>priya@example.com</td>
+                        <td>SQL</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🔑 Primary Key</h2>
+
+            <p>
+                A primary key uniquely identifies each row in a table.
+            </p>
+
+            <div class="code-box">id INTEGER PRIMARY KEY</div>
+
+            <p>
+                Example: student ID 1 identifies one particular student
+                record.
+            </p>
+        </section>
+
+        <section>
+            <h2>🔗 Foreign Key</h2>
+
+            <p>
+                A foreign key connects a record in one table to a record in
+                another table.
+            </p>
+
+            <div class="code-box">FOREIGN KEY (student_id)
+REFERENCES students(id)</div>
+
+            <p>
+                SQLite foreign-key enforcement should be enabled on the
+                connection when the application relies on foreign-key
+                constraints.
+            </p>
+
+            <div class="code-box">PRAGMA foreign_keys = ON</div>
+        </section>
+
+        <section>
+            <h2>🛡️ Common Constraints</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Constraint</th>
+                        <th>Purpose</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>PRIMARY KEY</td>
+                        <td>Uniquely identifies a row</td>
+                        <td>id INTEGER PRIMARY KEY</td>
+                    </tr>
+
+                    <tr>
+                        <td>NOT NULL</td>
+                        <td>Prevents NULL values</td>
+                        <td>name TEXT NOT NULL</td>
+                    </tr>
+
+                    <tr>
+                        <td>UNIQUE</td>
+                        <td>Prevents duplicate values</td>
+                        <td>email TEXT UNIQUE</td>
+                    </tr>
+
+                    <tr>
+                        <td>DEFAULT</td>
+                        <td>Provides a default value</td>
+                        <td>status TEXT DEFAULT 'active'</td>
+                    </tr>
+
+                    <tr>
+                        <td>CHECK</td>
+                        <td>Enforces a condition</td>
+                        <td>marks INTEGER CHECK (marks &gt;= 0)</td>
+                    </tr>
+
+                    <tr>
+                        <td>FOREIGN KEY</td>
+                        <td>Connects related tables</td>
+                        <td>REFERENCES students(id)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🏗️ Create a Student Table</h2>
+
+            <div class="code-box">CREATE TABLE students (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE,
+    marks INTEGER CHECK (marks &gt;= 0 AND marks &lt;= 100)
+);</div>
+        </section>
+
+        <section>
+            <h2>📚 Course Table</h2>
+
+            <div class="code-box">CREATE TABLE courses (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL,
+    credits INTEGER CHECK (credits &gt; 0)
+);</div>
+        </section>
+
+        <section>
+            <h2>🔄 Many-to-Many Relationship</h2>
+
+            <p>
+                A student can take many courses, and a course can have many
+                students. This is a many-to-many relationship.
+            </p>
+
+            <div class="flow">
+                <div class="flow-item">Students</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Enrollments</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Courses</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧩 Junction Table</h2>
+
+            <div class="code-box">CREATE TABLE enrollments (
+    student_id INTEGER,
+    course_id INTEGER,
+
+    PRIMARY KEY (student_id, course_id),
+
+    FOREIGN KEY (student_id)
+        REFERENCES students(id),
+
+    FOREIGN KEY (course_id)
+        REFERENCES courses(id)
+);</div>
+        </section>
+
+        <section>
+            <h2>🔢 Composite Primary Key</h2>
+
+            <p>
+                A composite primary key uses multiple columns together to
+                identify a record.
+            </p>
+
+            <div class="code-box">PRIMARY KEY (student_id, course_id)</div>
+
+            <p>
+                In an enrollment table, this can ensure that the same student
+                is not enrolled in the same course more than once.
+            </p>
+        </section>
+
+        <section>
+            <h2>🔄 Database Design Process</h2>
+
+            <div class="flow">
+                <div class="flow-item">Requirements</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Identify Entities</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Identify Attributes</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Choose Primary Keys</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Identify Relationships</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Add Foreign Keys</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Add Constraints</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Create Tables</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧠 Relationship Types</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>One-to-One</h3>
+                    <p>One record relates to one record.</p>
+                    <p>Example: Student ↔ Profile</p>
+                </div>
+
+                <div class="card">
+                    <h3>One-to-Many</h3>
+                    <p>One record relates to many records.</p>
+                    <p>Example: Course → Students</p>
+                </div>
+
+                <div class="card">
+                    <h3>Many-to-Many</h3>
+                    <p>Many records relate to many records.</p>
+                    <p>Example: Students ↔ Courses</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>📐 Normalization Basics</h2>
+
+            <p>
+                Normalization organizes data to reduce unnecessary duplication
+                and improve consistency.
+            </p>
+
+            <div class="warning">
+                Avoid designs with repeated columns such as:
+                <strong>course1, course2, course3</strong>.
+                A separate course table and enrollment relationship can be
+                more appropriate.
+            </div>
+        </section>
+
+        <section>
+            <h2>⭐ Good Database Design Rules</h2>
+
+            <ul>
+                <li>Use meaningful table names.</li>
+                <li>Use meaningful column names.</li>
+                <li>Define primary keys.</li>
+                <li>Use foreign keys for relationships.</li>
+                <li>Choose appropriate data types.</li>
+                <li>Use constraints where appropriate.</li>
+                <li>Avoid unnecessary data duplication.</li>
+                <li>Use junction tables for many-to-many relationships.</li>
+                <li>Test the design with realistic sample data.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🎯 Key Takeaways</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <strong>Primary Key</strong>
+                    <span>Uniquely identifies a record.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Foreign Key</strong>
+                    <span>Connects related tables.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Constraints</strong>
+                    <span>Protect data integrity.</span>
+                </div>
+
+                <div class="card">
+                    <strong>Relationships</strong>
+                    <span>Describe how tables are connected.</span>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 077 — Database Design and Tables</strong></p>
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Next: Day 078 — SQL CRUD Operations 🚀</p>
+    </footer>
+
+</body>
+</html>
