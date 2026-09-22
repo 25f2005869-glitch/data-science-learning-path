@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 078 - SQLAlchemy Basics</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 24px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            padding: 18px;
+            border: 1px solid #dbe2ea;
+            border-radius: 10px;
+            background: #f9fafb;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        code {
+            background: #eef2f7;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            overflow-x: auto;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .flow span {
+            padding: 12px 18px;
+            border-radius: 8px;
+            background: #e5e7eb;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+        }
+
+        .button-area {
+            text-align: center;
+        }
+
+        button {
+            border: none;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover,
+        button:focus-visible {
+            opacity: 0.85;
+        }
+
+        #demoOutput {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            min-height: 45px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #1f2937;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 078
+        Topic: SQLAlchemy Basics
+    -->
+
+    <header>
+        <h1>🗄️ SQLAlchemy Basics</h1>
+        <p>Day 078 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 What is SQLAlchemy?</h2>
+
+            <p>
+                SQLAlchemy is a Python library used to work with relational
+                databases. It provides SQL tools and an Object Relational
+                Mapper (ORM).
+            </p>
+
+            <p>
+                With ORM, Python classes can represent database tables and
+                Python objects can represent database records.
+            </p>
+        </section>
+
+        <section>
+            <h2>🧠 Core Concepts</h2>
+
+            <div class="concept-grid">
+
+                <article class="card">
+                    <h3>Engine</h3>
+                    <p>
+                        Connects the Python application with the database.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Model</h3>
+                    <p>
+                        A Python class that represents a database table.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Column</h3>
+                    <p>
+                        Represents a field in a database table.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Session</h3>
+                    <p>
+                        Manages database operations and transactions.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Primary Key</h3>
+                    <p>
+                        Uniquely identifies a record in a table.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>ORM</h3>
+                    <p>
+                        Maps programming objects to relational database data.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>🔄 SQLAlchemy Flow</h2>
+
+            <div class="flow">
+                <span>Python Model</span>
+                <span class="arrow">→</span>
+                <span>SQLAlchemy</span>
+                <span class="arrow">→</span>
+                <span>Engine</span>
+                <span class="arrow">→</span>
+                <span>Database</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>🐍 Basic Model Example</h2>
+
+            <pre>
+from sqlalchemy import String
+from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import Mapped, mapped_column
+
+class Base(DeclarativeBase):
+    pass
+
+class Student(Base):
+    __tablename__ = "students"
+
+    id: Mapped[int] = mapped_column(
+        primary_key=True
+    )
+
+    name: Mapped[str] = mapped_column(
+        String(100)
+    )
+
+    email: Mapped[str] = mapped_column(
+        String(120),
+        unique=True
+    )
+            </pre>
+        </section>
+
+        <section>
+            <h2>⚙️ Database Engine</h2>
+
+            <p>
+                An SQLAlchemy Engine provides the connection interface
+                between the application and database.
+            </p>
+
+            <pre>
+from sqlalchemy import create_engine
+
+engine = create_engine(
+    "sqlite:///students.db"
+)
+            </pre>
+        </section>
+
+        <section>
+            <h2>💾 Basic CRUD Mapping</h2>
+
+            <table>
+                <caption>SQL Operations and SQLAlchemy Concepts</caption>
+
+                <thead>
+                    <tr>
+                        <th>Operation</th>
+                        <th>SQL</th>
+                        <th>SQLAlchemy</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Create</td>
+                        <td>INSERT</td>
+                        <td><code>session.add()</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Read</td>
+                        <td>SELECT</td>
+                        <td><code>select()</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Update</td>
+                        <td>UPDATE</td>
+                        <td>Modify object</td>
+                    </tr>
+
+                    <tr>
+                        <td>Delete</td>
+                        <td>DELETE</td>
+                        <td><code>session.delete()</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>➕ Adding a Record</h2>
+
+            <pre>
+student = Student(
+    name="Saloni",
+    email="saloni@example.com"
+)
+
+session.add(student)
+session.commit()
+            </pre>
+        </section>
+
+        <section>
+            <h2>🔍 Querying Records</h2>
+
+            <pre>
+from sqlalchemy import select
+
+statement = select(Student)
+
+students = session.scalars(
+    statement
+).all()
+            </pre>
+        </section>
+
+        <section>
+            <h2>✏️ Updating a Record</h2>
+
+            <pre>
+student = session.get(Student, 1)
+
+student.name = "Saloni Tiwari"
+
+session.commit()
+            </pre>
+        </section>
+
+        <section>
+            <h2>🗑️ Deleting a Record</h2>
+
+            <pre>
+student = session.get(Student, 1)
+
+session.delete(student)
+
+session.commit()
+            </pre>
+        </section>
+
+        <section>
+            <h2>🔁 Commit and Rollback</h2>
+
+            <div class="concept-grid">
+
+                <article class="card">
+                    <h3>Commit</h3>
+                    <p>
+                        <code>session.commit()</code> saves the current
+                        transaction.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Rollback</h3>
+                    <p>
+                        <code>session.rollback()</code> cancels uncommitted
+                        changes after an error.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>🌐 Flask-SQLAlchemy</h2>
+
+            <p>
+                Flask applications can use Flask-SQLAlchemy to integrate
+                SQLAlchemy with Flask.
+            </p>
+
+            <pre>
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+
+app.config[
+    "SQLALCHEMY_DATABASE_URI"
+] = "sqlite:///students.db"
+
+db = SQLAlchemy(app)
+            </pre>
+        </section>
+
+        <section>
+            <h2>🎯 Interactive Revision</h2>
+
+            <div class="button-area">
+
+                <button onclick="showConcept('ORM')">
+                    ORM
+                </button>
+
+                <button onclick="showConcept('Engine')">
+                    Engine
+                </button>
+
+                <button onclick="showConcept('Session')">
+                    Session
+                </button>
+
+                <button onclick="showConcept('CRUD')">
+                    CRUD
+                </button>
+
+            </div>
+
+            <div id="demoOutput">
+                Select a concept to see a quick explanation.
+            </div>
+        </section>
+
+        <section>
+            <h2>⭐ Key Takeaways</h2>
+
+            <ul>
+                <li>SQLAlchemy is a Python database toolkit and ORM.</li>
+                <li>Models represent database tables.</li>
+                <li>Columns represent table fields.</li>
+                <li>Primary keys uniquely identify records.</li>
+                <li>Sessions manage database operations.</li>
+                <li>Commit saves changes.</li>
+                <li>Rollback cancels uncommitted changes.</li>
+                <li>SQLAlchemy supports CRUD operations.</li>
+                <li>Flask applications can use Flask-SQLAlchemy.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 078
+        </p>
+
+        <p>SQLAlchemy Basics — Modern Application Development 🚀</p>
+    </footer>
+
+    <script>
+        function showConcept(concept) {
+            const output = document.getElementById("demoOutput");
+
+            const explanations = {
+                ORM:
+                    "ORM maps Python classes and objects to database tables and records.",
+
+                Engine:
+                    "The Engine provides the connection interface between SQLAlchemy and the database.",
+
+                Session:
+                    "A Session manages database operations, transactions, commits, and rollbacks.",
+
+                CRUD:
+                    "CRUD means Create, Read, Update, and Delete — the four fundamental database operations."
+            };
+
+            output.textContent = explanations[concept];
+        }
+    </script>
+
+</body>
+</html>
