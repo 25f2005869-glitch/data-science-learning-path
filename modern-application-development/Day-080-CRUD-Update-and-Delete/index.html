@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 080 - CRUD Update and Delete</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 22px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 16px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f9fafb;
+            border: 1px solid #dbe2ea;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        code {
+            background: #eef2f7;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .flow span {
+            background: #e5e7eb;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 1.4rem;
+        }
+
+        .button-area {
+            text-align: center;
+        }
+
+        button {
+            border: none;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover,
+        button:focus-visible {
+            opacity: 0.8;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            min-height: 45px;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 080
+        Topic: CRUD: Update and Delete
+    -->
+
+    <header>
+        <h1>✏️ CRUD: Update and Delete</h1>
+        <p>Day 080 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 CRUD Overview</h2>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>C — Create</h3>
+                    <p>Add a new record to the database.</p>
+                </article>
+
+                <article class="card">
+                    <h3>R — Read</h3>
+                    <p>Retrieve existing records.</p>
+                </article>
+
+                <article class="card">
+                    <h3>U — Update</h3>
+                    <p>Modify an existing record.</p>
+                </article>
+
+                <article class="card">
+                    <h3>D — Delete</h3>
+                    <p>Remove an existing record.</p>
+                </article>
+
+            </div>
+
+            <p>
+                Day 079 covered Create and Read.
+                Day 080 focuses on Update and Delete.
+            </p>
+        </section>
+
+        <section>
+            <h2>✏️ Update Flow</h2>
+
+            <div class="flow">
+                <span>Find Record</span>
+                <span class="arrow">→</span>
+                <span>Modify Object</span>
+                <span class="arrow">→</span>
+                <span>Commit</span>
+                <span class="arrow">→</span>
+                <span>Database Updated</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>✏️ Updating a Record</h2>
+
+            <pre>
+student = session.get(Student, 1)
+
+if student:
+    student.name = "Saloni Tiwari"
+    student.course = "Data Science"
+
+    session.commit()
+            </pre>
+        </section>
+
+        <section>
+            <h2>🔑 Finding a Record</h2>
+
+            <pre>
+student = session.get(Student, 1)
+
+if student is None:
+    print("Student not found")
+else:
+    print(student.name)
+            </pre>
+
+            <p>
+                Checking for <code>None</code> prevents the program from
+                trying to modify a record that does not exist.
+            </p>
+        </section>
+
+        <section>
+            <h2>🗑️ Delete Flow</h2>
+
+            <div class="flow">
+                <span>Find Record</span>
+                <span class="arrow">→</span>
+                <span>session.delete()</span>
+                <span class="arrow">→</span>
+                <span>Commit</span>
+                <span class="arrow">→</span>
+                <span>Record Removed</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>🗑️ Deleting a Record</h2>
+
+            <pre>
+student = session.get(Student, 1)
+
+if student:
+    session.delete(student)
+    session.commit()
+else:
+    print("Student not found")
+            </pre>
+        </section>
+
+        <section>
+            <h2>🔎 Update Using a Condition</h2>
+
+            <pre>
+statement = select(Student).where(
+    Student.email == "saloni@example.com"
+)
+
+student = session.scalars(
+    statement
+).one_or_none()
+
+if student:
+    student.course = "Data Science"
+    session.commit()
+            </pre>
+        </section>
+
+        <section>
+            <h2>🔄 Update vs Delete</h2>
+
+            <table>
+                <caption>
+                    SQLAlchemy Update and Delete Comparison
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Action</th>
+                        <th>Save</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Update</td>
+                        <td>Modify object attributes</td>
+                        <td><code>session.commit()</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Delete</td>
+                        <td><code>session.delete()</code></td>
+                        <td><code>session.commit()</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>↩️ Rollback</h2>
+
+            <pre>
+try:
+    student.course = "Data Science"
+    session.commit()
+
+except Exception:
+    session.rollback()
+    raise
+            </pre>
+
+            <p>
+                Rollback cancels uncommitted changes after a transaction
+                failure.
+            </p>
+        </section>
+
+        <section>
+            <h2>📊 Complete CRUD</h2>
+
+            <table>
+                <caption>Complete CRUD Lifecycle</caption>
+
+                <thead>
+                    <tr>
+                        <th>Operation</th>
+                        <th>SQLAlchemy Approach</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Create</td>
+                        <td><code>add()</code> → <code>commit()</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Read</td>
+                        <td><code>select()</code> → <code>scalars()</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Update</td>
+                        <td>Modify object → <code>commit()</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Delete</td>
+                        <td><code>delete()</code> → <code>commit()</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🎮 Interactive Revision</h2>
+
+            <div class="button-area">
+
+                <button onclick="showConcept('update')">
+                    Update
+                </button>
+
+                <button onclick="showConcept('delete')">
+                    Delete
+                </button>
+
+                <button onclick="showConcept('commit')">
+                    Commit
+                </button>
+
+                <button onclick="showConcept('rollback')">
+                    Rollback
+                </button>
+
+            </div>
+
+            <div id="output">
+                Select a concept to see a quick explanation.
+            </div>
+        </section>
+
+        <section>
+            <h2>⭐ Key Takeaways</h2>
+
+            <ul>
+                <li>Update modifies an existing database record.</li>
+                <li>Delete removes an existing database record.</li>
+                <li>Find the object before updating or deleting it.</li>
+                <li>Modify attributes to perform an update.</li>
+                <li>Use <code>session.delete()</code> to mark an object for deletion.</li>
+                <li>Use <code>session.commit()</code> to save the transaction.</li>
+                <li>Use <code>session.rollback()</code> after transaction failures.</li>
+                <li>Always handle records that may not exist.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 080
+        </p>
+
+        <p>
+            CRUD: Update and Delete — Modern Application Development 🚀
+        </p>
+    </footer>
+
+    <script>
+        function showConcept(concept) {
+            const output = document.getElementById("output");
+
+            const explanations = {
+                update:
+                    "Update means finding an existing object, changing its attributes, and committing the transaction.",
+
+                delete:
+                    "Delete means finding an existing object, calling session.delete(), and committing the transaction.",
+
+                commit:
+                    "session.commit() saves the changes made in the current transaction to the database.",
+
+                rollback:
+                    "session.rollback() cancels uncommitted changes after a transaction failure."
+            };
+
+            output.textContent = explanations[concept];
+        }
+    </script>
+
+</body>
+</html>
