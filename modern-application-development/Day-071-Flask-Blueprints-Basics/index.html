@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 071 - Flask Blueprints Basics</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        nav {
+            background: #0f172a;
+            padding: 14px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .concept {
+            padding: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+
+        .syntax {
+            background: #eef2ff;
+            border-left: 4px solid #4338ca;
+            padding: 14px;
+            margin: 12px 0;
+            font-family: Consolas, monospace;
+            overflow-x: auto;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .flow {
+            padding: 20px;
+            background: #f1f5f9;
+            border-left: 4px solid #4338ca;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 25px;
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+
+            main {
+                padding: 0 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 071
+        Topic: Flask Blueprints Basics
+    -->
+
+    <header>
+        <h1>Day 071 — Flask Blueprints Basics</h1>
+        <p>Organizing Flask applications into modular components</p>
+    </header>
+
+    <nav aria-label="Main Navigation">
+        <a href="#concept">Concept</a>
+        <a href="#create">Create</a>
+        <a href="#structure">Structure</a>
+        <a href="#endpoint">Endpoints</a>
+        <a href="#workflow">Workflow</a>
+    </nav>
+
+    <main>
+
+        <section id="concept" class="card">
+            <h2>🧩 What Is a Blueprint?</h2>
+
+            <p>
+                A Flask Blueprint is a modular component used to organize
+                related routes and application functionality.
+            </p>
+
+            <div class="grid">
+
+                <article class="concept">
+                    <h3>👨‍🎓 Student</h3>
+                    <p>
+                        Handles student-related routes and functionality.
+                    </p>
+                </article>
+
+                <article class="concept">
+                    <h3>📚 Course</h3>
+                    <p>
+                        Handles course-related routes and functionality.
+                    </p>
+                </article>
+
+                <article class="concept">
+                    <h3>🔐 Authentication</h3>
+                    <p>
+                        Handles login, logout and authentication routes.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>1. Why Use Blueprints?</h2>
+
+            <p>
+                A small Flask application can keep its routes in
+                <code>app.py</code>. As the application grows, this
+                can become difficult to maintain.
+            </p>
+
+            <p>
+                Blueprints allow related routes to be separated into
+                independent modules.
+            </p>
+
+            <div class="flow">
+                <p><strong>Large Application</strong></p>
+                <p>↓</p>
+                <p>Split into Functional Modules</p>
+                <p>↓</p>
+                <p>Student + Course + Authentication</p>
+            </div>
+        </section>
+
+        <section id="create" class="card">
+            <h2>2. Creating a Blueprint</h2>
+
+            <div class="syntax">
+                <pre><code>from flask import Blueprint
+
+student_bp = Blueprint(
+    "student",
+    __name__
+)</code></pre>
+            </div>
+
+            <p>
+                The first argument is the Blueprint name.
+                The second argument is normally <code>__name__</code>.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>3. Blueprint Route</h2>
+
+            <div class="syntax">
+                <pre><code>@student_bp.route("/students")
+def students():
+    return "Students"</code></pre>
+            </div>
+
+            <p>
+                Routes are attached to the Blueprint instead of directly
+                to the Flask application object.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>4. Registering a Blueprint</h2>
+
+            <div class="syntax">
+                <pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+app.register_blueprint(student_bp)</code></pre>
+            </div>
+
+            <p>
+                A Blueprint must be registered with the Flask application
+                before its routes become available.
+            </p>
+        </section>
+
+        <section id="structure" class="card">
+            <h2>5. Application Structure</h2>
+
+            <div class="syntax">
+                <pre><code>project/
+├── app.py
+├── students/
+│   ├── __init__.py
+│   └── routes.py
+├── courses/
+│   └── routes.py
+├── templates/
+└── static/</code></pre>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>6. URL Prefix</h2>
+
+            <div class="syntax">
+                <pre><code>student_bp = Blueprint(
+    "student",
+    __name__,
+    url_prefix="/students"
+)
+
+@student_bp.route("/")
+def list_students():
+    return "Student List"</code></pre>
+            </div>
+
+            <p>
+                The route becomes:
+            </p>
+
+            <div class="syntax">
+                /students/
+            </div>
+        </section>
+
+        <section id="endpoint" class="card">
+            <h2>7. Blueprint Endpoints</h2>
+
+            <div class="syntax">
+                <pre><code>student_bp = Blueprint("student", __name__)
+
+@student_bp.route("/profile")
+def profile():
+    return "Profile"</code></pre>
+            </div>
+
+            <p>
+                The endpoint is generally:
+            </p>
+
+            <div class="syntax">
+                student.profile
+            </div>
+
+            <p>
+                Generate its URL using:
+            </p>
+
+            <div class="syntax">
+                url_for("student.profile")
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>8. Multiple Blueprints</h2>
+
+            <div class="grid">
+
+                <article class="concept">
+                    <h3>Student Blueprint</h3>
+                    <div class="syntax">
+                        /students/
+                    </div>
+                    <div class="syntax">
+                        /students/profile
+                    </div>
+                </article>
+
+                <article class="concept">
+                    <h3>Course Blueprint</h3>
+                    <div class="syntax">
+                        /courses/
+                    </div>
+                    <div class="syntax">
+                        /courses/python
+                    </div>
+                </article>
+
+                <article class="concept">
+                    <h3>Auth Blueprint</h3>
+                    <div class="syntax">
+                        /auth/login
+                    </div>
+                    <div class="syntax">
+                        /auth/logout
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>9. Registering Multiple Blueprints</h2>
+
+            <div class="syntax">
+                <pre><code>app.register_blueprint(student_bp)
+app.register_blueprint(course_bp)
+app.register_blueprint(auth_bp)</code></pre>
+            </div>
+        </section>
+
+        <section id="workflow" class="card">
+            <h2>10. Blueprint Workflow</h2>
+
+            <div class="flow">
+                <p><strong>1.</strong> Create a Blueprint.</p>
+                <p>↓</p>
+                <p><strong>2.</strong> Add related routes.</p>
+                <p>↓</p>
+                <p><strong>3.</strong> Import the Blueprint.</p>
+                <p>↓</p>
+                <p><strong>4.</strong> Register it with Flask.</p>
+                <p>↓</p>
+                <p><strong>5.</strong> Blueprint routes become available.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>11. Flask App vs Blueprint</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Flask Application</th>
+                        <th>Blueprint</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Main application object</td>
+                        <td>Modular application component</td>
+                    </tr>
+
+                    <tr>
+                        <td>Created with <code>Flask()</code></td>
+                        <td>Created with <code>Blueprint()</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Runs the application</td>
+                        <td>Does not run independently</td>
+                    </tr>
+
+                    <tr>
+                        <td>Registers Blueprints</td>
+                        <td>Gets registered with the application</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>app.route()</code></td>
+                        <td><code>blueprint.route()</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>12. Common Mistakes</h2>
+
+            <ul>
+                <li>Creating a Blueprint but forgetting to register it.</li>
+                <li>Using <code>app.route()</code> instead of the Blueprint route.</li>
+                <li>Using the wrong Blueprint endpoint in <code>url_for()</code>.</li>
+                <li>Forgetting required dynamic route parameters.</li>
+                <li>Accidentally repeating a URL prefix.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>13. Mental Model</h2>
+
+            <div class="flow">
+                <p><strong>Blueprint = Module of Flask Routes</strong></p>
+                <p>↓</p>
+                <p>Group related functionality</p>
+                <p>↓</p>
+                <p>Register with Flask Application</p>
+                <p>↓</p>
+                <p>Routes become available</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 071 — Flask Blueprints Basics</strong></p>
+        <p>Author: Saloni Tiwari | IIT Madras BS Degree — Diploma Level</p>
+    </footer>
+
+</body>
+</html>
