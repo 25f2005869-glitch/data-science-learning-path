@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 074 - Flask Mini Project</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            padding: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background: #f9fafb;
+        }
+
+        .card strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+
+        .flow {
+            display: grid;
+            gap: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .flow-item {
+            background: #eef2ff;
+            padding: 13px;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .project {
+            background: #f0fdf4;
+            border-left: 5px solid #16a34a;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        .warning {
+            background: #fef2f2;
+            border-left: 5px solid #dc2626;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 28px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 32px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 074
+        Topic: Flask Mini Project
+    -->
+
+    <header>
+        <h1>🚀 Student Learning Portal</h1>
+        <p>Day 074 — Flask Mini Project</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 Project Overview</h2>
+
+            <div class="project">
+                <p>
+                    The Student Learning Portal combines the major Flask
+                    concepts learned from Day 061 to Day 073 into one
+                    practical application.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎯 Project Features</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <strong>🏠 Home</strong>
+                    <span>Application landing page.</span>
+                </div>
+
+                <div class="card">
+                    <strong>👩‍🎓 Student Profile</strong>
+                    <span>Displays student information.</span>
+                </div>
+
+                <div class="card">
+                    <strong>📚 Courses</strong>
+                    <span>Displays available courses.</span>
+                </div>
+
+                <div class="card">
+                    <strong>📝 Registration</strong>
+                    <span>Processes student registration.</span>
+                </div>
+
+                <div class="card">
+                    <strong>⚠️ Error Pages</strong>
+                    <span>Custom 404 and 500 responses.</span>
+                </div>
+
+                <div class="card">
+                    <strong>⚙️ Configuration</strong>
+                    <span>Environment-based application settings.</span>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>🌐 Flask Request Flow</h2>
+
+            <div class="flow">
+                <div class="flow-item">Browser</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">HTTP Request</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Flask Route</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">View Function</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Application Logic</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Jinja2 Template</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">HTML Response</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🛣️ Example Routes</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>/</td>
+                        <td>Home page</td>
+                    </tr>
+
+                    <tr>
+                        <td>/student</td>
+                        <td>Student profile</td>
+                    </tr>
+
+                    <tr>
+                        <td>/courses</td>
+                        <td>Course list</td>
+                    </tr>
+
+                    <tr>
+                        <td>/course/&lt;course_name&gt;</td>
+                        <td>Dynamic course page</td>
+                    </tr>
+
+                    <tr>
+                        <td>/register</td>
+                        <td>Student registration</td>
+                    </tr>
+
+                    <tr>
+                        <td>/success</td>
+                        <td>Registration success</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🔗 Flask Routing</h2>
+
+            <div class="code-box">from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Student Learning Portal"
+
+@app.route("/course/&lt;course_name&gt;")
+def course(course_name):
+    return f"Course: {course_name}"</div>
+        </section>
+
+        <section>
+            <h2>📄 Jinja2 Templates</h2>
+
+            <p>
+                Flask uses Jinja2 to generate dynamic HTML pages.
+            </p>
+
+            <div class="code-box">from flask import render_template
+
+@app.route("/")
+def home():
+    return render_template(
+        "index.html",
+        student_name="Saloni"
+    )</div>
+
+            <p>
+                A template can display the value dynamically.
+            </p>
+
+            <div class="code-box">&lt;h1&gt;Welcome, {{ student_name }}!&lt;/h1&gt;</div>
+        </section>
+
+        <section>
+            <h2>📝 Form Processing</h2>
+
+            <div class="code-box">from flask import request
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+
+        return "Registration successful"
+
+    return "Registration Form"</div>
+        </section>
+
+        <section>
+            <h2>🔄 Redirect and url_for()</h2>
+
+            <div class="code-box">from flask import redirect, url_for
+
+return redirect(url_for("success"))</div>
+
+            <p>
+                Using <strong>url_for()</strong> allows Flask to generate a
+                URL from the endpoint name instead of hard-coding the URL.
+            </p>
+        </section>
+
+        <section>
+            <h2>🧩 Blueprint</h2>
+
+            <div class="code-box">from flask import Blueprint
+
+student_bp = Blueprint(
+    "students",
+    __name__,
+    url_prefix="/students"
+)
+
+@student_bp.route("/profile")
+def profile():
+    return "Student Profile"</div>
+        </section>
+
+        <section>
+            <h2>⚠️ Error Handling</h2>
+
+            <div class="code-box">@app.errorhandler(404)
+def not_found(error):
+    return "Page not found", 404</div>
+
+            <p>
+                Custom error handlers provide a better user experience and
+                keep technical information away from normal users.
+            </p>
+        </section>
+
+        <section>
+            <h2>⛔ abort()</h2>
+
+            <div class="code-box">from flask import abort
+
+if course_not_found:
+    abort(404)</div>
+        </section>
+
+        <section>
+            <h2>⚙️ Configuration</h2>
+
+            <div class="code-box">class Config:
+    APP_NAME = "Student Learning Portal"
+    DEBUG = False
+
+app.config.from_object(Config)</div>
+        </section>
+
+        <section>
+            <h2>🌱 Environment Variables</h2>
+
+            <div class="code-box">import os
+
+secret_key = os.environ.get("SECRET_KEY")
+
+app.config["SECRET_KEY"] = secret_key</div>
+
+            <div class="warning">
+                <strong>Security Rule:</strong>
+                Never commit real passwords, API keys, or secret keys to
+                a public repository.
+            </div>
+        </section>
+
+        <section>
+            <h2>📚 Concepts Combined</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Concept</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>061</td>
+                        <td>Flask Introduction</td>
+                    </tr>
+
+                    <tr>
+                        <td>062</td>
+                        <td>Installation and Structure</td>
+                    </tr>
+
+                    <tr>
+                        <td>063</td>
+                        <td>Routing</td>
+                    </tr>
+
+                    <tr>
+                        <td>064</td>
+                        <td>Dynamic Routes</td>
+                    </tr>
+
+                    <tr>
+                        <td>065</td>
+                        <td>Jinja2 Templates</td>
+                    </tr>
+
+                    <tr>
+                        <td>066</td>
+                        <td>Template Inheritance</td>
+                    </tr>
+
+                    <tr>
+                        <td>067</td>
+                        <td>Static Files</td>
+                    </tr>
+
+                    <tr>
+                        <td>068-069</td>
+                        <td>Forms, GET and POST</td>
+                    </tr>
+
+                    <tr>
+                        <td>070</td>
+                        <td>Redirects and url_for()</td>
+                    </tr>
+
+                    <tr>
+                        <td>071</td>
+                        <td>Blueprints</td>
+                    </tr>
+
+                    <tr>
+                        <td>072</td>
+                        <td>Error Handling and Debugging</td>
+                    </tr>
+
+                    <tr>
+                        <td>073</td>
+                        <td>Configuration and Environment</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🛡️ Security Checklist</h2>
+
+            <ul>
+                <li>Validate user input on the server.</li>
+                <li>Keep secrets outside source code.</li>
+                <li>Keep .env files out of Git.</li>
+                <li>Disable debug mode in production.</li>
+                <li>Use HTTPS in production.</li>
+                <li>Do not expose detailed tracebacks to users.</li>
+                <li>Do not trust client-side validation alone.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>⭐ Project Learning Outcome</h2>
+
+            <p>
+                This mini project demonstrates how individual Flask concepts
+                work together to create a structured web application.
+            </p>
+
+            <p>
+                The main development pattern is:
+            </p>
+
+            <div class="flow">
+                <div class="flow-item">Request</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Route</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Logic</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Template</div>
+                <div class="flow-item">↓</div>
+                <div class="flow-item">Response</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 074 — Flask Mini Project</strong></p>
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Next: Day 075 — Flask Revision and Master Challenge 🚀</p>
+    </footer>
+
+</body>
+</html>
