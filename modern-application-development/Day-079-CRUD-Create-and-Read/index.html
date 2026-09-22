@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 079 - CRUD Create and Read</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 22px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 16px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f9fafb;
+            border: 1px solid #dbe2ea;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        code {
+            background: #eef2f7;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .flow span {
+            background: #e5e7eb;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 1.4rem;
+        }
+
+        .button-area {
+            text-align: center;
+        }
+
+        button {
+            border: none;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover,
+        button:focus-visible {
+            opacity: 0.8;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            min-height: 45px;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 079
+        Topic: CRUD: Create and Read
+    -->
+
+    <header>
+        <h1>🗄️ CRUD: Create and Read</h1>
+        <p>Day 079 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 What is CRUD?</h2>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>C — Create</h3>
+                    <p>
+                        Adds new records to the database.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>R — Read</h3>
+                    <p>
+                        Retrieves records from the database.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>U — Update</h3>
+                    <p>
+                        Modifies existing records.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>D — Delete</h3>
+                    <p>
+                        Removes records from the database.
+                    </p>
+                </article>
+
+            </div>
+
+            <p>
+                Day 079 focuses on the first two operations:
+                <strong>Create</strong> and <strong>Read</strong>.
+            </p>
+        </section>
+
+        <section>
+            <h2>🔄 Create Flow</h2>
+
+            <div class="flow">
+                <span>Python Object</span>
+                <span class="arrow">→</span>
+                <span>session.add()</span>
+                <span class="arrow">→</span>
+                <span>commit()</span>
+                <span class="arrow">→</span>
+                <span>Database</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>➕ Creating a Record</h2>
+
+            <pre>
+student = Student(
+    name="Saloni",
+    email="saloni@example.com",
+    age=17
+)
+
+session.add(student)
+session.commit()
+            </pre>
+
+            <p>
+                <code>add()</code> places the object into the session.
+                <code>commit()</code> saves the transaction.
+            </p>
+        </section>
+
+        <section>
+            <h2>➕ Adding Multiple Records</h2>
+
+            <pre>
+session.add_all([
+    Student(
+        name="Saloni",
+        email="saloni@example.com"
+    ),
+    Student(
+        name="Rahul",
+        email="rahul@example.com"
+    ),
+    Student(
+        name="Anita",
+        email="anita@example.com"
+    )
+])
+
+session.commit()
+            </pre>
+        </section>
+
+        <section>
+            <h2>🔍 Read Flow</h2>
+
+            <div class="flow">
+                <span>select(Model)</span>
+                <span class="arrow">→</span>
+                <span>scalars()</span>
+                <span class="arrow">→</span>
+                <span>all()</span>
+                <span class="arrow">→</span>
+                <span>Python Objects</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>📖 Reading All Records</h2>
+
+            <pre>
+from sqlalchemy import select
+
+statement = select(Student)
+
+students = session.scalars(
+    statement
+).all()
+
+for student in students:
+    print(student.name)
+            </pre>
+        </section>
+
+        <section>
+            <h2>🎯 Read Methods</h2>
+
+            <table>
+                <caption>
+                    Common SQLAlchemy Reading Methods
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><code>all()</code></td>
+                        <td>Returns all matching records</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>first()</code></td>
+                        <td>Returns the first matching record</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>one_or_none()</code></td>
+                        <td>Returns one record or None</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>get()</code></td>
+                        <td>Finds a record by primary key</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🔎 Filtering Records</h2>
+
+            <pre>
+statement = select(Student).where(
+    Student.age >= 18
+)
+
+students = session.scalars(
+    statement
+).all()
+            </pre>
+
+            <p>
+                The <code>where()</code> method allows us to retrieve
+                records that satisfy a condition.
+            </p>
+        </section>
+
+        <section>
+            <h2>🔑 Reading by Primary Key</h2>
+
+            <pre>
+student = session.get(Student, 1)
+
+if student is None:
+    print("Student not found")
+else:
+    print(student.name)
+            </pre>
+        </section>
+
+        <section>
+            <h2>📊 Create vs Read</h2>
+
+            <table>
+                <caption>Create and Read Comparison</caption>
+
+                <thead>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Main SQLAlchemy Concepts</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Create</td>
+                        <td><code>Model()</code>, <code>add()</code>, <code>commit()</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Read</td>
+                        <td><code>select()</code>, <code>scalars()</code>, <code>all()</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🎮 Interactive Revision</h2>
+
+            <div class="button-area">
+
+                <button onclick="showConcept('create')">
+                    Create
+                </button>
+
+                <button onclick="showConcept('read')">
+                    Read
+                </button>
+
+                <button onclick="showConcept('filter')">
+                    Filter
+                </button>
+
+                <button onclick="showConcept('primaryKey')">
+                    Primary Key
+                </button>
+
+            </div>
+
+            <div id="output">
+                Select a concept to see a quick explanation.
+            </div>
+        </section>
+
+        <section>
+            <h2>⭐ Key Takeaways</h2>
+
+            <ul>
+                <li>Create adds new database records.</li>
+                <li>Read retrieves existing records.</li>
+                <li><code>session.add()</code> adds one object.</li>
+                <li><code>session.add_all()</code> adds multiple objects.</li>
+                <li><code>session.commit()</code> saves changes.</li>
+                <li><code>select()</code> builds a SELECT query.</li>
+                <li><code>scalars()</code> retrieves ORM objects.</li>
+                <li><code>all()</code> retrieves all matching results.</li>
+                <li><code>first()</code> retrieves the first result.</li>
+                <li><code>session.get()</code> is useful for primary-key lookup.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 079
+        </p>
+
+        <p>
+            CRUD: Create and Read — Modern Application Development 🚀
+        </p>
+    </footer>
+
+    <script>
+        function showConcept(concept) {
+            const output = document.getElementById("output");
+
+            const explanations = {
+                create:
+                    "Create adds a new database record. In SQLAlchemy, create an object, use session.add(), and then commit the transaction.",
+
+                read:
+                    "Read retrieves existing database records. SQLAlchemy commonly uses select(), session.scalars(), and methods such as all() or first().",
+
+                filter:
+                    "Filtering uses where() to retrieve only records that satisfy a condition, such as Student.age >= 18.",
+
+                primaryKey:
+                    "session.get(Model, primary_key) is a convenient way to retrieve a record using its primary key."
+            };
+
+            output.textContent = explanations[concept];
+        }
+    </script>
+
+</body>
+</html>
