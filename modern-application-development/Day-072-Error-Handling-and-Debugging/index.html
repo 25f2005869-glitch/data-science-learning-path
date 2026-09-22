@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 072 - Flask Error Handling and Debugging</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #111827;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            padding: 18px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            background: #f9fafb;
+        }
+
+        .status {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .code-box {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+            white-space: pre-wrap;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .workflow {
+            display: grid;
+            gap: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .step {
+            padding: 12px;
+            background: #eef2ff;
+            border-radius: 8px;
+        }
+
+        .warning {
+            padding: 15px;
+            border-left: 5px solid #dc2626;
+            background: #fef2f2;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 072
+        Topic: Flask Error Handling and Debugging
+    -->
+
+    <header>
+        <h1>🛠️ Flask Error Handling and Debugging</h1>
+        <p>Day 072 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 What Is Error Handling?</h2>
+            <p>
+                Error handling allows a Flask application to detect problems,
+                respond correctly, and provide useful information without
+                exposing sensitive technical details.
+            </p>
+        </section>
+
+        <section>
+            <h2>🚨 Types of Errors</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Syntax Error</h3>
+                    <p>Occurs when Python syntax is incorrect.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Runtime Error</h3>
+                    <p>Occurs while the program is executing.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Logical Error</h3>
+                    <p>The program runs but produces an incorrect result.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>🌐 HTTP Error Codes</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status Code</th>
+                        <th>Meaning</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>200</td>
+                        <td>OK</td>
+                    </tr>
+
+                    <tr>
+                        <td>400</td>
+                        <td>Bad Request</td>
+                    </tr>
+
+                    <tr>
+                        <td>403</td>
+                        <td>Forbidden</td>
+                    </tr>
+
+                    <tr>
+                        <td>404</td>
+                        <td>Not Found</td>
+                    </tr>
+
+                    <tr>
+                        <td>405</td>
+                        <td>Method Not Allowed</td>
+                    </tr>
+
+                    <tr>
+                        <td>500</td>
+                        <td>Internal Server Error</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>⛔ Using abort()</h2>
+
+            <p>
+                Flask's <strong>abort()</strong> function immediately stops
+                request processing and returns an HTTP error.
+            </p>
+
+            <div class="code-box">from flask import abort
+
+@app.route("/admin")
+def admin():
+    is_admin = False
+
+    if not is_admin:
+        abort(403)
+
+    return "Admin Dashboard"</div>
+        </section>
+
+        <section>
+            <h2>🎯 Custom Error Handler</h2>
+
+            <p>
+                Flask allows developers to create custom responses for
+                specific HTTP errors.
+            </p>
+
+            <div class="code-box">@app.errorhandler(404)
+def page_not_found(error):
+    return "Page not found", 404</div>
+        </section>
+
+        <section>
+            <h2>🧩 Try-Except</h2>
+
+            <p>
+                Python's try-except structure can handle expected exceptions
+                safely.
+            </p>
+
+            <div class="code-box">try:
+    result = 10 / 0
+except ZeroDivisionError:
+    result = 0</div>
+        </section>
+
+        <section>
+            <h2>🐞 Debug Mode</h2>
+
+            <p>
+                Debug mode provides detailed error information during
+                development and automatically reloads the application after
+                code changes.
+            </p>
+
+            <div class="code-box">app.run(debug=True)</div>
+
+            <div class="warning">
+                <strong>Important:</strong>
+                Never expose Flask debug mode in a production application.
+                Detailed tracebacks may reveal sensitive information.
+            </div>
+        </section>
+
+        <section>
+            <h2>🔍 Debugging Workflow</h2>
+
+            <div class="workflow">
+                <div class="step">1. Reproduce the Problem</div>
+                <div class="step">↓</div>
+                <div class="step">2. Read the Error Message</div>
+                <div class="step">↓</div>
+                <div class="step">3. Check the Traceback</div>
+                <div class="step">↓</div>
+                <div class="step">4. Find the File and Line</div>
+                <div class="step">↓</div>
+                <div class="step">5. Inspect Variables</div>
+                <div class="step">↓</div>
+                <div class="step">6. Fix and Test Again</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📝 Logging</h2>
+
+            <p>
+                Flask provides an application logger that can help developers
+                understand what happens inside the application.
+            </p>
+
+            <div class="code-box">app.logger.info("Student page requested")
+app.logger.warning("Invalid student ID")
+app.logger.error("Database operation failed")</div>
+        </section>
+
+        <section>
+            <h2>🔐 Development vs Production</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Development</th>
+                        <th>Production</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Debugging tools enabled</td>
+                        <td>Debug mode disabled</td>
+                    </tr>
+
+                    <tr>
+                        <td>Detailed errors useful</td>
+                        <td>Friendly error pages</td>
+                    </tr>
+
+                    <tr>
+                        <td>Tracebacks inspected</td>
+                        <td>Tracebacks kept private</td>
+                    </tr>
+
+                    <tr>
+                        <td>Frequent testing</td>
+                        <td>Secure logging</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>⭐ Key Takeaways</h2>
+
+            <ul>
+                <li><strong>404</strong> means the requested resource was not found.</li>
+                <li><strong>500</strong> means an internal server error occurred.</li>
+                <li><strong>abort()</strong> can return an HTTP error immediately.</li>
+                <li><strong>@app.errorhandler()</strong> creates custom error responses.</li>
+                <li><strong>try-except</strong> handles Python exceptions.</li>
+                <li><strong>Tracebacks</strong> help locate programming errors.</li>
+                <li><strong>Debug mode</strong> should only be used during development.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 072 — Flask Error Handling and Debugging</strong></p>
+        <p>Author: Saloni Tiwari</p>
+        <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+        <p>Next: Day 073 — Flask Application Structure 🚀</p>
+    </footer>
+
+</body>
+</html>
