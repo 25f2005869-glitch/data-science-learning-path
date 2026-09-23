@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 081 - User Authentication</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 22px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 16px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f9fafb;
+            border: 1px solid #dbe2ea;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        code {
+            background: #eef2f7;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .flow span {
+            background: #e5e7eb;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 1.4rem;
+        }
+
+        .button-area {
+            text-align: center;
+        }
+
+        button {
+            border: none;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover,
+        button:focus-visible {
+            opacity: 0.8;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            min-height: 45px;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 081
+        Topic: User Authentication
+    -->
+
+    <header>
+        <h1>🔐 User Authentication</h1>
+        <p>Day 081 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 What is Authentication?</h2>
+
+            <p>
+                Authentication is the process of verifying the identity
+                of a user.
+            </p>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>Authentication</h3>
+                    <p>
+                        Answers: <strong>Who are you?</strong>
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Authorization</h3>
+                    <p>
+                        Answers: <strong>What can you access?</strong>
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>🔄 Authentication Flow</h2>
+
+            <div class="flow">
+                <span>Register</span>
+                <span class="arrow">→</span>
+                <span>Hash Password</span>
+                <span class="arrow">→</span>
+                <span>Save User</span>
+                <span class="arrow">→</span>
+                <span>Login</span>
+                <span class="arrow">→</span>
+                <span>Verify</span>
+                <span class="arrow">→</span>
+                <span>Session</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>👤 Registration</h2>
+
+            <p>
+                Registration creates a new user account.
+                The password should be hashed before being stored.
+            </p>
+
+            <pre>
+password_hash = generate_password_hash(
+    password
+)
+
+user = User(
+    email=email,
+    password_hash=password_hash
+)
+
+db.session.add(user)
+db.session.commit()
+            </pre>
+        </section>
+
+        <section>
+            <h2>🔒 Password Hashing</h2>
+
+            <p>
+                Passwords should never be stored as plain text.
+                A password hash is stored instead.
+            </p>
+
+            <pre>
+from werkzeug.security import generate_password_hash
+
+password_hash = generate_password_hash(
+    password
+)
+            </pre>
+        </section>
+
+        <section>
+            <h2>✅ Password Verification</h2>
+
+            <pre>
+from werkzeug.security import check_password_hash
+
+valid = check_password_hash(
+    stored_hash,
+    entered_password
+)
+            </pre>
+
+            <p>
+                The verification function checks whether the entered
+                password matches the stored password hash.
+            </p>
+        </section>
+
+        <section>
+            <h2>🔑 Login</h2>
+
+            <pre>
+user = find_user_by_email(email)
+
+if user and check_password_hash(
+    user.password_hash,
+    password
+):
+    login_user(user)
+            </pre>
+        </section>
+
+        <section>
+            <h2>🧠 Flask Session</h2>
+
+            <p>
+                Flask sessions can maintain login-related state between
+                requests.
+            </p>
+
+            <pre>
+from flask import session
+
+session["user_id"] = user.id
+
+user_id = session.get("user_id")
+
+session.pop("user_id", None)
+            </pre>
+        </section>
+
+        <section>
+            <h2>🚪 Protected Routes</h2>
+
+            <pre>
+@app.route("/dashboard")
+@login_required
+def dashboard():
+    return "Student Dashboard"
+            </pre>
+
+            <p>
+                A protected route should only be accessible to an
+                authenticated user.
+            </p>
+        </section>
+
+        <section>
+            <h2>👤 Flask-Login</h2>
+
+            <table>
+                <caption>Common Flask-Login Components</caption>
+
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><code>LoginManager</code></td>
+                        <td>Manages authentication configuration</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>UserMixin</code></td>
+                        <td>Provides common user functionality</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>login_user()</code></td>
+                        <td>Logs a user in</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>logout_user()</code></td>
+                        <td>Logs a user out</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>login_required</code></td>
+                        <td>Protects routes</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>current_user</code></td>
+                        <td>Represents the current user</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🛡️ Security Best Practices</h2>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>Password Hashing</h3>
+                    <p>
+                        Never store plain-text passwords.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>HTTPS</h3>
+                    <p>
+                        Use HTTPS for production authentication traffic.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Secret Key</h3>
+                    <p>
+                        Keep production secret keys secure.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Input Validation</h3>
+                    <p>
+                        Validate user-controlled data on the server.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Protected Routes</h3>
+                    <p>
+                        Restrict private resources to authenticated users.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Rate Limiting</h3>
+                    <p>
+                        Help reduce automated brute-force login attempts.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>📊 Authentication vs Authorization</h2>
+
+            <table>
+                <caption>Identity and Permission</caption>
+
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Authentication</td>
+                        <td>Email + password verifies identity</td>
+                    </tr>
+
+                    <tr>
+                        <td>Authorization</td>
+                        <td>Student role allows student dashboard access</td>
+                    </tr>
+
+                    <tr>
+                        <td>Admin Authorization</td>
+                        <td>Admin role allows admin dashboard access</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🎮 Interactive Revision</h2>
+
+            <div class="button-area">
+
+                <button onclick="showConcept('authentication')">
+                    Authentication
+                </button>
+
+                <button onclick="showConcept('hashing')">
+                    Password Hashing
+                </button>
+
+                <button onclick="showConcept('session')">
+                    Session
+                </button>
+
+                <button onclick="showConcept('protected')">
+                    Protected Route
+                </button>
+
+                <button onclick="showConcept('logout')">
+                    Logout
+                </button>
+
+            </div>
+
+            <div id="output">
+                Select a concept to see a quick explanation.
+            </div>
+        </section>
+
+        <section>
+            <h2>⭐ Key Takeaways</h2>
+
+            <ul>
+                <li>Authentication verifies user identity.</li>
+                <li>Authorization controls access permissions.</li>
+                <li>Passwords should be hashed before storage.</li>
+                <li><code>generate_password_hash()</code> creates password hashes.</li>
+                <li><code>check_password_hash()</code> verifies passwords.</li>
+                <li>Flask sessions can maintain login state.</li>
+                <li>Flask-Login simplifies authentication management.</li>
+                <li><code>login_required</code> protects routes.</li>
+                <li><code>current_user</code> represents the authenticated user.</li>
+                <li>Logout removes the authenticated state.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 081
+        </p>
+
+        <p>
+            User Authentication — Modern Application Development 🚀
+        </p>
+    </footer>
+
+    <script>
+        function showConcept(concept) {
+            const output = document.getElementById("output");
+
+            const explanations = {
+                authentication:
+                    "Authentication verifies the identity of a user, commonly through credentials such as an email and password.",
+
+                hashing:
+                    "Password hashing converts a password into a protected representation that can be stored instead of the original password.",
+
+                session:
+                    "A Flask session can maintain login-related state between HTTP requests.",
+
+                protected:
+                    "A protected route requires authentication before allowing access to a private resource.",
+
+                logout:
+                    "Logout removes the authenticated login state so the user is no longer treated as logged in."
+            };
+
+            output.textContent = explanations[concept];
+        }
+    </script>
+
+</body>
+</html>
