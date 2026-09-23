@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 084
+        Topic: Flash Messages and Validation
+    -->
+
+    <title>Day 084 - Flash Messages and Validation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 32px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        main {
+            width: min(1050px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 24px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #1d4ed8;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .message-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .message {
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 5px solid;
+        }
+
+        .success {
+            background: #ecfdf5;
+            border-color: #16a34a;
+        }
+
+        .error {
+            background: #fef2f2;
+            border-color: #dc2626;
+        }
+
+        .warning {
+            background: #fffbeb;
+            border-color: #d97706;
+        }
+
+        .info {
+            background: #eff6ff;
+            border-color: #2563eb;
+        }
+
+        .flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+        }
+
+        .flow div {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            padding: 16px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .form-demo {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 11px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .result {
+            margin-top: 18px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .success-text {
+            color: #166534;
+        }
+
+        .error-text {
+            color: #991b1b;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 24px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 24px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>💬 Flash Messages and Validation</h1>
+    <p>Day 084 — Flask</p>
+    <p>Author: Saloni Tiwari</p>
+</header>
+
+<main>
+
+    <section>
+        <h2>📌 What Are Flash Messages?</h2>
+
+        <p>
+            Flash messages provide temporary feedback to users after an
+            operation.
+        </p>
+
+        <div class="message-grid">
+            <div class="message success">
+                <strong>Success</strong>
+                <p>Student created successfully.</p>
+            </div>
+
+            <div class="message error">
+                <strong>Error</strong>
+                <p>Invalid email address.</p>
+            </div>
+
+            <div class="message warning">
+                <strong>Warning</strong>
+                <p>Please check your information.</p>
+            </div>
+
+            <div class="message info">
+                <strong>Info</strong>
+                <p>Your profile was updated.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🐍 Flask Flash Message</h2>
+
+        <pre>from flask import flash
+
+flash("Registration successful.", "success")
+flash("Invalid email address.", "error")</pre>
+
+        <p>
+            Categories allow the application to style or process different
+            types of messages.
+        </p>
+    </section>
+
+    <section>
+        <h2>🧩 Displaying Flash Messages</h2>
+
+        <pre>{% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+        &lt;div class="{{ category }}"&gt;
+            {{ message }}
+        &lt;/div&gt;
+    {% endfor %}
+{% endwith %}</pre>
+    </section>
+
+    <section>
+        <h2>🔄 Flash Message Workflow</h2>
+
+        <div class="flow">
+            <div>Form Submission</div>
+            <div>Validate</div>
+            <div>Process</div>
+            <div>flash()</div>
+            <div>redirect()</div>
+            <div>Display Message</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>✅ Validation</h2>
+
+        <p>
+            Validation checks whether user input satisfies the application's
+            requirements.
+        </p>
+
+        <ul>
+            <li>Required fields</li>
+            <li>Correct data types</li>
+            <li>Minimum and maximum length</li>
+            <li>Numeric ranges</li>
+            <li>Allowed choices</li>
+            <li>Business rules</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>🌐 Client-Side vs Server-Side Validation</h2>
+
+        <div class="message-grid">
+            <div class="message info">
+                <h3>Client-Side</h3>
+                <p>
+                    Runs in the browser and provides fast feedback.
+                    It can be bypassed.
+                </p>
+            </div>
+
+            <div class="message success">
+                <h3>Server-Side</h3>
+                <p>
+                    Runs on the server and must always validate submitted
+                    data before processing it.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>📝 Validation Demo</h2>
+
+        <div class="form-demo">
+
+            <form id="registrationForm">
+
+                <div class="form-group">
+                    <label for="studentName">Name</label>
+                    <input
+                        type="text"
+                        id="studentName"
+                        minlength="3"
+                        maxlength="50"
+                        required
+                        placeholder="Enter your name"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="studentEmail">Email</label>
+                    <input
+                        type="email"
+                        id="studentEmail"
+                        required
+                        placeholder="Enter your email"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="studentAge">Age</label>
+                    <input
+                        type="number"
+                        id="studentAge"
+                        min="18"
+                        required
+                        placeholder="Enter your age"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="studentCourse">Course</label>
+
+                    <select id="studentCourse" required>
+                        <option value="">Select course</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Mathematics">Mathematics</option>
+                    </select>
+                </div>
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+
+            <div id="result" class="result"></div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>🔐 Server-Side Validation Example</h2>
+
+        <pre>name = request.form.get("name", "").strip()
+
+if not name:
+    flash("Name is required.", "error")
+    return redirect(url_for("register"))</pre>
+
+        <p>
+            The server should validate the submitted value even when the
+            browser already performs HTML validation.
+        </p>
+    </section>
+
+    <section>
+        <h2>🛡️ Important Security Rule</h2>
+
+        <div class="message warning">
+            <strong>Never trust user input.</strong>
+
+            <p>
+                Validate form data, query parameters, URL parameters and
+                other externally supplied values on the server.
+            </p>
+
+            <p>
+                Validation is one security layer. It does not replace
+                authentication, authorization, CSRF protection, output
+                escaping or parameterized database queries.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Day 084 — Flash Messages and Validation</p>
+    <p>Author: Saloni Tiwari</p>
+    <p>IIT Madras BS Degree — Diploma Level</p>
+</footer>
+
+<script>
+    const form = document.getElementById("registrationForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+            result.style.display = "block";
+            result.className = "result error";
+            result.innerHTML =
+                "<strong class='error-text'>Please correct the form fields.</strong>";
+
+            form.reportValidity();
+            return;
+        }
+
+        result.style.display = "block";
+        result.className = "result success";
+        result.innerHTML =
+            "<strong class='success-text'>Registration successful.</strong>";
+    });
+
+    /*
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 084
+        Topic: Flash Messages and Validation
+    */
+</script>
+
+</body>
+</html>
