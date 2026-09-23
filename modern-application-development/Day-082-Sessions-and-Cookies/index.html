@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 082 - Sessions and Cookies</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 22px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 16px;
+        }
+
+        .card {
+            padding: 18px;
+            background: #f9fafb;
+            border: 1px solid #dbe2ea;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        code {
+            background: #eef2f7;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .flow span {
+            background: #e5e7eb;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 1.4rem;
+        }
+
+        .button-area {
+            text-align: center;
+        }
+
+        button {
+            border: none;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover,
+        button:focus-visible {
+            opacity: 0.8;
+        }
+
+        #output {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            min-height: 45px;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 082
+        Topic: Sessions and Cookies
+    -->
+
+    <header>
+        <h1>🍪 Sessions and Cookies</h1>
+        <p>Day 082 — Modern Application Development</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 Why Sessions and Cookies?</h2>
+
+            <p>
+                HTTP is stateless. Each request is handled independently,
+                so web applications need mechanisms to maintain state
+                between requests.
+            </p>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>Session</h3>
+                    <p>
+                        Helps an application maintain user-related state
+                        across requests.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Cookie</h3>
+                    <p>
+                        Small browser-stored data that can be sent with
+                        matching HTTP requests.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>🔄 Authentication Flow</h2>
+
+            <div class="flow">
+                <span>Login</span>
+                <span class="arrow">→</span>
+                <span>Verify</span>
+                <span class="arrow">→</span>
+                <span>Login State</span>
+                <span class="arrow">→</span>
+                <span>Cookie</span>
+                <span class="arrow">→</span>
+                <span>Future Requests</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔐 Flask Session</h2>
+
+            <pre>
+from flask import session
+
+session["user_id"] = user.id
+
+user_id = session.get("user_id")
+            </pre>
+
+            <p>
+                Flask provides the <code>session</code> object for
+                maintaining state across requests.
+            </p>
+        </section>
+
+        <section>
+            <h2>🧹 Session Operations</h2>
+
+            <table>
+                <caption>Common Flask Session Operations</caption>
+
+                <thead>
+                    <tr>
+                        <th>Operation</th>
+                        <th>Code</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Set</td>
+                        <td><code>session["user_id"] = user.id</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Get</td>
+                        <td><code>session.get("user_id")</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Remove</td>
+                        <td><code>session.pop("user_id", None)</code></td>
+                    </tr>
+
+                    <tr>
+                        <td>Clear</td>
+                        <td><code>session.clear()</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>🛡️ Protected Route</h2>
+
+            <pre>
+@app.route("/dashboard")
+def dashboard():
+
+    if "user_id" not in session:
+        return redirect(
+            url_for("login")
+        )
+
+    return "Dashboard"
+            </pre>
+        </section>
+
+        <section>
+            <h2>🍪 What is a Cookie?</h2>
+
+            <p>
+                A cookie is a small piece of data stored by the browser
+                for a website.
+            </p>
+
+            <div class="flow">
+                <span>Server</span>
+                <span class="arrow">→</span>
+                <span>Set-Cookie</span>
+                <span class="arrow">→</span>
+                <span>Browser</span>
+                <span class="arrow">→</span>
+                <span>Future Request</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>🍪 Setting a Cookie in Flask</h2>
+
+            <pre>
+from flask import make_response
+
+response = make_response(
+    "Cookie set"
+)
+
+response.set_cookie(
+    "username",
+    "Saloni"
+)
+
+return response
+            </pre>
+        </section>
+
+        <section>
+            <h2>📖 Reading a Cookie</h2>
+
+            <pre>
+from flask import request
+
+username = request.cookies.get(
+    "username"
+)
+            </pre>
+        </section>
+
+        <section>
+            <h2>🗑️ Deleting a Cookie</h2>
+
+            <pre>
+response = make_response(
+    "Cookie deleted"
+)
+
+response.delete_cookie(
+    "username"
+)
+
+return response
+            </pre>
+        </section>
+
+        <section>
+            <h2>🔒 Cookie Security Attributes</h2>
+
+            <table>
+                <caption>Important Cookie Attributes</caption>
+
+                <thead>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><code>Secure</code></td>
+                        <td>Send cookie over HTTPS</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>HttpOnly</code></td>
+                        <td>Prevent normal JavaScript access</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>SameSite</code></td>
+                        <td>Control cross-site cookie behavior</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>Max-Age</code></td>
+                        <td>Specify cookie lifetime in seconds</td>
+                    </tr>
+
+                    <tr>
+                        <td><code>Path</code></td>
+                        <td>Control URL path scope</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>⚠️ Flask Default Session</h2>
+
+            <p>
+                Flask's default session is cookie-based and
+                cryptographically signed.
+            </p>
+
+            <pre>
+app.config["SECRET_KEY"] = os.environ.get(
+    "SECRET_KEY"
+)
+            </pre>
+
+            <p>
+                A signed cookie helps detect tampering, but signing does
+                not mean the data should be treated as encrypted secrets.
+            </p>
+        </section>
+
+        <section>
+            <h2>🧠 Session vs Cookie</h2>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>Session</h3>
+                    <ul>
+                        <li>Maintains application state</li>
+                        <li>Useful for login state</li>
+                        <li>Flask provides a session object</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Cookie</h3>
+                    <ul>
+                        <li>Stored by the browser</li>
+                        <li>Sent with matching requests</li>
+                        <li>Supports security attributes</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>🔐 Security Rules</h2>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>HTTPS</h3>
+                    <p>
+                        Use HTTPS for sensitive authentication traffic.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Secure</h3>
+                    <p>
+                        Use Secure for sensitive cookies in HTTPS deployments.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>HttpOnly</h3>
+                    <p>
+                        Use when JavaScript does not need access to the cookie.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>SameSite</h3>
+                    <p>
+                        Configure cross-site cookie behavior appropriately.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>No Passwords</h3>
+                    <p>
+                        Never store passwords in cookies or sessions.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Secret Key</h3>
+                    <p>
+                        Keep the production Flask secret key private.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section>
+            <h2>🎮 Interactive Revision</h2>
+
+            <div class="button-area">
+
+                <button onclick="showConcept('session')">
+                    Session
+                </button>
+
+                <button onclick="showConcept('cookie')">
+                    Cookie
+                </button>
+
+                <button onclick="showConcept('secure')">
+                    Secure
+                </button>
+
+                <button onclick="showConcept('httponly')">
+                    HttpOnly
+                </button>
+
+                <button onclick="showConcept('samesite')">
+                    SameSite
+                </button>
+
+            </div>
+
+            <div id="output">
+                Select a concept to see a quick explanation.
+            </div>
+        </section>
+
+        <section>
+            <h2>⭐ Key Takeaways</h2>
+
+            <ul>
+                <li>HTTP is stateless.</li>
+                <li>Sessions help maintain application state.</li>
+                <li>Cookies are small browser-stored data.</li>
+                <li>Flask provides the <code>session</code> object.</li>
+                <li><code>session.get()</code> safely reads session data.</li>
+                <li><code>session.pop()</code> removes a session value.</li>
+                <li><code>session.clear()</code> clears session data.</li>
+                <li>Flask can set and read cookies.</li>
+                <li><code>Secure</code>, <code>HttpOnly</code> and <code>SameSite</code> are important cookie attributes.</li>
+                <li>Passwords should never be stored in cookies or sessions.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 082
+        </p>
+
+        <p>
+            Sessions and Cookies — Modern Application Development 🚀
+        </p>
+    </footer>
+
+    <script>
+        function showConcept(concept) {
+            const output = document.getElementById("output");
+
+            const explanations = {
+                session:
+                    "A session helps a web application maintain state across multiple HTTP requests.",
+
+                cookie:
+                    "A cookie is small browser-stored data that can be sent with matching HTTP requests.",
+
+                secure:
+                    "The Secure cookie attribute tells the browser to send the cookie only over HTTPS.",
+
+                httponly:
+                    "The HttpOnly attribute prevents normal JavaScript access through document.cookie.",
+
+                samesite:
+                    "The SameSite attribute controls when a browser sends cookies in cross-site contexts."
+            };
+
+            output.textContent = explanations[concept];
+        }
+    </script>
+
+</body>
+</html>
