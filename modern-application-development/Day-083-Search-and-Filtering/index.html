@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 083
+        Topic: Search and Filtering
+    -->
+
+    <title>Day 083 - Search and Filtering</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 32px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 24px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #1d4ed8;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+        }
+
+        .flow div {
+            padding: 16px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .search-box input,
+        .search-box select {
+            flex: 1;
+            min-width: 180px;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 11px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .student-card {
+            padding: 18px;
+            border: 1px solid #dbeafe;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+
+        .student-card h3 {
+            margin-top: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 9px;
+            background: #dbeafe;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .info {
+            background: #f0fdf4;
+            border-left: 5px solid #16a34a;
+            padding: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 24px;
+            background: #172554;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 24px 15px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔎 Search and Filtering</h1>
+    <p>Day 083 — Flask + SQLAlchemy</p>
+    <p>Author: Saloni Tiwari</p>
+</header>
+
+<main>
+
+    <section>
+        <h2>📌 What is Search?</h2>
+
+        <p>
+            Search allows users to find specific records from a larger
+            collection of data using a keyword or value.
+        </p>
+
+        <p>
+            Example:
+            <code>/students?search=saloni</code>
+        </p>
+    </section>
+
+    <section>
+        <h2>🎯 Search Workflow</h2>
+
+        <div class="flow">
+            <div>User Input</div>
+            <div>GET Request</div>
+            <div>request.args</div>
+            <div>SQLAlchemy Query</div>
+            <div>Database</div>
+            <div>Filtered Results</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🔗 Query Parameters</h2>
+
+        <p>
+            Query parameters send additional information through a URL.
+        </p>
+
+        <pre>/students?search=saloni&course=data-science</pre>
+
+        <p>
+            <strong>search</strong> and <strong>course</strong> are query
+            parameter names.
+        </p>
+    </section>
+
+    <section>
+        <h2>🐍 Flask: request.args</h2>
+
+        <pre>search = request.args.get("search", "").strip()</pre>
+
+        <p>
+            Flask uses <code>request.args</code> to access query parameters.
+        </p>
+    </section>
+
+    <section>
+        <h2>🗄️ SQL Filtering</h2>
+
+        <pre>SELECT * FROM students
+WHERE marks >= 80;</pre>
+
+        <p>
+            The SQL <code>WHERE</code> clause selects records that satisfy
+            a condition.
+        </p>
+    </section>
+
+    <section>
+        <h2>🔤 LIKE Search</h2>
+
+        <pre>SELECT * FROM students
+WHERE name LIKE '%saloni%';</pre>
+
+        <p>
+            The pattern <code>%saloni%</code> searches for values containing
+            "saloni".
+        </p>
+    </section>
+
+    <section>
+        <h2>⚙️ SQLAlchemy Filtering</h2>
+
+        <pre>statement = select(Student).where(
+    Student.marks >= 80
+)</pre>
+
+        <p>
+            SQLAlchemy's <code>where()</code> is used to add filtering
+            conditions to a query.
+        </p>
+    </section>
+
+    <section>
+        <h2>🔎 Practical Search Demo</h2>
+
+        <p>
+            This is a frontend demonstration of the idea behind a student
+            search system.
+        </p>
+
+        <div class="search-box">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search student..."
+            >
+
+            <select id="courseFilter">
+                <option value="all">All Courses</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Programming">Programming</option>
+                <option value="Mathematics">Mathematics</option>
+            </select>
+
+            <button type="button" onclick="filterStudents()">
+                Search
+            </button>
+        </div>
+
+        <div id="studentGrid" class="student-grid"></div>
+    </section>
+
+    <section>
+        <h2>🔐 Security</h2>
+
+        <div class="info">
+            <strong>Important:</strong>
+            Never directly concatenate untrusted user input into SQL.
+            Use SQLAlchemy expressions or parameterized queries.
+        </div>
+
+        <pre>Safe approach:
+
+select(Student).where(
+    Student.name.ilike("%keyword%")
+)</pre>
+    </section>
+
+    <section>
+        <h2>📚 Search vs Filtering</h2>
+
+        <div class="student-grid">
+            <div class="student-card">
+                <h3>Search</h3>
+                <p>Usually finds records using a keyword.</p>
+                <span class="badge">Example: name contains "saloni"</span>
+            </div>
+
+            <div class="student-card">
+                <h3>Filtering</h3>
+                <p>Selects records using one or more conditions.</p>
+                <span class="badge">Example: marks >= 80</span>
+            </div>
+
+            <div class="student-card">
+                <h3>Sorting</h3>
+                <p>Arranges the returned records.</p>
+                <span class="badge">Example: marks DESC</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🧠 Key Concepts</h2>
+
+        <ul>
+            <li><code>request.args</code> — query parameters</li>
+            <li><code>select()</code> — create SELECT queries</li>
+            <li><code>where()</code> — filter records</li>
+            <li><code>like()</code> — pattern matching</li>
+            <li><code>ilike()</code> — case-insensitive pattern matching where supported</li>
+            <li><code>order_by()</code> — sort results</li>
+            <li><code>asc()</code> — ascending order</li>
+            <li><code>desc()</code> — descending order</li>
+        </ul>
+    </section>
+
+</main>
+
+<footer>
+    <p>Day 083 — Search and Filtering</p>
+    <p>Author: Saloni Tiwari</p>
+    <p>IIT Madras BS Degree — Diploma Level</p>
+</footer>
+
+<script>
+    const students = [
+        {
+            name: "Saloni Tiwari",
+            course: "Data Science",
+            marks: 92
+        },
+        {
+            name: "Rahul Kumar",
+            course: "Programming",
+            marks: 78
+        },
+        {
+            name: "Priya Sharma",
+            course: "Mathematics",
+            marks: 88
+        },
+        {
+            name: "Aman Singh",
+            course: "Data Science",
+            marks: 67
+        },
+        {
+            name: "Anjali Verma",
+            course: "Programming",
+            marks: 95
+        }
+    ];
+
+    function displayStudents(list) {
+        const grid = document.getElementById("studentGrid");
+
+        if (list.length === 0) {
+            grid.innerHTML = "<p>No students found.</p>";
+            return;
+        }
+
+        grid.innerHTML = list.map(function(student) {
+            return `
+                <div class="student-card">
+                    <h3>${student.name}</h3>
+                    <p>Course: ${student.course}</p>
+                    <p>Marks: ${student.marks}</p>
+                </div>
+            `;
+        }).join("");
+    }
+
+    function filterStudents() {
+        const keyword =
+            document.getElementById("searchInput").value
+            .trim()
+            .toLowerCase();
+
+        const course =
+            document.getElementById("courseFilter").value;
+
+        const filtered = students.filter(function(student) {
+            const matchesName =
+                student.name.toLowerCase().includes(keyword);
+
+            const matchesCourse =
+                course === "all" ||
+                student.course === course;
+
+            return matchesName && matchesCourse;
+        });
+
+        displayStudents(filtered);
+    }
+
+    displayStudents(students);
+
+    /*
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 083
+        Topic: Search and Filtering
+    */
+</script>
+
+</body>
+</html>
