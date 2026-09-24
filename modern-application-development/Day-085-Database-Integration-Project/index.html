@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 085
+        Topic: Database Integration Project
+    -->
+
+    <title>Day 085 - Database Integration Project</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 34px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #1d4ed8;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .architecture,
+        .feature-grid,
+        .crud-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .box {
+            padding: 18px;
+            text-align: center;
+            border-radius: 9px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+
+        .box strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #1e40af;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .flow-step {
+            padding: 13px 16px;
+            border-radius: 8px;
+            background: #dbeafe;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .crud-card {
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .create {
+            background: #166534;
+        }
+
+        .read {
+            background: #1d4ed8;
+        }
+
+        .update {
+            background: #92400e;
+        }
+
+        .delete {
+            background: #991b1b;
+        }
+
+        .crud-card h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .message {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+
+        .success {
+            background: #ecfdf5;
+            border-left: 5px solid #16a34a;
+        }
+
+        .error {
+            background: #fef2f2;
+            border-left: 5px solid #dc2626;
+        }
+
+        .warning {
+            background: #fffbeb;
+            border-left: 5px solid #d97706;
+        }
+
+        .student-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .student-table th,
+        .student-table td {
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            text-align: left;
+        }
+
+        .student-table th {
+            background: #eff6ff;
+        }
+
+        .search-area {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .search-area input,
+        .search-area select {
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            flex: 1;
+            min-width: 170px;
+        }
+
+        button {
+            padding: 11px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 10px;
+        }
+
+        .checklist div {
+            padding: 10px;
+            background: #f8fafc;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 650px) {
+            section {
+                padding: 18px;
+            }
+
+            .student-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .search-area {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🗄️ Database Integration Project</h1>
+    <p>Day 085 — Flask + SQLAlchemy + SQLite</p>
+    <p>Author: Saloni Tiwari</p>
+</header>
+
+<main>
+
+    <section>
+        <h2>🎯 Project Goal</h2>
+
+        <p>
+            Build a database-driven Student Management System that combines
+            Flask, SQLAlchemy, SQLite, CRUD, search, filtering, validation,
+            and flash messages.
+        </p>
+    </section>
+
+    <section>
+        <h2>🏗️ Application Architecture</h2>
+
+        <div class="architecture">
+            <div class="box">
+                <strong>Browser</strong>
+                User interface
+            </div>
+
+            <div class="box">
+                <strong>Flask</strong>
+                Routes and logic
+            </div>
+
+            <div class="box">
+                <strong>SQLAlchemy</strong>
+                ORM layer
+            </div>
+
+            <div class="box">
+                <strong>SQLite</strong>
+                Persistent database
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🔄 Request-to-Database Flow</h2>
+
+        <div class="flow">
+            <span class="flow-step">Browser</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Flask Route</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Validation</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">SQLAlchemy</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">SQLite</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Response</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>👩‍🎓 Student Model</h2>
+
+        <table class="student-table">
+            <thead>
+                <tr>
+                    <th>Column</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>Primary key</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>Student name</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>Unique email address</td>
+                </tr>
+                <tr>
+                    <td>age</td>
+                    <td>Student age</td>
+                </tr>
+                <tr>
+                    <td>course</td>
+                    <td>Enrolled course</td>
+                </tr>
+                <tr>
+                    <td>marks</td>
+                    <td>Student marks</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>♻️ CRUD Operations</h2>
+
+        <div class="crud-grid">
+
+            <div class="crud-card create">
+                <h3>CREATE</h3>
+                <p>Add a new student.</p>
+                <code>db.session.add()</code>
+            </div>
+
+            <div class="crud-card read">
+                <h3>READ</h3>
+                <p>Retrieve student records.</p>
+                <code>select()</code>
+            </div>
+
+            <div class="crud-card update">
+                <h3>UPDATE</h3>
+                <p>Modify an existing student.</p>
+                <code>db.session.commit()</code>
+            </div>
+
+            <div class="crud-card delete">
+                <h3>DELETE</h3>
+                <p>Remove a student.</p>
+                <code>db.session.delete()</code>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>🔎 Search and Filtering</h2>
+
+        <p>
+            A database application can search and filter records using
+            query parameters and SQLAlchemy conditions.
+        </p>
+
+        <div class="search-area">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search student..."
+            >
+
+            <select id="courseFilter">
+                <option value="all">All Courses</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Programming">Programming</option>
+                <option value="Mathematics">Mathematics</option>
+            </select>
+
+            <button type="button" onclick="searchStudents()">
+                Search
+            </button>
+        </div>
+
+        <div id="studentResults"></div>
+    </section>
+
+    <section>
+        <h2>✅ Validation</h2>
+
+        <div class="feature-grid">
+            <div class="box">
+                <strong>Name</strong>
+                Required and length checked
+            </div>
+
+            <div class="box">
+                <strong>Email</strong>
+                Format and uniqueness checked
+            </div>
+
+            <div class="box">
+                <strong>Age</strong>
+                Numeric and range checked
+            </div>
+
+            <div class="box">
+                <strong>Course</strong>
+                Allowed choices checked
+            </div>
+
+            <div class="box">
+                <strong>Marks</strong>
+                Must be between 0 and 100
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>💬 Flash Messages</h2>
+
+        <div class="message success">
+            <strong>Success:</strong>
+            Student added successfully.
+        </div>
+
+        <div class="message error">
+            <strong>Error:</strong>
+            Invalid student information.
+        </div>
+
+        <div class="message warning">
+            <strong>Warning:</strong>
+            Please check the submitted values.
+        </div>
+    </section>
+
+    <section>
+        <h2>🔄 POST → Flash → Redirect</h2>
+
+        <pre>POST
+  ↓
+Validate
+  ↓
+Database Operation
+  ↓
+flash()
+  ↓
+redirect()
+  ↓
+GET
+  ↓
+Display Result</pre>
+    </section>
+
+    <section>
+        <h2>🛡️ Database Safety</h2>
+
+        <div class="message warning">
+            <strong>Important:</strong>
+
+            <ul>
+                <li>Validate all user input.</li>
+                <li>Use SQLAlchemy expressions or parameterized queries.</li>
+                <li>Do not expose database credentials.</li>
+                <li>Do not store plaintext passwords.</li>
+                <li>Protect state-changing forms with CSRF protection.</li>
+                <li>Do not expose internal database errors to users.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>📋 Project Checklist</h2>
+
+        <div class="checklist">
+            <div>☐ Flask configured</div>
+            <div>☐ SQLite connected</div>
+            <div>☐ SQLAlchemy initialized</div>
+            <div>☐ Student model created</div>
+            <div>☐ Create implemented</div>
+            <div>☐ Read implemented</div>
+            <div>☐ Update implemented</div>
+            <div>☐ Delete implemented</div>
+            <div>☐ Search implemented</div>
+            <div>☐ Filtering implemented</div>
+            <div>☐ Sorting implemented</div>
+            <div>☐ Validation implemented</div>
+            <div>☐ Flash messages added</div>
+            <div>☐ Redirects added</div>
+            <div>☐ Jinja2 connected</div>
+            <div>☐ Error handling added</div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Day 085 — Database Integration Project</p>
+    <p>Author: Saloni Tiwari</p>
+    <p>IIT Madras BS Degree — Diploma Level</p>
+</footer>
+
+<script>
+    const students = [
+        {
+            id: 1,
+            name: "Saloni Tiwari",
+            email: "saloni@example.com",
+            age: 18,
+            course: "Data Science",
+            marks: 92
+        },
+        {
+            id: 2,
+            name: "Rahul Kumar",
+            email: "rahul@example.com",
+            age: 19,
+            course: "Programming",
+            marks: 78
+        },
+        {
+            id: 3,
+            name: "Priya Sharma",
+            email: "priya@example.com",
+            age: 18,
+            course: "Mathematics",
+            marks: 88
+        },
+        {
+            id: 4,
+            name: "Aman Singh",
+            email: "aman@example.com",
+            age: 20,
+            course: "Data Science",
+            marks: 67
+        }
+    ];
+
+    function displayStudents(list) {
+        const results = document.getElementById("studentResults");
+
+        if (list.length === 0) {
+            results.innerHTML =
+                '<div class="message error">No students found.</div>';
+            return;
+        }
+
+        let html = `
+            <table class="student-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        list.forEach(function(student) {
+            html += `
+                <tr>
+                    <td>${student.name}</td>
+                    <td>${student.course}</td>
+                    <td>${student.marks}</td>
+                </tr>
+            `;
+        });
+
+        html += `
+                </tbody>
+            </table>
+        `;
+
+        results.innerHTML = html;
+    }
+
+    function searchStudents() {
+        const keyword = document
+            .getElementById("searchInput")
+            .value
+            .trim()
+            .toLowerCase();
+
+        const selectedCourse =
+            document.getElementById("courseFilter").value;
+
+        const filteredStudents = students.filter(function(student) {
+
+            const matchesKeyword =
+                student.name.toLowerCase().includes(keyword) ||
+                student.email.toLowerCase().includes(keyword) ||
+                student.course.toLowerCase().includes(keyword);
+
+            const matchesCourse =
+                selectedCourse === "all" ||
+                student.course === selectedCourse;
+
+            return matchesKeyword && matchesCourse;
+        });
+
+        displayStudents(filteredStudents);
+    }
+
+    displayStudents(students);
+
+    /*
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 085
+        Topic: Database Integration Project
+    */
+</script>
+
+</body>
+</html>
