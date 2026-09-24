@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 086
+        Topic: Project Planning
+    -->
+
+    <title>Day 086 - Project Planning</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #1d4ed8;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flow-step {
+            background: #dbeafe;
+            border: 1px solid #93c5fd;
+            padding: 13px 16px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: #f8fafc;
+            border: 1px solid #dbeafe;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .card strong {
+            display: block;
+            color: #1e40af;
+            margin-bottom: 7px;
+        }
+
+        .priority {
+            border-left: 5px solid;
+        }
+
+        .must {
+            border-color: #dc2626;
+        }
+
+        .should {
+            border-color: #d97706;
+        }
+
+        .could {
+            border-color: #16a34a;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            text-align: left;
+        }
+
+        th {
+            background: #eff6ff;
+        }
+
+        .checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+        }
+
+        .checklist div {
+            padding: 10px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+        }
+
+        .warning {
+            background: #fffbeb;
+            border-left: 5px solid #d97706;
+            padding: 15px;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 650px) {
+            section {
+                padding: 18px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📋 Project Planning</h1>
+    <p>Day 086 — MAD 1 Final Project Preparation</p>
+    <p>Author: Saloni Tiwari</p>
+</header>
+
+<main>
+
+    <section>
+        <h2>🎯 Why Plan a Project?</h2>
+
+        <p>
+            Project planning converts a large application idea into smaller,
+            manageable tasks. It defines requirements, features, database
+            structure, routes, UI, testing, and security before implementation.
+        </p>
+    </section>
+
+    <section>
+        <h2>🔄 Project Planning Flow</h2>
+
+        <div class="flow">
+            <span class="flow-step">Problem</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Requirements</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Features</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Database</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Routes</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">UI</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Testing</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>🏗️ Suggested MAD 1 Project</h2>
+
+        <h3>Student Management System</h3>
+
+        <p>
+            A database-driven Flask application for managing student records,
+            authentication, CRUD operations, search, filtering, validation,
+            and dashboards.
+        </p>
+    </section>
+
+    <section>
+        <h2>🛠️ Technology Stack</h2>
+
+        <div class="grid">
+            <div class="card">
+                <strong>Frontend</strong>
+                HTML, CSS, JavaScript
+            </div>
+
+            <div class="card">
+                <strong>Backend</strong>
+                Python + Flask
+            </div>
+
+            <div class="card">
+                <strong>Database</strong>
+                SQLite
+            </div>
+
+            <div class="card">
+                <strong>ORM</strong>
+                SQLAlchemy
+            </div>
+
+            <div class="card">
+                <strong>Templates</strong>
+                Jinja2
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>📦 Project Modules</h2>
+
+        <div class="grid">
+            <div class="card">
+                <strong>Authentication</strong>
+                Registration, login and logout
+            </div>
+
+            <div class="card">
+                <strong>Student Management</strong>
+                Create, read, update and delete
+            </div>
+
+            <div class="card">
+                <strong>Search</strong>
+                Find student records
+            </div>
+
+            <div class="card">
+                <strong>Filtering</strong>
+                Filter by course and marks
+            </div>
+
+            <div class="card">
+                <strong>Dashboard</strong>
+                Display useful information
+            </div>
+
+            <div class="card">
+                <strong>Validation</strong>
+                Validate submitted data
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>⭐ Feature Priority</h2>
+
+        <div class="grid">
+
+            <div class="card priority must">
+                <h3>Must Have</h3>
+                <ul>
+                    <li>Authentication</li>
+                    <li>Database</li>
+                    <li>CRUD</li>
+                </ul>
+            </div>
+
+            <div class="card priority should">
+                <h3>Should Have</h3>
+                <ul>
+                    <li>Search</li>
+                    <li>Filtering</li>
+                    <li>Dashboard</li>
+                </ul>
+            </div>
+
+            <div class="card priority could">
+                <h3>Could Have</h3>
+                <ul>
+                    <li>Advanced analytics</li>
+                    <li>Export features</li>
+                    <li>Additional themes</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>🗄️ Database Planning</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Entity</th>
+                    <th>Example Fields</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>User</td>
+                    <td>id, username, email, password_hash, role</td>
+                </tr>
+
+                <tr>
+                    <td>Student</td>
+                    <td>id, name, email, age, course, marks</td>
+                </tr>
+
+                <tr>
+                    <td>Course</td>
+                    <td>id, name, description</td>
+                </tr>
+
+                <tr>
+                    <td>Enrollment</td>
+                    <td>student_id, course_id</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>🌐 Route Planning</h2>
+
+        <pre>GET  /
+GET  /login
+POST /login
+POST /logout
+
+GET  /students
+GET  /students/add
+POST /students/add
+
+GET  /students/&lt;id&gt;
+GET  /students/&lt;id&gt;/edit
+POST /students/&lt;id&gt;/edit
+POST /students/&lt;id&gt;/delete</pre>
+    </section>
+
+    <section>
+        <h2>🔎 Search and Filtering</h2>
+
+        <pre>/students?search=saloni
+/students?course=Data%20Science
+/students?min_marks=70</pre>
+
+        <p>
+            Query parameters can be combined to provide multiple filters.
+        </p>
+    </section>
+
+    <section>
+        <h2>🔐 Authentication and Authorization</h2>
+
+        <div class="grid">
+            <div class="card">
+                <strong>Authentication</strong>
+                Answers: "Who are you?"
+            </div>
+
+            <div class="card">
+                <strong>Authorization</strong>
+                Answers: "What are you allowed to do?"
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🧪 Testing Plan</h2>
+
+        <div class="checklist">
+            <div>☐ Login success</div>
+            <div>☐ Login failure</div>
+            <div>☐ Logout</div>
+            <div>☐ Unauthorized access</div>
+            <div>☐ Create student</div>
+            <div>☐ Read student</div>
+            <div>☐ Update student</div>
+            <div>☐ Delete student</div>
+            <div>☐ Search</div>
+            <div>☐ Filtering</div>
+            <div>☐ Invalid form data</div>
+            <div>☐ Flash messages</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🛡️ Security Checklist</h2>
+
+        <div class="warning">
+            <ul>
+                <li>Password hashing</li>
+                <li>Authentication and authorization</li>
+                <li>CSRF protection</li>
+                <li>Server-side validation</li>
+                <li>SQL injection prevention</li>
+                <li>Secure secret management</li>
+                <li>Output escaping</li>
+                <li>Safe error messages</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>🚀 Development Phases</h2>
+
+        <pre>Phase 1  → Planning
+Phase 2  → Setup
+Phase 3  → Database
+Phase 4  → Authentication
+Phase 5  → CRUD
+Phase 6  → Search and Filtering
+Phase 7  → UI
+Phase 8  → Validation
+Phase 9  → Testing
+Phase 10 → Documentation</pre>
+    </section>
+
+    <section>
+        <h2>📋 Project Checklist</h2>
+
+        <div class="checklist">
+            <div>☐ Problem defined</div>
+            <div>☐ Users identified</div>
+            <div>☐ Requirements written</div>
+            <div>☐ Features selected</div>
+            <div>☐ Database designed</div>
+            <div>☐ Routes planned</div>
+            <div>☐ Pages planned</div>
+            <div>☐ User flow planned</div>
+            <div>☐ Testing planned</div>
+            <div>☐ Security considered</div>
+            <div>☐ Documentation planned</div>
+            <div>☐ Tasks divided</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>⭐ Key Principle</h2>
+
+        <p>
+            <strong>Plan → Build → Test → Document</strong>
+        </p>
+
+        <p>
+            A large project becomes easier when it is divided into small,
+            clearly defined tasks.
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    <p>Day 086 — Project Planning</p>
+    <p>Author: Saloni Tiwari</p>
+    <p>IIT Madras BS Degree — Diploma Level</p>
+</footer>
+
+<script>
+    console.log("Day 086 - Project Planning");
+    console.log("Project planning prepares the application before implementation.");
+
+    /*
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 086
+        Topic: Project Planning
+    */
+</script>
+
+</body>
+</html>
