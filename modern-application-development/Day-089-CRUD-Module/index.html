@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 089 - CRUD Module</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #1f2937;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #d1d5db;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        .intro {
+            margin-bottom: 25px;
+        }
+
+        .intro h1 {
+            margin-bottom: 8px;
+        }
+
+        .crud-grid {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .operation {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .operation h2 {
+            margin-bottom: 10px;
+        }
+
+        .operation p {
+            line-height: 1.6;
+        }
+
+        .create {
+            border-top: 5px solid #166534;
+        }
+
+        .read {
+            border-top: 5px solid #1d4ed8;
+        }
+
+        .update {
+            border-top: 5px solid #92400e;
+        }
+
+        .delete {
+            border-top: 5px solid #991b1b;
+        }
+
+        .panel {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .panel h2 {
+            margin-bottom: 18px;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        button {
+            background: #111827;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover,
+        button:focus {
+            opacity: 0.85;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            min-width: 750px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        .status-passed {
+            font-weight: bold;
+            color: #166534;
+        }
+
+        .status-failed {
+            font-weight: bold;
+            color: #991b1b;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .action-buttons button {
+            width: auto;
+            padding: 8px 12px;
+        }
+
+        .message {
+            padding: 14px;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                width: 94%;
+                margin: 20px auto;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 089
+        Topic: CRUD Module
+    -->
+
+    <header>
+        <h1>Student Management System</h1>
+        <p>Day 089 — CRUD Module</p>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <h1>CRUD Module</h1>
+            <p>
+                This interface demonstrates the frontend structure of a
+                Flask and SQLAlchemy CRUD module.
+            </p>
+        </section>
+
+        <div id="message" class="message" hidden>
+            Operation completed successfully.
+        </div>
+
+        <section class="crud-grid" aria-label="CRUD operations">
+
+            <article class="operation create">
+                <h2>➕ Create</h2>
+                <p>
+                    Add a new student record to the database.
+                </p>
+            </article>
+
+            <article class="operation read">
+                <h2>📖 Read</h2>
+                <p>
+                    Retrieve and display existing student records.
+                </p>
+            </article>
+
+            <article class="operation update">
+                <h2>✏️ Update</h2>
+                <p>
+                    Modify information belonging to an existing student.
+                </p>
+            </article>
+
+            <article class="operation delete">
+                <h2>🗑️ Delete</h2>
+                <p>
+                    Remove an existing student record safely.
+                </p>
+            </article>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Add Student</h2>
+
+            <form id="studentForm">
+
+                <div>
+                    <label for="name">Student Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter student name"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="student@example.com"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <label for="course">Course</label>
+                    <select id="course" name="course" required>
+                        <option value="">Select course</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Mathematics">Mathematics</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="marks">Marks</label>
+                    <input
+                        type="number"
+                        id="marks"
+                        name="marks"
+                        min="0"
+                        max="100"
+                        placeholder="Enter marks"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Create Student
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Student Records</h2>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Marks</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable">
+
+                        <tr>
+                            <td>001</td>
+                            <td>Student One</td>
+                            <td>student1@example.com</td>
+                            <td>Data Science</td>
+                            <td>92</td>
+                            <td class="status-passed">Passed</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button
+                                        type="button"
+                                        class="edit-button"
+                                    >
+                                        Edit
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="delete-button"
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>002</td>
+                            <td>Student Two</td>
+                            <td>student2@example.com</td>
+                            <td>Mathematics</td>
+                            <td>68</td>
+                            <td class="status-passed">Passed</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button
+                                        type="button"
+                                        class="edit-button"
+                                    >
+                                        Edit
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="delete-button"
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>003</td>
+                            <td>Student Three</td>
+                            <td>student3@example.com</td>
+                            <td>Computer Science</td>
+                            <td>42</td>
+                            <td class="status-failed">Failed</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button
+                                        type="button"
+                                        class="edit-button"
+                                    >
+                                        Edit
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        class="delete-button"
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>CRUD Request Flow</h2>
+
+            <p>
+                Create:
+                Form → POST → Validate → Database → Commit → Redirect
+            </p>
+
+            <br>
+
+            <p>
+                Read:
+                GET → Database Query → Jinja2 → HTML
+            </p>
+
+            <br>
+
+            <p>
+                Update:
+                Form → POST → Validate → Modify → Commit → Redirect
+            </p>
+
+            <br>
+
+            <p>
+                Delete:
+                POST → Verify Record → Delete → Commit → Redirect
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 089
+        </p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("studentForm");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const course = document.getElementById("course").value;
+            const marks = Number(document.getElementById("marks").value);
+
+            if (!name || !email || !course) {
+                alert("Please complete all required fields.");
+                return;
+            }
+
+            if (marks < 0 || marks > 100) {
+                alert("Marks must be between 0 and 100.");
+                return;
+            }
+
+            message.textContent =
+                "Student validated successfully. In the Flask application, the form would now be submitted to the database.";
+
+            message.hidden = false;
+
+            form.reset();
+        });
+
+        document.querySelectorAll(".delete-button").forEach(function (button) {
+            button.addEventListener("click", function () {
+                const confirmed = confirm(
+                    "Are you sure you want to delete this student?"
+                );
+
+                if (confirmed) {
+                    message.textContent =
+                        "Delete action confirmed. In Flask, this would send a POST request to the delete route.";
+
+                    message.hidden = false;
+                }
+            });
+        });
+
+        document.querySelectorAll(".edit-button").forEach(function (button) {
+            button.addEventListener("click", function () {
+                message.textContent =
+                    "Edit action selected. In Flask, this would open the student edit route.";
+
+                message.hidden = false;
+            });
+        });
+    </script>
+
+</body>
+</html>
