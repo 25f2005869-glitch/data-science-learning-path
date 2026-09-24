@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 088 - Dashboard Development</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #1f2937;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #d1d5db;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            min-height: calc(100vh - 100px);
+        }
+
+        aside {
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+        }
+
+        aside h2 {
+            margin-bottom: 20px;
+        }
+
+        aside a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+        }
+
+        aside a:hover,
+        aside a:focus {
+            background: #374151;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        .intro {
+            margin-bottom: 25px;
+        }
+
+        .intro h1 {
+            margin-bottom: 8px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .number {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .panel {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .panel h2 {
+            margin-bottom: 18px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        input,
+        select,
+        button {
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            background: #111827;
+            color: white;
+            border: none;
+        }
+
+        button:hover,
+        button:focus {
+            opacity: 0.85;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        .status {
+            font-weight: bold;
+        }
+
+        .success {
+            color: #166534;
+        }
+
+        .warning {
+            color: #92400e;
+        }
+
+        .progress {
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-bar {
+            width: 75%;
+            height: 100%;
+            background: #111827;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111827;
+            color: white;
+        }
+
+        @media (max-width: 700px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            aside {
+                padding: 15px;
+            }
+
+            aside nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+
+            aside a {
+                margin: 0;
+            }
+
+            main {
+                padding: 18px;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            input,
+            select,
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 088
+        Topic: Dashboard Development
+    -->
+
+    <header>
+        <h1>Student Academic Dashboard</h1>
+        <p>Day 088 — Dashboard Development</p>
+    </header>
+
+    <div class="layout">
+
+        <aside>
+            <h2>Navigation</h2>
+
+            <nav aria-label="Dashboard navigation">
+                <a href="#dashboard">Dashboard</a>
+                <a href="#students">Students</a>
+                <a href="#courses">Courses</a>
+                <a href="#progress">Progress</a>
+                <a href="#profile">Profile</a>
+            </nav>
+        </aside>
+
+        <main>
+
+            <section id="dashboard" class="intro">
+                <h1>Welcome to the Dashboard</h1>
+                <p>
+                    This page demonstrates the frontend structure of a
+                    database-driven Flask dashboard.
+                </p>
+            </section>
+
+            <section class="cards" aria-label="Dashboard statistics">
+
+                <article class="card">
+                    <h3>Total Students</h3>
+                    <p class="number">120</p>
+                </article>
+
+                <article class="card">
+                    <h3>Total Courses</h3>
+                    <p class="number">08</p>
+                </article>
+
+                <article class="card">
+                    <h3>Average Marks</h3>
+                    <p class="number">78%</p>
+                </article>
+
+                <article class="card">
+                    <h3>Passed Students</h3>
+                    <p class="number">108</p>
+                </article>
+
+            </section>
+
+            <section id="students" class="panel">
+
+                <h2>Student Records</h2>
+
+                <div class="actions">
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search student..."
+                        aria-label="Search student"
+                    >
+
+                    <select id="courseFilter" aria-label="Filter by course">
+                        <option value="all">All Courses</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Mathematics">Mathematics</option>
+                    </select>
+
+                    <button type="button" id="addStudentButton">
+                        Add Student
+                    </button>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Course</th>
+                                <th>Marks</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="studentTableBody">
+
+                            <tr>
+                                <td>001</td>
+                                <td>Student One</td>
+                                <td>student1@example.com</td>
+                                <td>Data Science</td>
+                                <td>92</td>
+                                <td class="status success">Passed</td>
+                                <td>
+                                    <button type="button">View</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>002</td>
+                                <td>Student Two</td>
+                                <td>student2@example.com</td>
+                                <td>Mathematics</td>
+                                <td>68</td>
+                                <td class="status success">Passed</td>
+                                <td>
+                                    <button type="button">View</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>003</td>
+                                <td>Student Three</td>
+                                <td>student3@example.com</td>
+                                <td>Computer Science</td>
+                                <td>42</td>
+                                <td class="status warning">Failed</td>
+                                <td>
+                                    <button type="button">View</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+            <section id="courses" class="panel">
+
+                <h2>Course Overview</h2>
+
+                <p>Data Science</p>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+
+                <br>
+
+                <p>Database Management Systems</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+
+            </section>
+
+            <section id="progress" class="panel">
+
+                <h2>Learning Progress</h2>
+
+                <p>
+                    Dashboard development integrates Flask, Jinja2,
+                    SQLAlchemy, SQLite, authentication, CRUD and frontend
+                    technologies.
+                </p>
+
+            </section>
+
+            <section id="profile" class="panel">
+
+                <h2>Profile</h2>
+
+                <p><strong>Name:</strong> Saloni Tiwari</p>
+                <p><strong>Programme:</strong> IIT Madras BS Degree</p>
+                <p><strong>Learning Track:</strong> Modern Application Development</p>
+
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 088
+        </p>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const courseFilter = document.getElementById("courseFilter");
+        const tableBody = document.getElementById("studentTableBody");
+        const addStudentButton = document.getElementById("addStudentButton");
+
+        function filterStudents() {
+            const searchText = searchInput.value.toLowerCase();
+            const selectedCourse = courseFilter.value;
+
+            const rows = tableBody.querySelectorAll("tr");
+
+            rows.forEach(function (row) {
+                const name = row.cells[1].textContent.toLowerCase();
+                const course = row.cells[3].textContent;
+
+                const matchesName = name.includes(searchText);
+                const matchesCourse =
+                    selectedCourse === "all" ||
+                    course === selectedCourse;
+
+                row.style.display =
+                    matchesName && matchesCourse ? "" : "none";
+            });
+        }
+
+        searchInput.addEventListener("input", filterStudents);
+        courseFilter.addEventListener("change", filterStudents);
+
+        addStudentButton.addEventListener("click", function () {
+            alert(
+                "In the Flask application, this button would open the student creation route."
+            );
+        });
+    </script>
+
+</body>
+</html>
