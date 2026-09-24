@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 087
+        Topic: Authentication System
+    -->
+
+    <title>Day 087 - Authentication System</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #1d4ed8;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .flow-step {
+            padding: 13px 16px;
+            background: #dbeafe;
+            border: 1px solid #93c5fd;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            padding: 18px;
+            border-radius: 10px;
+            background: #f8fafc;
+            border: 1px solid #dbeafe;
+        }
+
+        .card strong {
+            display: block;
+            color: #1e40af;
+            margin-bottom: 7px;
+        }
+
+        .role-card {
+            border-left: 5px solid;
+        }
+
+        .student {
+            border-color: #2563eb;
+        }
+
+        .admin {
+            border-color: #16a34a;
+        }
+
+        pre {
+            background: #111827;
+            color: #f9fafb;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .security {
+            padding: 15px;
+            background: #fffbeb;
+            border-left: 5px solid #d97706;
+            border-radius: 6px;
+        }
+
+        .danger {
+            padding: 15px;
+            background: #fef2f2;
+            border-left: 5px solid #dc2626;
+            border-radius: 6px;
+        }
+
+        .success {
+            padding: 15px;
+            background: #ecfdf5;
+            border-left: 5px solid #16a34a;
+            border-radius: 6px;
+        }
+
+        .checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+        }
+
+        .checklist div {
+            padding: 10px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 650px) {
+            section {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔐 Authentication System</h1>
+    <p>Day 087 — Flask + SQLAlchemy</p>
+    <p>Author: Saloni Tiwari</p>
+</header>
+
+<main>
+
+    <section>
+        <h2>📌 Authentication vs Authorization</h2>
+
+        <div class="grid">
+            <div class="card">
+                <strong>Authentication</strong>
+                <p>Answers: "Who are you?"</p>
+                <p>Example: Login with email and password.</p>
+            </div>
+
+            <div class="card">
+                <strong>Authorization</strong>
+                <p>Answers: "What are you allowed to do?"</p>
+                <p>Example: Only admins can delete students.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🔄 Authentication Flow</h2>
+
+        <div class="flow">
+            <span class="flow-step">Register</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Validate</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Hash Password</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Store User</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Login</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Session</span>
+            <span class="arrow">→</span>
+            <span class="flow-step">Dashboard</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>👤 User Model</h2>
+
+        <div class="grid">
+            <div class="card">
+                <strong>id</strong>
+                Primary key
+            </div>
+
+            <div class="card">
+                <strong>username</strong>
+                Unique username
+            </div>
+
+            <div class="card">
+                <strong>email</strong>
+                Unique email
+            </div>
+
+            <div class="card">
+                <strong>password_hash</strong>
+                Hashed password
+            </div>
+
+            <div class="card">
+                <strong>role</strong>
+                Student or Admin
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🔑 Password Hashing</h2>
+
+        <pre>from werkzeug.security import generate_password_hash
+
+password_hash = generate_password_hash(password)</pre>
+
+        <div class="danger">
+            <strong>Never store plaintext passwords.</strong>
+            Store a password hash instead.
+        </div>
+    </section>
+
+    <section>
+        <h2>✅ Password Verification</h2>
+
+        <pre>from werkzeug.security import check_password_hash
+
+valid = check_password_hash(
+    stored_hash,
+    submitted_password
+)</pre>
+
+        <p>
+            During login, the submitted password is checked against the
+            stored password hash.
+        </p>
+    </section>
+
+    <section>
+        <h2>🧑‍💻 User Roles</h2>
+
+        <div class="grid">
+
+            <div class="card role-card student">
+                <h3>Student</h3>
+                <ul>
+                    <li>View dashboard</li>
+                    <li>View own profile</li>
+                    <li>View courses</li>
+                </ul>
+            </div>
+
+            <div class="card role-card admin">
+                <h3>Admin</h3>
+                <ul>
+                    <li>View students</li>
+                    <li>Add students</li>
+                    <li>Edit students</li>
+                    <li>Delete students</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>🍪 Flask Session</h2>
+
+        <pre>session["user_id"] = user.id
+
+user_id = session.get("user_id")</pre>
+
+        <p>
+            Sessions allow the application to maintain login state across
+            requests.
+        </p>
+    </section>
+
+    <section>
+        <h2>🛡️ Protected Route</h2>
+
+        <pre>if "user_id" not in session:
+    return redirect(url_for("login"))</pre>
+
+        <p>
+            A protected route should verify authentication on the server
+            before providing protected resources.
+        </p>
+    </section>
+
+    <section>
+        <h2>🔐 Flask-Login</h2>
+
+        <div class="grid">
+            <div class="card">
+                <strong>LoginManager</strong>
+                Manages login configuration.
+            </div>
+
+            <div class="card">
+                <strong>UserMixin</strong>
+                Provides common user-model functionality.
+            </div>
+
+            <div class="card">
+                <strong>login_user()</strong>
+                Logs a user in.
+            </div>
+
+            <div class="card">
+                <strong>logout_user()</strong>
+                Logs a user out.
+            </div>
+
+            <div class="card">
+                <strong>login_required</strong>
+                Protects routes.
+            </div>
+
+            <div class="card">
+                <strong>current_user</strong>
+                Represents the authenticated user.
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>⚙️ Flask-Login Example</h2>
+
+        <pre>@login_required
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")</pre>
+    </section>
+
+    <section>
+        <h2>🚪 Logout</h2>
+
+        <pre>logout_user()
+
+return redirect(url_for("login"))</pre>
+
+        <p>
+            With a custom session-based implementation, the application can
+            remove its authentication information from the session.
+        </p>
+    </section>
+
+    <section>
+        <h2>🛡️ Authentication Security</h2>
+
+        <div class="security">
+            <ul>
+                <li>Use password hashing.</li>
+                <li>Never store plaintext passwords.</li>
+                <li>Use a strong secret key.</li>
+                <li>Use HTTPS in production.</li>
+                <li>Validate data on the server.</li>
+                <li>Use CSRF protection for state-changing browser forms.</li>
+                <li>Use generic authentication error messages.</li>
+                <li>Protect admin operations with server-side authorization.</li>
+                <li>Do not log passwords.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>🔄 Complete Architecture</h2>
+
+        <pre>Registration
+     ↓
+Validation
+     ↓
+Password Hashing
+     ↓
+User Database
+     ↓
+Login
+     ↓
+Password Verification
+     ↓
+Authentication Session
+     ↓
+Protected Route
+     ↓
+Authorization
+     ↓
+Resource
+     ↓
+Logout</pre>
+    </section>
+
+    <section>
+        <h2>📋 Authentication Checklist</h2>
+
+        <div class="checklist">
+            <div>☐ Registration</div>
+            <div>☐ Server-side validation</div>
+            <div>☐ Password hashing</div>
+            <div>☐ Unique email</div>
+            <div>☐ Login</div>
+            <div>☐ Password verification</div>
+            <div>☐ Session management</div>
+            <div>☐ Protected routes</div>
+            <div>☐ Logout</div>
+            <div>☐ Authorization</div>
+            <div>☐ CSRF protection</div>
+            <div>☐ Secure configuration</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>⭐ Key Principle</h2>
+
+        <div class="success">
+            <strong>Authenticate first. Authorize second.</strong>
+
+            <p>
+                Authentication establishes identity. Authorization determines
+                what that authenticated user is allowed to access or modify.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Day 087 — Authentication System</p>
+    <p>Author: Saloni Tiwari</p>
+    <p>IIT Madras BS Degree — Diploma Level</p>
+</footer>
+
+<script>
+    console.log("Day 087 - Authentication System");
+    console.log("Authentication verifies identity; authorization controls access.");
+
+    /*
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 087
+        Topic: Authentication System
+    */
+</script>
+
+</body>
+</html>
