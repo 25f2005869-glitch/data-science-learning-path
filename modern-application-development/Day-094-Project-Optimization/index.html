@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 094 - Project Optimization</title>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 094
+        Topic: Project Optimization
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 32px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        .intro {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .checklist {
+            margin-top: 24px;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .checklist label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .progress {
+            height: 14px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+
+        button {
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 25px;
+            text-align: center;
+            background: #111827;
+            color: white;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 850px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding: 25px 15px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>⚡ Project Optimization</h1>
+    <p>Day 094 — MAD 1 Project Development</p>
+    <p>Performance • Database • Security • Maintainability</p>
+</header>
+
+<main>
+
+    <section class="intro">
+        <h2>📌 What is Project Optimization?</h2>
+        <p>
+            Project optimization means improving an application so that it
+            performs efficiently, remains secure, is easier to maintain,
+            and provides a better user experience.
+        </p>
+
+        <strong>Optimization Flow:</strong>
+        <p>
+            Measure → Identify Bottleneck → Optimize → Test → Measure Again
+        </p>
+    </section>
+
+    <section class="grid">
+
+        <article class="card">
+            <h2>⚡ Flask</h2>
+            <ul>
+                <li>Avoid unnecessary processing</li>
+                <li>Reuse common logic</li>
+                <li>Keep routes focused</li>
+                <li>Disable debug mode in production</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>🗄️ Database</h2>
+            <ul>
+                <li>Optimize queries</li>
+                <li>Use appropriate indexes</li>
+                <li>Filter at database level</li>
+                <li>Use pagination</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>🎨 Frontend</h2>
+            <ul>
+                <li>Optimize CSS</li>
+                <li>Reduce unnecessary JavaScript</li>
+                <li>Optimize images</li>
+                <li>Use responsive layouts</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>🔐 Security</h2>
+            <ul>
+                <li>Hash passwords</li>
+                <li>Validate input</li>
+                <li>Protect secrets</li>
+                <li>Use HTTPS</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>🛠️ Code Quality</h2>
+            <ul>
+                <li>Remove duplication</li>
+                <li>Refactor repeated logic</li>
+                <li>Use reusable functions</li>
+                <li>Keep structure organized</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2>📊 Performance</h2>
+            <ul>
+                <li>Measure response time</li>
+                <li>Test large datasets</li>
+                <li>Review database operations</li>
+                <li>Monitor bottlenecks</li>
+            </ul>
+        </article>
+
+    </section>
+
+    <section class="checklist">
+
+        <h2>✅ Optimization Checklist</h2>
+
+        <label>
+            <input type="checkbox" class="optimization-check">
+            Database queries reviewed
+        </label>
+
+        <label>
+            <input type="checkbox" class="optimization-check">
+            Search and filtering optimized
+        </label>
+
+        <label>
+            <input type="checkbox" class="optimization-check">
+            Pagination considered
+        </label>
+
+        <label>
+            <input type="checkbox" class="optimization-check">
+            Images optimized
+        </label>
+
+        <label>
+            <input type="checkbox" class="optimization-check">
+            CSS reviewed
+        </label>
+
+        <label>
+            <input type="checkbox" class="optimization-check">
+            JavaScript reviewed
+        </label>
+
+        <label>
+            <input type="checkbox" class="optimization-check">
+            Code duplication reduced
+        </label>
+
+        <label>
+            <input type="checkbox" class="optimization-check">
+            Security reviewed
+        </label>
+
+        <label>
+            <input type="checkbox" class="optimization-check">
+            Performance tested
+        </label>
+
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <p id="progressText">0% completed</p>
+
+        <button id="resetButton">Reset Checklist</button>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Author: Saloni Tiwari</p>
+    <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+    <p>Day 094 — Project Optimization</p>
+    <p>Part of the 100-Day MAD 1 Learning Journey 🚀</p>
+</footer>
+
+<script>
+    const checkboxes = document.querySelectorAll(".optimization-check");
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.getElementById("progressText");
+    const resetButton = document.getElementById("resetButton");
+
+    function updateProgress() {
+        const total = checkboxes.length;
+
+        let completed = 0;
+
+        checkboxes.forEach(function (checkbox) {
+            if (checkbox.checked) {
+                completed++;
+            }
+        });
+
+        const percentage = Math.round((completed / total) * 100);
+
+        progressBar.style.width = percentage + "%";
+        progressText.textContent = percentage + "% completed";
+    }
+
+    checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener("change", updateProgress);
+    });
+
+    resetButton.addEventListener("click", function () {
+        checkboxes.forEach(function (checkbox) {
+            checkbox.checked = false;
+        });
+
+        updateProgress();
+    });
+
+    updateProgress();
+</script>
+
+</body>
+</html>
