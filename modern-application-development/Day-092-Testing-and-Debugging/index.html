@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Day 092 - Testing and Debugging</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #d1d5db;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        .intro,
+        .panel,
+        .test-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .intro h1,
+        .panel h2 {
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            color: #4b5563;
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .test-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .test-card p {
+            color: #4b5563;
+        }
+
+        .test-status {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .pass {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .fail {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .form {
+            display: grid;
+            gap: 15px;
+        }
+
+        .field {
+            display: grid;
+            gap: 6px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            min-height: 44px;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        button {
+            background: #111827;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover,
+        button:focus-visible {
+            opacity: 0.85;
+        }
+
+        input:focus-visible,
+        select:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #9ca3af;
+            outline-offset: 2px;
+        }
+
+        .result {
+            margin-top: 18px;
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 6px;
+        }
+
+        .status-code {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .workflow {
+            display: grid;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .workflow div {
+            padding: 12px;
+            background: #f3f4f6;
+            border-radius: 6px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            min-width: 650px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: 94%;
+                margin: 20px auto;
+            }
+
+            .intro,
+            .panel,
+            .test-card {
+                padding: 18px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 092
+        Topic: Testing and Debugging
+    -->
+
+    <header>
+        <h1>Testing & Debugging Dashboard</h1>
+        <p>Day 092 — Testing and Debugging</p>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <h1>Application Test Center</h1>
+
+            <p>
+                This page demonstrates basic testing concepts,
+                test cases, validation, HTTP status codes, and
+                debugging workflows for a Flask application.
+            </p>
+        </section>
+
+        <section class="test-grid">
+
+            <article class="test-card">
+                <h3>Unit Test</h3>
+                <p>
+                    Tests a small function or isolated component.
+                </p>
+
+                <span class="test-status pass">
+                    PASS
+                </span>
+            </article>
+
+            <article class="test-card">
+                <h3>Integration Test</h3>
+                <p>
+                    Tests multiple components working together.
+                </p>
+
+                <span class="test-status pass">
+                    PASS
+                </span>
+            </article>
+
+            <article class="test-card">
+                <h3>Validation Test</h3>
+                <p>
+                    Checks valid and invalid user input.
+                </p>
+
+                <span class="test-status pass">
+                    PASS
+                </span>
+            </article>
+
+            <article class="test-card">
+                <h3>Error Test</h3>
+                <p>
+                    Checks how the application handles failures.
+                </p>
+
+                <span class="test-status fail">
+                    REVIEW
+                </span>
+            </article>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Student Validation Test</h2>
+
+            <form class="form" id="testForm">
+
+                <div class="field">
+                    <label for="studentName">
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter student name"
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="marks">
+                        Marks
+                    </label>
+
+                    <input
+                        type="number"
+                        id="marks"
+                        min="0"
+                        max="100"
+                        placeholder="0 - 100"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Run Validation Test
+                </button>
+
+            </form>
+
+            <div
+                id="validationResult"
+                class="result"
+                hidden
+            ></div>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>HTTP Status Code Test</h2>
+
+            <p>
+                Select a simulated response status to understand
+                how HTTP responses can be tested.
+            </p>
+
+            <br>
+
+            <div class="form">
+
+                <div class="field">
+                    <label for="statusSelect">
+                        Status Code
+                    </label>
+
+                    <select id="statusSelect">
+                        <option value="200">
+                            200 — OK
+                        </option>
+
+                        <option value="201">
+                            201 — Created
+                        </option>
+
+                        <option value="302">
+                            302 — Redirect
+                        </option>
+
+                        <option value="400">
+                            400 — Bad Request
+                        </option>
+
+                        <option value="401">
+                            401 — Unauthorized
+                        </option>
+
+                        <option value="403">
+                            403 — Forbidden
+                        </option>
+
+                        <option value="404">
+                            404 — Not Found
+                        </option>
+
+                        <option value="500">
+                            500 — Internal Server Error
+                        </option>
+                    </select>
+                </div>
+
+                <button
+                    type="button"
+                    id="statusButton"
+                >
+                    Test Status
+                </button>
+
+            </div>
+
+            <div class="result">
+                <p>Selected Response:</p>
+
+                <p
+                    id="statusCode"
+                    class="status-code"
+                >
+                    200
+                </p>
+
+                <p id="statusMessage">
+                    OK
+                </p>
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Test Case Examples</h2>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Test ID</th>
+                            <th>Feature</th>
+                            <th>Input</th>
+                            <th>Expected Result</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>TC-001</td>
+                            <td>Login</td>
+                            <td>Valid credentials</td>
+                            <td>Dashboard opens</td>
+                            <td>PASS</td>
+                        </tr>
+
+                        <tr>
+                            <td>TC-002</td>
+                            <td>Marks Validation</td>
+                            <td>101</td>
+                            <td>Validation error</td>
+                            <td>PASS</td>
+                        </tr>
+
+                        <tr>
+                            <td>TC-003</td>
+                            <td>CRUD</td>
+                            <td>Delete student</td>
+                            <td>Record removed</td>
+                            <td>PASS</td>
+                        </tr>
+
+                        <tr>
+                            <td>TC-004</td>
+                            <td>Search</td>
+                            <td>Unknown name</td>
+                            <td>No results</td>
+                            <td>PASS</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Debugging Workflow</h2>
+
+            <div class="workflow">
+
+                <div>1. Reproduce the problem</div>
+                <div>2. Read the error message</div>
+                <div>3. Inspect the traceback</div>
+                <div>4. Identify the failing component</div>
+                <div>5. Isolate the root cause</div>
+                <div>6. Fix the problem</div>
+                <div>7. Run the failing test again</div>
+                <div>8. Run regression tests</div>
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Testing Checklist</h2>
+
+            <div class="workflow">
+
+                <div>✓ Routes</div>
+                <div>✓ Forms</div>
+                <div>✓ Validation</div>
+                <div>✓ CRUD</div>
+                <div>✓ Authentication</div>
+                <div>✓ Authorization</div>
+                <div>✓ Search and Filtering</div>
+                <div>✓ Database Operations</div>
+                <div>✓ Error Handling</div>
+                <div>✓ Responsive UI</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 092
+        </p>
+    </footer>
+
+    <script>
+        const testForm =
+            document.getElementById("testForm");
+
+        const validationResult =
+            document.getElementById("validationResult");
+
+        testForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                const name =
+                    document
+                        .getElementById("studentName")
+                        .value
+                        .trim();
+
+                const marks =
+                    Number(
+                        document
+                            .getElementById("marks")
+                            .value
+                    );
+
+                validationResult.hidden = false;
+
+                if (!name) {
+                    validationResult.textContent =
+                        "FAIL: Student name is required.";
+
+                    return;
+                }
+
+                if (
+                    Number.isNaN(marks) ||
+                    marks < 0 ||
+                    marks > 100
+                ) {
+                    validationResult.textContent =
+                        "FAIL: Marks must be between 0 and 100.";
+
+                    return;
+                }
+
+                validationResult.textContent =
+                    "PASS: Student data passed client-side validation. A real Flask application must also validate the data on the server.";
+            }
+        );
+
+        const statusSelect =
+            document.getElementById("statusSelect");
+
+        const statusButton =
+            document.getElementById("statusButton");
+
+        const statusCode =
+            document.getElementById("statusCode");
+
+        const statusMessage =
+            document.getElementById("statusMessage");
+
+        const statusMessages = {
+            "200": "OK",
+            "201": "Created",
+            "302": "Redirect",
+            "400": "Bad Request",
+            "401": "Unauthorized",
+            "403": "Forbidden",
+            "404": "Not Found",
+            "500": "Internal Server Error"
+        };
+
+        statusButton.addEventListener(
+            "click",
+            function () {
+
+                const selected =
+                    statusSelect.value;
+
+                statusCode.textContent =
+                    selected;
+
+                statusMessage.textContent =
+                    statusMessages[selected];
+            }
+        );
+    </script>
+
+</body>
+</html>
