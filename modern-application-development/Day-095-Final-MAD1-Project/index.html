@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 095 - Final MAD 1 Project</title>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 095
+        Topic: Final MAD 1 Project
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        nav {
+            background: white;
+            padding: 14px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        nav a {
+            color: #1d4ed8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            text-decoration: underline;
+        }
+
+        main {
+            width: min(1150px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .hero,
+        .card,
+        .checklist,
+        .architecture {
+            background: white;
+            border-radius: 14px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        .hero h2 {
+            margin-top: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .architecture {
+            text-align: center;
+        }
+
+        .flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .flow-item {
+            padding: 12px 16px;
+            border-radius: 8px;
+            background: #eef2ff;
+            font-weight: bold;
+        }
+
+        .arrow {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .progress-container {
+            margin: 20px 0;
+        }
+
+        .progress {
+            height: 16px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+
+        .checklist label {
+            display: block;
+            padding: 7px 0;
+        }
+
+        button {
+            border: none;
+            border-radius: 8px;
+            padding: 11px 18px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 28px 20px;
+            margin-top: 40px;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 850px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.7rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚀 Student Academic Management System</h1>
+    <p>Day 095 — Final MAD 1 Project</p>
+    <p>Flask • SQLAlchemy • SQLite • Jinja2 • HTML • CSS • JavaScript</p>
+</header>
+
+<nav aria-label="Main navigation">
+    <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#modules">Modules</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#testing">Testing</a></li>
+        <li><a href="#checklist">Checklist</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <section id="overview" class="hero">
+        <h2>🎓 Final MAD 1 Project</h2>
+
+        <p>
+            A complete web application for managing student academic
+            information, authentication, CRUD operations, search,
+            filtering, validation, and dashboards.
+        </p>
+
+        <p>
+            The project integrates the major concepts learned throughout
+            the MAD 1 learning journey.
+        </p>
+    </section>
+
+    <section id="modules">
+
+        <h2>🧩 Project Modules</h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>🔐 Authentication</h3>
+                <ul>
+                    <li>Registration</li>
+                    <li>Login</li>
+                    <li>Logout</li>
+                    <li>Password hashing</li>
+                    <li>Protected routes</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>📊 Dashboard</h3>
+                <ul>
+                    <li>Total students</li>
+                    <li>Total courses</li>
+                    <li>Average marks</li>
+                    <li>Academic progress</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>🗄️ Student CRUD</h3>
+                <ul>
+                    <li>Create students</li>
+                    <li>Read records</li>
+                    <li>Update records</li>
+                    <li>Delete records</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>🔎 Search & Filtering</h3>
+                <ul>
+                    <li>Name search</li>
+                    <li>Course filter</li>
+                    <li>Marks filter</li>
+                    <li>Sorting</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>📝 Validation</h3>
+                <ul>
+                    <li>Form validation</li>
+                    <li>Server-side validation</li>
+                    <li>Error messages</li>
+                    <li>Flash messages</li>
+                </ul>
+            </article>
+
+            <article class="card">
+                <h3>📱 Responsive UI</h3>
+                <ul>
+                    <li>Mobile-first design</li>
+                    <li>Flexbox</li>
+                    <li>CSS Grid</li>
+                    <li>Media queries</li>
+                </ul>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section id="architecture" class="architecture">
+
+        <h2>🏗️ Application Architecture</h2>
+
+        <div class="flow">
+            <div class="flow-item">User</div>
+            <div class="arrow">→</div>
+            <div class="flow-item">Browser</div>
+            <div class="arrow">→</div>
+            <div class="flow-item">Flask</div>
+            <div class="arrow">→</div>
+            <div class="flow-item">SQLAlchemy</div>
+            <div class="arrow">→</div>
+            <div class="flow-item">SQLite</div>
+        </div>
+
+        <div class="flow">
+            <div class="flow-item">SQLite</div>
+            <div class="arrow">→</div>
+            <div class="flow-item">Flask</div>
+            <div class="arrow">→</div>
+            <div class="flow-item">Jinja2</div>
+            <div class="arrow">→</div>
+            <div class="flow-item">Browser</div>
+        </div>
+
+    </section>
+
+    <section id="security">
+
+        <h2>🔐 Security Features</h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>Password Security</h3>
+                <p>
+                    Passwords should be hashed and never stored as plaintext.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Input Security</h3>
+                <p>
+                    User input should be validated on the server before
+                    processing or storing it.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Application Security</h3>
+                <p>
+                    Protect secrets, sessions, routes, and sensitive
+                    configuration.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section id="testing">
+
+        <h2>🧪 Testing Areas</h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>Authentication</h3>
+                <p>Registration, login, logout, and protected routes.</p>
+            </article>
+
+            <article class="card">
+                <h3>CRUD</h3>
+                <p>Create, read, update, and delete operations.</p>
+            </article>
+
+            <article class="card">
+                <h3>Search</h3>
+                <p>Search, filtering, sorting, and no-result handling.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section id="checklist" class="checklist">
+
+        <h2>✅ Final Project Checklist</h2>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Project requirements defined
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Database designed
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Flask application created
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Authentication implemented
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            CRUD implemented
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Search and filtering implemented
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Validation implemented
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Error handling implemented
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Responsive UI implemented
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Testing completed
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Security reviewed
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Optimization completed
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Deployment prepared
+        </label>
+
+        <label>
+            <input type="checkbox" class="project-check">
+            Documentation completed
+        </label>
+
+        <div class="progress-container">
+
+            <strong>Project Completion</strong>
+
+            <div class="progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+
+            <p id="progressText">0% completed</p>
+
+        </div>
+
+        <button id="resetButton">Reset Checklist</button>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Author: Saloni Tiwari</p>
+    <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+    <p>Day 095 — Final MAD 1 Project</p>
+    <p>100-Day Modern Application Development Journey 🚀</p>
+</footer>
+
+<script>
+    const checks = document.querySelectorAll(".project-check");
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.getElementById("progressText");
+    const resetButton = document.getElementById("resetButton");
+
+    function updateProgress() {
+        const total = checks.length;
+
+        let completed = 0;
+
+        checks.forEach(function (check) {
+            if (check.checked) {
+                completed++;
+            }
+        });
+
+        const percentage = Math.round((completed / total) * 100);
+
+        progressBar.style.width = percentage + "%";
+        progressText.textContent = percentage + "% completed";
+    }
+
+    checks.forEach(function (check) {
+        check.addEventListener("change", updateProgress);
+    });
+
+    resetButton.addEventListener("click", function () {
+        checks.forEach(function (check) {
+            check.checked = false;
+        });
+
+        updateProgress();
+    });
+
+    updateProgress();
+</script>
+
+</body>
+</html>
