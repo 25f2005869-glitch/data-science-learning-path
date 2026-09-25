@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 090 - Search and Filtering</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #1f2937;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #d1d5db;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        .intro {
+            margin-bottom: 25px;
+        }
+
+        .intro h1 {
+            margin-bottom: 8px;
+        }
+
+        .search-panel,
+        .results-panel,
+        .info-panel {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr auto;
+            gap: 12px;
+            align-items: end;
+        }
+
+        .field {
+            display: grid;
+            gap: 7px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        button {
+            background: #111827;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover,
+        button:focus {
+            opacity: 0.85;
+        }
+
+        .summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+
+        .result-count {
+            font-weight: bold;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            min-width: 800px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        .passed {
+            font-weight: bold;
+            color: #166534;
+        }
+
+        .failed {
+            font-weight: bold;
+            color: #991b1b;
+        }
+
+        .no-results {
+            padding: 20px;
+            text-align: center;
+            background: #f9fafb;
+            border-radius: 6px;
+        }
+
+        .info-panel ul {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .info-panel p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .search-form {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: 94%;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 090
+        Topic: Search and Filtering
+    -->
+
+    <header>
+        <h1>Student Search & Filtering</h1>
+        <p>Day 090 — Search and Filtering</p>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <h1>Find Student Records</h1>
+            <p>
+                This page demonstrates the frontend structure of a
+                database-driven Flask search and filtering module.
+            </p>
+        </section>
+
+        <section class="search-panel">
+
+            <h2>Search and Filter</h2>
+
+            <br>
+
+            <form
+                class="search-form"
+                id="searchForm"
+                method="GET"
+            >
+
+                <div class="field">
+                    <label for="search">
+                        Search
+                    </label>
+
+                    <input
+                        type="search"
+                        id="search"
+                        name="search"
+                        placeholder="Name, email or course"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="course">
+                        Course
+                    </label>
+
+                    <select id="course" name="course">
+                        <option value="all">
+                            All Courses
+                        </option>
+                        <option value="Data Science">
+                            Data Science
+                        </option>
+                        <option value="Computer Science">
+                            Computer Science
+                        </option>
+                        <option value="Mathematics">
+                            Mathematics
+                        </option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="minMarks">
+                        Minimum Marks
+                    </label>
+
+                    <input
+                        type="number"
+                        id="minMarks"
+                        name="min_marks"
+                        min="0"
+                        max="100"
+                        placeholder="0"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="sort">
+                        Sort By
+                    </label>
+
+                    <select id="sort" name="sort">
+                        <option value="name">
+                            Name
+                        </option>
+                        <option value="marks">
+                            Marks
+                        </option>
+                        <option value="course">
+                            Course
+                        </option>
+                    </select>
+                </div>
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="results-panel">
+
+            <div class="summary">
+                <h2>Student Records</h2>
+
+                <p class="result-count">
+                    Results Found:
+                    <span id="resultCount">5</span>
+                </p>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Marks</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable">
+
+                        <tr
+                            data-name="Saloni Tiwari"
+                            data-email="saloni@example.com"
+                            data-course="Data Science"
+                            data-marks="92"
+                        >
+                            <td>001</td>
+                            <td>Saloni Tiwari</td>
+                            <td>saloni@example.com</td>
+                            <td>Data Science</td>
+                            <td>92</td>
+                            <td class="passed">
+                                Passed
+                            </td>
+                        </tr>
+
+                        <tr
+                            data-name="Aarav Sharma"
+                            data-email="aarav@example.com"
+                            data-course="Computer Science"
+                            data-marks="86"
+                        >
+                            <td>002</td>
+                            <td>Aarav Sharma</td>
+                            <td>aarav@example.com</td>
+                            <td>Computer Science</td>
+                            <td>86</td>
+                            <td class="passed">
+                                Passed
+                            </td>
+                        </tr>
+
+                        <tr
+                            data-name="Priya Singh"
+                            data-email="priya@example.com"
+                            data-course="Mathematics"
+                            data-marks="74"
+                        >
+                            <td>003</td>
+                            <td>Priya Singh</td>
+                            <td>priya@example.com</td>
+                            <td>Mathematics</td>
+                            <td>74</td>
+                            <td class="passed">
+                                Passed
+                            </td>
+                        </tr>
+
+                        <tr
+                            data-name="Rahul Kumar"
+                            data-email="rahul@example.com"
+                            data-course="Data Science"
+                            data-marks="63"
+                        >
+                            <td>004</td>
+                            <td>Rahul Kumar</td>
+                            <td>rahul@example.com</td>
+                            <td>Data Science</td>
+                            <td>63</td>
+                            <td class="passed">
+                                Passed
+                            </td>
+                        </tr>
+
+                        <tr
+                            data-name="Neha Verma"
+                            data-email="neha@example.com"
+                            data-course="Computer Science"
+                            data-marks="42"
+                        >
+                            <td>005</td>
+                            <td>Neha Verma</td>
+                            <td>neha@example.com</td>
+                            <td>Computer Science</td>
+                            <td>42</td>
+                            <td class="failed">
+                                Failed
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div
+                id="noResults"
+                class="no-results"
+                hidden
+            >
+                No students found matching the selected criteria.
+            </div>
+
+        </section>
+
+        <section class="info-panel">
+
+            <h2>Flask Search Flow</h2>
+
+            <br>
+
+            <p>
+                A real Flask application would process the search on
+                the server rather than filtering only the HTML.
+            </p>
+
+            <ul>
+                <li>Read query parameters with <code>request.args</code>.</li>
+                <li>Validate and normalize user input.</li>
+                <li>Build a SQLAlchemy query.</li>
+                <li>Apply search and filter conditions.</li>
+                <li>Apply an allowlisted sort option.</li>
+                <li>Execute the database query.</li>
+                <li>Pass results to Jinja2.</li>
+                <li>Render the filtered records.</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 090
+        </p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("searchForm");
+        const searchInput = document.getElementById("search");
+        const courseSelect = document.getElementById("course");
+        const minMarksInput = document.getElementById("minMarks");
+        const sortSelect = document.getElementById("sort");
+        const rows = Array.from(
+            document.querySelectorAll("#studentTable tr")
+        );
+        const resultCount = document.getElementById("resultCount");
+        const noResults = document.getElementById("noResults");
+
+        function filterStudents(event) {
+            if (event) {
+                event.preventDefault();
+            }
+
+            const searchText =
+                searchInput.value.trim().toLowerCase();
+
+            const selectedCourse =
+                courseSelect.value;
+
+            const minimumMarks =
+                Number(minMarksInput.value) || 0;
+
+            const sortValue =
+                sortSelect.value;
+
+            let visibleRows = rows.filter(function (row) {
+
+                const name =
+                    row.dataset.name.toLowerCase();
+
+                const email =
+                    row.dataset.email.toLowerCase();
+
+                const course =
+                    row.dataset.course;
+
+                const marks =
+                    Number(row.dataset.marks);
+
+                const matchesSearch =
+                    name.includes(searchText) ||
+                    email.includes(searchText) ||
+                    course.toLowerCase().includes(searchText);
+
+                const matchesCourse =
+                    selectedCourse === "all" ||
+                    course === selectedCourse;
+
+                const matchesMarks =
+                    marks >= minimumMarks;
+
+                return (
+                    matchesSearch &&
+                    matchesCourse &&
+                    matchesMarks
+                );
+            });
+
+            visibleRows.sort(function (rowA, rowB) {
+
+                if (sortValue === "marks") {
+                    return (
+                        Number(rowB.dataset.marks) -
+                        Number(rowA.dataset.marks)
+                    );
+                }
+
+                if (sortValue === "course") {
+                    return rowA.dataset.course.localeCompare(
+                        rowB.dataset.course
+                    );
+                }
+
+                return rowA.dataset.name.localeCompare(
+                    rowB.dataset.name
+                );
+            });
+
+            rows.forEach(function (row) {
+                row.style.display = "none";
+            });
+
+            visibleRows.forEach(function (row) {
+                row.style.display = "";
+            });
+
+            resultCount.textContent =
+                visibleRows.length;
+
+            noResults.hidden =
+                visibleRows.length !== 0;
+        }
+
+        form.addEventListener(
+            "submit",
+            filterStudents
+        );
+
+        searchInput.addEventListener(
+            "input",
+            filterStudents
+        );
+
+        courseSelect.addEventListener(
+            "change",
+            filterStudents
+        );
+
+        minMarksInput.addEventListener(
+            "input",
+            filterStudents
+        );
+
+        sortSelect.addEventListener(
+            "change",
+            filterStudents
+        );
+
+        filterStudents();
+    </script>
+
+</body>
+</html>
