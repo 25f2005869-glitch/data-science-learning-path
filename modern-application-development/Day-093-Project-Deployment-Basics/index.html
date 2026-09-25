@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Day 093 - Project Deployment Basics</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #d1d5db;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        .intro,
+        .panel,
+        .check-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .intro h1,
+        .panel h2 {
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            color: #4b5563;
+        }
+
+        .deployment-flow {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .flow-item {
+            padding: 18px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .check-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .check-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .check-card ul {
+            list-style: none;
+        }
+
+        .check-card li {
+            padding: 6px 0;
+        }
+
+        .check-card li::before {
+            content: "✓ ";
+            font-weight: bold;
+        }
+
+        .warning {
+            padding: 18px;
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 8px 14px;
+            background: #dcfce7;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .code-like {
+            background: #111827;
+            color: white;
+            padding: 18px;
+            border-radius: 8px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: 94%;
+                margin: 20px auto;
+            }
+
+            .intro,
+            .panel,
+            .check-card {
+                padding: 18px;
+            }
+
+            .deployment-flow {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 093
+        Topic: Project Deployment Basics
+    -->
+
+    <header>
+        <h1>Project Deployment Basics</h1>
+        <p>Day 093 — Preparing a Flask Application for Deployment</p>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <h1>Student Management System</h1>
+
+            <p>
+                This page represents a deployment preparation
+                dashboard for a Flask-based Student Management System.
+            </p>
+
+            <br>
+
+            <span class="status">
+                Production Readiness Review
+            </span>
+        </section>
+
+        <section class="panel">
+
+            <h2>Deployment Flow</h2>
+
+            <div class="deployment-flow">
+
+                <div class="flow-item">
+                    1. Develop
+                </div>
+
+                <div class="flow-item">
+                    2. Test
+                </div>
+
+                <div class="flow-item">
+                    3. Configure
+                </div>
+
+                <div class="flow-item">
+                    4. Deploy
+                </div>
+
+                <div class="flow-item">
+                    5. Verify
+                </div>
+
+                <div class="flow-item">
+                    6. Monitor
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="check-grid">
+
+            <article class="check-card">
+                <h3>🐍 Python Environment</h3>
+
+                <ul>
+                    <li>Virtual environment</li>
+                    <li>Dependencies installed</li>
+                    <li>requirements.txt</li>
+                    <li>Python version checked</li>
+                </ul>
+            </article>
+
+            <article class="check-card">
+                <h3>🔐 Security</h3>
+
+                <ul>
+                    <li>Debug disabled</li>
+                    <li>Secret key protected</li>
+                    <li>HTTPS configured</li>
+                    <li>Passwords hashed</li>
+                </ul>
+            </article>
+
+            <article class="check-card">
+                <h3>🗄️ Database</h3>
+
+                <ul>
+                    <li>Database configured</li>
+                    <li>Schema verified</li>
+                    <li>Migrations considered</li>
+                    <li>Backup strategy considered</li>
+                </ul>
+            </article>
+
+            <article class="check-card">
+                <h3>🧪 Testing</h3>
+
+                <ul>
+                    <li>Routes tested</li>
+                    <li>CRUD tested</li>
+                    <li>Authentication tested</li>
+                    <li>Validation tested</li>
+                </ul>
+            </article>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Recommended Project Structure</h2>
+
+            <div class="code-like">project/
+├── app/
+│   ├── __init__.py
+│   ├── models.py
+│   ├── routes/
+│   ├── templates/
+│   └── static/
+├── tests/
+├── requirements.txt
+├── .gitignore
+└── run.py</div>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Environment Configuration</h2>
+
+            <div class="code-like">SECRET_KEY=&lt;secure-secret&gt;
+DATABASE_URL=&lt;database-connection&gt;
+
+Production:
+Debug = False</div>
+
+            <div class="warning">
+                Never place real passwords, API keys, database
+                credentials, or secret keys directly in source code
+                or commit them to a public repository.
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Production Verification</h2>
+
+            <div class="deployment-flow">
+
+                <div class="flow-item">
+                    Home Page
+                </div>
+
+                <div class="flow-item">
+                    Login
+                </div>
+
+                <div class="flow-item">
+                    Dashboard
+                </div>
+
+                <div class="flow-item">
+                    CRUD
+                </div>
+
+                <div class="flow-item">
+                    Search
+                </div>
+
+                <div class="flow-item">
+                    Filtering
+                </div>
+
+                <div class="flow-item">
+                    Error Pages
+                </div>
+
+                <div class="flow-item">
+                    Mobile UI
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <h2>Deployment Checklist</h2>
+
+            <div class="check-grid">
+
+                <article class="check-card">
+                    <h3>Application</h3>
+
+                    <ul>
+                        <li>Application starts</li>
+                        <li>Routes work</li>
+                        <li>Templates load</li>
+                        <li>Static files load</li>
+                    </ul>
+                </article>
+
+                <article class="check-card">
+                    <h3>Database</h3>
+
+                    <ul>
+                        <li>Connection works</li>
+                        <li>CRUD works</li>
+                        <li>Constraints work</li>
+                        <li>Database errors handled</li>
+                    </ul>
+                </article>
+
+                <article class="check-card">
+                    <h3>Security</h3>
+
+                    <ul>
+                        <li>HTTPS enabled</li>
+                        <li>Secrets protected</li>
+                        <li>Authorization checked</li>
+                        <li>Debug disabled</li>
+                    </ul>
+                </article>
+
+                <article class="check-card">
+                    <h3>Monitoring</h3>
+
+                    <ul>
+                        <li>Logs available</li>
+                        <li>Health endpoint</li>
+                        <li>Error monitoring</li>
+                        <li>Backup strategy</li>
+                    </ul>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 093
+        </p>
+    </footer>
+
+</body>
+</html>
