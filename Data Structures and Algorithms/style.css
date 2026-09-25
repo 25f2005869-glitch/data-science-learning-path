@@ -1,0 +1,590 @@
+/*
+============================================================
+             DATA STRUCTURES & ALGORITHMS
+                    STYLE SHEET
+============================================================
+
+Author      : Saloni Tiwari
+Programme   : IIT Madras BS Degree — Diploma Level
+
+File        : style.css
+
+============================================================
+*/
+
+
+/* ============================================================
+   1. GLOBAL STYLES
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    padding: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f6f8;
+
+    color: #1f2937;
+
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   2. HEADER
+   ============================================================ */
+
+header {
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 45px 20px;
+
+    border-bottom:
+        4px solid #2563eb;
+}
+
+
+header h1 {
+    margin: 0;
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+header p {
+    margin: 8px 0;
+
+    font-size: 17px;
+}
+
+
+header p:first-of-type {
+    font-size: 19px;
+
+    color: #d1d5db;
+}
+
+
+/* ============================================================
+   3. MAIN CONTAINER
+   ============================================================ */
+
+.container {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin:
+        35px auto;
+}
+
+
+/* ============================================================
+   4. CARD
+   ============================================================ */
+
+.card {
+    background: white;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid #e5e7eb;
+
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.06);
+}
+
+
+.card:hover {
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.09);
+}
+
+
+/* ============================================================
+   5. HEADINGS
+   ============================================================ */
+
+h2 {
+    margin-top: 0;
+
+    color: #111827;
+
+    font-size: 27px;
+
+    border-bottom:
+        2px solid #e5e7eb;
+
+    padding-bottom: 10px;
+}
+
+
+h3 {
+    color: #374151;
+
+    margin-top: 25px;
+
+    font-size: 21px;
+}
+
+
+p {
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   6. TOPIC GRID
+   ============================================================ */
+
+.topic-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(210px, 1fr)
+        );
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+
+.topic {
+    background: #eef2ff;
+
+    color: #1e3a8a;
+
+    padding: 16px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    border:
+        1px solid #c7d2fe;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.topic:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 5px 12px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* ============================================================
+   7. LISTS
+   ============================================================ */
+
+ul {
+    padding-left: 25px;
+}
+
+
+li {
+    margin-bottom: 7px;
+}
+
+
+/* ============================================================
+   8. BUTTONS
+   ============================================================ */
+
+button {
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    padding:
+        10px 18px;
+
+    margin:
+        5px 5px 5px 0;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+button:hover {
+    background: #1d4ed8;
+
+    transform:
+        translateY(-1px);
+}
+
+
+button:active {
+    transform:
+        translateY(0);
+}
+
+
+/* ============================================================
+   9. INPUT FIELDS
+   ============================================================ */
+
+input {
+    padding:
+        10px 12px;
+
+    margin:
+        5px 5px 5px 0;
+
+    border:
+        1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    width: 220px;
+
+    background: white;
+}
+
+
+input:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.12);
+}
+
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* ============================================================
+   10. OUTPUT BOX
+   ============================================================ */
+
+.output {
+    background: #111827;
+
+    color: #22c55e;
+
+    padding: 16px;
+
+    margin-top: 15px;
+
+    border-radius: 8px;
+
+    min-height: 50px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    white-space: pre-wrap;
+
+    overflow-x: auto;
+
+    border:
+        1px solid #374151;
+}
+
+
+/* ============================================================
+   11. ARRAY DISPLAY
+   ============================================================ */
+
+.array-box {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin:
+        20px 0;
+}
+
+
+.array-item {
+    background: #dbeafe;
+
+    color: #1e3a8a;
+
+    padding:
+        12px 17px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    border:
+        1px solid #93c5fd;
+
+    min-width: 45px;
+
+    text-align: center;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.array-item:hover {
+    transform:
+        scale(1.05);
+}
+
+
+/* ============================================================
+   12. COMPLEXITY GRID
+   ============================================================ */
+
+.complexity {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        );
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+
+.complexity div {
+    background: #f3f4f6;
+
+    padding: 18px;
+
+    border-radius: 8px;
+
+    border:
+        1px solid #e5e7eb;
+
+    text-align: center;
+
+    font-weight: 600;
+}
+
+
+.complexity div:hover {
+    background: #e5e7eb;
+}
+
+
+/* ============================================================
+   13. CODE / MONOSPACE TEXT
+   ============================================================ */
+
+code {
+    font-family:
+        "Courier New",
+        monospace;
+
+    background: #f3f4f6;
+
+    padding:
+        2px 6px;
+
+    border-radius: 4px;
+}
+
+
+/* ============================================================
+   14. FOOTER
+   ============================================================ */
+
+footer {
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    margin-top: 40px;
+
+    border-top:
+        4px solid #2563eb;
+}
+
+
+footer p {
+    margin: 6px 0;
+}
+
+
+footer .author {
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+/* ============================================================
+   15. RESPONSIVE DESIGN
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 35px 15px;
+    }
+
+
+    header h1 {
+        font-size: 30px;
+    }
+
+
+    header p {
+        font-size: 15px;
+    }
+
+
+    .container {
+        width: 94%;
+
+        margin:
+            20px auto;
+    }
+
+
+    .card {
+        padding: 20px;
+    }
+
+
+    h2 {
+        font-size: 24px;
+    }
+
+
+    h3 {
+        font-size: 19px;
+    }
+
+
+    input {
+        width: 100%;
+
+        margin-bottom: 8px;
+    }
+
+
+    button {
+        width: auto;
+    }
+}
+
+
+/* ============================================================
+   16. SMALL MOBILE DEVICES
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+
+    header p {
+        font-size: 14px;
+    }
+
+
+    .card {
+        padding: 16px;
+    }
+
+
+    h2 {
+        font-size: 21px;
+    }
+
+
+    .topic-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .complexity {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .array-item {
+        padding:
+            10px 14px;
+    }
+
+
+    button {
+        width: 100%;
+
+        margin:
+            5px 0;
+    }
+}
+
+
+/* ============================================================
+   END OF STYLE SHEET
+============================================================ */

@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Data Structures & Algorithms - Saloni Tiwari</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 34px;
+        }
+
+        header p {
+            margin: 8px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #1f2937;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #374151;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .topic {
+            padding: 15px;
+            background: #eef2ff;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+            margin: 5px;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin: 5px;
+            font-size: 15px;
+        }
+
+        .output {
+            background: #111827;
+            color: #22c55e;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 50px;
+            margin-top: 15px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        .array-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .array-item {
+            padding: 12px 16px;
+            background: #dbeafe;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .complexity {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .complexity div {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .author {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     HEADER
+     ====================================================== -->
+
+<header>
+
+    <h1>Data Structures & Algorithms</h1>
+
+    <p>HTML Interactive DSA Reference</p>
+
+    <p>
+        <strong>Author:</strong>
+        Saloni Tiwari
+    </p>
+
+    <p>
+        IIT Madras BS Degree — Diploma Level
+    </p>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- ======================================================
+     1. INTRODUCTION
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>1. Introduction to DSA</h2>
+
+    <p>
+        Data Structures and Algorithms are fundamental
+        concepts used to store, organize and process data
+        efficiently.
+    </p>
+
+    <p>
+        Data structures define how data is stored, while
+        algorithms define the steps used to solve a problem.
+    </p>
+
+</section>
+
+
+<!-- ======================================================
+     2. TOPICS
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>2. DSA Topics</h2>
+
+    <div class="topic-grid">
+
+        <div class="topic">Arrays</div>
+
+        <div class="topic">Strings</div>
+
+        <div class="topic">Linked List</div>
+
+        <div class="topic">Doubly Linked List</div>
+
+        <div class="topic">Circular Linked List</div>
+
+        <div class="topic">Stack</div>
+
+        <div class="topic">Queue</div>
+
+        <div class="topic">Hashing</div>
+
+        <div class="topic">Recursion</div>
+
+        <div class="topic">Searching</div>
+
+        <div class="topic">Sorting</div>
+
+        <div class="topic">Binary Tree</div>
+
+        <div class="topic">Binary Search Tree</div>
+
+        <div class="topic">Heap</div>
+
+        <div class="topic">Graph</div>
+
+        <div class="topic">BFS</div>
+
+        <div class="topic">DFS</div>
+
+        <div class="topic">Dijkstra</div>
+
+        <div class="topic">Prim's Algorithm</div>
+
+        <div class="topic">Kruskal's Algorithm</div>
+
+        <div class="topic">Greedy Algorithms</div>
+
+        <div class="topic">Divide and Conquer</div>
+
+        <div class="topic">Backtracking</div>
+
+        <div class="topic">Dynamic Programming</div>
+
+        <div class="topic">Trie</div>
+
+        <div class="topic">Disjoint Set Union</div>
+
+        <div class="topic">Bit Manipulation</div>
+
+        <div class="topic">Mathematical Algorithms</div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     3. ARRAYS
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>3. Arrays</h2>
+
+    <p>
+        An array stores multiple values in a single
+        collection using indexes.
+    </p>
+
+    <div id="arrayDisplay"
+         class="array-box">
+    </div>
+
+    <button onclick="reverseArray()">
+        Reverse Array
+    </button>
+
+    <button onclick="sortArray()">
+        Sort Array
+    </button>
+
+    <button onclick="resetArray()">
+        Reset
+    </button>
+
+    <div id="arrayOutput"
+         class="output">
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     4. SEARCHING
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>4. Searching</h2>
+
+    <h3>Linear Search</h3>
+
+    <p>
+        Linear search checks every element one by one.
+    </p>
+
+    <p>
+        Time Complexity: O(n)
+    </p>
+
+    <h3>Binary Search</h3>
+
+    <p>
+        Binary search repeatedly divides a sorted array
+        into two parts.
+    </p>
+
+    <p>
+        Time Complexity: O(log n)
+    </p>
+
+    <input
+        type="number"
+        id="searchValue"
+        placeholder="Enter number"
+    >
+
+    <button onclick="linearSearch()">
+        Linear Search
+    </button>
+
+    <button onclick="binarySearch()">
+        Binary Search
+    </button>
+
+    <div id="searchOutput"
+         class="output">
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     5. SORTING
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>5. Sorting Algorithms</h2>
+
+    <ul>
+
+        <li>Bubble Sort</li>
+
+        <li>Selection Sort</li>
+
+        <li>Insertion Sort</li>
+
+        <li>Merge Sort</li>
+
+        <li>Quick Sort</li>
+
+        <li>Heap Sort</li>
+
+    </ul>
+
+    <div class="complexity">
+
+        <div>
+            <strong>Bubble Sort</strong>
+            <br>
+            Average: O(n²)
+        </div>
+
+        <div>
+            <strong>Selection Sort</strong>
+            <br>
+            Average: O(n²)
+        </div>
+
+        <div>
+            <strong>Insertion Sort</strong>
+            <br>
+            Average: O(n²)
+        </div>
+
+        <div>
+            <strong>Merge Sort</strong>
+            <br>
+            O(n log n)
+        </div>
+
+        <div>
+            <strong>Quick Sort</strong>
+            <br>
+            Average: O(n log n)
+        </div>
+
+        <div>
+            <strong>Heap Sort</strong>
+            <br>
+            O(n log n)
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     6. LINKED LIST
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>6. Linked List</h2>
+
+    <p>
+        A linked list consists of nodes. Each node stores
+        data and a reference to another node.
+    </p>
+
+    <button onclick="addNode()">
+        Add Node
+    </button>
+
+    <button onclick="removeNode()">
+        Remove Node
+    </button>
+
+    <div id="linkedListOutput"
+         class="output">
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     7. STACK
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>7. Stack</h2>
+
+    <p>
+        Stack follows the LIFO principle:
+        Last In, First Out.
+    </p>
+
+    <input
+        type="number"
+        id="stackValue"
+        placeholder="Enter value"
+    >
+
+    <button onclick="pushStack()">
+        Push
+    </button>
+
+    <button onclick="popStack()">
+        Pop
+    </button>
+
+    <div id="stackOutput"
+         class="output">
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     8. QUEUE
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>8. Queue</h2>
+
+    <p>
+        Queue follows the FIFO principle:
+        First In, First Out.
+    </p>
+
+    <input
+        type="number"
+        id="queueValue"
+        placeholder="Enter value"
+    >
+
+    <button onclick="enqueue()">
+        Enqueue
+    </button>
+
+    <button onclick="dequeue()">
+        Dequeue
+    </button>
+
+    <div id="queueOutput"
+         class="output">
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     9. TREE
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>9. Trees</h2>
+
+    <p>
+        A tree is a hierarchical data structure consisting
+        of nodes connected by edges.
+    </p>
+
+    <ul>
+
+        <li>Binary Tree</li>
+
+        <li>Binary Search Tree</li>
+
+        <li>AVL Tree</li>
+
+        <li>Heap</li>
+
+        <li>Trie</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ======================================================
+     10. GRAPH
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>10. Graph</h2>
+
+    <p>
+        A graph consists of vertices and edges.
+    </p>
+
+    <ul>
+
+        <li>Graph Representation</li>
+
+        <li>Adjacency Matrix</li>
+
+        <li>Adjacency List</li>
+
+        <li>BFS</li>
+
+        <li>DFS</li>
+
+        <li>Dijkstra Algorithm</li>
+
+        <li>Prim's Algorithm</li>
+
+        <li>Kruskal's Algorithm</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ======================================================
+     11. RECURSION
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>11. Recursion</h2>
+
+    <p>
+        Recursion is a technique where a function calls
+        itself to solve smaller versions of the same problem.
+    </p>
+
+    <input
+        type="number"
+        id="factorialValue"
+        placeholder="Enter number"
+    >
+
+    <button onclick="calculateFactorial()">
+        Calculate Factorial
+    </button>
+
+    <div id="factorialOutput"
+         class="output">
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     12. DYNAMIC PROGRAMMING
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>12. Dynamic Programming</h2>
+
+    <p>
+        Dynamic Programming solves complex problems by
+        breaking them into smaller overlapping subproblems
+        and storing previously calculated results.
+    </p>
+
+    <ul>
+
+        <li>Fibonacci</li>
+
+        <li>0/1 Knapsack</li>
+
+        <li>Longest Common Subsequence</li>
+
+        <li>Longest Increasing Subsequence</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ======================================================
+     13. GREEDY ALGORITHMS
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>13. Greedy Algorithms</h2>
+
+    <p>
+        Greedy algorithms make the best available choice
+        at each step.
+    </p>
+
+    <ul>
+
+        <li>Activity Selection</li>
+
+        <li>Fractional Knapsack</li>
+
+        <li>Huffman Coding</li>
+
+        <li>Prim's Algorithm</li>
+
+        <li>Kruskal's Algorithm</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ======================================================
+     14. BACKTRACKING
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>14. Backtracking</h2>
+
+    <p>
+        Backtracking explores possible solutions and goes
+        back when a selected path cannot produce a solution.
+    </p>
+
+    <ul>
+
+        <li>N-Queens</li>
+
+        <li>Rat in a Maze</li>
+
+        <li>Sudoku Solver</li>
+
+        <li>Subset Problems</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ======================================================
+     15. COMPLEXITY
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>15. Time Complexity</h2>
+
+    <div class="complexity">
+
+        <div>
+            O(1)
+            <br>
+            Constant
+        </div>
+
+        <div>
+            O(log n)
+            <br>
+            Logarithmic
+        </div>
+
+        <div>
+            O(n)
+            <br>
+            Linear
+        </div>
+
+        <div>
+            O(n log n)
+            <br>
+            Linearithmic
+        </div>
+
+        <div>
+            O(n²)
+            <br>
+            Quadratic
+        </div>
+
+        <div>
+            O(2ⁿ)
+            <br>
+            Exponential
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     16. BIT MANIPULATION
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>16. Bit Manipulation</h2>
+
+    <p>
+        Bit manipulation works directly with binary
+        representation of numbers.
+    </p>
+
+    <ul>
+
+        <li>AND (&)</li>
+
+        <li>OR (|)</li>
+
+        <li>XOR (^)</li>
+
+        <li>Left Shift (&lt;&lt;)</li>
+
+        <li>Right Shift (&gt;&gt;)</li>
+
+    </ul>
+
+</section>
+
+
+<!-- ======================================================
+     17. MATHEMATICAL ALGORITHMS
+     ====================================================== -->
+
+<section class="card">
+
+    <h2>17. Mathematical Algorithms</h2>
+
+    <ul>
+
+        <li>GCD</li>
+
+        <li>LCM</li>
+
+        <li>Prime Number</li>
+
+        <li>Fast Power</li>
+
+        <li>Sieve of Eratosthenes</li>
+
+    </ul>
+
+</section>
+
+
+</div>
+
+
+<!-- ======================================================
+     FOOTER
+     ====================================================== -->
+
+<footer>
+
+    <p class="author">
+        Data Structures & Algorithms
+    </p>
+
+    <p>
+        Author: Saloni Tiwari
+    </p>
+
+    <p>
+        IIT Madras BS Degree — Diploma Level
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   ARRAY DEMONSTRATION
+   ========================================================= */
+
+let originalArray =
+    [64, 25, 12, 22, 11];
+
+let currentArray =
+    [...originalArray];
+
+
+function displayArray() {
+
+    const container =
+        document.getElementById(
+            "arrayDisplay"
+        );
+
+    container.innerHTML = "";
+
+    currentArray.forEach(
+        value => {
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+            item.className =
+                "array-item";
+
+            item.textContent =
+                value;
+
+            container.appendChild(
+                item
+            );
+        }
+    );
+}
+
+
+function reverseArray() {
+
+    currentArray.reverse();
+
+    displayArray();
+
+    document.getElementById(
+        "arrayOutput"
+    ).textContent =
+        "Array reversed successfully.";
+}
+
+
+function sortArray() {
+
+    currentArray.sort(
+        (a, b) => a - b
+    );
+
+    displayArray();
+
+    document.getElementById(
+        "arrayOutput"
+    ).textContent =
+        "Array sorted successfully.";
+}
+
+
+function resetArray() {
+
+    currentArray =
+        [...originalArray];
+
+    displayArray();
+
+    document.getElementById(
+        "arrayOutput"
+    ).textContent =
+        "Array reset.";
+}
+
+
+/* =========================================================
+   SEARCHING
+   ========================================================= */
+
+function linearSearch() {
+
+    const value =
+        Number(
+            document.getElementById(
+                "searchValue"
+            ).value
+        );
+
+    const index =
+        currentArray.indexOf(value);
+
+    document.getElementById(
+        "searchOutput"
+    ).textContent =
+        index === -1
+        ? "Element not found."
+        : "Element found at index "
+          + index + ".";
+}
+
+
+function binarySearch() {
+
+    const value =
+        Number(
+            document.getElementById(
+                "searchValue"
+            ).value
+        );
+
+    const sorted =
+        [...currentArray].sort(
+            (a, b) => a - b
+        );
+
+    let left = 0;
+
+    let right =
+        sorted.length - 1;
+
+    let found = -1;
+
+    while (left <= right) {
+
+        const mid =
+            Math.floor(
+                (left + right) / 2
+            );
+
+        if (sorted[mid] === value) {
+
+            found = mid;
+
+            break;
+
+        } else if (
+            sorted[mid] < value
+        ) {
+
+            left = mid + 1;
+
+        } else {
+
+            right = mid - 1;
+        }
+    }
+
+    document.getElementById(
+        "searchOutput"
+    ).textContent =
+        found === -1
+        ? "Element not found."
+        : "Element found at sorted index "
+          + found + ".";
+}
+
+
+/* =========================================================
+   LINKED LIST
+   ========================================================= */
+
+let linkedList =
+    [10, 20, 30];
+
+
+function displayLinkedList() {
+
+    document.getElementById(
+        "linkedListOutput"
+    ).textContent =
+        linkedList.join(
+            " -> "
+        ) + " -> NULL";
+}
+
+
+function addNode() {
+
+    linkedList.push(
+        linkedList.length * 10
+        + 10
+    );
+
+    displayLinkedList();
+}
+
+
+function removeNode() {
+
+    if (linkedList.length > 0) {
+
+        linkedList.pop();
+
+    }
+
+    displayLinkedList();
+}
+
+
+/* =========================================================
+   STACK
+   ========================================================= */
+
+let stack =
+    [10, 20, 30];
+
+
+function displayStack() {
+
+    document.getElementById(
+        "stackOutput"
+    ).textContent =
+        stack.length === 0
+        ? "Stack is empty."
+        : "Stack: "
+          + stack.join(" -> ")
+          + "\nTop: "
+          + stack[stack.length - 1];
+}
+
+
+function pushStack() {
+
+    const value =
+        Number(
+            document.getElementById(
+                "stackValue"
+            ).value
+        );
+
+    if (
+        document.getElementById(
+            "stackValue"
+        ).value === ""
+    ) {
+        return;
+    }
+
+    stack.push(value);
+
+    displayStack();
+}
+
+
+function popStack() {
+
+    if (stack.length > 0) {
+
+        stack.pop();
+
+    }
+
+    displayStack();
+}
+
+
+/* =========================================================
+   QUEUE
+   ========================================================= */
+
+let queue =
+    [10, 20, 30];
+
+
+function displayQueue() {
+
+    document.getElementById(
+        "queueOutput"
+    ).textContent =
+        queue.length === 0
+        ? "Queue is empty."
+        : "Queue: "
+          + queue.join(
+                " -> "
+            );
+}
+
+
+function enqueue() {
+
+    const input =
+        document.getElementById(
+            "queueValue"
+        );
+
+    if (input.value === "") {
+        return;
+    }
+
+    queue.push(
+        Number(input.value)
+    );
+
+    input.value = "";
+
+    displayQueue();
+}
+
+
+function dequeue() {
+
+    if (queue.length > 0) {
+
+        queue.shift();
+
+    }
+
+    displayQueue();
+}
+
+
+/* =========================================================
+   FACTORIAL
+   ========================================================= */
+
+function calculateFactorial() {
+
+    const value =
+        Number(
+            document.getElementById(
+                "factorialValue"
+            ).value
+        );
+
+    if (
+        value < 0 ||
+        !Number.isInteger(value)
+    ) {
+
+        document.getElementById(
+            "factorialOutput"
+        ).textContent =
+            "Please enter a valid positive integer.";
+
+        return;
+    }
+
+    let result = 1;
+
+    for (
+        let i = 2;
+        i <= value;
+        i++
+    ) {
+
+        result *= i;
+    }
+
+    document.getElementById(
+        "factorialOutput"
+    ).textContent =
+        value + "! = " + result;
+}
+
+
+/* =========================================================
+   INITIAL DISPLAY
+   ========================================================= */
+
+displayArray();
+
+displayLinkedList();
+
+displayStack();
+
+displayQueue();
+
+</script>
+
+
+</body>
+
+</html>
