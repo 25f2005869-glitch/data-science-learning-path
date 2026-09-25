@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Day 091 - Responsive UI</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 20px;
+        }
+
+        .header-inner {
+            width: min(1200px, 92%);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        header p {
+            color: #d1d5db;
+            font-size: 14px;
+        }
+
+        .layout {
+            width: min(1200px, 92%);
+            margin: 25px auto;
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 25px;
+        }
+
+        aside {
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        aside h2 {
+            margin-bottom: 15px;
+        }
+
+        aside nav {
+            display: grid;
+            gap: 8px;
+        }
+
+        aside a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        aside a:hover,
+        aside a:focus-visible {
+            background: #374151;
+            outline: none;
+        }
+
+        main {
+            min-width: 0;
+        }
+
+        .hero,
+        .panel {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero h1 {
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            color: #4b5563;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .number {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns:
+                2fr 1fr 1fr 1fr auto;
+            gap: 12px;
+            align-items: end;
+        }
+
+        .field {
+            display: grid;
+            gap: 6px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            min-height: 44px;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        button {
+            background: #111827;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover,
+        button:focus-visible {
+            opacity: 0.85;
+        }
+
+        button:focus-visible,
+        input:focus-visible,
+        select:focus-visible {
+            outline: 3px solid #9ca3af;
+            outline-offset: 2px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            min-width: 700px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background: #f3f4f6;
+        }
+
+        .passed {
+            font-weight: bold;
+        }
+
+        .failed {
+            font-weight: bold;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .actions button {
+            width: auto;
+            min-height: 40px;
+        }
+
+        .progress-item {
+            margin-bottom: 18px;
+        }
+
+        .progress {
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 78%;
+            background: #111827;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 950px) {
+            .layout {
+                grid-template-columns: 180px 1fr;
+            }
+
+            .search-form {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .layout {
+                width: 94%;
+                grid-template-columns: 1fr;
+                margin-top: 15px;
+            }
+
+            aside {
+                padding: 15px;
+            }
+
+            aside nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+
+            aside a {
+                padding: 8px 10px;
+            }
+
+            .hero,
+            .panel {
+                padding: 18px;
+            }
+
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .actions button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 091
+        Topic: Responsive UI
+    -->
+
+    <header>
+        <div class="header-inner">
+            <div>
+                <h1>Student Management System</h1>
+                <p>Responsive UI — Day 091</p>
+            </div>
+
+            <p>Modern Application Development</p>
+        </div>
+    </header>
+
+    <div class="layout">
+
+        <aside>
+            <h2>Navigation</h2>
+
+            <nav aria-label="Main navigation">
+                <a href="#dashboard">Dashboard</a>
+                <a href="#students">Students</a>
+                <a href="#search">Search</a>
+                <a href="#progress">Progress</a>
+                <a href="#profile">Profile</a>
+            </nav>
+        </aside>
+
+        <main>
+
+            <section id="dashboard" class="hero">
+                <h1>Responsive Academic Dashboard</h1>
+                <p>
+                    This interface adapts its layout for mobile,
+                    tablet, and desktop screens.
+                </p>
+            </section>
+
+            <section class="cards" aria-label="Academic statistics">
+
+                <article class="card">
+                    <h3>Total Students</h3>
+                    <p class="number">120</p>
+                </article>
+
+                <article class="card">
+                    <h3>Courses</h3>
+                    <p class="number">08</p>
+                </article>
+
+                <article class="card">
+                    <h3>Average Marks</h3>
+                    <p class="number">78%</p>
+                </article>
+
+                <article class="card">
+                    <h3>Passed</h3>
+                    <p class="number">108</p>
+                </article>
+
+            </section>
+
+            <section id="search" class="panel">
+
+                <h2>Search and Filtering</h2>
+
+                <br>
+
+                <form class="search-form" id="searchForm">
+
+                    <div class="field">
+                        <label for="search">
+                            Search
+                        </label>
+
+                        <input
+                            type="search"
+                            id="search"
+                            placeholder="Search name or email"
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="course">
+                            Course
+                        </label>
+
+                        <select id="course">
+                            <option value="all">
+                                All Courses
+                            </option>
+                            <option value="Data Science">
+                                Data Science
+                            </option>
+                            <option value="Computer Science">
+                                Computer Science
+                            </option>
+                            <option value="Mathematics">
+                                Mathematics
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="marks">
+                            Minimum Marks
+                        </label>
+
+                        <input
+                            type="number"
+                            id="marks"
+                            min="0"
+                            max="100"
+                            placeholder="0"
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="sort">
+                            Sort
+                        </label>
+
+                        <select id="sort">
+                            <option value="name">
+                                Name
+                            </option>
+                            <option value="marks">
+                                Marks
+                            </option>
+                        </select>
+                    </div>
+
+                    <button type="submit">
+                        Search
+                    </button>
+
+                </form>
+
+            </section>
+
+            <section id="students" class="panel">
+
+                <h2>Student Records</h2>
+
+                <br>
+
+                <div class="table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Course</th>
+                                <th>Marks</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="studentTable">
+
+                            <tr
+                                data-name="Saloni Tiwari"
+                                data-email="saloni@example.com"
+                                data-course="Data Science"
+                                data-marks="92"
+                            >
+                                <td>001</td>
+                                <td>Saloni Tiwari</td>
+                                <td>saloni@example.com</td>
+                                <td>Data Science</td>
+                                <td>92</td>
+                                <td class="passed">Passed</td>
+                                <td>
+                                    <div class="actions">
+                                        <button type="button">
+                                            View
+                                        </button>
+
+                                        <button type="button">
+                                            Edit
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="delete-button"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr
+                                data-name="Aarav Sharma"
+                                data-email="aarav@example.com"
+                                data-course="Computer Science"
+                                data-marks="86"
+                            >
+                                <td>002</td>
+                                <td>Aarav Sharma</td>
+                                <td>aarav@example.com</td>
+                                <td>Computer Science</td>
+                                <td>86</td>
+                                <td class="passed">Passed</td>
+                                <td>
+                                    <div class="actions">
+                                        <button type="button">
+                                            View
+                                        </button>
+
+                                        <button type="button">
+                                            Edit
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="delete-button"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr
+                                data-name="Priya Singh"
+                                data-email="priya@example.com"
+                                data-course="Mathematics"
+                                data-marks="74"
+                            >
+                                <td>003</td>
+                                <td>Priya Singh</td>
+                                <td>priya@example.com</td>
+                                <td>Mathematics</td>
+                                <td>74</td>
+                                <td class="passed">Passed</td>
+                                <td>
+                                    <div class="actions">
+                                        <button type="button">
+                                            View
+                                        </button>
+
+                                        <button type="button">
+                                            Edit
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="delete-button"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr
+                                data-name="Neha Verma"
+                                data-email="neha@example.com"
+                                data-course="Computer Science"
+                                data-marks="42"
+                            >
+                                <td>004</td>
+                                <td>Neha Verma</td>
+                                <td>neha@example.com</td>
+                                <td>Computer Science</td>
+                                <td>42</td>
+                                <td class="failed">Failed</td>
+                                <td>
+                                    <div class="actions">
+                                        <button type="button">
+                                            View
+                                        </button>
+
+                                        <button type="button">
+                                            Edit
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            class="delete-button"
+                                        >
+                                            Delete
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </section>
+
+            <section id="progress" class="panel">
+
+                <h2>Learning Progress</h2>
+
+                <div class="progress-item">
+                    <p>Modern Application Development</p>
+
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+
+                <p>
+                    Responsive UI combines flexible layouts, media
+                    queries, accessible controls, and device-friendly
+                    interfaces.
+                </p>
+
+            </section>
+
+            <section id="profile" class="panel">
+
+                <h2>Profile</h2>
+
+                <p>
+                    <strong>Author:</strong> Saloni Tiwari
+                </p>
+
+                <p>
+                    <strong>Programme:</strong>
+                    IIT Madras BS Degree — Diploma Level
+                </p>
+
+                <p>
+                    <strong>Course:</strong>
+                    Modern Application Development
+                </p>
+
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>
+            Author: Saloni Tiwari |
+            IIT Madras BS Degree — Diploma Level |
+            Day 091
+        </p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("searchForm");
+        const searchInput = document.getElementById("search");
+        const courseSelect = document.getElementById("course");
+        const marksInput = document.getElementById("marks");
+        const sortSelect = document.getElementById("sort");
+        const table = document.getElementById("studentTable");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const searchText =
+                searchInput.value.trim().toLowerCase();
+
+            const selectedCourse =
+                courseSelect.value;
+
+            const minimumMarks =
+                Number(marksInput.value) || 0;
+
+            const rows =
+                Array.from(table.querySelectorAll("tr"));
+
+            const visibleRows = rows.filter(function (row) {
+
+                const name =
+                    row.dataset.name.toLowerCase();
+
+                const email =
+                    row.dataset.email.toLowerCase();
+
+                const course =
+                    row.dataset.course;
+
+                const marks =
+                    Number(row.dataset.marks);
+
+                const matchesSearch =
+                    name.includes(searchText) ||
+                    email.includes(searchText);
+
+                const matchesCourse =
+                    selectedCourse === "all" ||
+                    course === selectedCourse;
+
+                const matchesMarks =
+                    marks >= minimumMarks;
+
+                return (
+                    matchesSearch &&
+                    matchesCourse &&
+                    matchesMarks
+                );
+            });
+
+            rows.forEach(function (row) {
+                row.style.display = "none";
+            });
+
+            visibleRows.forEach(function (row) {
+                row.style.display = "";
+            });
+
+            if (sortSelect.value === "marks") {
+                visibleRows.sort(function (a, b) {
+                    return (
+                        Number(b.dataset.marks) -
+                        Number(a.dataset.marks)
+                    );
+                });
+            } else {
+                visibleRows.sort(function (a, b) {
+                    return a.dataset.name.localeCompare(
+                        b.dataset.name
+                    );
+                });
+            }
+
+            visibleRows.forEach(function (row) {
+                table.appendChild(row);
+            });
+        });
+
+        document.querySelectorAll(".delete-button")
+            .forEach(function (button) {
+
+                button.addEventListener("click", function () {
+
+                    const confirmed = confirm(
+                        "Are you sure you want to delete this student?"
+                    );
+
+                    if (confirmed) {
+                        alert(
+                            "In the Flask application, this action would submit a secure POST request to the delete route."
+                        );
+                    }
+                });
+            });
+    </script>
+
+</body>
+</html>
