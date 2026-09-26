@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 096 - HTML Complete Revision</title>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 096
+        Topic: HTML Complete Revision
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.3rem;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: white;
+            padding: 14px 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #1d4ed8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            text-decoration: underline;
+        }
+
+        main {
+            width: min(1150px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .intro,
+        .card,
+        .revision-box,
+        .checklist {
+            background: white;
+            padding: 24px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        .intro h2 {
+            margin-top: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        caption {
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #eef2ff;
+        }
+
+        form {
+            display: grid;
+            gap: 14px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        fieldset {
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        fieldset label {
+            display: block;
+            margin: 8px 0;
+            font-weight: normal;
+        }
+
+        button {
+            width: fit-content;
+            border: none;
+            border-radius: 8px;
+            padding: 11px 18px;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .checklist label {
+            display: block;
+            margin: 9px 0;
+            font-weight: normal;
+        }
+
+        .progress {
+            height: 16px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+
+        .status {
+            font-weight: bold;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 28px 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 850px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌐 HTML Complete Revision</h1>
+    <p>Day 096 — MAD 1 Final Revision Phase</p>
+    <p>Structure • Forms • Tables • Semantics • Accessibility</p>
+</header>
+
+<nav aria-label="HTML revision navigation">
+    <ul>
+        <li><a href="#fundamentals">Fundamentals</a></li>
+        <li><a href="#elements">Elements</a></li>
+        <li><a href="#tables">Tables</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#semantic">Semantic HTML</a></li>
+        <li><a href="#checklist">Checklist</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <section class="intro">
+        <h2>📚 Complete HTML Revision</h2>
+
+        <p>
+            This page revises the major HTML concepts learned during
+            the MAD 1 learning journey.
+        </p>
+
+        <p>
+            <strong>HTML → Structure</strong> |
+            <strong>CSS → Presentation</strong> |
+            <strong>JavaScript → Behavior</strong>
+        </p>
+    </section>
+
+    <section id="fundamentals">
+
+        <h2>🧱 HTML Fundamentals</h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>Document Structure</h3>
+                <p>
+                    HTML5 documents use a doctype, root element,
+                    head, metadata, title, and body.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Elements</h3>
+                <p>
+                    Elements define the structure and meaning of
+                    webpage content.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Attributes</h3>
+                <p>
+                    Attributes provide additional information such as
+                    <code>id</code>, <code>class</code>, <code>href</code>,
+                    and <code>src</code>.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Links</h3>
+                <p>
+                    The <code>&lt;a&gt;</code> element creates hyperlinks.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Images</h3>
+                <p>
+                    The <code>&lt;img&gt;</code> element displays images.
+                    Meaningful images should have useful alternative text.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Lists</h3>
+                <p>
+                    HTML supports ordered, unordered, and description lists.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section id="elements" class="revision-box">
+
+        <h2>🏷️ Common HTML Elements</h2>
+
+        <table>
+            <caption>HTML Element Revision</caption>
+
+            <thead>
+                <tr>
+                    <th scope="col">Element</th>
+                    <th scope="col">Purpose</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>h1–h6</td>
+                    <td>Headings</td>
+                </tr>
+                <tr>
+                    <td>p</td>
+                    <td>Paragraph</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>Link</td>
+                </tr>
+                <tr>
+                    <td>img</td>
+                    <td>Image</td>
+                </tr>
+                <tr>
+                    <td>ul / ol</td>
+                    <td>Lists</td>
+                </tr>
+                <tr>
+                    <td>table</td>
+                    <td>Tabular data</td>
+                </tr>
+                <tr>
+                    <td>form</td>
+                    <td>User input</td>
+                </tr>
+                <tr>
+                    <td>button</td>
+                    <td>Interactive button</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </section>
+
+    <section id="tables" class="revision-box">
+
+        <h2>📊 Table Revision</h2>
+
+        <table>
+            <caption>Student Academic Records</caption>
+
+            <thead>
+                <tr>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Marks</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>DBMS</td>
+                    <td>85</td>
+                    <td>Passed</td>
+                </tr>
+                <tr>
+                    <td>PDSA</td>
+                    <td>88</td>
+                    <td>Passed</td>
+                </tr>
+                <tr>
+                    <td>MLF</td>
+                    <td>82</td>
+                    <td>Passed</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th scope="row">Average</th>
+                    <td colspan="2">85%</td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+    </section>
+
+    <section id="forms" class="revision-box">
+
+        <h2>📝 Form Revision</h2>
+
+        <form id="revisionForm">
+
+            <div>
+                <label for="name">Student Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    minlength="3"
+                    required>
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="student@example.com"
+                    required>
+            </div>
+
+            <div>
+                <label for="course">Course</label>
+
+                <select id="course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="dbms">DBMS</option>
+                    <option value="pdsa">PDSA</option>
+                    <option value="mlf">MLF</option>
+                    <option value="mad1">MAD 1</option>
+                </select>
+            </div>
+
+            <fieldset>
+
+                <legend>Programme Level</legend>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="level"
+                        value="foundation"
+                        required>
+                    Foundation
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="level"
+                        value="diploma">
+                    Diploma
+                </label>
+
+            </fieldset>
+
+            <fieldset>
+
+                <legend>Skills</legend>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="skill"
+                        value="html">
+                    HTML
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="skill"
+                        value="css">
+                    CSS
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="skill"
+                        value="javascript">
+                    JavaScript
+                </label>
+
+            </fieldset>
+
+            <div>
+                <label for="message">Revision Goal</label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    minlength="10"
+                    maxlength="300"
+                    placeholder="Write your HTML revision goal..."
+                    required></textarea>
+            </div>
+
+            <button type="submit">Submit Revision Form</button>
+
+        </form>
+
+        <p id="formStatus" class="status" aria-live="polite"></p>
+
+    </section>
+
+    <section id="semantic">
+
+        <h2>🧩 Semantic HTML</h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>&lt;header&gt;</h3>
+                <p>Introductory content for a page or section.</p>
+            </article>
+
+            <article class="card">
+                <h3>&lt;nav&gt;</h3>
+                <p>Navigation links.</p>
+            </article>
+
+            <article class="card">
+                <h3>&lt;main&gt;</h3>
+                <p>Main unique content of the page.</p>
+            </article>
+
+            <article class="card">
+                <h3>&lt;section&gt;</h3>
+                <p>A thematic section of content.</p>
+            </article>
+
+            <article class="card">
+                <h3>&lt;article&gt;</h3>
+                <p>Self-contained content.</p>
+            </article>
+
+            <article class="card">
+                <h3>&lt;footer&gt;</h3>
+                <p>Footer information for a page or section.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="revision-box">
+
+        <h2>🎵 Multimedia Revision</h2>
+
+        <p>
+            Audio and video can be embedded using HTML5 multimedia elements.
+        </p>
+
+        <figure>
+            <figcaption>
+                HTML multimedia can include audio, video, captions,
+                and other supported content.
+            </figcaption>
+        </figure>
+
+        <p>
+            Accessibility should be considered when adding multimedia,
+            including captions and meaningful descriptions where appropriate.
+        </p>
+
+    </section>
+
+    <section id="checklist" class="checklist">
+
+        <h2>✅ HTML Revision Checklist</h2>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            HTML5 document structure
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Elements and attributes
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Headings and paragraphs
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Links and images
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Lists
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Tables
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Forms and input types
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            HTML validation
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Semantic HTML
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Multimedia
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Accessibility
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            HTML best practices
+        </label>
+
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <p id="progressText">0% completed</p>
+
+        <button id="resetButton" type="button">
+            Reset Checklist
+        </button>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Author: Saloni Tiwari</p>
+    <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+    <p>Day 096 — HTML Complete Revision</p>
+    <p>HTML Revision Phase 🚀</p>
+</footer>
+
+<script>
+    const revisionForm = document.getElementById("revisionForm");
+    const formStatus = document.getElementById("formStatus");
+
+    revisionForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!revisionForm.checkValidity()) {
+            revisionForm.reportValidity();
+            return;
+        }
+
+        formStatus.textContent =
+            "Revision form submitted successfully!";
+    });
+
+    const checks = document.querySelectorAll(".revision-check");
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.getElementById("progressText");
+    const resetButton = document.getElementById("resetButton");
+
+    function updateProgress() {
+        const total = checks.length;
+
+        let completed = 0;
+
+        checks.forEach(function (check) {
+            if (check.checked) {
+                completed++;
+            }
+        });
+
+        const percentage = Math.round((completed / total) * 100);
+
+        progressBar.style.width = percentage + "%";
+        progressText.textContent = percentage + "% completed";
+    }
+
+    checks.forEach(function (check) {
+        check.addEventListener("change", updateProgress);
+    });
+
+    resetButton.addEventListener("click", function () {
+        checks.forEach(function (check) {
+            check.checked = false;
+        });
+
+        updateProgress();
+    });
+
+    updateProgress();
+</script>
+
+</body>
+</html>
