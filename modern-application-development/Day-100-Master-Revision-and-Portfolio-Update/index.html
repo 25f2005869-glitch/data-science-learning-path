@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 100 - MAD 1 Master Revision and Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 55px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 5px 9px;
+            color: #172554;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            text-decoration: underline;
+        }
+
+        main {
+            width: min(1150px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 28px;
+            border-radius: 15px;
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.07);
+        }
+
+        h2 {
+            color: #172554;
+            margin-bottom: 18px;
+        }
+
+        h3 {
+            color: #1d4ed8;
+            margin-bottom: 8px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: #f8fafc;
+            border: 1px solid #dbe3ef;
+            border-radius: 12px;
+            padding: 18px;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .flow-item {
+            padding: 13px 17px;
+            background: #eff6ff;
+            border: 2px solid #bfdbfe;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .arrow {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        .progress-container {
+            background: #e5e7eb;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress {
+            width: 100%;
+            padding: 9px;
+            text-align: center;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+        }
+
+        .checklist label {
+            display: block;
+            padding: 8px 0;
+        }
+
+        .checklist input {
+            margin-right: 8px;
+        }
+
+        .project {
+            border-left: 5px solid #2563eb;
+        }
+
+        .project p {
+            margin: 7px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dbe3ef;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #eff6ff;
+        }
+
+        .score {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1d4ed8;
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        button {
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #1d4ed8;
+            color: white;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        button:hover,
+        button:focus {
+            opacity: 0.9;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 650px) {
+            header h1 {
+                font-size: 1.9rem;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .arrow {
+                display: none;
+            }
+
+            .flow {
+                flex-direction: column;
+            }
+
+            .flow-item {
+                width: 100%;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            * {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 100
+        Topic: Master Revision and Portfolio Update
+    -->
+
+    <header id="home">
+        <h1>🎓 Day 100 — MAD 1 Master Revision</h1>
+        <p>
+            Final milestone of the 100-day Modern Application Development
+            learning path with complete revision and portfolio preparation.
+        </p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="#revision">Revision</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#projects">Projects</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#checklist">Checklist</a>
+    </nav>
+
+    <main>
+
+        <section id="revision">
+            <h2>📚 Complete Revision</h2>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>🌐 HTML</h3>
+                    <ul>
+                        <li>Structure</li>
+                        <li>Elements & Attributes</li>
+                        <li>Forms</li>
+                        <li>Tables</li>
+                        <li>Semantic HTML</li>
+                        <li>Accessibility</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>🎨 CSS</h3>
+                    <ul>
+                        <li>Selectors</li>
+                        <li>Box Model</li>
+                        <li>Flexbox</li>
+                        <li>Grid</li>
+                        <li>Responsive Design</li>
+                        <li>Animations</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>⚙️ JavaScript</h3>
+                    <ul>
+                        <li>Variables</li>
+                        <li>Functions</li>
+                        <li>Arrays & Objects</li>
+                        <li>DOM</li>
+                        <li>Events</li>
+                        <li>Storage</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>🐍 Flask</h3>
+                    <ul>
+                        <li>Routing</li>
+                        <li>Jinja2</li>
+                        <li>Forms</li>
+                        <li>GET & POST</li>
+                        <li>Blueprints</li>
+                        <li>Configuration</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>🗄️ Database</h3>
+                    <ul>
+                        <li>SQLite</li>
+                        <li>SQL</li>
+                        <li>SQLAlchemy</li>
+                        <li>Database Design</li>
+                        <li>CRUD</li>
+                        <li>Search</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>🛡️ Development</h3>
+                    <ul>
+                        <li>Authentication</li>
+                        <li>Validation</li>
+                        <li>Testing</li>
+                        <li>Security</li>
+                        <li>Deployment</li>
+                        <li>Optimization</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="stack">
+            <h2>🧩 MAD 1 Technology Stack</h2>
+
+            <div class="flow">
+                <div class="flow-item">HTML</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">CSS</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">JavaScript</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">Flask</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">SQLAlchemy</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">SQLite</div>
+            </div>
+        </section>
+
+        <section id="architecture">
+            <h2>🏗️ Full-Stack Application Architecture</h2>
+
+            <div class="flow">
+                <div class="flow-item">Browser</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">HTTP Request</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">Flask Route</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">Validation</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">SQLAlchemy</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">SQLite</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">Jinja2</div>
+                <span class="arrow">→</span>
+
+                <div class="flow-item">HTML Response</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>🚀 Featured Portfolio Projects</h2>
+
+            <div class="grid">
+
+                <article class="card project">
+                    <h3>Student Portfolio Website</h3>
+                    <p>
+                        HTML project demonstrating semantic structure,
+                        forms, tables, links, images, and accessibility.
+                    </p>
+                </article>
+
+                <article class="card project">
+                    <h3>Student Learning Tracker</h3>
+                    <p>
+                        JavaScript project using DOM manipulation,
+                        events, validation, JSON, and browser storage.
+                    </p>
+                </article>
+
+                <article class="card project">
+                    <h3>Student Management System</h3>
+                    <p>
+                        Flask and database project demonstrating CRUD,
+                        search, validation, flash messages, and SQLAlchemy.
+                    </p>
+                </article>
+
+                <article class="card project">
+                    <h3>Student Academic Management System</h3>
+                    <p>
+                        Full MAD 1 project combining authentication, CRUD,
+                        database integration, responsive UI, testing, and security.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2>💼 Portfolio Readiness</h2>
+
+            <div class="progress-container">
+                <div class="progress">
+                    100-Day Learning Path Complete
+                </div>
+            </div>
+
+            <div class="grid">
+
+                <article class="card">
+                    <h3>Profile</h3>
+                    <p>
+                        Add a concise introduction, education, technical skills,
+                        GitHub, and contact information.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Projects</h3>
+                    <p>
+                        Feature projects with descriptions, technologies,
+                        screenshots, and repository links.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Documentation</h3>
+                    <p>
+                        Maintain professional README files with setup,
+                        features, architecture, testing, and improvements.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>GitHub</h3>
+                    <p>
+                        Keep repositories organized, readable, documented,
+                        and free from secrets.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="checklist" class="checklist">
+            <h2>✅ Final Portfolio Checklist</h2>
+
+            <label>
+                <input type="checkbox">
+                HTML revision complete
+            </label>
+
+            <label>
+                <input type="checkbox">
+                CSS revision complete
+            </label>
+
+            <label>
+                <input type="checkbox">
+                JavaScript revision complete
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Flask revision complete
+            </label>
+
+            <label>
+                <input type="checkbox">
+                SQLite and SQLAlchemy revision complete
+            </label>
+
+            <label>
+                <input type="checkbox">
+                CRUD revision complete
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Authentication revision complete
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Testing and debugging reviewed
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Security reviewed
+            </label>
+
+            <label>
+                <input type="checkbox">
+                GitHub repositories reviewed
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Project README files updated
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Portfolio projects organized
+            </label>
+        </section>
+
+        <section>
+            <h2>🎯 Final Knowledge Test</h2>
+
+            <p>
+                Can you explain the complete flow of a database-driven
+                MAD 1 application?
+            </p>
+
+            <button type="button" onclick="showAnswer()">
+                Show Answer
+            </button>
+
+            <p id="message" aria-live="polite"></p>
+        </section>
+
+        <section>
+            <h2>🏆 100-Day Milestone</h2>
+
+            <div class="score">DAY 100 / 100 🎉</div>
+
+            <p>
+                The learning path has covered the foundations required to
+                build modern web applications using HTML, CSS, JavaScript,
+                Flask, SQLite, and SQLAlchemy.
+            </p>
+
+            <p>
+                The next phase is practical:
+                <strong>Build → Test → Document → Deploy → Improve</strong>.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 100 — Master Revision and Portfolio Update</strong></p>
+        <p>Author: Saloni Tiwari</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+        <p>🎉 100-Day MAD 1 Learning Path Complete 🎉</p>
+    </footer>
+
+    <script>
+        function showAnswer() {
+            const message = document.getElementById("message");
+
+            message.textContent =
+                "Browser → HTTP Request → Flask Route → Validation → SQLAlchemy → SQLite → Jinja2 → HTML Response → Browser";
+        }
+    </script>
+
+</body>
+</html>
