@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 098 - JavaScript Complete Revision</title>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 098
+        Topic: JavaScript Complete Revision
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 42px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.3rem;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: white;
+            padding: 14px 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #1d4ed8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            text-decoration: underline;
+        }
+
+        main {
+            width: min(1150px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .intro,
+        .revision-box,
+        .demo,
+        .checklist {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        .intro h2 {
+            margin-top: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border: 1px solid #dbe3ef;
+            border-radius: 12px;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .demo {
+            margin-top: 20px;
+        }
+
+        .demo-output {
+            min-height: 45px;
+            margin-top: 15px;
+            padding: 12px;
+            background: #eef2ff;
+            border-radius: 8px;
+        }
+
+        button {
+            border: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover,
+        button:focus-visible {
+            background: #1d4ed8;
+        }
+
+        input,
+        select {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            margin: 6px 0 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font: inherit;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .checklist label {
+            font-weight: normal;
+            margin: 9px 0;
+        }
+
+        .progress {
+            height: 16px;
+            margin-top: 18px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 28px 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 850px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>⚡ JavaScript Complete Revision</h1>
+    <p>Day 098 — MAD 1 Final Revision Phase</p>
+    <p>Logic • Functions • Arrays • Objects • DOM • Events • Storage</p>
+</header>
+
+<nav aria-label="JavaScript revision navigation">
+    <ul>
+        <li><a href="#fundamentals">Fundamentals</a></li>
+        <li><a href="#data">Data</a></li>
+        <li><a href="#dom">DOM</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#storage">Storage</a></li>
+        <li><a href="#checklist">Checklist</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <section class="intro">
+
+        <h2>📚 Complete JavaScript Revision</h2>
+
+        <p>
+            This page revises the major JavaScript concepts learned
+            during the MAD 1 learning journey.
+        </p>
+
+        <p>
+            <strong>HTML → Structure</strong> |
+            <strong>CSS → Presentation</strong> |
+            <strong>JavaScript → Behavior</strong>
+        </p>
+
+    </section>
+
+    <section id="fundamentals">
+
+        <h2>🧠 JavaScript Fundamentals</h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>Variables</h3>
+                <p>
+                    Use <code>const</code> by default and
+                    <code>let</code> when reassignment is needed.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Conditions</h3>
+                <p>
+                    Use <code>if</code>, <code>else</code>,
+                    <code>switch</code>, and ternary expressions
+                    for conditional logic.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Loops</h3>
+                <p>
+                    Use <code>for</code>, <code>while</code>,
+                    and <code>do...while</code> to repeat operations.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Functions</h3>
+                <p>
+                    Functions package reusable logic using parameters,
+                    arguments, and return values.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Scope</h3>
+                <p>
+                    Scope determines where variables can be accessed.
+                    Block and function scope are important concepts.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Errors</h3>
+                <p>
+                    Use <code>try</code>, <code>catch</code>,
+                    <code>finally</code>, and <code>throw</code>
+                    when appropriate.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section id="data" class="revision-box">
+
+        <h2>📦 Strings, Arrays and Objects</h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>Strings</h3>
+
+                <p id="stringOutput">
+                    JavaScript strings are immutable.
+                </p>
+
+                <button id="uppercaseButton">
+                    Convert to Uppercase
+                </button>
+            </article>
+
+            <article class="card">
+                <h3>Arrays</h3>
+
+                <p>
+                    Array methods include
+                    <code>map()</code>,
+                    <code>filter()</code>,
+                    <code>find()</code>,
+                    and <code>reduce()</code>.
+                </p>
+
+                <button id="arrayButton">
+                    Calculate Total
+                </button>
+
+                <p id="arrayOutput" class="result"></p>
+            </article>
+
+            <article class="card">
+                <h3>Objects</h3>
+
+                <p>
+                    Objects store related data as key-value pairs
+                    and can also contain methods.
+                </p>
+
+                <button id="objectButton">
+                    Show Student
+                </button>
+
+                <p id="objectOutput" class="result"></p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section id="dom" class="demo">
+
+        <h2>🌳 DOM Manipulation</h2>
+
+        <p id="domMessage">
+            JavaScript can select and modify HTML elements through the DOM.
+        </p>
+
+        <button id="changeTextButton">
+            Change Text
+        </button>
+
+        <button id="toggleClassButton">
+            Toggle Highlight
+        </button>
+
+    </section>
+
+    <section id="events" class="demo">
+
+        <h2>🖱️ Events and Form Validation</h2>
+
+        <form id="studentForm">
+
+            <label for="studentName">
+                Student Name
+            </label>
+
+            <input
+                type="text"
+                id="studentName"
+                name="studentName"
+                minlength="3"
+                required
+                placeholder="Enter your name">
+
+            <label for="studentMarks">
+                Marks
+            </label>
+
+            <input
+                type="number"
+                id="studentMarks"
+                name="studentMarks"
+                min="0"
+                max="100"
+                required
+                placeholder="Enter marks">
+
+            <button type="submit">
+                Calculate Grade
+            </button>
+
+        </form>
+
+        <p
+            id="formResult"
+            class="result"
+            aria-live="polite">
+        </p>
+
+    </section>
+
+    <section id="storage" class="demo">
+
+        <h2>💾 Browser Storage</h2>
+
+        <p>
+            This demonstration stores a student name using
+            <code>localStorage</code>.
+        </p>
+
+        <input
+            type="text"
+            id="storageName"
+            placeholder="Enter a name">
+
+        <button id="saveButton">
+            Save
+        </button>
+
+        <button id="loadButton">
+            Load
+        </button>
+
+        <button id="deleteButton">
+            Delete
+        </button>
+
+        <p
+            id="storageResult"
+            class="result"
+            aria-live="polite">
+        </p>
+
+    </section>
+
+    <section class="revision-box">
+
+        <h2>🔧 JavaScript Quick Reference</h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>DOM Selection</h3>
+                <p>
+                    <code>getElementById()</code><br>
+                    <code>querySelector()</code><br>
+                    <code>querySelectorAll()</code>
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Array Methods</h3>
+                <p>
+                    <code>map()</code>
+                    <code>filter()</code>
+                    <code>find()</code>
+                    <code>reduce()</code>
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Events</h3>
+                <p>
+                    <code>click</code>
+                    <code>input</code>
+                    <code>change</code>
+                    <code>submit</code>
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section id="checklist" class="checklist">
+
+        <h2>✅ JavaScript Revision Checklist</h2>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Variables and data types
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Operators and expressions
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Conditional statements
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Loops
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Functions
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Strings and template literals
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Arrays and array methods
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Objects
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Scope and hoisting
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            ES6 features
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Error handling
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            DOM manipulation
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Events and event propagation
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Form validation
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            JSON and browser storage
+        </label>
+
+        <div class="progress">
+            <div
+                class="progress-bar"
+                id="progressBar">
+            </div>
+        </div>
+
+        <p id="progressText">0% completed</p>
+
+        <button id="resetButton" type="button">
+            Reset Checklist
+        </button>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Author: Saloni Tiwari</p>
+    <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+    <p>Day 098 — JavaScript Complete Revision</p>
+    <p>MAD 1 Final Revision Phase 🚀</p>
+</footer>
+
+<script>
+    const student = {
+        name: "Saloni",
+        course: "MAD 1",
+        marks: 85
+    };
+
+    const marks = [70, 80, 90];
+
+    const stringOutput = document.getElementById("stringOutput");
+    const uppercaseButton = document.getElementById("uppercaseButton");
+
+    uppercaseButton.addEventListener("click", function () {
+        stringOutput.textContent =
+            "javascript revision".toUpperCase();
+    });
+
+    const arrayButton = document.getElementById("arrayButton");
+    const arrayOutput = document.getElementById("arrayOutput");
+
+    arrayButton.addEventListener("click", function () {
+        const total = marks.reduce(function (sum, mark) {
+            return sum + mark;
+        }, 0);
+
+        arrayOutput.textContent =
+            "Total marks: " + total;
+    });
+
+    const objectButton = document.getElementById("objectButton");
+    const objectOutput = document.getElementById("objectOutput");
+
+    objectButton.addEventListener("click", function () {
+        const { name, course, marks } = student;
+
+        objectOutput.textContent =
+            `${name} | ${course} | ${marks} marks`;
+    });
+
+    const domMessage = document.getElementById("domMessage");
+    const changeTextButton =
+        document.getElementById("changeTextButton");
+
+    changeTextButton.addEventListener("click", function () {
+        domMessage.textContent =
+            "The DOM allows JavaScript to change webpage content dynamically.";
+    });
+
+    const toggleClassButton =
+        document.getElementById("toggleClassButton");
+
+    toggleClassButton.addEventListener("click", function () {
+        domMessage.classList.toggle("selector-demo");
+    });
+
+    const studentForm =
+        document.getElementById("studentForm");
+
+    const formResult =
+        document.getElementById("formResult");
+
+    studentForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!studentForm.checkValidity()) {
+            studentForm.reportValidity();
+            return;
+        }
+
+        const name =
+            document.getElementById("studentName").value.trim();
+
+        const marksValue =
+            Number(document.getElementById("studentMarks").value);
+
+        let grade;
+
+        if (marksValue >= 90) {
+            grade = "A+";
+        } else if (marksValue >= 80) {
+            grade = "A";
+        } else if (marksValue >= 70) {
+            grade = "B";
+        } else if (marksValue >= 60) {
+            grade = "C";
+        } else if (marksValue >= 50) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+
+        const status =
+            marksValue >= 40 ? "Passed" : "Failed";
+
+        formResult.textContent =
+            `${name}: Grade ${grade} — ${status}`;
+    });
+
+    const storageName =
+        document.getElementById("storageName");
+
+    const storageResult =
+        document.getElementById("storageResult");
+
+    const saveButton =
+        document.getElementById("saveButton");
+
+    const loadButton =
+        document.getElementById("loadButton");
+
+    const deleteButton =
+        document.getElementById("deleteButton");
+
+    saveButton.addEventListener("click", function () {
+        const name = storageName.value.trim();
+
+        if (!name) {
+            storageResult.textContent =
+                "Please enter a name first.";
+            return;
+        }
+
+        localStorage.setItem("revisionStudent", name);
+
+        storageResult.textContent =
+            "Student name saved successfully.";
+    });
+
+    loadButton.addEventListener("click", function () {
+        const name =
+            localStorage.getItem("revisionStudent");
+
+        if (name === null) {
+            storageResult.textContent =
+                "No saved student name found.";
+            return;
+        }
+
+        storageResult.textContent =
+            "Saved student: " + name;
+    });
+
+    deleteButton.addEventListener("click", function () {
+        localStorage.removeItem("revisionStudent");
+
+        storageResult.textContent =
+            "Saved student name deleted.";
+    });
+
+    const checks =
+        document.querySelectorAll(".revision-check");
+
+    const progressBar =
+        document.getElementById("progressBar");
+
+    const progressText =
+        document.getElementById("progressText");
+
+    const resetButton =
+        document.getElementById("resetButton");
+
+    function updateProgress() {
+        const total = checks.length;
+
+        let completed = 0;
+
+        checks.forEach(function (check) {
+            if (check.checked) {
+                completed++;
+            }
+        });
+
+        const percentage =
+            Math.round((completed / total) * 100);
+
+        progressBar.style.width =
+            percentage + "%";
+
+        progressText.textContent =
+            percentage + "% completed";
+    }
+
+    checks.forEach(function (check) {
+        check.addEventListener(
+            "change",
+            updateProgress
+        );
+    });
+
+    resetButton.addEventListener("click", function () {
+        checks.forEach(function (check) {
+            check.checked = false;
+        });
+
+        updateProgress();
+    });
+
+    updateProgress();
+</script>
+
+</body>
+</html>
