@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Day 097 - CSS Complete Revision</title>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 097
+        Topic: CSS Complete Revision
+    -->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 42px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 2.3rem;
+        }
+
+        header p {
+            margin: 5px 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: white;
+            padding: 14px 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #1d4ed8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav a:hover,
+        nav a:focus-visible {
+            text-decoration: underline;
+        }
+
+        main {
+            width: min(1150px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .intro,
+        .revision-box,
+        .checklist {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        .intro h2 {
+            margin-top: 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            padding: 22px;
+            border: 1px solid #dbe3ef;
+            border-radius: 12px;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .selector-demo {
+            padding: 15px;
+            border-radius: 8px;
+            background: #eef2ff;
+        }
+
+        .box-model-demo {
+            width: min(100%, 500px);
+            margin: 20px auto;
+            padding: 25px;
+            border: 5px solid #2563eb;
+            background: #dbeafe;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .flex-demo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 18px;
+            background: #eef2ff;
+            border-radius: 10px;
+        }
+
+        .flex-item {
+            flex: 1 1 150px;
+            padding: 15px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(180px, 1fr)
+            );
+            gap: 15px;
+            margin-top: 18px;
+        }
+
+        .grid-item {
+            padding: 25px 15px;
+            text-align: center;
+            background: #eef2ff;
+            border-radius: 8px;
+        }
+
+        .animation-demo {
+            width: 80px;
+            height: 80px;
+            margin: 25px auto;
+            border-radius: 50%;
+            background: #2563eb;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        caption {
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        th,
+        td {
+            padding: 11px;
+            border: 1px solid #d1d5db;
+            text-align: left;
+        }
+
+        th {
+            background: #eef2ff;
+        }
+
+        .checklist label {
+            display: block;
+            margin: 9px 0;
+        }
+
+        .progress {
+            height: 16px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 18px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #2563eb;
+            transition: width 0.3s ease;
+        }
+
+        button {
+            border: none;
+            border-radius: 8px;
+            padding: 11px 18px;
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover,
+        button:focus-visible {
+            background: #1d4ed8;
+        }
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 28px 20px;
+            margin-top: 40px;
+        }
+
+        code {
+            background: #eef2ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 850px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎨 CSS Complete Revision</h1>
+    <p>Day 097 — MAD 1 Final Revision Phase</p>
+    <p>Selectors • Box Model • Flexbox • Grid • Responsive Design</p>
+</header>
+
+<nav aria-label="CSS revision navigation">
+    <ul>
+        <li><a href="#fundamentals">Fundamentals</a></li>
+        <li><a href="#box-model">Box Model</a></li>
+        <li><a href="#flexbox">Flexbox</a></li>
+        <li><a href="#grid">Grid</a></li>
+        <li><a href="#responsive">Responsive</a></li>
+        <li><a href="#checklist">Checklist</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <section class="intro">
+        <h2>📚 Complete CSS Revision</h2>
+
+        <p>
+            This page revises the major CSS concepts learned during
+            the MAD 1 learning journey.
+        </p>
+
+        <p>
+            <strong>HTML → Structure</strong> |
+            <strong>CSS → Presentation</strong> |
+            <strong>JavaScript → Behavior</strong>
+        </p>
+    </section>
+
+    <section id="fundamentals">
+
+        <h2>🎯 CSS Fundamentals</h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>Selectors</h3>
+
+                <div class="selector-demo">
+                    <p>
+                        Universal, element, class, ID, grouping,
+                        descendant, child, sibling, and attribute selectors.
+                    </p>
+                </div>
+            </article>
+
+            <article class="card">
+                <h3>Colors</h3>
+
+                <p>
+                    CSS supports named colors, HEX, RGB, RGBA,
+                    HSL, HSLA, and gradients.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Typography</h3>
+
+                <p>
+                    Font family, size, weight, style, line height,
+                    alignment, spacing, and decoration.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Specificity</h3>
+
+                <p>
+                    Specificity helps determine which CSS rule
+                    takes priority when multiple rules match.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Units</h3>
+
+                <p>
+                    Common units include px, %, em, rem, vw,
+                    vh, vmin, vmax, and ch.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Overflow</h3>
+
+                <p>
+                    Control overflowing content using
+                    <code>overflow</code>, <code>overflow-x</code>,
+                    and <code>overflow-y</code>.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section id="box-model" class="revision-box">
+
+        <h2>📦 CSS Box Model</h2>
+
+        <p>
+            The CSS box model consists of:
+        </p>
+
+        <p>
+            <strong>Content → Padding → Border → Margin</strong>
+        </p>
+
+        <div class="box-model-demo">
+            Content Area
+            <br>
+            + Padding
+            <br>
+            + Border
+            <br>
+            + Margin outside the box
+        </div>
+
+        <p>
+            A common project-wide rule is:
+            <code>box-sizing: border-box;</code>
+        </p>
+
+    </section>
+
+    <section id="flexbox">
+
+        <h2>📐 Flexbox</h2>
+
+        <div class="flex-demo">
+
+            <div class="flex-item">
+                <strong>justify-content</strong>
+                <br>
+                Main axis
+            </div>
+
+            <div class="flex-item">
+                <strong>align-items</strong>
+                <br>
+                Cross axis
+            </div>
+
+            <div class="flex-item">
+                <strong>flex-wrap</strong>
+                <br>
+                Multiple lines
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="grid" class="revision-box">
+
+        <h2>🧮 CSS Grid</h2>
+
+        <p>
+            CSS Grid is a two-dimensional layout system useful
+            for dashboards, cards, galleries, and page layouts.
+        </p>
+
+        <div class="grid-demo">
+
+            <div class="grid-item">Grid Item 1</div>
+            <div class="grid-item">Grid Item 2</div>
+            <div class="grid-item">Grid Item 3</div>
+            <div class="grid-item">Grid Item 4</div>
+            <div class="grid-item">Grid Item 5</div>
+            <div class="grid-item">Grid Item 6</div>
+
+        </div>
+
+    </section>
+
+    <section id="responsive">
+
+        <h2>📱 Responsive Design</h2>
+
+        <div class="grid">
+
+            <article class="card">
+                <h3>Mobile First</h3>
+                <p>
+                    Start with the smaller-screen layout and
+                    progressively enhance it for larger screens.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Media Queries</h3>
+                <p>
+                    Apply styles according to viewport and
+                    other supported conditions.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>Responsive Images</h3>
+                <p>
+                    Avoid images overflowing their containers.
+                    A common pattern is <code>max-width: 100%</code>.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="revision-box">
+
+        <h2>✨ Transitions and Animations</h2>
+
+        <p>
+            Transitions smoothly change properties between states.
+            Animations can define multiple stages using keyframes.
+        </p>
+
+        <div class="animation-demo" aria-label="CSS pulse animation"></div>
+
+        <p>
+            The animated circle demonstrates a CSS
+            <code>@keyframes</code> animation.
+        </p>
+
+    </section>
+
+    <section class="revision-box">
+
+        <h2>📊 CSS Quick Reference</h2>
+
+        <table>
+            <caption>Major CSS Topics</caption>
+
+            <thead>
+                <tr>
+                    <th scope="col">Topic</th>
+                    <th scope="col">Important Concepts</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Selectors</td>
+                    <td>Class, ID, element, attribute, pseudo-class</td>
+                </tr>
+
+                <tr>
+                    <td>Box Model</td>
+                    <td>Content, padding, border, margin</td>
+                </tr>
+
+                <tr>
+                    <td>Layout</td>
+                    <td>Display, Flexbox, Grid</td>
+                </tr>
+
+                <tr>
+                    <td>Position</td>
+                    <td>Static, relative, absolute, fixed, sticky</td>
+                </tr>
+
+                <tr>
+                    <td>Responsive</td>
+                    <td>Units, media queries, mobile-first</td>
+                </tr>
+
+                <tr>
+                    <td>Animation</td>
+                    <td>Transition, transform, keyframes</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <section id="checklist" class="checklist">
+
+        <h2>✅ CSS Revision Checklist</h2>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            CSS syntax and selectors
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Specificity
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Colors and backgrounds
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Fonts and text styling
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Box model
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Margin, padding, and border
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Width, height, and display
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Units and overflow
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Position and z-index
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Flexbox
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            CSS Grid
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Responsive design
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Media queries
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Transitions and animations
+        </label>
+
+        <label>
+            <input type="checkbox" class="revision-check">
+            Accessibility and best practices
+        </label>
+
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <p id="progressText">0% completed</p>
+
+        <button id="resetButton" type="button">
+            Reset Checklist
+        </button>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Author: Saloni Tiwari</p>
+    <p>Programme: IIT Madras BS Degree — Diploma Level</p>
+    <p>Day 097 — CSS Complete Revision</p>
+    <p>MAD 1 Final Revision Phase 🚀</p>
+</footer>
+
+<script>
+    const checks = document.querySelectorAll(".revision-check");
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.getElementById("progressText");
+    const resetButton = document.getElementById("resetButton");
+
+    function updateProgress() {
+        const total = checks.length;
+
+        let completed = 0;
+
+        checks.forEach(function (check) {
+            if (check.checked) {
+                completed++;
+            }
+        });
+
+        const percentage = Math.round((completed / total) * 100);
+
+        progressBar.style.width = percentage + "%";
+        progressText.textContent = percentage + "% completed";
+    }
+
+    checks.forEach(function (check) {
+        check.addEventListener("change", updateProgress);
+    });
+
+    resetButton.addEventListener("click", function () {
+        checks.forEach(function (check) {
+            check.checked = false;
+        });
+
+        updateProgress();
+    });
+
+    updateProgress();
+</script>
+
+</body>
+</html>
