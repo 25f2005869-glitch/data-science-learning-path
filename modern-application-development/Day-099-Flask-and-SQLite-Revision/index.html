@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 099 - Flask and SQLite Revision</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        nav {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        nav a {
+            color: #172554;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            text-decoration: underline;
+        }
+
+        main {
+            width: min(1100px, 92%);
+            margin: 30px auto;
+        }
+
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 14px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+        }
+
+        h2 {
+            color: #172554;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            margin-bottom: 8px;
+            color: #1d4ed8;
+        }
+
+        .hero-grid,
+        .topic-grid,
+        .flow-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            border: 1px solid #dbe3ef;
+            border-radius: 12px;
+            padding: 18px;
+            background: #f8fafc;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card p {
+            margin-top: 7px;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .code-example {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 18px;
+            border-radius: 10px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+            margin-top: 15px;
+        }
+
+        .flow {
+            text-align: center;
+            font-weight: bold;
+            padding: 15px;
+            border: 2px solid #bfdbfe;
+            border-radius: 10px;
+            background: #eff6ff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dbe3ef;
+            padding: 11px;
+            text-align: left;
+        }
+
+        th {
+            background: #eff6ff;
+        }
+
+        .checklist label {
+            display: block;
+            padding: 8px 0;
+        }
+
+        button {
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #1d4ed8;
+            color: white;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        button:hover,
+        button:focus {
+            opacity: 0.9;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 650px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            section {
+                padding: 18px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        Author: Saloni Tiwari
+        Programme: IIT Madras BS Degree — Diploma Level
+        Day: 099
+        Topic: Flask and SQLite Revision
+    -->
+
+    <header id="home">
+        <h1>🐍 Flask & SQLite Revision</h1>
+        <p>
+            Day 099 — Complete revision of Flask, Jinja2, SQLite,
+            SQLAlchemy, CRUD, authentication, validation, and database integration.
+        </p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="#flask">Flask</a>
+        <a href="#jinja">Jinja2</a>
+        <a href="#database">Database</a>
+        <a href="#crud">CRUD</a>
+        <a href="#security">Security</a>
+        <a href="#checklist">Checklist</a>
+    </nav>
+
+    <main>
+
+        <section id="flask">
+            <h2>🐍 Flask Revision</h2>
+
+            <div class="topic-grid">
+                <article class="card">
+                    <h3>Flask</h3>
+                    <p>Python web framework used to build web applications and APIs.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Routing</h3>
+                    <p>Connects URLs to Python view functions.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Request</h3>
+                    <p>Contains information sent by the browser to the Flask server.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Response</h3>
+                    <p>Data returned by Flask to the browser.</p>
+                </article>
+            </div>
+
+            <div class="code-example">Browser
+    ↓
+HTTP Request
+    ↓
+Flask Route
+    ↓
+View Function
+    ↓
+Response
+    ↓
+Browser</div>
+        </section>
+
+        <section id="jinja">
+            <h2>🎨 Jinja2 Revision</h2>
+
+            <div class="topic-grid">
+                <article class="card">
+                    <h3>Variables</h3>
+                    <p>Jinja2 uses double braces to display dynamic values.</p>
+                    <div class="code-example">{{ student.name }}</div>
+                </article>
+
+                <article class="card">
+                    <h3>Conditions</h3>
+                    <p>Use conditions to display different content.</p>
+                    <div class="code-example">{% if marks >= 50 %}
+    Passed
+{% else %}
+    Failed
+{% endif %}</div>
+                </article>
+
+                <article class="card">
+                    <h3>Loops</h3>
+                    <p>Use loops to display collections of data.</p>
+                    <div class="code-example">{% for student in students %}
+    {{ student.name }}
+{% endfor %}</div>
+                </article>
+
+                <article class="card">
+                    <h3>Inheritance</h3>
+                    <p>Base templates provide reusable page layouts.</p>
+                    <div class="code-example">{% extends "base.html" %}
+
+{% block content %}
+    Dashboard
+{% endblock %}</div>
+                </article>
+            </div>
+        </section>
+
+        <section id="database">
+            <h2>🗄️ SQLite & SQLAlchemy</h2>
+
+            <table>
+                <caption>Database Revision</caption>
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SQLite</td>
+                        <td>Lightweight file-based relational database</td>
+                    </tr>
+                    <tr>
+                        <td>Table</td>
+                        <td>Stores structured records</td>
+                    </tr>
+                    <tr>
+                        <td>Primary Key</td>
+                        <td>Uniquely identifies a row</td>
+                    </tr>
+                    <tr>
+                        <td>Foreign Key</td>
+                        <td>Connects related tables</td>
+                    </tr>
+                    <tr>
+                        <td>SQLAlchemy</td>
+                        <td>Python SQL toolkit and ORM</td>
+                    </tr>
+                    <tr>
+                        <td>Session</td>
+                        <td>Manages database operations and transactions</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="crud">
+            <h2>🔄 CRUD Revision</h2>
+
+            <div class="hero-grid">
+                <div class="flow">
+                    <h3>Create</h3>
+                    <p>Add new database records.</p>
+                </div>
+
+                <div class="flow">
+                    <h3>Read</h3>
+                    <p>Retrieve database records.</p>
+                </div>
+
+                <div class="flow">
+                    <h3>Update</h3>
+                    <p>Modify existing records.</p>
+                </div>
+
+                <div class="flow">
+                    <h3>Delete</h3>
+                    <p>Remove records.</p>
+                </div>
+            </div>
+
+            <div class="code-example">CREATE → Add Student
+READ   → View Students
+UPDATE → Edit Student
+DELETE → Remove Student</div>
+        </section>
+
+        <section>
+            <h2>🔐 Authentication & Sessions</h2>
+
+            <div class="topic-grid">
+                <article class="card">
+                    <h3>Authentication</h3>
+                    <p>Determines who the user is.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Authorization</h3>
+                    <p>Determines what the user is allowed to do.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Password Hashing</h3>
+                    <p>Passwords should be stored as secure hashes, not plain text.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Session</h3>
+                    <p>Helps maintain login state between requests.</p>
+                </article>
+            </div>
+
+            <div class="code-example">Register
+    ↓
+Hash Password
+    ↓
+Store User
+    ↓
+Login
+    ↓
+Verify Password
+    ↓
+Create Session
+    ↓
+Protected Dashboard
+    ↓
+Logout</div>
+        </section>
+
+        <section>
+            <h2>🔍 Search, Filtering & Validation</h2>
+
+            <div class="topic-grid">
+                <article class="card">
+                    <h3>Search</h3>
+                    <p>Use GET query parameters and database filtering.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Filtering</h3>
+                    <p>Filter records by course, marks, status, or other fields.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Validation</h3>
+                    <p>Check user input before processing or storing it.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Flash Messages</h3>
+                    <p>Provide temporary success, error, warning, or info feedback.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="security">
+            <h2>🛡️ Security Revision</h2>
+
+            <ul>
+                <li>Hash passwords securely.</li>
+                <li>Use HTTPS in production.</li>
+                <li>Keep secret keys outside source code.</li>
+                <li>Validate data on the server.</li>
+                <li>Use parameterized SQL or ORM queries.</li>
+                <li>Protect state-changing forms against CSRF.</li>
+                <li>Check authorization for protected operations.</li>
+                <li>Do not expose sensitive error details.</li>
+                <li>Never log passwords or secret keys.</li>
+                <li>Use secure cookie settings.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🌐 Complete Application Architecture</h2>
+
+            <div class="flow-grid">
+                <div class="flow">Browser</div>
+                <div class="flow">Flask Route</div>
+                <div class="flow">Validation</div>
+                <div class="flow">SQLAlchemy</div>
+                <div class="flow">SQLite</div>
+                <div class="flow">Jinja2</div>
+                <div class="flow">HTML Response</div>
+            </div>
+        </section>
+
+        <section id="checklist" class="checklist">
+            <h2>✅ Revision Checklist</h2>
+
+            <label><input type="checkbox"> Flask Fundamentals</label>
+            <label><input type="checkbox"> Routing & Dynamic Routes</label>
+            <label><input type="checkbox"> Jinja2</label>
+            <label><input type="checkbox"> Template Inheritance</label>
+            <label><input type="checkbox"> Forms & GET/POST</label>
+            <label><input type="checkbox"> Redirects & url_for()</label>
+            <label><input type="checkbox"> Blueprints</label>
+            <label><input type="checkbox"> Error Handling</label>
+            <label><input type="checkbox"> Configuration</label>
+            <label><input type="checkbox"> SQLite</label>
+            <label><input type="checkbox"> Database Design</label>
+            <label><input type="checkbox"> SQLAlchemy</label>
+            <label><input type="checkbox"> CRUD</label>
+            <label><input type="checkbox"> Authentication</label>
+            <label><input type="checkbox"> Sessions & Cookies</label>
+            <label><input type="checkbox"> Search & Filtering</label>
+            <label><input type="checkbox"> Flash Messages</label>
+            <label><input type="checkbox"> Validation</label>
+            <label><input type="checkbox"> Testing</label>
+            <label><input type="checkbox"> Security</label>
+        </section>
+
+        <section>
+            <h2>🎯 Quick Knowledge Test</h2>
+
+            <p>
+                What is the correct high-level flow of a Flask application
+                connected to SQLite?
+            </p>
+
+            <button type="button" onclick="showAnswer()">
+                Show Answer
+            </button>
+
+            <p id="result" aria-live="polite"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><strong>Day 099 — Flask and SQLite Revision</strong></p>
+        <p>Author: Saloni Tiwari</p>
+        <p>IIT Madras BS Degree — Diploma Level</p>
+        <p>Next: Day 100 — MAD 1 Final Revision and Portfolio 🚀</p>
+    </footer>
+
+    <script>
+        function showAnswer() {
+            const result = document.getElementById("result");
+
+            result.textContent =
+                "Browser → Flask Route → Validation → SQLAlchemy → SQLite → Jinja2 → HTML Response → Browser";
+        }
+    </script>
+
+</body>
+</html>
