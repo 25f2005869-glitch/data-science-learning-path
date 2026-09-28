@@ -143,45 +143,29 @@ Why should business insights use more than one metric?
 
 How can this analysis support inventory planning?
 
-## Folder Structure
+## Important Formulas
 
-Day_027_W5_L6_Revenue_Pareto_and_Scatter_Plot/
+Revenue Share % = Product Revenue / Total Revenue × 100.
 
-├── README.md
+Cumulative Share = Previous Cumulative Share + Current Revenue Share.
 
-├── notes.md
+Average Revenue per Unit = Revenue / Units.
 
-├── cheat-sheet.md
+Use SUMIFS or Pivot Tables when working directly in Excel.
 
-├── practice.md
+Use GROUPBY-style logic or Pivot Tables for quick summaries.
 
-├── resources.md
+Always validate the total revenue after aggregation.
 
-├── Day_027_W5_L6_Revenue_Pareto_and_Scatter_Plot.xlsx
+## Key Takeaways
 
-└── code/
+Pareto answers where revenue is concentrated.
 
-    └── revenue_pareto_and_scatter_plot.py
+Scatter analysis answers how volume and revenue relate.
 
-## Completion Checklist
+Together they create a stronger product-performance view.
 
-Watch W5_L6 lecture.
-
-Understand revenue Pareto ranking.
-
-Review the workbook dataset.
-
-Check the revenue Pareto table.
-
-Interpret the cumulative revenue share.
-
-Review the scatter chart.
-
-Complete the practice questions.
-
-Run the Python script.
-
-Save your insights in GitHub.
+The analysis is descriptive and should be combined with business context.
 
 ## 🏅 Badges
 

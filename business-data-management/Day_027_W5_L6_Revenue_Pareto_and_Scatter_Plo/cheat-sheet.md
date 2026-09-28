@@ -1,9 +1,9 @@
-# 📊 Day 027 — Revenue Pareto & Scatter Plot
+# 📊 Day 027 — Cheat Sheet
 
 **Author:** Saloni Tiwari
 **Programme:** IIT Madras BS Degree — Diploma Level
 **Day:** 027
-**Topic:** W5_L6 — Revenue Pareto & Scatter Plot | Excel Sales
+**Topic:** Revenue Pareto and Scatter Plot
 
 ## Learning Objective
 
@@ -143,45 +143,53 @@ Why should business insights use more than one metric?
 
 How can this analysis support inventory planning?
 
-## Folder Structure
+## Quick Formula Sheet
 
-Day_027_W5_L6_Revenue_Pareto_and_Scatter_Plot/
+Total Revenue = SUM(Revenue_Lakh).
 
-├── README.md
+Revenue Share = Product Revenue / Total Revenue.
 
-├── notes.md
+Cumulative Share = Running SUM of Revenue Share.
 
-├── cheat-sheet.md
+Average Revenue per Unit = Revenue / Units.
 
-├── practice.md
+Pareto ranking = sort Revenue descending.
 
-├── resources.md
+Core group = products reaching the selected cumulative threshold.
 
-├── Day_027_W5_L6_Revenue_Pareto_and_Scatter_Plot.xlsx
+Scatter X = Units.
 
-└── code/
+Scatter Y = Revenue.
 
-    └── revenue_pareto_and_scatter_plot.py
+## Excel Functions
 
-## Completion Checklist
+SUM() adds numeric values.
 
-Watch W5_L6 lecture.
+SUMIFS() aggregates using conditions.
 
-Understand revenue Pareto ranking.
+COUNT() counts numeric cells.
 
-Review the workbook dataset.
+AVERAGE() calculates the arithmetic mean.
 
-Check the revenue Pareto table.
+SORT() can help rank a table.
 
-Interpret the cumulative revenue share.
+RANK() can create ranking logic.
 
-Review the scatter chart.
+Pivot Tables can produce product summaries quickly.
 
-Complete the practice questions.
+Charts convert summary tables into visual evidence.
 
-Run the Python script.
+## Common Mistakes
 
-Save your insights in GitHub.
+Do not calculate cumulative share before sorting revenue.
+
+Do not confuse units with orders.
+
+Do not interpret correlation as causation.
+
+Do not ignore data quality checks.
+
+Do not compare raw revenue without considering scale.
 
 ## 🏅 Badges
 

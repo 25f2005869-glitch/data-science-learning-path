@@ -1,9 +1,9 @@
-# 📊 Day 027 — Revenue Pareto & Scatter Plot
+# 📊 Day 027 — Practice
 
 **Author:** Saloni Tiwari
 **Programme:** IIT Madras BS Degree — Diploma Level
 **Day:** 027
-**Topic:** W5_L6 — Revenue Pareto & Scatter Plot | Excel Sales
+**Topic:** Revenue Pareto and Scatter Plot
 
 ## Learning Objective
 
@@ -143,45 +143,79 @@ Why should business insights use more than one metric?
 
 How can this analysis support inventory planning?
 
-## Folder Structure
+## Practice Questions
 
-Day_027_W5_L6_Revenue_Pareto_and_Scatter_Plot/
+Q1. Which product has the highest revenue?
 
-├── README.md
+Q2. Which product has the lowest revenue?
 
-├── notes.md
+Q3. What is the total revenue?
 
-├── cheat-sheet.md
+Q4. Calculate the revenue share of the top product.
 
-├── practice.md
+Q5. Which products belong to the core revenue group?
 
-├── resources.md
+Q6. At what point does cumulative revenue cross 80%?
 
-├── Day_027_W5_L6_Revenue_Pareto_and_Scatter_Plot.xlsx
+Q7. Which month has the highest revenue?
 
-└── code/
+Q8. Which channel has the highest revenue?
 
-    └── revenue_pareto_and_scatter_plot.py
+Q9. Which region has the highest revenue?
 
-## Completion Checklist
+Q10. Which product sells the most units?
 
-Watch W5_L6 lecture.
+Q11. Does the highest-volume product also have the highest revenue?
 
-Understand revenue Pareto ranking.
+Q12. Identify one high-volume product with comparatively lower revenue.
 
-Review the workbook dataset.
+Q13. Identify one lower-volume product with comparatively high revenue.
 
-Check the revenue Pareto table.
+Q14. What business action would you recommend for the top revenue product?
 
-Interpret the cumulative revenue share.
+Q15. Why is Pareto useful for inventory prioritization?
 
-Review the scatter chart.
+## Excel Tasks
 
-Complete the practice questions.
+Create a Pivot Table by Product.
 
-Run the Python script.
+Add Units and Revenue as values.
 
-Save your insights in GitHub.
+Sort revenue from largest to smallest.
+
+Calculate revenue share.
+
+Calculate cumulative revenue share.
+
+Create a column chart for revenue by product.
+
+Create a scatter chart using Units and Revenue.
+
+Add suitable chart titles.
+
+Write three observations below the charts.
+
+## Python Tasks
+
+Read the workbook with pandas.
+
+Group by Product.
+
+Aggregate Orders, Units and Revenue_Lakh.
+
+Sort revenue descending.
+
+Calculate revenue share.
+
+Calculate cumulative revenue share.
+
+Create the revenue chart.
+
+Create the Pareto curve.
+
+Create the scatter plot.
+
+Export summary CSV files.
 
 ## 🏅 Badges
 

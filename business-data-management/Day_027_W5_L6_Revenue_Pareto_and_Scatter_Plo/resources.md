@@ -1,9 +1,9 @@
-# 📊 Day 027 — Revenue Pareto & Scatter Plot
+# 📊 Day 027 — Resources
 
 **Author:** Saloni Tiwari
 **Programme:** IIT Madras BS Degree — Diploma Level
 **Day:** 027
-**Topic:** W5_L6 — Revenue Pareto & Scatter Plot | Excel Sales
+**Topic:** W5_L6 — Revenue Pareto & Scatter Plot
 
 ## Learning Objective
 
@@ -143,45 +143,83 @@ Why should business insights use more than one metric?
 
 How can this analysis support inventory planning?
 
-## Folder Structure
+## Lecture Resource
 
-Day_027_W5_L6_Revenue_Pareto_and_Scatter_Plot/
+IIT Madras Business Data Management playlist — W5_L6.
 
-├── README.md
+Lecture focus: Revenue Pareto and Scatter Plot.
 
-├── notes.md
+Follow the lecture examples before extending the analysis.
 
-├── cheat-sheet.md
+Keep the workbook structure aligned with the course workflow.
 
-├── practice.md
+## Excel Resources
 
-├── resources.md
+Excel Tables.
 
-├── Day_027_W5_L6_Revenue_Pareto_and_Scatter_Plot.xlsx
+Pivot Tables.
 
-└── code/
+SUMIFS.
 
-    └── revenue_pareto_and_scatter_plot.py
+Sorting and filtering.
 
-## Completion Checklist
+Percentage calculations.
 
-Watch W5_L6 lecture.
+Cumulative calculations.
 
-Understand revenue Pareto ranking.
+Column charts.
 
-Review the workbook dataset.
+Scatter charts.
 
-Check the revenue Pareto table.
+Dashboard formatting.
 
-Interpret the cumulative revenue share.
+## Python Resources
 
-Review the scatter chart.
+Pandas DataFrame.
 
-Complete the practice questions.
+groupby().agg().
 
-Run the Python script.
+sort_values().
 
-Save your insights in GitHub.
+cumsum().
+
+Matplotlib bar charts.
+
+Matplotlib line charts.
+
+Matplotlib scatter plots.
+
+CSV export with to_csv().
+
+## Business Analysis Checklist
+
+Validate the source data.
+
+Check duplicates and missing values.
+
+Confirm total revenue.
+
+Rank products.
+
+Calculate revenue share.
+
+Calculate cumulative share.
+
+Identify concentration.
+
+Compare units with revenue.
+
+Add channel and region context.
+
+Write evidence-based insights.
+
+## Next Step
+
+After completing W5_L6, continue to W5_L7 Trend Analysis.
+
+Keep this workbook as a reusable business analytics template.
+
+Commit the files to your BDM learning repository.
 
 ## 🏅 Badges
 
