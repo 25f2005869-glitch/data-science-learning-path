@@ -1,0 +1,6 @@
+Product,Orders,Units,Revenue_Lakh,Unit_Share_Percent,Cumulative_Units,Cumulative_Share_Percent,Pareto_80_Flag
+Headphones,1671,2730,32.55,31.16,2730,31.16,Core Volume Group
+Smartwatches,1389,2250,40.95,25.68,4980,56.85,Core Volume Group
+Tablets,1017,1620,52.349999999999994,18.49,6600,75.34,Core Volume Group
+Smartphones,795,1230,60.75,14.04,7830,89.38,Core Volume Group
+Laptops,663,930,88.94999999999999,10.62,8760,100.0,Remaining Volume
