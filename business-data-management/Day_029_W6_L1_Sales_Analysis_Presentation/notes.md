@@ -1,4 +1,4 @@
-# Day 029 — W6_L1 Sales Analysis Presentation
+# Day 029 — Sales Analysis Presentation Notes
 
 **Author:** Saloni Tiwari
 **Programme:** IIT Madras BS Degree — Diploma Level
@@ -174,6 +174,17 @@
 - Claiming a reason not present in data.
 - Ignoring data quality.
 - Showing too many charts on one slide.
+
+## Revision Notes
+
+- Sales analysis converts transactional data into decision-ready information.
+- W6_L1 emphasizes presentation of already-developed sales analysis.
+- KPI, trend and ranking are complementary views.
+- Product, channel and region comparisons explain where sales are concentrated.
+- A good presentation separates fact from interpretation.
+- Excel is useful for transparent business analysis.
+- Python can reproduce summaries and charts.
+- The final output should be concise, accurate and business-focused.
 
 ## 🏅 Badges
 
