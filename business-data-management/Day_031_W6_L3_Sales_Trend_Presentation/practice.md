@@ -1,4 +1,4 @@
-# Day 031 — W6_L3 Sales Trend Presentation
+# Day 031 — Sales Trend Presentation Practice
 
 ![Course](https://img.shields.io/badge/Course-Business%20Data%20Management-blue?style=for-the-badge)
 ![Learning Path](https://img.shields.io/badge/Learning%20Path-100%20Days-green?style=for-the-badge)
