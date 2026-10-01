@@ -1,0 +1,4 @@
+Transaction_Type,Records,Purchases,Sales_Units
+Opening,3,0,0
+Purchase,10,645,0
+Sale,16,0,755
