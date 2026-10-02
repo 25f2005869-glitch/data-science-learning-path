@@ -1,0 +1,8 @@
+Step,Analysis,Suggested Tool,Expected Output
+1,Descriptive statistics,Excel / pandas,Summary statistics
+2,Group comparison,Pivot Table / groupby,Category summaries
+3,Trend analysis,Line chart,Time pattern
+4,Composition,Bar/Pie chart,Contribution comparison
+5,Relationship,Scatter plot,Variable relationship
+6,KPI review,Dashboard,Management view
+7,Insight generation,Business reasoning,Evidence-based insights

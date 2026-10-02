@@ -1,0 +1,9 @@
+Check,What to Inspect,Result,Action
+Missing Values,Blank cells in important fields,Pending,Investigate and document
+Duplicates,Repeated transaction IDs,Pending,Check whether duplicates are valid
+Data Types,"Dates, numbers, text",Pending,Standardize types
+Categories,Spelling/category consistency,Pending,Standardize labels
+Outliers,Unusually high/low values,Pending,Investigate before removal
+Range,Minimum and maximum values,Pending,Check business plausibility
+Keys,Unique identifiers,Pending,Validate key structure
+Formulas,Calculation consistency,Pending,Cross-check selected records

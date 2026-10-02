@@ -1,0 +1,8 @@
+KPI,Definition,Business Use,Source Field(s)
+Total Revenue,Sum of revenue,Measure monetary sales performance,Revenue
+Total Units,Sum of units sold,Measure sales volume,Units
+Average Revenue per Unit,Revenue / Units,Compare monetary value per unit,"Revenue, Units"
+Order Count,Count of orders,Measure transaction activity,Order_ID
+Average Order Value,Revenue / Orders,Measure average order size,"Revenue, Order_ID"
+Regional Revenue Share,Region revenue / total revenue,Compare regional contribution,"Region, Revenue"
+Channel Revenue Share,Channel revenue / total revenue,Compare channel contribution,"Channel, Revenue"
