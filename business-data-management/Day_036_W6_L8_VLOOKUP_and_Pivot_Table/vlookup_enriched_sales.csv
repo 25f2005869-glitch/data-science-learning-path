@@ -1,0 +1,21 @@
+Order_ID,Product,Category,Region,Channel,Units,Unit_Price,Revenue,Unnamed: 8,Lookup_Category,Lookup_Price,Lookup_Segment,Category_Master,Unit_Price_Master,Value_Segment
+1001,Laptop,Electronics,North,Online,12,55000,660000,,,,,Electronics,55000,High Value
+1002,Smartphone,Electronics,South,Retail,25,22000,550000,,,,,Electronics,22000,Medium Value
+1003,Shoes,Fashion,West,Online,40,3500,140000,,,,,Fashion,3500,Fashion
+1004,Laptop,Electronics,South,Online,10,55000,550000,,,,,Electronics,55000,High Value
+1005,Headphones,Electronics,North,Retail,35,2500,87500,,,,,Electronics,2500,Accessory
+1006,Shoes,Fashion,North,Retail,30,3500,105000,,,,,Fashion,3500,Fashion
+1007,Smartphone,Electronics,West,Online,18,22000,396000,,,,,Electronics,22000,Medium Value
+1008,Laptop,Electronics,West,Retail,8,55000,440000,,,,,Electronics,55000,High Value
+1009,Headphones,Electronics,South,Online,45,2500,112500,,,,,Electronics,2500,Accessory
+1010,Shoes,Fashion,South,Retail,28,3500,98000,,,,,Fashion,3500,Fashion
+1011,Smartphone,Electronics,North,Retail,20,22000,440000,,,,,Electronics,22000,Medium Value
+1012,Laptop,Electronics,North,Online,15,55000,825000,,,,,Electronics,55000,High Value
+1013,Shoes,Fashion,West,Retail,36,3500,126000,,,,,Fashion,3500,Fashion
+1014,Headphones,Electronics,West,Online,32,2500,80000,,,,,Electronics,2500,Accessory
+1015,Smartphone,Electronics,South,Online,22,22000,484000,,,,,Electronics,22000,Medium Value
+1016,Laptop,Electronics,South,Retail,9,55000,495000,,,,,Electronics,55000,High Value
+1017,Shoes,Fashion,North,Online,44,3500,154000,,,,,Fashion,3500,Fashion
+1018,Headphones,Electronics,North,Retail,38,2500,95000,,,,,Electronics,2500,Accessory
+1019,Smartphone,Electronics,West,Retail,16,22000,352000,,,,,Electronics,22000,Medium Value
+1020,Laptop,Electronics,West,Online,11,55000,605000,,,,,Electronics,55000,High Value
