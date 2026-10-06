@@ -121,42 +121,82 @@ Explain every chart in one or two sentences.
 
 Write three final evidence-based observations.
 
-### ✅ Completion Checklist
+### 📚 Detailed Notes
 
-- [ ] Source data reviewed.
-- [ ] Product portfolio metrics reviewed.
-- [ ] Revenue presentation reviewed.
-- [ ] Margin presentation reviewed.
-- [ ] Revenue share reviewed.
-- [ ] Operations comparison reviewed.
-- [ ] Presentation questions answered.
-- [ ] Presentation plan followed.
-- [ ] Dashboard explained.
-- [ ] Three closing observations written.
+Product portfolio presentation begins after the calculations are complete.
 
-### 🧠 Key Takeaway
+The analyst should not place every available number on one slide or dashboard.
 
-Day 044 produced the portfolio working.
+Instead, select metrics that answer the business question.
 
-Day 045 turns that working into a clear business presentation.
+Revenue is useful for showing product scale.
 
-The important skill is choosing the right metric for the question.
+Revenue share is useful for showing the composition of the portfolio.
 
-Revenue explains scale.
+Gross margin shows absolute contribution after production cost.
 
-Gross margin explains absolute margin contribution.
+Margin percentage makes margin more comparable across different revenue scales.
 
-Margin percentage supports relative comparison.
+Production units show operating output.
 
-Revenue share explains portfolio concentration.
+Sales units show units converted into sales.
 
-Production and sales provide operating context.
+Sales conversion connects these two quantities.
+
+Scrap rate provides production-loss context.
+
+### Revenue Story
+
+Start with total revenue.
+
+Then show revenue by product.
+
+Then show each product's share of total revenue.
+
+This creates a simple overview-to-detail sequence.
+
+### Margin Story
+
+Present gross margin and margin percentage together.
+
+Absolute gross margin and percentage margin answer different questions.
+
+A presentation should make that distinction visible.
+
+### Operations Story
+
+Production and sales can be compared when the audience needs operating context.
+
+Sales conversion can summarize the relationship.
+
+Scrap rate can be used as a supporting operational indicator.
+
+### Presentation Discipline
+
+Use a chart only when it improves comparison.
+
+Use a table when exact values are important.
+
+Use KPI cards for a small number of headline metrics.
+
+Keep chart titles descriptive.
+
+Keep units and percentages formatted consistently.
+
+State what the chart shows before giving an interpretation.
+
+### Python Workflow
+
+The Python script reads Portfolio_Data.
+
+It recreates product-level portfolio calculations.
+
+It exports a presentation summary CSV.
+
+It creates revenue, margin, revenue-share and production-versus-sales charts.
 
 ### 🏅 Badges
 
-- BDM 100-Day Learning Path
-- IIT Madras BS Degree — Diploma Level
-- Day 045 completed
+- Day 045 notes completed
 - Product portfolio presentation
-- Excel presentation analytics
-- Python portfolio analysis
+- Evidence-based business communication
