@@ -109,9 +109,43 @@ Sales conversion and scrap rate provide operating context.
 - [ ] Dashboard reviewed.
 - [ ] Questions answered.
 
-### 🧠 Key Takeaway
+### ⚡ Quick Reference
 
-Portfolio working compares products with multiple measurable metrics rather than revenue alone.
+Revenue = SUM(Revenue).
+
+Gross Margin = Revenue − Production Cost.
+
+Margin % = Gross Margin / Revenue.
+
+Revenue Share % = Product Revenue / Total Revenue.
+
+Sales Conversion % = Sales Units / Production Units.
+
+Scrap Rate % = Scrap Units / Production Units.
+
+Revenue Rank = descending Revenue.
+
+Margin Rank = descending Margin %.
+
+### Excel Checks
+
+Check gross margin.
+
+Check revenue shares sum to about 100%.
+
+Check product names.
+
+Check no product is omitted.
+
+### Exam Focus
+
+Know the formulas.
+
+Know absolute versus percentage measures.
+
+Know why revenue share is useful.
+
+Know how to explain a chart with evidence.
 
 ## 🏅 Badges
 

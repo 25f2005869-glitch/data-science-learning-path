@@ -109,9 +109,33 @@ Sales conversion and scrap rate provide operating context.
 - [ ] Dashboard reviewed.
 - [ ] Questions answered.
 
-### 🧠 Key Takeaway
+### 📚 Detailed Notes
 
-Portfolio working compares products with multiple measurable metrics rather than revenue alone.
+Portfolio management working converts product records into a comparable portfolio view.
+
+Revenue measures scale of contribution.
+
+Gross margin measures absolute contribution after production cost.
+
+Margin percentage normalizes margin by revenue.
+
+Revenue share describes contribution to total portfolio revenue.
+
+Sales conversion compares sales units with production units.
+
+Scrap rate compares scrap units with production units.
+
+A portfolio presentation should state the metric, comparison and evidence.
+
+### Python Workflow
+
+Python reads Portfolio_Data.
+
+Pandas aggregates the product data.
+
+The script calculates portfolio percentages and ranks.
+
+It exports a CSV summary and PNG charts.
 
 ## 🏅 Badges
 

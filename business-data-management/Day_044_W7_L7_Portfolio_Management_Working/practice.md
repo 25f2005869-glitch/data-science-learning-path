@@ -109,9 +109,57 @@ Sales conversion and scrap rate provide operating context.
 - [ ] Dashboard reviewed.
 - [ ] Questions answered.
 
-### 🧠 Key Takeaway
+### 🧪 Practice Questions
 
-Portfolio working compares products with multiple measurable metrics rather than revenue alone.
+1. Which product has the highest revenue?
+
+2. Which product has the highest gross margin?
+
+3. Which product has the highest margin percentage?
+
+4. Which product has the largest revenue share?
+
+5. Which product has the highest sales conversion?
+
+6. Which product has the highest scrap rate?
+
+7. What is total portfolio revenue?
+
+8. What is total portfolio gross margin?
+
+9. What is overall margin percentage?
+
+10. Do revenue rank and margin rank match?
+
+11. Create a revenue bar chart.
+
+12. Create a gross margin chart.
+
+13. Create a revenue-share chart.
+
+14. Write three evidence-based observations.
+
+### Mini Case
+
+Compare revenue first.
+
+Then compare gross margin and margin percentage.
+
+Add operating metrics for context.
+
+Do not treat one metric as the entire portfolio decision rule.
+
+### Self Review
+
+Can I calculate gross margin?
+
+Can I calculate margin percentage?
+
+Can I explain revenue share?
+
+Can I compare rankings?
+
+Can I reproduce the analysis in Python?
 
 ## 🏅 Badges
 

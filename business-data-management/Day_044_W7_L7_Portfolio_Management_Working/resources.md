@@ -109,9 +109,63 @@ Sales conversion and scrap rate provide operating context.
 - [ ] Dashboard reviewed.
 - [ ] Questions answered.
 
-### 🧠 Key Takeaway
+### 🔗 Resources and Practice
 
-Portfolio working compares products with multiple measurable metrics rather than revenue alone.
+Use the Excel workbook as the primary hands-on resource.
+
+Use Data_Dictionary before calculations.
+
+Use Product_Portfolio for product-level analysis.
+
+Use Product_Ranking for ranking practice.
+
+Use Portfolio_Questions for self-testing.
+
+Use Business_Insights for interpretation.
+
+Use Portfolio_Dashboard for presentation practice.
+
+Use the Python script for reproducible calculations.
+
+### Suggested Workflow
+
+Inspect raw data.
+
+Identify product.
+
+Aggregate revenue and cost.
+
+Calculate gross margin.
+
+Calculate percentage metrics.
+
+Rank products.
+
+Inspect charts.
+
+Write evidence-based observations.
+
+### Skill Building
+
+Recreate calculations with Excel formulas.
+
+Recreate the summary with a Pivot Table.
+
+Recreate it with pandas.
+
+Compare outputs and investigate mismatches.
+
+### Presentation Practice
+
+Start with the business question.
+
+Show the relevant chart.
+
+State the comparison.
+
+Support the statement with a metric.
+
+Separate descriptive evidence from recommendations.
 
 ## 🏅 Badges
 
