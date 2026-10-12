@@ -1,4 +1,0 @@
-Region,Employees,Avg_Salary,Avg_Performance,Attrition_Count,Avg_Attendance,Attrition_Rate_%
-North,8,54500.0,4.225,5,93.375,62.5
-South,8,57625.0,4.2875,3,94.5,37.5
-West,8,56875.0,4.275,9,93.75,112.5
