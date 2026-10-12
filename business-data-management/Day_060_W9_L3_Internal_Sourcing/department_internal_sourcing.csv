@@ -1,0 +1,7 @@
+Department,Requests,Total_Cost,Avg_Cost,Avg_Planned_Days,Avg_Actual_Days,Avg_Satisfaction,Completed,On_Time,Completion_Rate_%,On_Time_Rate_%,Avg_Time_Variance_Days
+Finance,4,422000,105500.0,10.5,3.75,4.3,4,4,100.0,100.0,-6.75
+HR,4,343000,85750.0,9.5,4.0,4.125,2,4,50.0,100.0,-5.5
+IT,4,615000,153750.0,16.75,6.25,4.65,4,4,100.0,100.0,-10.5
+Marketing,4,393000,98250.0,9.75,3.75,4.125,3,4,75.0,100.0,-6.0
+Operations,4,493000,123250.0,13.75,5.25,4.4,4,4,100.0,100.0,-8.5
+Sales,4,495000,123750.0,12.75,4.25,4.4,4,4,100.0,100.0,-8.5
