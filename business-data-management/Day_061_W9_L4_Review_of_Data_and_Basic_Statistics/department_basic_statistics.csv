@@ -1,0 +1,7 @@
+Department,Requests,Total_Cost,Avg_Cost,Avg_Actual_Days,Avg_Satisfaction,Completed
+Finance,4,422000,105500.0,3.75,4.3,4
+HR,4,343000,85750.0,4.0,4.125,2
+IT,4,615000,153750.0,6.25,4.65,4
+Marketing,4,393000,98250.0,3.75,4.125,3
+Operations,4,493000,123250.0,5.25,4.4,4
+Sales,4,495000,123750.0,4.25,4.4,4
