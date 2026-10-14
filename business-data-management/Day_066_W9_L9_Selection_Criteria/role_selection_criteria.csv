@@ -1,0 +1,21 @@
+Target_Role,Candidates,Criteria_Met,Selected,Average_Score,Criteria_Met_Rate_%
+Accountant,1,1,0,78.0,100.0
+Accounts Executive,1,1,0,76.0,100.0
+Backend Developer,1,1,1,90.0,100.0
+Brand Executive,1,0,0,70.0,0.0
+Content Strategist,1,1,1,84.0,100.0
+Data Analyst,2,2,2,83.5,100.0
+Data Engineer,1,1,1,87.0,100.0
+Digital Marketer,1,0,0,69.0,0.0
+Finance Executive,1,1,1,82.0,100.0
+Finance Manager,1,1,1,88.0,100.0
+Financial Analyst,2,2,2,80.5,100.0
+Frontend Developer,1,1,1,85.0,100.0
+HR Executive,2,2,1,82.0,100.0
+HR Manager,1,1,1,92.0,100.0
+Marketing Analyst,2,2,2,82.5,100.0
+QA Engineer,1,1,1,88.0,100.0
+Sales Executive,4,2,1,74.0,50.0
+Sales Manager,2,2,2,87.5,100.0
+Software Engineer,2,2,2,78.5,100.0
+Talent Specialist,2,2,2,89.0,100.0

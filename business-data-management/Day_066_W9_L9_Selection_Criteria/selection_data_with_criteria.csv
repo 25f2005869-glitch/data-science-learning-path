@@ -1,0 +1,31 @@
+Candidate_ID,Candidate_Name,Department,Region,Target_Role,Experience_Level,Qualification,Experience_Years,Technical_Score,Communication_Score,Interview_Score,Overall_Score,Selected_Flag,Technical_Eligible,Communication_Eligible,Interview_Eligible,Overall_Eligible,Experience_Eligible,Criteria_Pass_Count,Weighted_Score,Criteria_Met,Selection_Status
+C001,Aarav,Engineering,North,Software Engineer,Graduate,Bachelor's,3,72,82,88,78,1,1,1,1,1,1,5,80.0,1,Criteria Met
+C002,Diya,Engineering,South,Data Analyst,Graduate,Bachelor's,2,81,86,91,84,1,1,1,1,1,1,5,85.6,1,Criteria Met
+C003,Kabir,Finance,West,Financial Analyst,Experienced,Bachelor's,5,76,79,85,80,1,1,1,1,1,1,5,80.1,1,Criteria Met
+C004,Ananya,HR,North,HR Executive,Graduate,Bachelor's,1,84,88,90,86,1,1,1,1,1,1,5,87.0,1,Criteria Met
+C005,Rohan,Sales,South,Sales Executive,Graduate,Bachelor's,2,69,74,81,73,0,0,0,1,0,1,2,74.4,0,Criteria Not Met
+C006,Ishita,Marketing,West,Marketing Analyst,Graduate,Bachelor's,3,78,83,87,81,1,1,1,1,1,1,5,82.3,1,Criteria Met
+C007,Vivaan,Engineering,North,Backend Developer,Experienced,Bachelor's,6,88,90,94,90,1,1,1,1,1,1,5,90.6,1,Criteria Met
+C008,Meera,Finance,South,Accountant,Experienced,Bachelor's,4,73,77,84,78,0,1,1,1,1,1,5,78.1,1,Criteria Met
+C009,Aditya,Sales,West,Sales Manager,Experienced,MBA,7,86,82,89,85,1,1,1,1,1,1,5,85.9,1,Criteria Met
+C010,Saanvi,HR,North,Talent Specialist,Graduate,Bachelor's,3,90,92,94,91,1,1,1,1,1,1,5,91.80000000000001,1,Criteria Met
+C011,Arjun,Marketing,South,Brand Executive,Graduate,Bachelor's,2,67,71,79,70,0,0,0,0,0,1,1,72.0,0,Criteria Not Met
+C012,Kavya,Engineering,West,Frontend Developer,Graduate,Bachelor's,3,83,87,92,85,1,1,1,1,1,1,5,86.89999999999999,1,Criteria Met
+C013,Rahul,Finance,North,Accounts Executive,Experienced,Bachelor's,5,71,75,82,76,0,1,1,1,1,1,5,76.1,1,Criteria Met
+C014,Nisha,Sales,South,Sales Executive,Graduate,Bachelor's,3,79,81,86,80,1,1,1,1,1,1,5,81.7,1,Criteria Met
+C015,Yash,Engineering,West,Data Engineer,Experienced,Bachelor's,5,85,88,93,87,1,1,1,1,1,1,5,88.4,1,Criteria Met
+C016,Pooja,HR,North,HR Manager,Experienced,MBA,8,92,91,95,92,1,1,1,1,1,1,5,92.7,1,Criteria Met
+C017,Manav,Marketing,South,Digital Marketer,Graduate,Bachelor's,2,65,73,78,69,0,0,0,0,0,1,1,71.3,0,Criteria Not Met
+C018,Riya,Finance,West,Finance Executive,Graduate,Bachelor's,3,80,84,88,82,1,1,1,1,1,1,5,83.6,1,Criteria Met
+C019,Kunal,Sales,North,Sales Executive,Graduate,Bachelor's,2,74,78,83,76,0,1,1,1,1,1,5,77.89999999999999,1,Criteria Met
+C020,Tanya,Engineering,South,QA Engineer,Experienced,Bachelor's,4,87,89,93,88,1,1,1,1,1,1,5,89.4,1,Criteria Met
+C021,Dev,Finance,North,Finance Manager,Experienced,MBA,9,89,86,92,88,1,1,1,1,1,1,5,89.1,1,Criteria Met
+C022,Aditi,Marketing,West,Content Strategist,Graduate,Bachelor's,3,82,85,90,84,1,1,1,1,1,1,5,85.39999999999999,1,Criteria Met
+C023,Samar,HR,South,HR Executive,Graduate,Bachelor's,2,75,80,85,78,0,1,1,1,1,1,5,79.6,1,Criteria Met
+C024,Sneha,Sales,West,Sales Manager,Experienced,MBA,6,91,88,93,90,1,1,1,1,1,1,5,90.80000000000001,1,Criteria Met
+C025,Nakul,Engineering,North,Software Engineer,Graduate,Bachelor's,2,77,80,86,79,1,1,1,1,1,1,5,80.69999999999999,1,Criteria Met
+C026,Mahi,Finance,South,Financial Analyst,Graduate,Bachelor's,2,79,82,87,81,1,1,1,1,1,1,5,82.4,1,Criteria Met
+C027,Ritesh,Sales,West,Sales Executive,Graduate,Bachelor's,1,63,70,76,67,0,0,0,0,0,1,1,69.10000000000001,0,Criteria Not Met
+C028,Simran,HR,North,Talent Specialist,Graduate,Bachelor's,2,86,89,91,87,1,1,1,1,1,1,5,88.30000000000001,1,Criteria Met
+C029,Vikram,Marketing,South,Marketing Analyst,Experienced,Bachelor's,5,84,81,89,84,1,1,1,1,1,1,5,84.89999999999999,1,Criteria Met
+C030,Neha,Engineering,West,Data Analyst,Graduate,Bachelor's,2,80,85,90,83,1,1,1,1,1,1,5,84.6,1,Criteria Met

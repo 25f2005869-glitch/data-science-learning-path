@@ -1,0 +1,4 @@
+Region,Candidates,Criteria_Met,Selected,Average_Score,Criteria_Met_Rate_%
+North,10,10,8,84.3,100.0
+South,10,7,5,78.5,70.0
+West,10,9,9,82.4,90.0
