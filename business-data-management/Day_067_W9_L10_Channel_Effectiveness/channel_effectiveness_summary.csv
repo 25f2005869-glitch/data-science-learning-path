@@ -1,0 +1,6 @@
+Sourcing_Channel,Candidates,Applications,Selected,Selection_Rate,Avg_Days_to_Fill,Avg_Sourcing_Cost,Total_Sourcing_Cost,Avg_Satisfaction,Selection_Rate_%,Cost_per_Selected
+Employee Referral,8,145,8,1.0,21.125,1375.0,11000,4.4125,100.0,1375.0
+Internal Promotion,4,26,4,1.0,14.5,625.0,2500,4.75,100.0,625.0
+Internal Transfer,5,55,5,1.0,17.6,884.0,4420,4.26,100.0,884.0
+Job Portal,8,228,0,0.0,30.875,1746.25,13970,3.85,0.0,inf
+Recruitment Agency,5,94,5,1.0,27.0,3110.0,15550,4.08,100.0,3110.0

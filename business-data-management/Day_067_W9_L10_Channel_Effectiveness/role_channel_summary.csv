@@ -1,0 +1,26 @@
+Target_Role,Candidates,Selected,Avg_Days_to_Fill,Avg_Sourcing_Cost,Selection_Rate_%
+Accountant,1,0,29.0,1700.0,0.0
+Area Sales Manager,1,1,28.0,3300.0,100.0
+BI Analyst,1,1,18.0,950.0,100.0
+Credit Analyst,1,1,23.0,1450.0,100.0
+Data Analyst,1,1,18.0,900.0,100.0
+Data Engineer,1,1,25.0,3000.0,100.0
+Finance Lead,1,1,15.0,650.0,100.0
+Financial Analyst,2,1,26.0,1560.0,50.0
+HR Analyst,1,1,17.0,850.0,100.0
+HR Business Partner,1,1,20.0,1250.0,100.0
+HR Executive,2,1,23.5,1300.0,50.0
+ML Engineer,1,1,22.0,1550.0,100.0
+Operations Analyst,2,2,20.5,1250.0,100.0
+Operations Executive,1,1,19.0,920.0,100.0
+Operations Lead,1,1,16.0,700.0,100.0
+Operations Manager,1,1,13.0,550.0,100.0
+Python Developer,1,0,28.0,1750.0,0.0
+Recruiter,1,0,33.0,1900.0,0.0
+Risk Analyst,1,1,26.0,3150.0,100.0
+Sales Analyst,1,0,30.0,1600.0,0.0
+Sales Executive,3,2,27.333333333333332,2133.3333333333335,66.66666666666666
+Sales Lead,1,1,14.0,600.0,100.0
+Software Engineer,1,1,20.0,1500.0,100.0
+Supply Chain Analyst,1,0,32.0,1650.0,0.0
+Talent Acquisition Executive,1,1,29.0,2900.0,100.0
