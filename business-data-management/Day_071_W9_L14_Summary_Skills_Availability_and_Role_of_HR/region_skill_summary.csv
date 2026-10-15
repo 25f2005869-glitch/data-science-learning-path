@@ -1,0 +1,4 @@
+Region,Employees,Available,Average_Skill_Score,Skill_Gap,Average_Training_Hours,Availability_Rate_%,Skill_Gap_Rate_%
+North,10,7,73.9,4,6.7,70.0,40.0
+South,10,8,72.8,4,6.0,80.0,40.0
+West,10,8,75.8,4,5.3,80.0,40.0
