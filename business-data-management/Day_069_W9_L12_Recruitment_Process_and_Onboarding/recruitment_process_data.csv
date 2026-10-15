@@ -1,0 +1,31 @@
+Record_ID,Candidate_ID,Department,Region,Target_Role,Month,Recruitment_Channel,Stage,Applications,Days_to_Fill,Recruitment_Cost,Assessment_Score,Selected_Flag,Application_Date,Stage_Date,Cost_per_Day,Process_Efficiency,Selection_Status
+R001,C001,Technology,North,Data Analyst,Jan-2023,Job Portal,Applied,5,3,4500,80,1,2023-01-05,2023-01-08,1500.0,26.66666666666667,Selected
+R002,C002,Finance,South,Financial Analyst,Jan-2023,Employee Referral,Applied,4,2,3000,86,1,2023-01-07,2023-01-09,1500.0,43.0,Selected
+R003,C003,HR,West,HR Executive,Jan-2023,Internal Transfer,Screened,3,2,1500,78,1,2023-01-10,2023-01-12,750.0,39.0,Selected
+R004,C004,Sales,North,Sales Executive,Jan-2023,Job Portal,Applied,7,4,5200,72,0,2023-01-12,2023-01-16,1300.0,18.0,Not Selected
+R005,C005,Operations,South,Operations Associate,Jan-2023,Recruitment Agency,Applied,6,3,7000,75,1,2023-01-14,2023-01-17,2333.3333333333335,25.0,Selected
+R006,C006,Technology,West,Data Analyst,Jan-2023,Employee Referral,Offer,5,2,3200,89,1,2023-01-16,2023-01-18,1600.0,44.5,Selected
+R007,C007,Finance,North,Financial Analyst,Jan-2023,Job Portal,Applied,8,4,4800,74,0,2023-01-18,2023-01-22,1200.0,18.5,Not Selected
+R008,C008,HR,South,HR Executive,Jan-2023,Employee Referral,Joined,4,2,2800,91,1,2023-01-20,2023-01-22,1400.0,45.5,Selected
+R009,C009,Sales,West,Sales Executive,Jan-2023,Internal Transfer,Joined,3,2,1200,88,1,2023-01-22,2023-01-24,600.0,44.0,Selected
+R010,C010,Operations,North,Operations Associate,Jan-2023,Job Portal,Applied,7,3,4100,77,0,2023-01-24,2023-01-27,1366.6666666666667,25.66666666666667,Not Selected
+R011,C011,Technology,South,Data Analyst,Feb-2023,Job Portal,Screened,6,3,4600,83,1,2023-02-02,2023-02-05,1533.3333333333333,27.66666666666667,Selected
+R012,C012,Finance,West,Financial Analyst,Feb-2023,Employee Referral,Offer,4,2,3100,90,1,2023-02-04,2023-02-06,1550.0,45.0,Selected
+R013,C013,HR,North,HR Executive,Feb-2023,Job Portal,Applied,7,3,4300,76,0,2023-02-06,2023-02-09,1433.3333333333333,25.33333333333333,Not Selected
+R014,C014,Sales,South,Sales Executive,Feb-2023,Recruitment Agency,Applied,8,4,7200,73,0,2023-02-08,2023-02-12,1800.0,18.25,Not Selected
+R015,C015,Operations,West,Operations Associate,Feb-2023,Employee Referral,Joined,5,2,2900,92,1,2023-02-10,2023-02-12,1450.0,46.0,Selected
+R016,C016,Technology,North,Data Analyst,Feb-2023,Internal Transfer,Joined,3,2,1400,94,1,2023-02-12,2023-02-14,700.0,47.0,Selected
+R017,C017,Finance,South,Financial Analyst,Feb-2023,Job Portal,Screened,7,3,4700,81,1,2023-02-15,2023-02-18,1566.6666666666667,27.0,Selected
+R018,C018,HR,West,HR Executive,Feb-2023,Employee Referral,Joined,4,2,2700,93,1,2023-02-17,2023-02-19,1350.0,46.5,Selected
+R019,C019,Sales,North,Sales Executive,Feb-2023,Job Portal,Applied,8,4,5000,71,0,2023-02-19,2023-02-23,1250.0,17.75,Not Selected
+R020,C020,Operations,South,Operations Associate,Feb-2023,Recruitment Agency,Offer,6,3,6800,84,1,2023-02-21,2023-02-24,2266.6666666666665,28.0,Selected
+R021,C021,Technology,West,Data Analyst,Mar-2023,Employee Referral,Joined,4,2,3000,95,1,2023-03-02,2023-03-04,1500.0,47.5,Selected
+R022,C022,Finance,North,Financial Analyst,Mar-2023,Internal Transfer,Joined,3,2,1300,92,1,2023-03-04,2023-03-06,650.0,46.0,Selected
+R023,C023,HR,South,HR Executive,Mar-2023,Job Portal,Screened,6,3,4200,82,1,2023-03-06,2023-03-09,1400.0,27.33333333333333,Selected
+R024,C024,Sales,West,Sales Executive,Mar-2023,Employee Referral,Joined,4,2,2600,90,1,2023-03-08,2023-03-10,1300.0,45.0,Selected
+R025,C025,Operations,North,Operations Associate,Mar-2023,Job Portal,Applied,7,4,4400,76,0,2023-03-10,2023-03-14,1100.0,19.0,Not Selected
+R026,C026,Technology,South,Data Analyst,Mar-2023,Recruitment Agency,Offer,5,3,6500,87,1,2023-03-12,2023-03-15,2166.6666666666665,29.0,Selected
+R027,C027,Finance,West,Financial Analyst,Mar-2023,Job Portal,Applied,7,3,4500,79,0,2023-03-15,2023-03-18,1500.0,26.33333333333333,Not Selected
+R028,C028,HR,North,HR Executive,Mar-2023,Internal Transfer,Joined,3,2,1100,96,1,2023-03-17,2023-03-19,550.0,48.0,Selected
+R029,C029,Sales,South,Sales Executive,Mar-2023,Recruitment Agency,Screened,7,4,7100,80,1,2023-03-19,2023-03-23,1775.0,20.0,Selected
+R030,C030,Operations,West,Operations Associate,Mar-2023,Employee Referral,Joined,4,2,2500,94,1,2023-03-21,2023-03-23,1250.0,47.0,Selected
