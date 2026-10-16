@@ -1,0 +1,5 @@
+Credit_Product,Customers,Total_Credit_Limit,Total_Credit_Utilised,Average_Utilisation,Total_Transactions_Lakh,Average_Repayment_Score
+Credit Line,8,457000,284500,62.40940582063765,109,12.0
+Merchant Credit,7,674000,460000,68.33642810286534,129,16.142857142857142
+PayLater,8,163000,110500,67.55127690768423,60,8.0
+Working Capital,7,1049000,708000,67.63296562017754,166,19.857142857142858
