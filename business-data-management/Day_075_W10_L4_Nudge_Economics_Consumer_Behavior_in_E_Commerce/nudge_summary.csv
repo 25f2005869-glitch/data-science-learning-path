@@ -1,0 +1,6 @@
+Nudge_Type,Exposures,Clicks,Purchases,Total_Order_Value,Average_Order_Value,Conversion_Rate_%,Click_Rate_%,Lift_vs_Baseline_pp
+Default Recommendation,6,3,6,22700,3783.3333333333335,100.0,50.0,100.0
+Free Shipping Message,6,0,6,18100,3016.6666666666665,100.0,0.0,100.0
+Limited Time Message,6,2,6,22000,3666.6666666666665,100.0,33.33333333333333,100.0
+No Nudge,6,0,0,20400,3400.0,0.0,0.0,0.0
+Social Proof,6,4,6,23400,3900.0,100.0,66.66666666666666,100.0
