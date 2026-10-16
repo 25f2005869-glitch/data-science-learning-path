@@ -1,0 +1,5 @@
+Region,Records,Successful,Transaction_Volume_Lakh,Transaction_Value_Crore,Success_Rate_%
+East,10,8,32940,1130,80.0
+North,10,8,34030,800,80.0
+South,10,8,30200,910,80.0
+West,10,8,31570,1020,80.0

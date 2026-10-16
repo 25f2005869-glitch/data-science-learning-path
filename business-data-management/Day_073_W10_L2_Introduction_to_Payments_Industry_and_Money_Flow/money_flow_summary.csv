@@ -1,0 +1,21 @@
+Region,Payment_Channel,Transaction_Volume_Lakh,Transaction_Value_Crore
+East,Credit Card,6532,246
+East,Debit Card,7628,334
+East,Net Banking,5436,158
+East,UPI,8724,242
+East,Wallet,4620,150
+North,Credit Card,7902,176
+North,Debit Card,8998,84
+North,Net Banking,6806,268
+North,UPI,4614,92
+North,Wallet,5710,180
+South,Credit Card,4072,106
+South,Debit Card,4888,114
+South,Net Banking,8176,198
+South,UPI,5984,202
+South,Wallet,7080,290
+West,Credit Card,5162,136
+West,Debit Card,6258,224
+West,Net Banking,4346,128
+West,UPI,7354,312
+West,Wallet,8450,220

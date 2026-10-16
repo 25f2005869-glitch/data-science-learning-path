@@ -1,0 +1,41 @@
+Transaction_ID,Payment_Entity,Payment_Channel,Payment_Type,Region,Payment_Service,Transaction_Status,Transaction_Volume_Lakh,Transaction_Value_Crore,Average_Ticket_Value_Rupee,Success_Flag,Failure_Flag
+PAY001,Payment Entity 01,UPI,Digital,North,P2P,Successful,937,26,2774.81,1,0
+PAY002,Payment Entity 02,Debit Card,Digital,South,P2M,Successful,1074,37,3445.07,1,0
+PAY003,Payment Entity 03,Credit Card,Digital,West,Bill Payment,Successful,1211,48,3963.67,1,0
+PAY004,Payment Entity 04,Net Banking,Digital,East,E-commerce,Successful,1348,59,4376.85,1,0
+PAY005,Payment Entity 05,Wallet,Digital,North,Subscription,Failed,1485,70,4713.8,0,1
+PAY006,Payment Entity 06,UPI,Digital,South,P2P,Successful,1622,81,4993.83,1,0
+PAY007,Payment Entity 07,Debit Card,Digital,West,P2M,Successful,1759,92,5230.24,1,0
+PAY008,Payment Entity 08,Credit Card,Digital,East,Bill Payment,Successful,1896,103,5432.49,1,0
+PAY009,Payment Entity 09,Net Banking,Digital,North,E-commerce,Successful,2033,114,5607.48,1,0
+PAY010,Payment Entity 10,Wallet,Digital,South,Subscription,Failed,2170,125,5760.37,0,1
+PAY011,Payment Entity 11,UPI,Digital,West,P2P,Successful,2307,136,5895.1,1,0
+PAY012,Payment Entity 12,Debit Card,Digital,East,P2M,Successful,2444,147,6014.73,1,0
+PAY013,Payment Entity 13,Credit Card,Digital,North,Bill Payment,Successful,2581,158,6121.66,1,0
+PAY014,Payment Entity 14,Net Banking,Digital,South,E-commerce,Successful,2718,169,6217.81,1,0
+PAY015,Payment Entity 15,Wallet,Digital,West,Subscription,Failed,2855,180,6304.73,0,1
+PAY016,Payment Entity 16,UPI,Digital,East,P2P,Successful,2992,191,6383.69,1,0
+PAY017,Payment Entity 17,Debit Card,Digital,North,P2M,Successful,3129,22,703.1,1,0
+PAY018,Payment Entity 18,Credit Card,Digital,South,Bill Payment,Successful,3266,33,1010.41,1,0
+PAY019,Payment Entity 19,Net Banking,Digital,West,E-commerce,Successful,3403,44,1292.98,1,0
+PAY020,Payment Entity 20,Wallet,Digital,East,Subscription,Failed,3540,55,1553.67,0,1
+PAY021,Payment Entity 21,UPI,Digital,North,P2P,Successful,3677,66,1794.94,1,0
+PAY022,Payment Entity 22,Debit Card,Digital,South,P2M,Successful,3814,77,2018.88,1,0
+PAY023,Payment Entity 23,Credit Card,Digital,West,Bill Payment,Successful,3951,88,2227.28,1,0
+PAY024,Payment Entity 24,Net Banking,Digital,East,E-commerce,Successful,4088,99,2421.72,1,0
+PAY025,Payment Entity 25,Wallet,Digital,North,Subscription,Failed,4225,110,2603.55,0,1
+PAY026,Payment Entity 26,UPI,Digital,South,P2P,Successful,4362,121,2773.96,1,0
+PAY027,Payment Entity 27,Debit Card,Digital,West,P2M,Successful,4499,132,2933.99,1,0
+PAY028,Payment Entity 28,Credit Card,Digital,East,Bill Payment,Successful,4636,143,3084.56,1,0
+PAY029,Payment Entity 29,Net Banking,Digital,North,E-commerce,Successful,4773,154,3226.48,1,0
+PAY030,Payment Entity 30,Wallet,Digital,South,Subscription,Failed,4910,165,3360.49,0,1
+PAY031,Payment Entity 31,UPI,Digital,West,P2P,Successful,5047,176,3487.22,1,0
+PAY032,Payment Entity 32,Debit Card,Digital,East,P2M,Successful,5184,187,3607.25,1,0
+PAY033,Payment Entity 33,Credit Card,Digital,North,Bill Payment,Successful,5321,18,338.28,1,0
+PAY034,Payment Entity 34,Net Banking,Digital,South,E-commerce,Successful,5458,29,531.33,1,0
+PAY035,Payment Entity 35,Wallet,Digital,West,Subscription,Failed,5595,40,714.92,0,1
+PAY036,Payment Entity 36,UPI,Digital,East,P2P,Successful,5732,51,889.74,1,0
+PAY037,Payment Entity 37,Debit Card,Digital,North,P2M,Successful,5869,62,1056.4,1,0
+PAY038,Payment Entity 38,Credit Card,Digital,South,Bill Payment,Successful,806,73,9057.07,1,0
+PAY039,Payment Entity 39,Net Banking,Digital,West,E-commerce,Successful,943,84,8907.74,1,0
+PAY040,Payment Entity 40,Wallet,Digital,East,Subscription,Failed,1080,95,8796.3,0,1
