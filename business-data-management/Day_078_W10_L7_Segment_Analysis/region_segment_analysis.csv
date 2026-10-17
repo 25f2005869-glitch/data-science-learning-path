@@ -1,0 +1,14 @@
+Region,Customer_Segment,Active_Customers_Lakh,Transactions_Lakh,Transaction_Value_Crore,Average_Digital_Adoption
+East,Business,20.700000000000003,34.0,4160,71.0
+East,Consumer,38.2,35.2,5140,67.0
+East,Investor,13.8,12.9,2140,96.0
+East,Retail,17.9,41.3,3020,93.0
+North,Consumer,57.9,109.0,8830,84.66666666666667
+North,Investor,41.9,37.1,6630,85.25
+North,Retail,17.4,35.1,2760,84.0
+South,Business,51.3,58.6,8210,81.4
+South,Consumer,26.799999999999997,32.400000000000006,4020,72.0
+South,Retail,16.7,24.9,2650,88.0
+West,Business,16.1,31.6,2960,78.0
+West,Consumer,72.6,151.5,11970,86.5
+West,Investor,20.1,20.1,3520,83.5
