@@ -1,0 +1,22 @@
+Primary_Product,Players,Active_Customers_Lakh,Transactions_Lakh,Transaction_Value_Crore,Average_Satisfaction
+Brokerage,2,910,141,34000,79.5
+Business Loan,1,720,66,15900,80.0
+Consumer Loan,1,830,61,13700,82.0
+Credit Line,1,1120,51,10800,86.0
+Debit Card,1,1170,49,7900,90.0
+Digital Insurance,2,1640,92,18500,87.5
+Digital Investment,1,510,63,14800,82.0
+Digital Lending,2,1790,112,23700,84.5
+Health Cover,2,1340,94,17500,85.5
+Life Insurance,2,1440,109,20000,83.5
+Mutual Funds,1,560,64,15500,83.0
+Net Banking,1,1080,53,8500,89.0
+PayLater,1,1190,48,9700,90.0
+Personal Loan,1,1010,55,11900,85.0
+QR Payments,1,1450,33,5900,94.0
+RegTech,1,380,73,13200,83.0
+Trading,1,390,76,18400,78.0
+UPI,3,4150,112,22200,93.0
+Wallet,2,2190,72,12900,89.5
+WealthTech,1,430,67,16200,81.0
+Working Capital,2,1210,145,35700,78.0
