@@ -1,0 +1,5 @@
+Customer_Segment,Records,Active_Customers_Lakh,Transactions_Lakh,Transaction_Value_Crore,Average_Digital_Adoption,Average_Satisfaction,Average_Engagement_Index
+Business,8,88.10000000000001,124.2,15330,78.375,4.1,3.23975
+Consumer,12,195.5,328.1,29960,78.75,4.091666666666667,3.2456666666666667
+Investor,7,75.8,70.1,12290,86.28571428571429,4.242857142857143,3.672
+Retail,3,52.0,101.3,8430,88.33333333333333,4.333333333333333,3.832333333333333
