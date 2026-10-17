@@ -1,0 +1,31 @@
+Experiment_ID,Consumer_ID,Customer_Segment,Region,Category,Device,Nudge_Type,Nudge_Shown,Clicked,Purchased_Flag,Order_Value_Rupee,Repeat_Visit_Flag,Baseline_Eligible,Conversion_Rate_Flag,Click_Rate_Flag,Order_Value_per_Exposure,Engagement_Flag
+N001,C001,Consumer,North,Electronics,Mobile,Default Recommendation,1,0,0,0,1,1,0,0,0.0,1
+N002,C002,Retail,South,Fashion,Desktop,Free Shipping,1,1,0,0,1,0,0,1,0.0,1
+N003,C003,Business,West,Grocery,Mobile,Social Proof,0,0,0,0,0,1,0,0,0.0,0
+N004,C004,Investor,East,Finance,Tablet,Limited Time Message,1,1,1,700,1,1,1,1,700.0,1
+N005,C005,Consumer,North,Electronics,Mobile,Default Recommendation,1,0,0,0,1,0,0,0,0.0,1
+N006,C006,Retail,South,Fashion,Desktop,Free Shipping,0,0,0,0,0,1,0,0,0.0,0
+N007,C007,Business,West,Grocery,Mobile,Social Proof,1,1,0,0,1,1,0,1,0.0,1
+N008,C008,Investor,East,Finance,Tablet,Limited Time Message,1,1,1,850,1,0,1,1,850.0,1
+N009,C009,Consumer,North,Electronics,Mobile,Default Recommendation,1,0,0,0,1,1,0,0,0.0,1
+N010,C010,Retail,South,Fashion,Desktop,Free Shipping,1,1,1,1250,1,1,1,1,1250.0,1
+N011,C011,Business,West,Grocery,Mobile,Social Proof,0,0,0,0,0,0,0,0,0.0,0
+N012,C012,Investor,East,Finance,Tablet,Limited Time Message,1,1,0,0,1,1,0,1,0.0,1
+N013,C013,Consumer,North,Electronics,Mobile,Default Recommendation,1,0,0,0,1,1,0,0,0.0,1
+N014,C014,Retail,South,Fashion,Desktop,Free Shipping,1,1,1,1100,1,0,1,1,1100.0,1
+N015,C015,Business,West,Grocery,Mobile,Social Proof,0,0,0,0,0,1,0,0,0.0,0
+N016,C016,Investor,East,Finance,Tablet,Limited Time Message,1,1,1,850,1,1,1,1,850.0,1
+N017,C017,Consumer,North,Electronics,Mobile,Default Recommendation,1,0,0,0,1,0,0,0,0.0,1
+N018,C018,Retail,South,Fashion,Desktop,Free Shipping,1,1,1,1250,1,1,1,1,1250.0,1
+N019,C019,Business,West,Grocery,Mobile,Social Proof,1,1,1,1800,1,1,1,1,1800.0,1
+N020,C020,Investor,East,Finance,Tablet,Limited Time Message,1,1,1,700,1,0,1,1,700.0,1
+N021,C021,Consumer,North,Electronics,Mobile,Default Recommendation,0,0,0,0,0,1,0,0,0.0,0
+N022,C022,Retail,South,Fashion,Desktop,Free Shipping,1,1,0,0,1,1,0,1,0.0,1
+N023,C023,Business,West,Grocery,Mobile,Social Proof,0,0,0,0,0,0,0,0,0.0,0
+N024,C024,Investor,East,Finance,Tablet,Limited Time Message,1,1,1,850,1,1,1,1,850.0,1
+N025,C025,Consumer,North,Electronics,Mobile,Default Recommendation,1,0,0,0,1,1,0,0,0.0,1
+N026,C026,Retail,South,Fashion,Desktop,Free Shipping,0,0,0,0,0,0,0,0,0.0,0
+N027,C027,Business,West,Grocery,Mobile,Social Proof,0,0,0,0,0,1,0,0,0.0,0
+N028,C028,Investor,East,Finance,Tablet,Limited Time Message,1,1,1,700,1,1,1,1,700.0,1
+N029,C029,Consumer,North,Electronics,Mobile,Default Recommendation,1,0,0,0,1,0,0,0,0.0,1
+N030,C030,Retail,South,Fashion,Desktop,Free Shipping,1,1,1,1100,1,1,1,1,1100.0,1

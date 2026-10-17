@@ -1,0 +1,5 @@
+Customer_Segment,Exposures,Clicks,Purchases,Order_Value,Repeat_Visits,Click_Rate_%,Conversion_Rate_%
+Business,2,2,1,1800,2,100.0,50.0
+Consumer,7,0,0,0,7,0.0,0.0
+Investor,7,7,6,4650,7,100.0,85.71428571428571
+Retail,6,6,4,4700,6,100.0,66.66666666666666

@@ -1,0 +1,5 @@
+Nudge_Type,Exposures,Clicks,Purchases,Total_Order_Value,Repeat_Visits,Avg_Order_Value,Click_Rate_%,Conversion_Rate_%,Repeat_Visit_Rate_%,Lift_vs_Default_pp
+Default Recommendation,7,0,0,0,7,0.0,0.0,0.0,100.0,0.0
+Free Shipping,6,6,4,4700,6,587.5,100.0,66.66666666666666,100.0,66.66666666666666
+Limited Time Message,7,7,6,4650,7,664.2857142857143,100.0,85.71428571428571,100.0,85.71428571428571
+Social Proof,2,2,1,1800,2,257.14285714285717,100.0,50.0,100.0,50.0

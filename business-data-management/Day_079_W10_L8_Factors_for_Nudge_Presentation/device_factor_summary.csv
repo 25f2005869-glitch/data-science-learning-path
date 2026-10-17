@@ -1,0 +1,4 @@
+Device,Exposures,Clicks,Purchases,Order_Value,Click_Rate_%,Conversion_Rate_%
+Desktop,6,6,4,4700,100.0,66.66666666666666
+Mobile,9,2,1,1800,22.22222222222222,11.11111111111111
+Tablet,7,7,6,4650,100.0,85.71428571428571

@@ -1,0 +1,109 @@
+![Course](https://img.shields.io/badge/Course-Business%20Data%20Management-blue?style=for-the-badge)
+![Learning Path](https://img.shields.io/badge/Learning%20Path-100%20Days-green?style=for-the-badge)
+![IIT Madras](https://img.shields.io/badge/IIT%20Madras-BS%20Degree-red?style=for-the-badge)
+![Level](https://img.shields.io/badge/Level-Diploma-orange?style=for-the-badge)
+![Day](https://img.shields.io/badge/Day-079-brightgreen?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+
+# 📊 Day 079 — Factors for Nudge Presentation
+
+## 🎯 Objective
+- Prepare a business-analysis presentation around factors affecting nudge response.
+- Separate intervention variables from response variables.
+- Compare click and conversion behaviour.
+- Organise factor analysis into a presentation-ready workflow.
+
+## 🧩 Case Context
+- This package uses a synthetic e-commerce nudge dataset.
+- It is created for Business Data Management practice.
+- It is not official IIT Madras data.
+- It is not real PayBuddy or market data.
+
+## 🔍 Factors Covered
+- Nudge type.
+- Customer segment.
+- Region.
+- Device.
+- Product category.
+
+## 📈 Outcomes
+- Nudge exposure.
+- Click response.
+- Purchase response.
+- Order value.
+- Repeat visit.
+
+## 🧮 Key Measures
+- Click rate.
+- Conversion rate.
+- Repeat-visit rate.
+- Average order value.
+- Lift versus default reference.
+
+## 📂 Workbook Structure
+- Nudge_Factor_Data stores observations.
+- Nudge_Factor_Summary compares nudge types.
+- Customer_Segment_Summary analyses segments.
+- Region_Summary analyses regions.
+- Device_Summary analyses devices.
+- Category_Summary analyses categories.
+- Nudge_KPIs contains headline metrics.
+- Factor_Definitions defines analytical factors.
+- Presentation_Stages provides presentation flow.
+- Analysis_Questions contains business questions.
+- Business_Insights stores descriptive observations.
+- Data_Dictionary documents fields.
+- Nudge_Factor_Presentation_Dashboard contains prepared charts.
+
+## 📊 Dashboard
+- Conversion Rate by Nudge Type.
+- Lift versus Default Reference.
+- Conversion Rate by Customer Segment.
+- Conversion Rate by Device.
+
+## 🐍 Python Analysis
+- Reads the workbook.
+- Creates derived measures.
+- Aggregates factor summaries.
+- Calculates baseline lift.
+- Exports CSV files.
+- Generates presentation charts.
+
+## ⚠️ Interpretation Rule
+- A difference between groups is descriptive.
+- It does not by itself prove causality.
+- Experimental design matters when making causal claims.
+- Denominators should always be shown with rates.
+
+## 🏅 Badges
+- 📊 Business Analytics.
+- 🧩 Factor Analysis.
+- 🛒 E-Commerce.
+- 📗 Excel.
+- 🐍 Python.
+- 🎤 Presentation.
+
+## ✅ Completion Checklist
+- Dataset prepared.
+- Factor summaries prepared.
+- Baseline defined.
+- Segment analysis prepared.
+- Dashboard prepared.
+- Python outputs generated.
+- Presentation questions documented.
+- Business limitations documented.
+
+## 📌 Presentation Deliverables
+- Business question slide.
+- Dataset and factor-definition slide.
+- Baseline comparison slide.
+- Factor comparison charts.
+- Segment and device analysis.
+- Evidence and limitation slide.
+- Final discussion points.
+
+## 🔁 Reproducibility
+- The Excel workbook stores the prepared analytical tables.
+- The Python script reproduces the main summary calculations.
+- PNG outputs can be reused in presentation material.
+- All figures are based on the synthetic learning dataset.
