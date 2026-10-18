@@ -1,0 +1,5 @@
+Region,Variant,Exposures,Clicks,PayLater_Users,Purchase_Value_Rupee,Repayments,Click_Rate_%,Conversion_Rate_%,Repayment_Rate_%
+East,Treatment,10,8,6,51700,8,80.0,60.0,133.33333333333331
+North,Control,10,4,3,59800,5,40.0,30.0,166.66666666666669
+South,Treatment,10,10,10,71100,10,100.0,100.0,100.0
+West,Control,10,1,1,35000,1,10.0,10.0,100.0

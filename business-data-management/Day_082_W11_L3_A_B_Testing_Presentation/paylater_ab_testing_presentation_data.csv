@@ -1,0 +1,41 @@
+Experiment_ID,Customer_ID,Variant,Nudge_Type,Customer_Segment,Region,Device,Eligibility_Flag,Nudge_Shown,Clicked,PayLater_Used_Flag,Purchase_Value_Rupee,Repayment_Flag,Conversion_Flag,Click_Rate_%,Conversion_Rate_%,Repayment_Rate_%
+EXP001,C001,Control,No Nudge,Consumer,North,Mobile,1,1,0,0,4200,1,0,0,0,100
+EXP002,C002,Treatment,Reminder Nudge,Consumer,South,Mobile,1,1,1,1,5100,1,1,100,100,100
+EXP003,C003,Control,No Nudge,Retail,West,Desktop,1,1,0,0,3800,0,0,0,0,0
+EXP004,C004,Treatment,Social Proof,Retail,East,Mobile,1,1,1,1,6200,1,1,100,100,100
+EXP005,C005,Control,No Nudge,Business,North,Desktop,1,1,1,0,7500,1,0,100,0,100
+EXP006,C006,Treatment,Limited Time Message,Business,South,Mobile,1,1,1,1,8100,1,1,100,100,100
+EXP007,C007,Control,No Nudge,Investor,West,Tablet,1,1,0,0,2900,0,0,0,0,0
+EXP008,C008,Treatment,Reminder Nudge,Investor,East,Mobile,1,1,0,0,3300,0,0,0,0,0
+EXP009,C009,Control,No Nudge,Consumer,North,Mobile,1,1,0,0,4500,0,0,0,0,0
+EXP010,C010,Treatment,Social Proof,Consumer,South,Desktop,1,1,1,1,5600,1,1,100,100,100
+EXP011,C011,Control,No Nudge,Retail,West,Mobile,1,1,1,1,4700,1,1,100,100,100
+EXP012,C012,Treatment,Limited Time Message,Retail,East,Mobile,1,1,1,1,6800,1,1,100,100,100
+EXP013,C013,Control,No Nudge,Business,North,Desktop,1,1,0,0,5200,0,0,0,0,0
+EXP014,C014,Treatment,Reminder Nudge,Business,South,Mobile,1,1,1,1,7300,1,1,100,100,100
+EXP015,C015,Control,No Nudge,Investor,West,Tablet,1,1,0,0,3100,0,0,0,0,0
+EXP016,C016,Treatment,Social Proof,Investor,East,Mobile,1,1,1,0,4900,1,0,100,0,100
+EXP017,C017,Control,No Nudge,Consumer,North,Desktop,1,1,1,1,6100,1,1,100,100,100
+EXP018,C018,Treatment,Limited Time Message,Consumer,South,Mobile,1,1,1,1,7900,1,1,100,100,100
+EXP019,C019,Control,No Nudge,Retail,West,Mobile,1,1,0,0,3600,0,0,0,0,0
+EXP020,C020,Treatment,Reminder Nudge,Retail,East,Desktop,1,1,1,1,5400,1,1,100,100,100
+EXP021,C021,Control,No Nudge,Business,North,Mobile,1,1,0,0,6900,0,0,0,0,0
+EXP022,C022,Treatment,Social Proof,Business,South,Mobile,1,1,1,1,8400,1,1,100,100,100
+EXP023,C023,Control,No Nudge,Investor,West,Tablet,1,1,0,0,2700,0,0,0,0,0
+EXP024,C024,Treatment,Limited Time Message,Investor,East,Mobile,1,1,1,1,4600,1,1,100,100,100
+EXP025,C025,Control,No Nudge,Consumer,North,Mobile,1,1,1,1,5700,1,1,100,100,100
+EXP026,C026,Treatment,Reminder Nudge,Consumer,South,Mobile,1,1,1,1,6300,1,1,100,100,100
+EXP027,C027,Control,No Nudge,Retail,West,Desktop,1,1,0,0,4100,0,0,0,0,0
+EXP028,C028,Treatment,Social Proof,Retail,East,Mobile,1,1,1,1,5900,1,1,100,100,100
+EXP029,C029,Control,No Nudge,Business,North,Desktop,1,1,0,0,7300,0,0,0,0,0
+EXP030,C030,Treatment,Limited Time Message,Business,South,Mobile,1,1,1,1,9100,1,1,100,100,100
+EXP031,C031,Control,No Nudge,Investor,West,Tablet,1,1,0,0,3200,0,0,0,0,0
+EXP032,C032,Treatment,Reminder Nudge,Investor,East,Mobile,1,1,1,0,4100,1,0,100,0,100
+EXP033,C033,Control,No Nudge,Consumer,North,Mobile,1,1,0,0,4400,0,0,0,0,0
+EXP034,C034,Treatment,Social Proof,Consumer,South,Desktop,1,1,1,1,5700,1,1,100,100,100
+EXP035,C035,Control,No Nudge,Retail,West,Mobile,1,1,0,0,3900,0,0,0,0,0
+EXP036,C036,Treatment,Limited Time Message,Retail,East,Mobile,1,1,1,1,7000,1,1,100,100,100
+EXP037,C037,Control,No Nudge,Business,North,Desktop,1,1,1,1,8000,1,1,100,100,100
+EXP038,C038,Treatment,Reminder Nudge,Business,South,Mobile,1,1,1,1,7600,1,1,100,100,100
+EXP039,C039,Control,No Nudge,Investor,West,Tablet,1,1,0,0,3000,0,0,0,0,0
+EXP040,C040,Treatment,Social Proof,Investor,East,Mobile,1,1,0,0,3500,0,0,0,0,0

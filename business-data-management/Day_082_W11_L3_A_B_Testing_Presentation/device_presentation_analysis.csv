@@ -1,0 +1,6 @@
+Device,Variant,Exposures,Clicks,PayLater_Users,Purchase_Value_Rupee,Repayments,Click_Rate_%,Conversion_Rate_%,Repayment_Rate_%
+Desktop,Control,7,3,2,42000,3,42.857142857142854,28.57142857142857,150.0
+Desktop,Treatment,3,3,3,16700,3,100.0,100.0,100.0
+Mobile,Control,8,2,2,37900,3,25.0,25.0,150.0
+Mobile,Treatment,17,15,13,106100,15,88.23529411764706,76.47058823529412,115.38461538461537
+Tablet,Control,5,0,0,14900,0,0.0,0.0,0.0

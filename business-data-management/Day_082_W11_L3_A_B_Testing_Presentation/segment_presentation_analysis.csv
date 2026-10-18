@@ -1,0 +1,9 @@
+Customer_Segment,Variant,Exposures,Clicks,PayLater_Users,Purchase_Value_Rupee,Repayments,Click_Rate_%,Conversion_Rate_%,Repayment_Rate_%
+Business,Control,5,2,1,34900,2,40.0,20.0,200.0
+Business,Treatment,5,5,5,40500,5,100.0,100.0,100.0
+Consumer,Control,5,2,2,24900,3,40.0,40.0,150.0
+Consumer,Treatment,5,5,5,30600,5,100.0,100.0,100.0
+Investor,Control,5,0,0,14900,0,0.0,0.0,0.0
+Investor,Treatment,5,3,1,20400,3,60.0,20.0,300.0
+Retail,Control,5,1,1,20100,1,20.0,20.0,100.0
+Retail,Treatment,5,5,5,31300,5,100.0,100.0,100.0
