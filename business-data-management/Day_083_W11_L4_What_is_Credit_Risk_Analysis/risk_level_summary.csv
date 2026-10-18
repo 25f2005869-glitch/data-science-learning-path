@@ -1,0 +1,5 @@
+Risk_Level,Customers,Average_Credit_Score,Average_DTI,Defaults,Default_Rate_%
+High,2,642.5,24.0,2,100.0
+Low,10,786.2,48.2,1,10.0
+Medium,10,722.8,29.6,3,30.0
+Medium-High,8,671.25,27.75,6,75.0
