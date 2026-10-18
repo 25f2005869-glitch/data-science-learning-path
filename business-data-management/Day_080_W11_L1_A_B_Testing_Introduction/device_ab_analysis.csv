@@ -1,0 +1,7 @@
+Device,Variant,Exposures,Clicks,Purchases,Order_Value,Conversion_Rate_%
+Desktop,Control,6,0,0,0,0.0
+Desktop,Treatment,7,0,0,0,0.0
+Mobile,Control,7,7,5,4000,71.42857142857143
+Mobile,Treatment,7,0,0,0,0.0
+Tablet,Control,7,0,0,0,0.0
+Tablet,Treatment,6,6,5,11000,83.33333333333334
