@@ -1,0 +1,10 @@
+Metric,Value
+Control PayLater Conversion %,10.0
+Treatment PayLater Conversion %,28.57142857142857
+Absolute Lift (percentage points),18.57142857142857
+Relative Lift %,185.7142857142857
+Control Click Rate %,35.0
+Treatment Click Rate %,42.857142857142854
+Control Repayment Rate %,100.0
+Treatment Repayment Rate %,66.66666666666666
+Total PayLater Purchase Value (Rupee),13600.0

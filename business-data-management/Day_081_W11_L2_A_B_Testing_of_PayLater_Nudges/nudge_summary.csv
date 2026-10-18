@@ -1,0 +1,5 @@
+Nudge_Type,Exposures,Clicks,PayLater_Users,Purchase_Value,Repayments,Click_Rate_%,Conversion_Rate_%,Repayment_Rate_%,Lift_vs_No_Nudge_pp
+Limited Time Message,7,2,2,5200,2,28.57142857142857,28.57142857142857,100.0,18.57142857142857
+No Nudge,20,7,2,2400,2,35.0,10.0,100.0,0.0
+Reminder Nudge,7,3,2,2400,0,42.857142857142854,28.57142857142857,0.0,18.57142857142857
+Social Proof,7,4,2,3600,2,57.14285714285714,28.57142857142857,100.0,18.57142857142857

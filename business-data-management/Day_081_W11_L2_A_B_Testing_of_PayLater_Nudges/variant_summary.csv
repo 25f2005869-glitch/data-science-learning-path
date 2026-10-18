@@ -1,0 +1,3 @@
+Variant,Eligible_Customers,Exposures,Clicks,PayLater_Users,Purchase_Value,Repayments,Click_Rate_%,PayLater_Conversion_%,Repayment_Rate_%,Average_Purchase_Value_Rupee
+Control,20,20,7,2,2400,2,35.0,10.0,100.0,1200.0
+Treatment,21,21,9,6,11200,4,42.857142857142854,28.57142857142857,66.66666666666666,1866.6666666666667

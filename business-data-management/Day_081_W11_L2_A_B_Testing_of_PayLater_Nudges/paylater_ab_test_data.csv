@@ -1,0 +1,49 @@
+Experiment_ID,Customer_ID,Variant,Nudge_Type,Customer_Segment,Region,Device,Category,Eligibility_Flag,Nudge_Shown,Clicked,PayLater_Used_Flag,Purchase_Value_Rupee,PayLater_Due_Rupee,Repayment_Flag,Click_Rate_Flag,Conversion_Flag
+PLAB001,PL001,Control,No Nudge,Consumer,North,Mobile,Electronics,0,0,0,0,0,0,0,0,0
+PLAB002,PL002,Treatment,Reminder Nudge,Retail,South,Desktop,Fashion,1,1,0,0,0,0,0,0,0
+PLAB003,PL003,Control,No Nudge,Business,West,Tablet,Grocery,1,1,1,0,0,0,0,1,0
+PLAB004,PL004,Treatment,Social Proof,Investor,East,Mobile,Finance,1,1,0,0,0,0,0,0,0
+PLAB005,PL005,Control,No Nudge,Consumer,North,Desktop,Electronics,1,1,1,0,0,0,0,1,0
+PLAB006,PL006,Treatment,Limited Time Message,Retail,South,Tablet,Fashion,1,1,0,0,0,0,0,0,0
+PLAB007,PL007,Control,No Nudge,Business,West,Mobile,Grocery,1,1,0,0,0,0,0,0,0
+PLAB008,PL008,Treatment,Reminder Nudge,Investor,East,Desktop,Finance,0,0,0,0,0,0,0,0,0
+PLAB009,PL009,Control,No Nudge,Consumer,North,Tablet,Electronics,1,1,0,0,0,0,0,0,0
+PLAB010,PL010,Treatment,Social Proof,Retail,South,Mobile,Fashion,1,1,1,0,0,0,0,1,0
+PLAB011,PL011,Control,No Nudge,Business,West,Desktop,Grocery,1,1,0,0,0,0,0,0,0
+PLAB012,PL012,Treatment,Limited Time Message,Investor,East,Tablet,Finance,1,1,1,1,2600,1400,1,1,1
+PLAB013,PL013,Control,No Nudge,Consumer,North,Mobile,Electronics,1,1,0,0,0,0,0,0,0
+PLAB014,PL014,Treatment,Reminder Nudge,Retail,South,Desktop,Fashion,1,1,1,1,1200,2200,0,1,1
+PLAB015,PL015,Control,No Nudge,Business,West,Tablet,Grocery,0,0,0,0,0,0,0,0,0
+PLAB016,PL016,Treatment,Social Proof,Investor,East,Mobile,Finance,1,1,1,1,1800,1000,1,1,1
+PLAB017,PL017,Control,No Nudge,Consumer,North,Desktop,Electronics,1,1,0,0,0,0,0,0,0
+PLAB018,PL018,Treatment,Limited Time Message,Retail,South,Tablet,Fashion,1,1,0,0,0,0,0,0,0
+PLAB019,PL019,Control,No Nudge,Business,West,Mobile,Grocery,1,1,0,0,0,0,0,0,0
+PLAB020,PL020,Treatment,Reminder Nudge,Investor,East,Desktop,Finance,1,1,0,0,0,0,0,0,0
+PLAB021,PL021,Control,No Nudge,Consumer,North,Tablet,Electronics,1,1,0,0,0,0,0,0,0
+PLAB022,PL022,Treatment,Social Proof,Retail,South,Mobile,Fashion,0,0,0,0,0,0,0,0,0
+PLAB023,PL023,Control,No Nudge,Business,West,Desktop,Grocery,1,1,1,0,0,0,0,1,0
+PLAB024,PL024,Treatment,Limited Time Message,Investor,East,Tablet,Finance,1,1,0,0,0,0,0,0,0
+PLAB025,PL025,Control,No Nudge,Consumer,North,Mobile,Electronics,1,1,1,1,900,2800,1,1,1
+PLAB026,PL026,Treatment,Reminder Nudge,Retail,South,Desktop,Fashion,1,1,0,0,0,0,0,0,0
+PLAB027,PL027,Control,No Nudge,Business,West,Tablet,Grocery,1,1,1,1,1500,1400,1,1,1
+PLAB028,PL028,Treatment,Social Proof,Investor,East,Mobile,Finance,1,1,0,0,0,0,0,0,0
+PLAB029,PL029,Control,No Nudge,Consumer,North,Desktop,Electronics,0,0,0,0,0,0,0,0,0
+PLAB030,PL030,Treatment,Limited Time Message,Retail,South,Tablet,Fashion,1,1,0,0,0,0,0,0,0
+PLAB031,PL031,Control,No Nudge,Business,West,Mobile,Grocery,1,1,0,0,0,0,0,0,0
+PLAB032,PL032,Treatment,Reminder Nudge,Investor,East,Desktop,Finance,1,1,1,0,0,0,0,1,0
+PLAB033,PL033,Control,No Nudge,Consumer,North,Tablet,Electronics,1,1,0,0,0,0,0,0,0
+PLAB034,PL034,Treatment,Social Proof,Retail,South,Mobile,Fashion,1,1,1,0,0,0,0,1,0
+PLAB035,PL035,Control,No Nudge,Business,West,Desktop,Grocery,1,1,0,0,0,0,0,0,0
+PLAB036,PL036,Treatment,Limited Time Message,Investor,East,Tablet,Finance,0,0,0,0,0,0,0,0,0
+PLAB037,PL037,Control,No Nudge,Consumer,North,Mobile,Electronics,1,1,0,0,0,0,0,0,0
+PLAB038,PL038,Treatment,Reminder Nudge,Retail,South,Desktop,Fashion,1,1,1,1,1200,1800,0,1,1
+PLAB039,PL039,Control,No Nudge,Business,West,Tablet,Grocery,1,1,0,0,0,0,0,0,0
+PLAB040,PL040,Treatment,Social Proof,Investor,East,Mobile,Finance,1,1,1,1,1800,2800,1,1,1
+PLAB041,PL041,Control,No Nudge,Consumer,North,Desktop,Electronics,1,1,0,0,0,0,0,0,0
+PLAB042,PL042,Treatment,Limited Time Message,Retail,South,Tablet,Fashion,1,1,1,1,2600,1400,1,1,1
+PLAB043,PL043,Control,No Nudge,Business,West,Mobile,Grocery,0,0,0,0,0,0,0,0,0
+PLAB044,PL044,Treatment,Reminder Nudge,Investor,East,Desktop,Finance,1,1,0,0,0,0,0,0,0
+PLAB045,PL045,Control,No Nudge,Consumer,North,Tablet,Electronics,1,1,1,0,0,0,0,1,0
+PLAB046,PL046,Treatment,Social Proof,Retail,South,Mobile,Fashion,1,1,0,0,0,0,0,0,0
+PLAB047,PL047,Control,No Nudge,Business,West,Desktop,Grocery,1,1,1,0,0,0,0,1,0
+PLAB048,PL048,Treatment,Limited Time Message,Investor,East,Tablet,Finance,1,1,0,0,0,0,0,0,0

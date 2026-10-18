@@ -1,0 +1,5 @@
+Customer_Segment,Variant,Exposures,Clicks,PayLater_Users,Purchase_Value,Repayments,Conversion_Rate_%
+Business,Control,10,4,1,1500,1,10.0
+Consumer,Control,10,3,1,900,1,10.0
+Investor,Treatment,10,4,3,6200,3,30.0
+Retail,Treatment,11,5,3,5000,1,27.27272727272727

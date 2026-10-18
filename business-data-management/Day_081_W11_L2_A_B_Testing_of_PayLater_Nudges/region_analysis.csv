@@ -1,0 +1,5 @@
+Region,Variant,Exposures,Clicks,PayLater_Users,Purchase_Value,Conversion_Rate_%
+East,Treatment,10,4,3,6200,30.0
+North,Control,10,3,1,900,10.0
+South,Treatment,11,5,3,5000,27.27272727272727
+West,Control,10,4,1,1500,10.0
