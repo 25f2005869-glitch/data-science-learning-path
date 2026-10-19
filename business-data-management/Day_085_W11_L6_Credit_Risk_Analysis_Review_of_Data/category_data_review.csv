@@ -1,0 +1,12 @@
+Field,Category,Count,Share_%
+Employment_Type,Salaried,18,60.0
+Employment_Type,Self-Employed,12,40.0
+Region,North,8,26.67
+Region,South,8,26.67
+Region,West,7,23.33
+Region,East,7,23.33
+Loan_Product,Personal Loan,8,26.67
+Loan_Product,Business Loan,6,20.0
+Loan_Product,Home Loan,6,20.0
+Loan_Product,Auto Loan,6,20.0
+Loan_Product,Education Loan,4,13.33

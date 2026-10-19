@@ -1,0 +1,6 @@
+Loan_Product,Customers,Total_Loan_Amount,Avg_Credit_Score,Avg_DTI,Defaults,High_Risk_Customers,Default_Rate_%
+Auto Loan,6,3440000,720.0,31.333333333333332,0,1,0.0
+Business Loan,6,4870000,679.5,41.166666666666664,2,5,33.33333333333333
+Education Loan,4,1350000,696.0,29.0,0,1,0.0
+Home Loan,6,11250000,751.8333333333334,32.666666666666664,0,0,0.0
+Personal Loan,8,1945000,669.125,40.125,4,6,50.0

@@ -1,0 +1,15 @@
+Field,Missing_Count,Missing_%
+Record_ID,0,0.0
+Customer_ID,0,0.0
+Employment_Type,0,0.0
+Region,0,0.0
+Loan_Product,0,0.0
+Age,0,0.0
+Monthly_Income_Rupee,0,0.0
+Loan_Amount_Rupee,0,0.0
+Tenure_Months,0,0.0
+Debt_to_Income_%,0,0.0
+Credit_Score,0,0.0
+Past_Delinquencies,0,0.0
+Default_Flag,0,0.0
+High_Risk_Flag,0,0.0
