@@ -1,0 +1,4 @@
+Risk_Band,Customers,Avg_Credit_Score,Avg_DTI,Avg_Risk_Score,Defaults
+Low,0,,,,0
+Medium,1,768.0,30.0,60.0,0
+High,29,699.2068965517242,35.793103448275865,105.74137931034483,6
