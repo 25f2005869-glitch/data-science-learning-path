@@ -1,0 +1,5 @@
+Category,Closing_Stock,Stock_In,Stock_Out,Inventory_Value,Reorder_Records,Records
+Electronics,1993.0,824.0,840,30257600.0,7,21
+Furniture,732.0,459.0,556,7653500.0,3,9
+Accessories,1192.0,576.0,948,1653050.0,6,15
+Stationery,1143.0,788.0,789,227580.0,4,14
