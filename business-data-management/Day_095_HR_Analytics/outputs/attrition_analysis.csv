@@ -1,0 +1,7 @@
+Department,Employees,Attrition_Count,Attrition_Rate_%
+Finance,11,2,18.181818181818183
+Hr,9,2,22.22222222222222
+It,10,2,20.0
+Marketing,10,3,30.0
+Operations,10,2,20.0
+Sales,10,2,20.0

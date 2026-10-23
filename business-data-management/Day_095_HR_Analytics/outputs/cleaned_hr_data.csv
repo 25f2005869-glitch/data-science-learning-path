@@ -1,0 +1,61 @@
+Employee_ID,Joining_Date,Employee_Name,Age,Department,Job_Role,Education,Location,Experience_Years,Monthly_Salary,Employment_Type,Employee_Status,Attrition,Month
+E001,2025-05-17,Employee 1,36.0,Sales,Sales Executive,Graduate,Delhi,17.0,87918.0,Full-Time,Resigned,Yes,2025-05
+E002,2025-02-20,Employee 2,39.0,Finance,Financial Analyst,Graduate,Patna,2.0,54532.0,Part-Time,Active,No,2025-02
+E003,2025-06-12,Employee 3,26.0,Hr,Hr Executive,Graduate,Bengaluru,8.0,64340.0,Part-Time,Active,No,2025-06
+E004,2025-09-22,Employee 4,37.0,It,Software Analyst,Graduate,Delhi,5.0,82342.0,Full-Time,Active,No,2025-09
+E005,2025-01-20,Employee 5,21.0,Marketing,Marketing Executive,Postgraduate,Kolkata,11.0,76196.0,Part-Time,Active,No,2025-01
+E006,2026-03-22,Employee 6,40.0,Operations,Operations Executive,Postgraduate,Patna,9.0,66637.0,Full-Time,Active,No,2026-03
+E007,2025-01-20,Employee 7,27.0,Sales,Sales Executive,Postgraduate,Delhi,2.0,51225.0,Part-Time,Active,No,2025-01
+E008,2026-02-13,Employee 8,43.0,Finance,Software Analyst,Postgraduate,Delhi,18.0,92704.0,Full-Time,Resigned,Yes,2026-02
+E009,2025-12-03,Employee 9,30.0,Hr,Hr Executive,Postgraduate,Kolkata,14.0,80520.0,Full-Time,Active,No,2025-12
+E010,2025-05-01,Employee 10,26.0,It,Software Analyst,Graduate,Patna,8.0,82311.0,Full-Time,Active,No,2025-05
+E011,2025-01-27,Employee 11,32.0,Marketing,Marketing Executive,Postgraduate,Delhi,6.0,63306.0,Part-Time,Resigned,Yes,2025-01
+E012,2025-01-29,Employee 12,40.0,Operations,Operations Executive,Postgraduate,Kolkata,7.0,56552.0,Full-Time,Active,No,2025-01
+E013,2026-01-19,Employee 13,34.0,Sales,Sales Executive,Postgraduate,Patna,0.0,41807.0,Part-Time,Active,No,2026-01
+E014,2026-06-10,Employee 14,30.5,Finance,Financial Analyst,Graduate,Mumbai,14.0,87486.0,Full-Time,Active,No,2026-06
+E015,2025-05-30,Employee 15,31.0,Hr,Hr Executive,Graduate,Delhi,10.0,66637.0,Full-Time,Active,No,2025-05
+E016,2025-01-08,Employee 16,41.0,It,Software Analyst,Postgraduate,Kolkata,8.0,83626.0,Part-Time,Active,Yes,2025-01
+E017,2026-02-02,Employee 17,45.0,Marketing,Marketing Executive,Postgraduate,Delhi,6.0,61357.0,Full-Time,Active,No,2026-02
+E018,2025-05-23,Employee 18,24.0,Operations,Operations Executive,Postgraduate,Kolkata,9.0,64970.0,Full-Time,On Leave,No,2025-05
+E019,2026-04-12,Employee 19,42.0,Sales,Sales Executive,Postgraduate,Kolkata,2.0,48218.0,Part-Time,Active,No,2026-04
+E020,2025-03-01,Employee 20,43.0,Finance,Financial Analyst,Postgraduate,Bengaluru,10.0,79678.0,Full-Time,On Leave,No,2025-03
+E021,2025-04-13,Employee 21,21.0,Hr,Hr Executive,Graduate,Mumbai,8.5,50764.0,Full-Time,On Leave,No,2025-04
+E022,2026-04-26,Employee 22,43.0,It,Software Analyst,Postgraduate,Bengaluru,7.0,77636.0,Part-Time,Active,No,2026-04
+E023,2026-03-29,Employee 23,27.0,Marketing,Marketing Executive,Graduate,Kolkata,9.0,65660.0,Part-Time,Active,No,2026-03
+E024,2025-07-29,Employee 24,26.0,Operations,Operations Executive,Graduate,Patna,2.0,47002.0,Full-Time,Active,No,2025-07
+E025,2026-05-23,Employee 25,42.0,Sales,Sales Executive,Graduate,Bengaluru,9.0,62888.0,Full-Time,Active,No,2026-05
+E026,2025-03-19,Employee 26,44.0,Finance,Financial Analyst,Postgraduate,Bengaluru,6.0,64238.0,Part-Time,Resigned,Yes,2025-03
+E027,2025-10-20,Employee 27,23.0,Finance,Hr Executive,Postgraduate,Kolkata,18.0,92423.0,Full-Time,Active,No,2025-10
+E028,2025-08-21,Employee 28,21.0,It,Software Analyst,Postgraduate,Delhi,7.0,79969.0,Full-Time,Active,No,2025-08
+E029,2025-05-01,Employee 29,23.0,Marketing,Marketing Executive,Postgraduate,Kolkata,16.0,88475.0,Full-Time,Resigned,Yes,2025-05
+E030,2025-02-27,Employee 30,26.0,Operations,Operations Executive,Graduate,Mumbai,8.5,52721.0,Part-Time,Resigned,Yes,2025-02
+E031,2025-01-17,Employee 31,45.0,Sales,Sales Executive,Postgraduate,Kolkata,17.0,82400.0,Part-Time,Active,No,2025-01
+E032,2025-12-29,Employee 32,23.0,Finance,Financial Analyst,Postgraduate,Delhi,11.0,73307.0,Full-Time,Active,No,2025-12
+E033,2025-08-05,Employee 33,39.0,Hr,Hr Executive,Postgraduate,Delhi,17.0,86377.0,Full-Time,Active,No,2025-08
+E034,2025-07-23,Employee 34,23.0,It,Software Analyst,Graduate,Mumbai,14.0,95899.0,Part-Time,Active,No,2025-07
+E035,2025-07-04,Employee 35,22.0,Marketing,Marketing Executive,Postgraduate,Delhi,14.0,84486.0,Full-Time,Active,No,2025-07
+E036,2025-11-11,Employee 36,23.0,Operations,Operations Executive,Postgraduate,Bengaluru,4.0,46866.0,Full-Time,On Leave,No,2025-11
+E037,2026-02-10,Employee 37,41.0,Sales,Sales Executive,Postgraduate,Bengaluru,9.0,61642.0,Full-Time,On Leave,No,2026-02
+E038,2025-05-17,Employee 38,33.0,Finance,Financial Analyst,Postgraduate,Mumbai,7.0,66637.0,Full-Time,On Leave,No,2025-05
+E039,2025-10-24,Employee 39,31.0,Hr,Hr Executive,Graduate,Kolkata,17.0,82187.0,Full-Time,Resigned,Yes,2025-10
+E040,2026-01-25,Employee 40,40.0,It,Software Analyst,Postgraduate,Patna,0.0,63592.0,Full-Time,Active,No,2026-01
+E041,2025-04-30,Employee 41,27.0,Marketing,Marketing Executive,Graduate,Kolkata,1.0,47117.0,Part-Time,Active,No,2025-04
+E042,2025-05-22,Employee 42,29.0,Operations,Operations Executive,Postgraduate,Bengaluru,9.0,66032.0,Full-Time,Active,No,2025-05
+E043,2025-11-24,Employee 43,30.0,Sales,Sales Executive,Postgraduate,Mumbai,0.0,41191.0,Full-Time,Active,No,2025-11
+E044,2025-01-14,Employee 44,22.0,Finance,Financial Analyst,Postgraduate,Mumbai,8.0,65046.0,Full-Time,Active,No,2025-01
+E045,2025-12-04,Employee 45,21.0,Hr,Hr Executive,Graduate,Bengaluru,0.0,46372.0,Part-Time,Resigned,Yes,2025-12
+E046,2026-02-22,Employee 46,30.0,It,Software Analyst,Graduate,Bengaluru,11.0,89270.0,Part-Time,Active,No,2026-02
+E047,2025-02-07,Employee 47,44.0,Marketing,Marketing Executive,Postgraduate,Patna,14.0,82705.0,Part-Time,On Leave,No,2025-02
+E048,2025-10-05,Employee 48,28.0,Operations,Operations Executive,Postgraduate,Kolkata,6.0,58438.0,Full-Time,Active,No,2025-10
+E049,2025-09-05,Employee 49,27.0,Sales,Sales Executive,Postgraduate,Bengaluru,14.0,81164.0,Part-Time,On Leave,No,2025-09
+E050,2026-05-31,Employee 50,30.0,Finance,Financial Analyst,Postgraduate,Patna,9.0,70438.0,Full-Time,Active,No,2026-05
+E051,2025-06-21,Employee 51,36.0,Hr,Hr Executive,Graduate,Delhi,6.0,62706.0,Full-Time,Active,No,2025-06
+E052,2025-11-25,Employee 52,27.0,It,Software Analyst,Graduate,Mumbai,2.0,65853.0,Full-Time,Active,No,2025-11
+E053,2025-04-12,Employee 53,39.0,Marketing,Marketing Executive,Postgraduate,Mumbai,1.0,51727.0,Part-Time,On Leave,No,2025-04
+E054,2025-03-21,Employee 54,42.0,Operations,Operations Executive,Graduate,Patna,12.0,68953.0,Full-Time,Active,No,2025-03
+E055,2026-04-06,Employee 55,28.0,Sales,Sales Executive,Postgraduate,Mumbai,8.0,60408.0,Full-Time,Resigned,Yes,2026-04
+E056,2025-10-23,Employee 56,35.0,Finance,Financial Analyst,Graduate,Delhi,18.0,99100.0,Part-Time,Active,No,2025-10
+E057,2026-03-15,Employee 57,44.0,Hr,Hr Executive,Graduate,Bengaluru,12.0,77622.0,Part-Time,On Leave,No,2026-03
+E058,2025-03-08,Employee 58,43.0,It,Software Analyst,Graduate,Patna,2.0,74550.0,Full-Time,Resigned,Yes,2025-03
+E059,2025-09-03,Employee 59,24.0,Marketing,Marketing Executive,Graduate,Delhi,9.0,72763.0,Full-Time,Resigned,Yes,2025-09
+E060,2026-01-16,Employee 60,26.0,Operations,Operations Executive,Graduate,Kolkata,4.0,52947.0,Part-Time,Resigned,Yes,2026-01
