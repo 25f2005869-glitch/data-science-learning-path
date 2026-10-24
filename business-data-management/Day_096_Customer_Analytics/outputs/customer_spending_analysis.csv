@@ -1,0 +1,41 @@
+Customer_ID,Customer_Name,Customer_Segment,Orders,Quantity,Revenue,Avg_Satisfaction,Repeat_Customer
+C001,Aarav Sharma,New,2,7.0,126000.0,77.5,Yes
+C002,Ananya Singh,Regular,2,3.0,28500.0,77.0,Yes
+C003,Riya Verma,Loyal,2,3.0,6820.0,83.0,Yes
+C004,Rohan Kumar,Regular,2,7.0,126000.0,81.5,Yes
+C005,Priya Gupta,Loyal,2,4.0,3060.0,91.0,Yes
+C006,Aditya Mishra,Regular,2,6.0,13640.0,88.0,Yes
+C007,Sneha Roy,At Risk,2,6.0,57000.0,86.5,Yes
+C008,Vikash Yadav,New,2,6.0,108000.0,90.0,Yes
+C009,Neha Jain,Loyal,2,6.0,12760.0,90.5,Yes
+C010,Kunal Das,Regular,2,7.0,66500.0,89.0,Yes
+C011,Meera Patel,New,2,4.0,3145.0,87.5,Yes
+C012,Rahul Sinha,Loyal,2,8.0,144000.0,74.5,Yes
+C013,Kavya Nair,Regular,2,4.0,8140.0,77.0,Yes
+C014,Amit Thakur,At Risk,2,7.0,66500.0,74.0,Yes
+C015,Pooja Kumari,Loyal,2,7.0,118800.0,85.5,Yes
+C016,Saurabh Singh,Regular,2,6.0,4930.0,81.0,Yes
+C017,Nisha Gupta,New,2,6.0,13200.0,81.5,Yes
+C018,Manish Kumar,Loyal,2,5.0,90000.0,74.5,Yes
+C019,Simran Kaur,Regular,2,4.0,38000.0,73.5,Yes
+C020,Deepak Verma,At Risk,2,3.0,6600.0,90.5,Yes
+C021,Isha Sharma,Regular,1,3.0,54000.0,70.0,No
+C022,Mohit Raj,Loyal,1,2.0,20900.0,84.0,No
+C023,Tanya Singh,New,1,3.0,2550.0,67.0,No
+C024,Abhishek Das,Regular,1,4.0,8800.0,91.0,No
+C025,Shreya Jain,Loyal,1,1.0,18000.0,66.0,No
+C026,Aman Gupta,Regular,1,4.0,34200.0,83.0,No
+C027,Divya Roy,New,1,1.0,1980.0,70.0,No
+C028,Nitin Kumar,At Risk,1,2.0,39600.0,82.0,No
+C029,Aditi Mishra,Loyal,1,1.0,850.0,77.0,No
+C030,Rakesh Sinha,Regular,1,3.0,28500.0,90.0,No
+C031,Sakshi Verma,New,1,4.0,72000.0,72.0,No
+C032,Vivek Sharma,Loyal,1,3.0,7260.0,69.0,No
+C033,Komal Singh,Regular,1,4.0,41800.0,71.0,No
+C034,Pankaj Kumar,At Risk,1,4.0,72000.0,75.0,No
+C035,Muskan Gupta,New,1,4.0,3400.0,91.0,No
+C036,Harsh Raj,Regular,1,2.0,4840.0,97.0,No
+C037,Nandini Das,Loyal,1,1.0,18000.0,83.0,No
+C038,Arjun Patel,Regular,1,2.0,19000.0,73.0,No
+C039,Payal Nair,New,1,2.0,4400.0,92.0,No
+C040,Tarun Yadav,At Risk,1,2.0,39600.0,93.0,No

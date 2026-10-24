@@ -1,0 +1,61 @@
+Order_ID,Date,Customer_ID,Customer_Name,Age,Gender,City,Region,Customer_Segment,Product_Category,Quantity,Unit_Price,Revenue,Customer_Satisfaction,Customer_Status,Payment_Method,Repeat_Customer,Customer_Spend_Band,Month
+O001,2026-01-05 00:00:00,C001,Aarav Sharma,24.0,Male,Patna,East,New,Electronics,3.0,18000.0,54000.0,90.0,Active,Card,Yes,High,2026-01
+O002,2026-01-08 00:00:00,C002,Ananya Singh,28.0,Female,Delhi,North,Regular,Furniture,1.0,9500.0,9500.0,67.0,Active,UPI,Yes,Low,2026-01
+O003,2026-01-11 00:00:00,C003,Riya Verma,31.0,Female,Mumbai,West,Loyal,Accessories,2.0,2420.0,4840.0,85.0,Active,UPI,Yes,Low,2026-01
+O004,2026-01-14 00:00:00,C004,Rohan Kumar,35.0,Male,Bengaluru,South,Regular,Electronics,3.0,18000.0,54000.0,87.0,Active,Cash,Yes,High,2026-01
+O005,2026-01-17 00:00:00,C005,Priya Gupta,27.0,Female,Kolkata,East,Loyal,Stationery,2.0,765.0,1530.0,95.0,Active,Net Banking,Yes,Low,2026-01
+O006,2026-01-20 00:00:00,C006,Aditya Mishra,29.0,Male,Patna,East,Regular,Accessories,4.0,2200.0,8800.0,80.0,Active,Cash,Yes,Low,2026-01
+O007,2026-01-23 00:00:00,C007,Sneha Roy,33.0,Female,Delhi,North,At Risk,Furniture,3.0,8550.0,25650.0,75.0,Active,UPI,Yes,Medium,2026-01
+O008,2026-01-26 00:00:00,C008,Vikash Yadav,26.0,Male,Mumbai,West,New,Electronics,4.0,18000.0,72000.0,88.0,Active,UPI,Yes,High,2026-01
+O009,2026-01-29 00:00:00,C009,Neha Jain,30.0,Female,Bengaluru,South,Loyal,Accessories,2.0,1980.0,3960.0,84.0,Active,Cash,Yes,Low,2026-01
+O010,2026-02-01 00:00:00,C010,Kunal Das,38.0,Male,Kolkata,East,Regular,Furniture,3.0,9500.0,28500.0,92.0,Active,Net Banking,Yes,Medium,2026-02
+O011,2026-02-04 00:00:00,C011,Meera Patel,25.0,Female,Patna,East,New,Stationery,1.0,850.0,850.0,97.0,Active,Cash,Yes,Low,2026-02
+O012,2026-02-07 00:00:00,C012,Rahul Sinha,34.0,Male,Delhi,North,Loyal,Electronics,4.0,19800.0,79200.0,70.0,Active,Card,Yes,High,2026-02
+O013,2026-02-10 00:00:00,C013,Kavya Nair,29.0,Female,Mumbai,West,Regular,Accessories,1.0,2200.0,2200.0,79.0,Active,UPI,Yes,Low,2026-02
+O014,2026-02-13 00:00:00,C014,Amit Thakur,41.0,Male,Bengaluru,South,At Risk,Furniture,3.0,9500.0,28500.0,79.0,Active,Cash,Yes,Medium,2026-02
+O015,2026-02-16 00:00:00,C015,Pooja Kumari,32.0,Female,Kolkata,East,Loyal,Electronics,4.0,16200.0,64800.0,96.0,Active,Card,Yes,High,2026-02
+O016,2026-02-19 00:00:00,C016,Saurabh Singh,36.0,Male,Patna,East,Regular,Stationery,2.0,765.0,1530.0,81.0,Active,Net Banking,Yes,Low,2026-02
+O017,2026-02-22 00:00:00,C017,Nisha Gupta,27.0,Female,Delhi,North,New,Accessories,3.0,1980.0,5940.0,75.0,Active,UPI,Yes,Low,2026-02
+O018,2026-02-25 00:00:00,C018,Manish Kumar,39.0,Male,Mumbai,West,Loyal,Electronics,3.0,18000.0,54000.0,69.0,Active,Cash,Yes,High,2026-02
+O019,2026-02-28 00:00:00,C019,Simran Kaur,31.0,Female,Bengaluru,South,Regular,Furniture,2.0,9500.0,19000.0,76.0,Active,UPI,Yes,Medium,2026-02
+O020,2026-03-03 00:00:00,C020,Deepak Verma,44.0,Male,Kolkata,East,At Risk,Accessories,1.0,2200.0,2200.0,86.0,Inactive,UPI,Yes,Low,2026-03
+O021,2026-03-06 00:00:00,C021,Isha Sharma,28.0,Female,Patna,East,Regular,Electronics,3.0,18000.0,54000.0,70.0,Active,Card,No,High,2026-03
+O022,2026-03-09 00:00:00,C022,Mohit Raj,31.0,Male,Delhi,North,Loyal,Furniture,2.0,10450.0,20900.0,84.0,Active,Card,No,Medium,2026-03
+O023,2026-04-03 12:00:00,C023,Tanya Singh,26.0,Female,Mumbai,West,New,Stationery,3.0,850.0,2550.0,67.0,Active,UPI,No,Low,2026-04
+O024,2026-03-15 00:00:00,C024,Abhishek Das,37.0,Male,Bengaluru,South,Regular,Accessories,4.0,2200.0,8800.0,91.0,Active,Card,No,Low,2026-03
+O025,2026-03-18 00:00:00,C025,Shreya Jain,34.0,Female,Kolkata,East,Loyal,Electronics,1.0,18000.0,18000.0,66.0,Active,Net Banking,No,Medium,2026-03
+O026,2026-03-21 00:00:00,C026,Aman Gupta,29.0,Male,Patna,East,Regular,Furniture,4.0,8550.0,34200.0,83.0,Active,Net Banking,No,High,2026-03
+O027,2026-03-24 00:00:00,C027,Divya Roy,25.0,Female,Delhi,North,New,Accessories,1.0,1980.0,1980.0,70.0,Active,Card,No,Low,2026-03
+O028,2026-03-27 00:00:00,C028,Nitin Kumar,42.0,Male,Mumbai,West,At Risk,Electronics,2.0,19800.0,39600.0,82.0,Active,Cash,No,High,2026-03
+O029,2026-03-30 00:00:00,C029,Aditi Mishra,30.0,Female,Bengaluru,South,Loyal,Stationery,1.0,850.0,850.0,77.0,Active,Card,No,Low,2026-03
+O030,2026-04-02 00:00:00,C030,Rakesh Sinha,45.0,Male,Kolkata,East,Regular,Furniture,3.0,9500.0,28500.0,90.0,Active,Net Banking,No,Medium,2026-04
+O031,2026-04-05 00:00:00,C031,Sakshi Verma,27.0,Female,Patna,East,New,Electronics,4.0,18000.0,72000.0,72.0,Active,Cash,No,High,2026-04
+O032,2026-04-08 00:00:00,C032,Vivek Sharma,33.0,Male,Delhi,North,Loyal,Accessories,3.0,2420.0,7260.0,69.0,Active,Card,No,Low,2026-04
+O033,2026-04-11 00:00:00,C033,Komal Singh,29.0,Female,Mumbai,West,Regular,Furniture,4.0,10450.0,41800.0,71.0,Active,Card,No,High,2026-04
+O034,2026-04-14 00:00:00,C034,Pankaj Kumar,40.0,Male,Bengaluru,South,At Risk,Electronics,4.0,18000.0,72000.0,75.0,Active,Cash,No,High,2026-04
+O035,2026-04-17 00:00:00,C035,Muskan Gupta,24.0,Female,Kolkata,East,New,Stationery,4.0,850.0,3400.0,91.0,Inactive,Card,No,Low,2026-04
+O036,2026-04-20 00:00:00,C036,Harsh Raj,32.0,Male,Patna,East,Regular,Accessories,2.0,2420.0,4840.0,97.0,Active,Card,No,Low,2026-04
+O037,2026-04-23 00:00:00,C037,Nandini Das,36.0,Female,Delhi,North,Loyal,Electronics,1.0,18000.0,18000.0,83.0,Active,Cash,No,Medium,2026-04
+O038,2026-04-26 00:00:00,C038,Arjun Patel,28.0,Male,Mumbai,West,Regular,Furniture,2.0,9500.0,19000.0,73.0,Active,Card,No,Medium,2026-04
+O039,2026-04-29 00:00:00,C039,Payal Nair,31.0,Female,Bengaluru,South,New,Accessories,2.0,2200.0,4400.0,92.0,Active,UPI,No,Low,2026-04
+O040,2026-05-02 00:00:00,C040,Tarun Yadav,43.0,Male,Kolkata,East,At Risk,Electronics,2.0,19800.0,39600.0,93.0,Inactive,UPI,No,High,2026-05
+O041,2026-05-05 00:00:00,C001,Aarav Sharma,24.0,Male,Patna,East,New,Electronics,4.0,18000.0,72000.0,65.0,Active,Net Banking,Yes,High,2026-05
+O042,2026-05-08 00:00:00,C002,Ananya Singh,28.0,Female,Delhi,North,Regular,Furniture,2.0,9500.0,19000.0,87.0,Active,Net Banking,Yes,Medium,2026-05
+O043,2026-05-11 00:00:00,C003,Riya Verma,31.0,Female,Mumbai,North,Loyal,Accessories,1.0,1980.0,1980.0,81.0,Active,Card,Yes,Low,2026-05
+O044,2026-05-14 00:00:00,C004,Rohan Kumar,35.0,Male,Bengaluru,South,Regular,Electronics,4.0,18000.0,72000.0,76.0,Active,Net Banking,Yes,High,2026-05
+O045,2026-05-17 00:00:00,C005,Priya Gupta,27.0,Female,Kolkata,East,Loyal,Stationery,2.0,765.0,1530.0,87.0,Active,Card,Yes,Low,2026-05
+O046,2026-05-20 00:00:00,C006,Aditya Mishra,29.0,Male,Patna,East,Regular,Accessories,2.0,2420.0,4840.0,96.0,Active,Cash,Yes,Low,2026-05
+O047,2026-05-23 00:00:00,C007,Sneha Roy,33.0,Female,Delhi,North,At Risk,Furniture,3.0,10450.0,31350.0,98.0,Active,Card,Yes,High,2026-05
+O048,2026-05-26 00:00:00,C008,Vikash Yadav,26.0,Male,Mumbai,West,New,Furniture,2.0,18000.0,36000.0,92.0,Active,Net Banking,Yes,High,2026-05
+O049,2026-05-29 00:00:00,C009,Neha Jain,30.0,Female,Bengaluru,South,Loyal,Accessories,4.0,2200.0,8800.0,97.0,Active,Cash,Yes,Low,2026-05
+O050,2026-06-01 00:00:00,C010,Kunal Das,38.0,Male,Kolkata,East,Regular,Furniture,4.0,9500.0,38000.0,86.0,Active,Net Banking,Yes,High,2026-06
+O051,2026-06-04 00:00:00,C011,Meera Patel,25.0,Female,Patna,East,New,Stationery,3.0,765.0,2295.0,78.0,Active,Card,Yes,Low,2026-06
+O052,2026-06-07 00:00:00,C012,Rahul Sinha,34.0,Male,Delhi,North,Loyal,Electronics,4.0,16200.0,64800.0,79.0,Active,Card,Yes,High,2026-06
+O053,2026-06-10 00:00:00,C013,Kavya Nair,29.0,Female,Mumbai,West,Regular,Accessories,3.0,1980.0,5940.0,75.0,Active,Net Banking,Yes,Low,2026-06
+O054,2026-06-13 00:00:00,C014,Amit Thakur,41.0,Male,Bengaluru,South,At Risk,Furniture,4.0,9500.0,38000.0,69.0,Active,Cash,Yes,High,2026-06
+O055,2026-06-16 00:00:00,C015,Pooja Kumari,32.0,Female,Kolkata,East,Loyal,Electronics,3.0,18000.0,54000.0,75.0,Active,Card,Yes,High,2026-06
+O056,2026-06-19 00:00:00,C016,Saurabh Singh,36.0,Male,Patna,East,Regular,Stationery,4.0,850.0,3400.0,81.0,Active,Cash,Yes,Low,2026-06
+O057,2026-06-22 00:00:00,C017,Nisha Gupta,27.0,Female,Delhi,North,New,Accessories,3.0,2420.0,7260.0,88.0,Active,Card,Yes,Low,2026-06
+O058,2026-06-25 00:00:00,C018,Manish Kumar,39.0,Male,Mumbai,West,Loyal,Electronics,2.0,18000.0,36000.0,80.0,Active,UPI,Yes,High,2026-06
+O059,2026-06-28 00:00:00,C019,Simran Kaur,23.0,Female,Bengaluru,South,Regular,Furniture,2.0,9500.0,19000.0,71.0,Active,UPI,Yes,Medium,2026-06
+O060,2026-07-01 00:00:00,C020,Deepak Verma,44.0,Male,Kolkata,East,At Risk,Accessories,2.0,2200.0,4400.0,95.0,Active,Card,Yes,Low,2026-07
