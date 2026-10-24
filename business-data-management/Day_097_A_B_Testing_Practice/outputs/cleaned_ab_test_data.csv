@@ -1,0 +1,81 @@
+User_ID,Date,Group,Customer_Segment,Device,Channel,Age,Visitors,Converted,Order_Value,Revenue,Conversion_Status
+U001,2026-01-05,A,New,Mobile,Organic,25.0,1.0,0,0.0,0.0,Not Converted
+U002,2026-01-06,B,Regular,Desktop,Paid Search,32.0,1.0,0,0.0,0.0,Not Converted
+U003,2026-01-07,A,Loyal,Tablet,Social,39.0,1.0,0,0.0,0.0,Not Converted
+U004,2026-01-08,B,At Risk,Mobile,Email,46.0,1.0,0,0.0,0.0,Not Converted
+U005,2026-01-09,B,New,Desktop,Organic,53.0,1.0,0,0.0,0.0,Not Converted
+U006,2026-01-10,B,Regular,Tablet,Paid Search,60.0,1.0,0,0.0,0.0,Not Converted
+U007,2026-01-11,A,Loyal,Mobile,Social,24.0,1.0,0,0.0,0.0,Not Converted
+U008,2026-01-12,B,At Risk,Desktop,Email,31.0,1.0,1,7195.29,7195.29,Converted
+U009,2026-01-13,A,Loyal,Tablet,Organic,38.0,1.0,0,0.0,0.0,Not Converted
+U010,2026-01-14,B,Regular,Mobile,Paid Search,45.0,1.0,0,0.0,0.0,Not Converted
+U011,2026-01-15,A,Loyal,Desktop,Social,52.0,1.0,1,3952.75,3952.75,Converted
+U012,2026-01-16,B,At Risk,Tablet,Email,59.0,1.0,0,0.0,0.0,Not Converted
+U013,2026-01-17,A,New,Mobile,Organic,23.0,1.0,0,0.0,0.0,Not Converted
+U014,2026-01-18,B,Regular,Desktop,Paid Search,30.0,1.0,0,0.0,0.0,Not Converted
+U015,2026-01-19,A,Loyal,Tablet,Social,37.0,1.0,0,0.0,0.0,Not Converted
+U016,2026-01-20,B,At Risk,Mobile,Email,44.0,1.0,0,0.0,0.0,Not Converted
+U017,2026-01-21,A,New,Desktop,Paid Search,51.0,1.0,0,0.0,0.0,Not Converted
+U018,2026-01-22,B,Regular,Tablet,Paid Search,58.0,1.0,1,7012.45,7012.45,Converted
+U019,2026-01-23,A,Loyal,Mobile,Social,22.0,1.0,0,0.0,0.0,Not Converted
+U020,2026-01-24,B,At Risk,Desktop,Email,29.0,1.0,0,0.0,0.0,Not Converted
+U021,2026-01-25,A,New,Tablet,Organic,39.0,1.0,1,6187.71,6187.71,Converted
+U022,2026-01-26,B,Regular,Mobile,Paid Search,43.0,1.0,1,1263.05,1263.05,Converted
+U023,2026-01-27,A,Loyal,Desktop,Social,50.0,1.0,0,0.0,0.0,Not Converted
+U024,2026-01-28,B,At Risk,Tablet,Email,57.0,1.0,0,0.0,0.0,Not Converted
+U025,2026-01-29,A,New,Mobile,Organic,21.0,1.0,0,0.0,0.0,Not Converted
+U026,2026-01-30,B,Regular,Desktop,Paid Search,28.0,1.0,0,0.0,0.0,Not Converted
+U027,2026-01-31,A,Loyal,Tablet,Social,35.0,1.0,0,0.0,0.0,Not Converted
+U028,2026-02-01,B,At Risk,Mobile,Email,42.0,1.0,0,0.0,0.0,Not Converted
+U029,2026-02-02,A,New,Desktop,Organic,49.0,1.0,0,0.0,0.0,Not Converted
+U030,2026-02-03,B,Regular,Tablet,Paid Search,56.0,1.0,1,4997.11,4997.11,Converted
+U031,2026-01-05,A,Loyal,Mobile,Social,20.0,1.0,0,0.0,0.0,Not Converted
+U032,2026-01-06,B,At Risk,Desktop,Email,27.0,1.0,0,0.0,0.0,Not Converted
+U033,2026-01-07,A,New,Tablet,Organic,34.0,1.0,1,0.0,0.0,Converted
+U034,2026-01-08,B,Regular,Mobile,Paid Search,41.0,1.0,0,0.0,0.0,Not Converted
+U035,2026-01-09,A,Loyal,Desktop,Social,48.0,1.0,1,7850.99,7850.99,Converted
+U036,2026-01-10,B,At Risk,Tablet,Email,55.0,1.0,0,0.0,0.0,Not Converted
+U037,2026-01-11,A,New,Mobile,Organic,19.0,1.0,0,0.0,0.0,Not Converted
+U038,2026-01-12,B,Regular,Desktop,Paid Search,26.0,1.0,1,6109.47,6109.47,Converted
+U039,2026-01-13,A,Loyal,Tablet,Social,33.0,1.0,0,0.0,0.0,Not Converted
+U040,2026-01-14,B,At Risk,Mobile,Email,40.0,1.0,0,0.0,0.0,Not Converted
+U041,2026-01-15,A,New,Desktop,Organic,47.0,1.0,1,7441.11,7441.11,Converted
+U042,2026-01-16,B,Regular,Tablet,Paid Search,54.0,1.0,0,0.0,0.0,Not Converted
+U043,2026-01-17,A,Loyal,Mobile,Social,18.0,1.0,0,0.0,0.0,Not Converted
+U044,2026-01-18,B,At Risk,Desktop,Email,25.0,1.0,1,4622.96,4622.96,Converted
+U045,2026-01-19,A,New,Tablet,Organic,32.0,1.0,0,0.0,0.0,Not Converted
+U046,2026-01-20,B,Regular,Mobile,Paid Search,39.0,1.0,1,5646.82,5646.82,Converted
+U047,2026-01-21,A,Loyal,Desktop,Social,46.0,1.0,0,0.0,0.0,Not Converted
+U048,2026-01-22,B,At Risk,Tablet,Email,53.0,1.0,0,0.0,0.0,Not Converted
+U049,2026-01-23,A,At Risk,Mobile,Organic,60.0,1.0,0,0.0,0.0,Not Converted
+U050,2026-01-24,B,Regular,Desktop,Paid Search,24.0,1.0,0,0.0,0.0,Not Converted
+U051,2026-01-25,A,Loyal,Tablet,Social,31.0,1.0,0,0.0,0.0,Not Converted
+U052,2026-01-26,B,At Risk,Mobile,Email,38.0,1.0,0,0.0,0.0,Not Converted
+U053,2026-01-27,A,New,Desktop,Organic,39.0,1.0,0,0.0,0.0,Not Converted
+U054,2026-01-28,B,Regular,Tablet,Paid Search,52.0,1.0,0,0.0,0.0,Not Converted
+U055,2026-01-29,A,Loyal,Mobile,Social,59.0,1.0,0,0.0,0.0,Not Converted
+U056,2026-01-30,B,At Risk,Desktop,Email,23.0,1.0,0,0.0,0.0,Not Converted
+U057,2026-01-31,A,New,Tablet,Organic,30.0,1.0,0,0.0,0.0,Not Converted
+U058,2026-02-01,B,Regular,Mobile,Paid Search,37.0,1.0,0,0.0,0.0,Not Converted
+U059,2026-02-02,A,Loyal,Desktop,Social,44.0,1.0,0,0.0,0.0,Not Converted
+U060,2026-02-03,B,At Risk,Tablet,Email,51.0,1.0,0,0.0,0.0,Not Converted
+U061,2026-01-05,A,New,Mobile,Organic,58.0,1.0,0,0.0,0.0,Not Converted
+U062,2026-01-06,B,Regular,Desktop,Paid Search,22.0,1.0,0,0.0,0.0,Not Converted
+U063,2026-01-07,A,Loyal,Tablet,Social,29.0,1.0,0,0.0,0.0,Not Converted
+U064,2026-01-08,B,At Risk,Mobile,Email,36.0,1.0,0,0.0,0.0,Not Converted
+U065,2026-01-09,A,New,Desktop,Organic,43.0,1.0,0,0.0,0.0,Not Converted
+U066,2026-01-10,B,Regular,Tablet,Paid Search,50.0,1.0,0,0.0,0.0,Not Converted
+U067,2026-01-11,A,Loyal,Mobile,Social,57.0,1.0,1,4282.9,4282.9,Converted
+U068,2026-01-12,B,At Risk,Desktop,Email,21.0,1.0,0,0.0,0.0,Not Converted
+U069,2026-01-13,A,New,Tablet,Organic,28.0,1.0,0,0.0,0.0,Not Converted
+U070,2026-01-14,B,Regular,Mobile,Paid Search,35.0,1.0,1,2911.81,2911.81,Converted
+U071,2026-01-15,A,Loyal,Desktop,Social,42.0,1.0,1,4670.71,4670.71,Converted
+U072,2026-01-16,B,At Risk,Tablet,Email,49.0,1.0,0,0.0,0.0,Not Converted
+U073,2026-01-17,A,New,Mobile,Organic,56.0,1.0,0,0.0,0.0,Not Converted
+U074,2026-01-18,B,Regular,Desktop,Paid Search,20.0,1.0,1,7027.49,7027.49,Converted
+U075,2026-01-19,A,Loyal,Tablet,Social,27.0,1.0,0,0.0,0.0,Not Converted
+U076,2026-01-20,B,At Risk,Mobile,Email,34.0,1.0,0,0.0,0.0,Not Converted
+U077,2026-01-21,A,New,Desktop,Organic,41.0,1.0,0,0.0,0.0,Not Converted
+U078,2026-01-22,B,Regular,Tablet,Paid Search,48.0,1.0,0,0.0,0.0,Not Converted
+U079,2026-01-23,A,Loyal,Mobile,Social,55.0,1.0,0,0.0,0.0,Not Converted
+U080,2026-01-24,B,At Risk,Desktop,Email,19.0,1.0,0,0.0,0.0,Not Converted

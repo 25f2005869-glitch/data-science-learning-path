@@ -1,0 +1,7 @@
+Customer_Segment,Group,Visitors,Conversions,Revenue,Conversion Rate %,Average Order Value
+At Risk,A,1.0,0,0.0,0.0,0.0
+At Risk,B,20.0,2,11818.25,10.0,5909.125
+Loyal,A,21.0,4,20757.35,19.047619047619047,5189.3375
+New,A,17.0,3,13628.82,17.647058823529413,4542.94
+New,B,1.0,0,0.0,0.0,0.0
+Regular,B,20.0,7,34968.2,35.0,4995.457142857143
