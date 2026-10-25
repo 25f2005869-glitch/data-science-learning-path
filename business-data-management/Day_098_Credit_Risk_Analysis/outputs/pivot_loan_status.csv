@@ -1,0 +1,5 @@
+Loan_Status,Customers,Loan_Amount,Average_Credit_Score
+Active,52,20819178.0,693.375
+Approved,9,4872308.0,795.2222222222222
+Closed,7,2871812.0,689.8571428571429
+Defaulted,12,5022308.0,661.0

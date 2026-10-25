@@ -1,0 +1,13 @@
+Metric,Value
+Total Customers,80.0
+Total Loan Amount,33585606.0
+Average Credit Score,699.66875
+Average Monthly Income,76692.15
+Average DTI %,39.56
+High Risk Customers,24.0
+Very High Risk Customers,32.0
+High / Very High Risk Customers,56.0
+Active Loans,52.0
+Defaulted Loans,12.0
+Default Rate %,15.0
+Duplicates Removed,1.0

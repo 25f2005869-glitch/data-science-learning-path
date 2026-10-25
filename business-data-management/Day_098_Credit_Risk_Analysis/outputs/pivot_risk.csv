@@ -1,0 +1,5 @@
+Risk_Category,Customers,Loan_Amount,Default_Count
+High,24,9724821.0,0
+Low,9,4689568.0,1
+Medium,15,5327637.0,0
+Very High,32,13843580.0,11
