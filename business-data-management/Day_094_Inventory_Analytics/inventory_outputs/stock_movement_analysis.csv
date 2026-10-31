@@ -1,0 +1,13 @@
+Product,Stock_In,Stock_Out,Net_Movement
+Mouse,236.0,183,53.0
+Desk,284.0,255,29.0
+Printer Paper,145.0,127,18.0
+Notebook,277.0,261,16.0
+Monitor,193.0,184,9.0
+Keyboard,195.0,208,-13.0
+Pen Pack,366.0,401,-35.0
+Laptop,142.0,216,-74.0
+Headphones,181.0,268,-87.0
+USB Drive,228.0,334,-106.0
+Office Chair,233.0,350,-117.0
+Backpack,167.0,346,-179.0

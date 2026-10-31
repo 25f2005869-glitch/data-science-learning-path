@@ -1,0 +1,5 @@
+Warehouse,Closing_Stock,Stock_In,Stock_Out,Inventory_Value,Reorder_Records,Records
+North Warehouse,1258.0,741.0,967,24004540.0,4,15
+South Warehouse,1299.0,660.0,731,7871600.0,6,15
+West Warehouse,1192.0,566.0,645,6868350.0,4,14
+East Warehouse,1311.0,680.0,790,1047240.0,6,15
