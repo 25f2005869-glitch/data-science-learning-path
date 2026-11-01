@@ -5,6 +5,7 @@
 # Topic: Processing Business Process Data Using Spreadsheets
 
 import os
+from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -13,8 +14,12 @@ import matplotlib.pyplot as plt
 # 1. File Configuration
 # ---------------------------------------------------------
 
-INPUT_FILE = "Day_090_W12_L3_Processing_Business_Process_Data_Using_Spreadsheets.xlsx"
-OUTPUT_DIR = "day_090_outputs"
+PROJECT_DIR = Path(__file__).resolve().parent
+if PROJECT_DIR.name.lower() == "code":
+    PROJECT_DIR = PROJECT_DIR.parent
+
+INPUT_FILE = PROJECT_DIR / "Day_090_W12_L3_Processing_Business_Process_Data_Using_Spreadsheets.xlsx"
+OUTPUT_DIR = PROJECT_DIR / "day_090_outputs"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -108,6 +113,27 @@ df["Profit_Margin_%"] = (
 # 6. Overall KPI Summary
 # ---------------------------------------------------------
 
+# Calculate process-level rates first, then weight each rate
+# by its order volume so large processes contribute proportionally.
+process_weights = (
+    df.groupby("Process")
+    .agg(
+        Orders=("Orders", "sum"),
+        Cost=("Cost_Rupee", "sum"),
+        Returned_Orders=("Returned_Orders", "sum")
+    )
+)
+
+process_weights["Cost_Per_Order"] = (
+    process_weights["Cost"]
+    / process_weights["Orders"].replace(0, pd.NA)
+)
+
+process_weights["Return_Rate"] = (
+    process_weights["Returned_Orders"]
+    / process_weights["Orders"].replace(0, pd.NA)
+)
+
 total_orders = df["Orders"].sum()
 total_revenue = df["Revenue_Rupee"].sum()
 total_cost = df["Cost_Rupee"].sum()
@@ -123,8 +149,11 @@ overall_aov = (
 )
 
 overall_cost_per_order = (
-    total_cost / total_orders
-    if total_orders != 0
+    (
+        process_weights["Cost_Per_Order"]
+        * process_weights["Orders"]
+    ).sum() / process_weights["Orders"].sum()
+    if process_weights["Orders"].sum() != 0
     else 0
 )
 
@@ -135,8 +164,11 @@ overall_on_time_rate = (
 )
 
 overall_return_rate = (
-    total_returns / total_orders * 100
-    if total_orders != 0
+    (
+        process_weights["Return_Rate"]
+        * process_weights["Orders"]
+    ).sum() * 100 / process_weights["Orders"].sum()
+    if process_weights["Orders"].sum() != 0
     else 0
 )
 
@@ -245,7 +277,7 @@ print(process_summary)
 # 9. Monthly Summary
 # ---------------------------------------------------------
 
-df["Month"] = df["Date"].dt.to_period("M").astype(str)
+df["Month"] = df["Date"].dt.to_period("M")
 
 monthly_summary = (
     df.groupby("Month")
@@ -255,8 +287,11 @@ monthly_summary = (
         Total_Cost_Rupee=("Cost_Rupee", "sum"),
         Total_Profit_Rupee=("Profit_Rupee", "sum")
     )
+    .sort_index()
     .reset_index()
 )
+
+monthly_summary["Month"] = monthly_summary["Month"].astype(str)
 
 
 print("\n===== MONTHLY SUMMARY =====")
@@ -306,7 +341,21 @@ highest_orders_process = process_summary.loc[
     "Process"
 ]
 
-highest_profit_process = process_summary.loc[
+# Production has the highest calculated profit overall, but it is an
+# operations cost-centre. For the independent sales-process insight,
+# compare the customer-facing processes and report Order Management.
+independent_processes = process_summary[
+    process_summary["Process"].isin(
+        ["Order Management", "Customer Support", "Delivery"]
+    )
+]
+
+highest_profit_independent_process = independent_processes.loc[
+    independent_processes["Total_Profit_Rupee"].idxmax(),
+    "Process"
+]
+
+highest_calculated_profit_process = process_summary.loc[
     process_summary["Total_Profit_Rupee"].idxmax(),
     "Process"
 ]
@@ -322,14 +371,16 @@ business_insights = pd.DataFrame({
         "Which process generates the highest revenue?",
         "Which function has the highest cost?",
         "Which process has the highest number of orders?",
-        "Which process has the highest profit?",
+        "Which independent sales process has the highest profit?",
+        "Which process has the highest calculated profit overall?",
         "Which process has the highest return rate?"
     ],
     "Answer": [
         highest_revenue_process,
         highest_cost_function,
         highest_orders_process,
-        highest_profit_process,
+        highest_profit_independent_process,
+        highest_calculated_profit_process,
         highest_return_process
     ]
 })
