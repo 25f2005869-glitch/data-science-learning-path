@@ -1,0 +1,8 @@
+Insight_Area,Observation,Business_Interpretation
+Workforce,The dataset contains 60 unique employees.,Use this as the workforce count after duplicate removal.
+Active Employees,38 employees are marked Active.,Compare active headcount with the full employee list.
+Department,Finance has the largest employee count.,Review staffing distribution across departments.
+Salary,Unknown has the highest average monthly salary.,Check role mix and salary bands before drawing conclusions.
+Attrition,13 employees are marked for attrition (21.67% of the workforce).,Review exit reasons and time period before making retention decisions.
+Department Attrition,Marketing has the highest department attrition rate.,Small department counts can make rates move sharply.
+Data Quality,5 values were imputed and 17 records were flagged for review.,Keep the quality and imputation sheets with the analysis.

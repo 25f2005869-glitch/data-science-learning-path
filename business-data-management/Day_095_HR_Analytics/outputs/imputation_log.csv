@@ -1,0 +1,6 @@
+Employee_ID,Column,Original_Value,Updated_Value,Department,Method
+E014,Age,,35.0,Finance,Department median
+E021,Experience_Years,,11.0,HR,Department median
+E030,Experience_Years,-2.0,7.0,Operations,Department median
+E006,Monthly_Salary,,56552.0,Operations,Department median
+E038,Monthly_Salary,,73307.0,Finance,Department median

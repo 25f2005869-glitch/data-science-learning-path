@@ -1,0 +1,9 @@
+KPI,Value,Description
+Total Employees,60.0,Unique employee IDs after exact duplicate removal
+Active Employees,38.0,Employees marked Active
+Average Age,32.333333333333336,Mean age after documented imputation
+Average Experience (Years),8.566666666666666,Mean experience after department median imputation
+Average Monthly Salary,69141.96666666666,Mean salary after department median imputation
+Total Monthly Salary Cost,4148518.0,Sum of monthly salaries after imputation
+Attrition Count,13.0,Records marked Yes
+Attrition Rate (%),21.666666666666668,Attrition count divided by total unique employees

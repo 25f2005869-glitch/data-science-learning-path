@@ -1,0 +1,8 @@
+Department,Employee_Count,Average_Salary,Total_Salary,Average_Experience,Attrition_Count,Attrition_Rate_%
+Finance,10,75983.6,759836.0,10.3,2,20.0
+IT,10,79504.8,795048.0,6.4,2,20.0
+Marketing,10,69379.2,693792.0,8.7,3,30.0
+Operations,10,57103.3,571033.0,6.9,2,20.0
+Sales,10,61886.1,618861.0,7.8,2,20.0
+HR,9,68613.88888888889,617525.0,10.555555555555555,2,22.22222222222222
+Unknown,1,92423.0,92423.0,18.0,0,0.0

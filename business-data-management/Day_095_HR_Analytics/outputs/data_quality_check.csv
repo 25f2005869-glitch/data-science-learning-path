@@ -1,0 +1,10 @@
+Check,Result,Action
+Raw records,61,Source rows including duplicates
+Duplicate rows removed,1,Exact duplicate rows
+Missing Age in source,1,Filled with department median where available
+Missing Department in source,1,Kept as Unknown; not guessed
+Missing Experience in source,1,Filled with department median where available
+Negative Experience in source,1,Replaced with department median
+Missing Salary in source,2,Filled with department median where available
+Age and experience conflicts,15,Flagged for review; not silently corrected
+Role and department issues,2,Flagged using the role-to-department mapping
