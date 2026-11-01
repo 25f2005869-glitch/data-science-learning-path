@@ -16,27 +16,26 @@ import matplotlib.pyplot as plt
 # ============================================================
 
 def find_workbook():
-    possible_paths = [
-        Path("/mnt/data/Day_096_Customer_Analytics.xlsx"),
-        Path("Day_096_Customer_Analytics.xlsx"),
-        Path("data/Day_096_Customer_Analytics.xlsx"),
+    project_folder = Path(__file__).resolve().parent.parent
+    names = [
+        "Day_096_Customer_Analytics.xlsx",
+        "Day_096_Customer_Analytics(1).xlsx",
     ]
 
-    for path in possible_paths:
-        if path.exists():
-            return path
+    for name in names:
+        workbook = project_folder / name
+        if workbook.exists():
+            return workbook
 
     raise FileNotFoundError(
-        "Day_096_Customer_Analytics.xlsx was not found."
+        "Keep Day_096_Customer_Analytics.xlsx in the main project folder."
     )
 
 
 INPUT_FILE = find_workbook()
-
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = INPUT_FILE.parent
 OUTPUT_DIR = BASE_DIR / "outputs"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
 
 # ============================================================
 # 2. LOAD RAW CUSTOMER DATA
@@ -87,7 +86,6 @@ text_columns = [
     "Customer_Name",
     "Gender",
     "City",
-    "Region",
     "Customer_Segment",
     "Product_Category",
     "Customer_Status",
@@ -114,9 +112,25 @@ for column in [
     if column in clean_df.columns:
         clean_df[column] = clean_df[column].str.title()
 
+# Keep region names consistent, even when the source uses mixed case.
+region_names = {
+    "north": "North",
+    "south": "South",
+    "east": "East",
+    "west": "West",
+}
+
+clean_df["Region"] = (
+    clean_df["Region"]
+    .astype("string")
+    .str.strip()
+    .str.casefold()
+    .map(region_names)
+    .fillna(clean_df["Region"].astype("string").str.strip().str.title())
+)
+
 if "Payment_Method" in clean_df.columns:
     clean_df["Payment_Method"] = clean_df["Payment_Method"].str.title()
-
     clean_df["Payment_Method"] = clean_df["Payment_Method"].replace(
         {"Upi": "UPI"}
     )
@@ -131,8 +145,11 @@ clean_df["Date"] = pd.to_datetime(
     errors="coerce"
 )
 
-median_date = clean_df["Date"].dropna().median()
+# The source workbook documents O023 as 5 April 2026.
+clean_df.loc[clean_df["Order_ID"].eq("O023"), "Date"] = pd.Timestamp("2026-04-05")
 
+# Use the median only if any other invalid date remains.
+median_date = clean_df["Date"].dropna().median()
 clean_df["Date"] = clean_df["Date"].fillna(median_date)
 
 
@@ -165,13 +182,27 @@ median_age = clean_df["Age"].median()
 clean_df["Age"] = clean_df["Age"].fillna(median_age)
 
 
-# Quantity
-clean_df["Quantity"] = clean_df["Quantity"].fillna(1)
+# Quantity: work it out from Revenue / Unit_Price when possible.
+# This handles both missing and non-positive quantities.
+invalid_quantity = clean_df["Quantity"].isna() | clean_df["Quantity"].le(0)
+quantity_from_revenue = (
+    clean_df["Revenue"] / clean_df["Unit_Price"].replace(0, np.nan)
+)
 
-clean_df.loc[
-    clean_df["Quantity"] <= 0,
-    "Quantity"
-] = 1
+valid_calculation = (
+    invalid_quantity
+    & quantity_from_revenue.notna()
+    & quantity_from_revenue.gt(0)
+    & np.isclose(quantity_from_revenue, quantity_from_revenue.round())
+)
+
+clean_df.loc[valid_calculation, "Quantity"] = (
+    quantity_from_revenue.loc[valid_calculation].round()
+)
+
+# Keep a safe fallback for any row that cannot be calculated reliably.
+clean_df["Quantity"] = clean_df["Quantity"].fillna(1)
+clean_df.loc[clean_df["Quantity"] <= 0, "Quantity"] = 1
 
 
 # Unit Price
