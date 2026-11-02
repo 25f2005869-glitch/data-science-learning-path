@@ -1,0 +1,3 @@
+Gender,Employees,Average_Age,Average_Salary,Average_Performance,Attrition_Count,Average_Training_Hours,Average_Attendance,Gender_Share_%,Attrition_Rate_%
+Female,12,29.416666666666668,49666.666666666664,4.375,0,20.833333333333332,95.83333333333333,50.0,0.0
+Male,12,29.75,51416.666666666664,4.016666666666667,4,15.5,91.5,50.0,33.33333333333333
