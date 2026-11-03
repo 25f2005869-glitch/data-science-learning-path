@@ -1,0 +1,31 @@
+Source_Record_ID,Candidate_ID,Department,Region,Sourcing_Channel,Target_Role,Month,Application_Count,Days_to_Fill,Sourcing_Cost,Satisfaction_Score,Selected_Flag,Cost_per_Day
+SC001,C001,Technology,North,Internal Transfer,Data Analyst,2023-01,12,18,900,4.3,1,50.0
+SC002,C002,Finance,South,Employee Referral,Financial Analyst,2023-01,18,22,1400,4.5,1,63.63636363636363
+SC003,C003,HR,West,Job Portal,HR Executive,2023-01,30,31,1800,4.0,0,58.064516129032256
+SC004,C004,Sales,North,Recruitment Agency,Sales Executive,2023-01,20,27,3200,4.1,1,118.51851851851852
+SC005,C005,Operations,South,Internal Promotion,Operations Lead,2023-01,8,16,700,4.6,1,43.75
+SC006,C006,Technology,West,Employee Referral,Software Engineer,2023-01,24,20,1500,4.4,1,75.0
+SC007,C007,Finance,North,Job Portal,Accountant,2023-01,28,29,1700,3.9,0,58.62068965517241
+SC008,C008,HR,South,Internal Transfer,HR Analyst,2023-01,10,17,850,4.2,1,50.0
+SC009,C009,Sales,West,Job Portal,Sales Analyst,2023-01,26,30,1600,3.8,0,53.333333333333336
+SC010,C010,Operations,North,Employee Referral,Operations Analyst,2023-01,16,21,1300,4.3,1,61.904761904761905
+SC011,C011,Technology,South,Recruitment Agency,Data Engineer,2023-02,19,25,3000,4.0,1,120.0
+SC012,C012,Finance,West,Internal Promotion,Finance Lead,2023-02,7,15,650,4.7,1,43.333333333333336
+SC013,C013,HR,North,Job Portal,Recruiter,2023-02,32,33,1900,3.7,0,57.57575757575758
+SC014,C014,Sales,South,Employee Referral,Sales Executive,2023-02,17,21,1350,4.4,1,64.28571428571429
+SC015,C015,Operations,West,Internal Transfer,Operations Executive,2023-02,11,19,920,4.1,1,48.421052631578945
+SC016,C016,Technology,North,Job Portal,Python Developer,2023-02,29,28,1750,4.0,0,62.5
+SC017,C017,Finance,South,Recruitment Agency,Risk Analyst,2023-02,21,26,3150,4.2,1,121.15384615384616
+SC018,C018,HR,West,Employee Referral,HR Business Partner,2023-02,15,20,1250,4.5,1,62.5
+SC019,C019,Sales,North,Internal Promotion,Sales Lead,2023-02,6,14,600,4.8,1,42.857142857142854
+SC020,C020,Operations,South,Job Portal,Supply Chain Analyst,2023-02,25,32,1650,3.9,0,51.5625
+SC021,C021,Technology,West,Internal Transfer,BI Analyst,2023-03,13,18,950,4.4,1,52.77777777777778
+SC022,C022,Finance,North,Employee Referral,Credit Analyst,2023-03,19,23,1450,4.3,1,63.04347826086956
+SC023,C023,HR,South,Recruitment Agency,Talent Acquisition Executive,2023-03,18,29,2900,4.1,1,100.0
+SC024,C024,Sales,West,Job Portal,Sales Executive,2023-03,31,34,1850,3.6,0,54.411764705882355
+SC025,C025,Operations,North,Internal Promotion,Operations Manager,2023-03,5,13,550,4.9,1,42.30769230769231
+SC026,C026,Technology,South,Employee Referral,ML Engineer,2023-03,22,22,1550,4.5,1,70.45454545454545
+SC027,C027,Finance,West,Job Portal,Financial Analyst,2023-03,27,30,1720,3.9,0,57.333333333333336
+SC028,C028,HR,North,Internal Transfer,HR Executive,2023-03,9,16,800,4.3,1,50.0
+SC029,C029,Sales,South,Recruitment Agency,Area Sales Manager,2023-03,16,28,3300,4.0,1,117.85714285714286
+SC030,C030,Operations,West,Employee Referral,Operations Analyst,2023-03,14,20,1200,4.4,1,60.0
