@@ -1,0 +1,20 @@
+Candidate_ID,Target_Role,Onboarding_Phase,Onboarding_Task,Task_Status,Access_Ready,Task_Days
+C002,Financial Analyst,Pre-Joining,Documentation,Completed,Yes,2
+C005,Operations Associate,Pre-Joining,Background Verification,Completed,Yes,3
+C006,Data Analyst,Joining,IT & Access Setup,Completed,Yes,1
+C008,HR Executive,Joining,Orientation,Completed,Yes,1
+C009,Sales Executive,Joining,Orientation,Completed,Yes,1
+C011,Data Analyst,Pre-Joining,Documentation,Completed,Yes,2
+C012,Financial Analyst,Joining,IT & Access Setup,Completed,Yes,1
+C015,Operations Associate,Joining,Manager Introduction,Completed,Yes,1
+C016,Data Analyst,Joining,IT & Access Setup,Completed,Yes,1
+C018,HR Executive,Joining,Orientation,Completed,Yes,1
+C020,Operations Associate,Joining,Manager Introduction,In Progress,No,2
+C021,Data Analyst,Joining,Orientation,Completed,Yes,1
+C022,Financial Analyst,Joining,IT & Access Setup,Completed,Yes,1
+C023,HR Executive,Pre-Joining,Documentation,Completed,Yes,2
+C024,Sales Executive,Joining,Manager Introduction,Completed,Yes,1
+C026,Data Analyst,Joining,IT & Access Setup,In Progress,No,2
+C028,HR Executive,Joining,Orientation,Completed,Yes,1
+C029,Sales Executive,Pre-Joining,Documentation,In Progress,No,3
+C030,Operations Associate,Joining,Manager Introduction,Completed,Yes,1
