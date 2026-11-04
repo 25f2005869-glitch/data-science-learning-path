@@ -1,0 +1,31 @@
+Candidate_Record_ID,Candidate_ID,Department,Region,Target_Role,Experience_Level,Experience_Years,Technical_Score,Communication_Score,Interview_Score,Overall_Score,Selected_Flag,Composite_Score,Composite_Rank,Composite_Percentile
+CR001,C001,Technology,North,Software Engineer,Graduate,1.2,82,78,84,81,1,81.60000000000001,21,33.33333333333333
+CR002,C002,Finance,South,Financial Analyst,Experienced,3.5,88,85,82,86,1,85.2,13,58.333333333333336
+CR003,C003,HR,West,HR Executive,Graduate,1.0,74,80,78,77,0,77.0,29,6.666666666666667
+CR004,C004,Sales,North,Sales Executive,Experienced,4.0,79,82,88,84,1,83.3,20,36.666666666666664
+CR005,C005,Operations,South,Operations Lead,Experienced,5.5,91,87,90,90,1,89.7,5,86.66666666666667
+CR006,C006,Technology,West,Data Engineer,Experienced,4.2,86,81,85,84,1,84.3,15,53.333333333333336
+CR007,C007,Finance,North,Accountant,Graduate,1.5,76,77,75,76,0,75.9,30,3.3333333333333335
+CR008,C008,HR,South,HR Analyst,Graduate,2.0,81,84,79,81,1,81.0,22,30.0
+CR009,C009,Sales,West,Sales Analyst,Graduate,1.3,73,79,81,78,0,77.6,28,10.0
+CR010,C010,Operations,North,Operations Analyst,Experienced,3.0,84,86,83,84,1,84.1,17,45.0
+CR011,C011,Technology,South,Python Developer,Experienced,3.8,92,88,86,89,1,88.8,7,80.0
+CR012,C012,Finance,West,Risk Analyst,Experienced,4.5,85,83,87,86,1,85.4,12,63.33333333333333
+CR013,C013,HR,North,Recruiter,Graduate,1.1,78,82,80,79,0,79.6,25,18.333333333333332
+CR014,C014,Sales,South,Sales Executive,Experienced,2.8,87,89,85,87,1,86.80000000000001,9,73.33333333333333
+CR015,C015,Operations,West,Operations Executive,Graduate,1.7,80,76,82,79,0,79.6,25,18.333333333333332
+CR016,C016,Technology,North,BI Analyst,Experienced,3.2,89,84,91,88,1,88.4,8,76.66666666666667
+CR017,C017,Finance,South,Credit Analyst,Graduate,2.2,83,86,84,84,1,84.1,17,45.0
+CR018,C018,HR,West,HR Business Partner,Experienced,5.0,90,91,88,90,1,89.6,6,83.33333333333334
+CR019,C019,Sales,North,Sales Lead,Experienced,6.0,93,90,92,92,1,91.9,2,96.66666666666667
+CR020,C020,Operations,South,Supply Chain Analyst,Graduate,1.4,77,81,79,78,0,78.6,27,13.333333333333334
+CR021,C021,Technology,West,ML Engineer,Experienced,4.8,95,89,93,93,1,92.79999999999998,1,100.0
+CR022,C022,Finance,North,Financial Analyst,Experienced,3.0,80,82,81,81,1,80.9,23,26.666666666666668
+CR023,C023,HR,South,Talent Acquisition Executive,Graduate,2.5,84,87,82,84,1,84.0,19,40.0
+CR024,C024,Sales,West,Area Sales Manager,Experienced,5.2,89,92,90,90,1,90.1,4,90.0
+CR025,C025,Operations,North,Operations Manager,Experienced,6.5,94,88,91,92,1,91.5,3,93.33333333333333
+CR026,C026,Technology,South,Data Analyst,Graduate,1.8,85,83,87,85,1,85.2,13,58.333333333333336
+CR027,C027,Finance,West,Investment Analyst,Experienced,4.1,87,80,89,86,1,86.0,11,66.66666666666666
+CR028,C028,HR,North,HR Executive,Graduate,1.6,79,85,77,80,0,79.8,24,23.333333333333332
+CR029,C029,Sales,South,Sales Executive,Graduate,1.9,82,88,84,84,1,84.2,16,50.0
+CR030,C030,Operations,West,Operations Analyst,Experienced,3.7,86,84,88,86,1,86.2,10,70.0

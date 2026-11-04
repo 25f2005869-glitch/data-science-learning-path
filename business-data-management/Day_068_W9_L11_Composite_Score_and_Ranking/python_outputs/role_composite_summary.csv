@@ -1,0 +1,26 @@
+Target_Role,Candidates,Average_Composite_Score,Highest_Composite_Score,Selected,Selection_Rate_%
+Accountant,1,75.9,75.9,0,0.0
+Area Sales Manager,1,90.1,90.1,1,100.0
+BI Analyst,1,88.4,88.4,1,100.0
+Credit Analyst,1,84.1,84.1,1,100.0
+Data Analyst,1,85.2,85.2,1,100.0
+Data Engineer,1,84.3,84.3,1,100.0
+Financial Analyst,2,83.05000000000001,85.2,2,100.0
+HR Analyst,1,81.0,81.0,1,100.0
+HR Business Partner,1,89.6,89.6,1,100.0
+HR Executive,2,78.4,79.8,0,0.0
+Investment Analyst,1,86.0,86.0,1,100.0
+ML Engineer,1,92.79999999999998,92.79999999999998,1,100.0
+Operations Analyst,2,85.15,86.2,2,100.0
+Operations Executive,1,79.6,79.6,0,0.0
+Operations Lead,1,89.7,89.7,1,100.0
+Operations Manager,1,91.5,91.5,1,100.0
+Python Developer,1,88.8,88.8,1,100.0
+Recruiter,1,79.6,79.6,0,0.0
+Risk Analyst,1,85.4,85.4,1,100.0
+Sales Analyst,1,77.6,77.6,0,0.0
+Sales Executive,3,84.76666666666667,86.80000000000001,3,100.0
+Sales Lead,1,91.9,91.9,1,100.0
+Software Engineer,1,81.60000000000001,81.60000000000001,1,100.0
+Supply Chain Analyst,1,78.6,78.6,0,0.0
+Talent Acquisition Executive,1,84.0,84.0,1,100.0

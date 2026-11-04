@@ -1,0 +1,11 @@
+Candidate_Record_ID,Candidate_ID,Department,Region,Target_Role,Experience_Level,Experience_Years,Technical_Score,Communication_Score,Interview_Score,Overall_Score,Selected_Flag,Composite_Score,Composite_Rank,Composite_Percentile
+CR021,C021,Technology,West,ML Engineer,Experienced,4.8,95,89,93,93,1,92.79999999999998,1,100.0
+CR019,C019,Sales,North,Sales Lead,Experienced,6.0,93,90,92,92,1,91.9,2,96.66666666666667
+CR025,C025,Operations,North,Operations Manager,Experienced,6.5,94,88,91,92,1,91.5,3,93.33333333333333
+CR024,C024,Sales,West,Area Sales Manager,Experienced,5.2,89,92,90,90,1,90.1,4,90.0
+CR005,C005,Operations,South,Operations Lead,Experienced,5.5,91,87,90,90,1,89.7,5,86.66666666666667
+CR018,C018,HR,West,HR Business Partner,Experienced,5.0,90,91,88,90,1,89.6,6,83.33333333333334
+CR011,C011,Technology,South,Python Developer,Experienced,3.8,92,88,86,89,1,88.8,7,80.0
+CR016,C016,Technology,North,BI Analyst,Experienced,3.2,89,84,91,88,1,88.4,8,76.66666666666667
+CR014,C014,Sales,South,Sales Executive,Experienced,2.8,87,89,85,87,1,86.80000000000001,9,73.33333333333333
+CR030,C030,Operations,West,Operations Analyst,Experienced,3.7,86,84,88,86,1,86.2,10,70.0
