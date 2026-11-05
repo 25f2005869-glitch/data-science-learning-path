@@ -1,0 +1,31 @@
+Employee_ID,Employee_Name,Department,Region,Job_Role,Experience_Level,Primary_Skill,Skill_Score,Skill_Available_Flag,Training_Hours,Performance_Score,Secondary_Skill,Skill_Gap_Flag,Training_Need_Flag
+EMP001,Employee 01,Technology,North,Data Analyst,Graduate,Excel,58,1,4,72,Python,1,1
+EMP002,Employee 02,Finance,South,Business Analyst,Experienced,SQL,61,1,6,74,Communication,1,1
+EMP003,Employee 03,HR,West,HR Analyst,Graduate,Python,64,1,8,76,Data Visualization,1,1
+EMP004,Employee 04,Sales,North,Sales Executive,Experienced,Communication,67,0,10,78,Power BI,1,1
+EMP005,Employee 05,Operations,South,Operations Analyst,Graduate,Data Visualization,70,1,3,80,Excel,0,1
+EMP006,Employee 06,Technology,West,Data Analyst,Experienced,Excel,73,1,5,82,SQL,0,1
+EMP007,Employee 07,Finance,North,Business Analyst,Graduate,SQL,76,1,7,84,Python,0,0
+EMP008,Employee 08,HR,South,HR Analyst,Experienced,Python,79,0,9,86,Communication,0,0
+EMP009,Employee 09,Sales,West,Sales Executive,Graduate,Communication,82,1,2,88,Data Visualization,0,1
+EMP010,Employee 10,Operations,North,Operations Analyst,Experienced,Data Visualization,85,1,4,90,Power BI,0,1
+EMP011,Employee 11,Technology,South,Data Analyst,Graduate,Excel,88,1,6,92,Excel,0,0
+EMP012,Employee 12,Finance,West,Business Analyst,Experienced,SQL,91,0,8,94,SQL,0,0
+EMP013,Employee 13,HR,North,HR Analyst,Graduate,Python,94,1,10,96,Python,0,0
+EMP014,Employee 14,Sales,South,Sales Executive,Experienced,Communication,56,1,3,98,Communication,1,1
+EMP015,Employee 15,Operations,West,Operations Analyst,Graduate,Data Visualization,59,1,5,71,Data Visualization,1,1
+EMP016,Employee 16,Technology,North,Data Analyst,Experienced,Excel,62,0,7,73,Power BI,1,1
+EMP017,Employee 17,Finance,South,Business Analyst,Graduate,SQL,65,1,9,75,Excel,1,1
+EMP018,Employee 18,HR,West,HR Analyst,Experienced,Python,68,1,2,77,SQL,1,1
+EMP019,Employee 19,Sales,North,Sales Executive,Graduate,Communication,71,1,4,79,Python,0,1
+EMP020,Employee 20,Operations,South,Operations Analyst,Experienced,Data Visualization,74,0,6,81,Communication,0,1
+EMP021,Employee 21,Technology,West,Data Analyst,Graduate,Excel,77,1,8,83,Data Visualization,0,0
+EMP022,Employee 22,Finance,North,Business Analyst,Experienced,SQL,80,1,10,85,Power BI,0,0
+EMP023,Employee 23,HR,South,HR Analyst,Graduate,Python,83,1,3,87,Excel,0,1
+EMP024,Employee 24,Sales,West,Sales Executive,Experienced,Communication,86,0,5,89,SQL,0,0
+EMP025,Employee 25,Operations,North,Operations Analyst,Graduate,Data Visualization,89,1,7,91,Python,0,0
+EMP026,Employee 26,Technology,South,Data Analyst,Experienced,Excel,92,1,9,93,Communication,0,0
+EMP027,Employee 27,Finance,West,Business Analyst,Graduate,SQL,95,1,2,95,Data Visualization,0,1
+EMP028,Employee 28,HR,North,HR Analyst,Experienced,Python,57,0,4,97,Power BI,1,1
+EMP029,Employee 29,Sales,South,Sales Executive,Graduate,Communication,60,1,6,70,Excel,1,1
+EMP030,Employee 30,Operations,West,Operations Analyst,Experienced,Data Visualization,63,1,8,72,SQL,1,1
