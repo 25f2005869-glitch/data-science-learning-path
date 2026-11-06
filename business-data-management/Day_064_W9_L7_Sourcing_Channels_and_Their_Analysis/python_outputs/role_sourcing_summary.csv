@@ -1,0 +1,18 @@
+Target_Role,Candidates,Selected,Avg_Days_to_Fill,Avg_Sourcing_Cost
+Account Executive,2,2,18.0,43500.0
+Business Analyst,2,2,20.0,46500.0
+Credit Analyst,1,0,29.0,39000.0
+Data Analyst,3,2,20.333333333333332,45000.0
+Finance Analyst,2,1,23.0,42500.0
+HR Analyst,3,2,21.333333333333332,39666.666666666664
+Learning Analyst,1,0,26.0,37000.0
+Operations Analyst,2,1,22.5,39500.0
+Operations Lead,2,2,15.0,49000.0
+People Operations Specialist,1,1,18.0,40000.0
+Process Analyst,1,1,23.0,41000.0
+Revenue Analyst,1,1,16.0,45000.0
+Risk Analyst,1,0,30.0,40000.0
+Sales Executive,3,1,25.666666666666668,36333.333333333336
+Software Developer,3,3,14.0,54000.0
+Supply Chain Analyst,1,1,21.0,42000.0
+Talent Specialist,1,1,21.0,39000.0
