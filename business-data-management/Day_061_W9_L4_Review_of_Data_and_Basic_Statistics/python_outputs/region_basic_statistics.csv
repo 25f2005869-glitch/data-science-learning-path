@@ -1,0 +1,4 @@
+Region,Requests,Total_Cost,Avg_Cost,Avg_Actual_Days,Avg_Satisfaction
+North,8,955000,119375.0,4.625,4.3875
+South,8,858000,107250.0,3.875,4.2875
+West,8,948000,118500.0,5.125,4.325
