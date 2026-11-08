@@ -1,0 +1,4 @@
+Region,Requests,Total_Cost,Avg_Cost,Avg_Satisfaction,Completed,Completion_Rate_%
+North,8,955000,119375.0,4.3875,8,100.0
+South,8,858000,107250.0,4.2875,7,87.5
+West,8,948000,118500.0,4.325,6,75.0
