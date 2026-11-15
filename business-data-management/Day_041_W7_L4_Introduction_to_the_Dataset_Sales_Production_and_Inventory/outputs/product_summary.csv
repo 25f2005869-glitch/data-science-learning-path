@@ -1,0 +1,4 @@
+Product,Production_Units,Sales_Units,Scrap_Units,Closing_Inventory,Revenue,Production_Cost,Gross_Margin,Scrap_Rate
+Bearings,12500,10510,1865,125,625000,578860,46140,0.1492
+Gears,9830,8080,1510,240,589800,551040,38760,0.1536113936927772
+Shafts,8670,7210,1325,135,520200,491580,28620,0.15282583621683968
